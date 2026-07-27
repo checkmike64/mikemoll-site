@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Undervalued Expert — A Podcast for Growing Your Service Business | Mike Moll</title>
+<meta name="description" content="Short, practical episodes for experts who undercharge. Live coaching sessions, expert interviews, and trainings you can use the same day.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --canvas:#141210;--surface:#1b1815;--surface-2:#221e19;
+    --ink:#ece6da;--muted:#948f84;
+    --hairline:rgba(236,230,218,0.10);--hairline-2:rgba(236,230,218,0.18);
+    --accent:#c6a06a;--accent-ink:#141210;
+    --display:'Space Grotesk',sans-serif;--body:'Hanken Grotesk',sans-serif;--max:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:0.03;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;position:relative;z-index:2}
+  a{color:inherit;text-decoration:none}
+  .eyebrow{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:0.26em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:block}
+  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-0.03em;line-height:1.04}
+
+  nav{position:sticky;top:0;z-index:10;background:rgba(20,18,16,0.75);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-0.02em}
+  .logo span{color:var(--accent)}
+  .nav-links{display:flex;align-items:center;gap:28px}
+  .nav-links a:not(.btn){color:var(--muted);font-size:15px;font-weight:500;transition:color .2s}
+  .nav-links a:not(.btn):hover,.nav-links a.active{color:var(--ink)}
+  .btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:15px;padding:12px 22px;border-radius:8px;transition:transform .2s,background .2s,border-color .2s;border:none;cursor:pointer}
+  .btn-primary{background:var(--accent);color:var(--accent-ink)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{border:1px solid var(--hairline-2);color:var(--ink);background:none}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+  .text-link{font-family:var(--display);font-weight:600;font-size:15px;color:var(--muted);display:inline-flex;gap:7px;transition:color .2s,gap .2s}
+  .text-link:hover{color:var(--accent);gap:11px}
+  .crumbs{font-family:var(--display);font-size:12px;letter-spacing:0.08em;color:var(--muted);margin-bottom:22px}
+  .crumbs a:hover{color:var(--ink)}
+
+  header{padding:44px 0 90px;border-bottom:1px solid var(--hairline)}
+  .hero{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(2.4rem,5.2vw,4rem);font-weight:700;max-width:14ch;margin-bottom:22px}
+  .hero .sub{color:var(--muted);font-size:1.15rem;max-width:46ch;margin-bottom:30px}
+  .subs{margin-bottom:26px}
+  .subs .lab{font-family:var(--display);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;display:block}
+  .subrow{display:flex;flex-wrap:wrap;gap:12px}
+  .sub-btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--display);font-weight:600;font-size:14px;padding:11px 18px;border:1px solid var(--hairline-2);border-radius:100px;color:var(--ink);transition:border-color .2s,transform .2s}
+  .sub-btn:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .sub-btn .d{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+  .embed{border:1px solid var(--hairline);border-radius:16px;overflow:hidden;background:var(--surface);box-shadow:0 20px 50px rgba(0,0,0,0.4)}
+  .embed iframe{display:block;width:100%;border:0}
+
+  section{padding:96px 0;border-bottom:1px solid var(--hairline)}
+  .sec-head{max-width:60ch;margin-bottom:12px}
+  .sec-head h2{font-size:clamp(1.9rem,4.4vw,3rem);margin-bottom:14px}
+  .sec-head p{color:var(--muted);font-size:1.08rem}
+
+  .eps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+  .ep{border:1px solid var(--hairline);border-radius:16px;overflow:hidden;background:var(--surface);display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
+  .ep:hover{transform:translateY(-4px);border-color:var(--accent)}
+  .ep .art{aspect-ratio:16/9;background:linear-gradient(150deg,#241f18,#171410);display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid var(--hairline)}
+  .ep .play{width:48px;height:48px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;font-size:16px;padding-left:3px}
+  .ep .art .n{position:absolute;bottom:12px;left:14px;font-family:var(--display);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)}
+  .ep .body{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1}
+  .ep .meta{font-family:var(--display);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .ep h3{font-size:1.25rem;margin-bottom:10px}
+  .ep p{color:var(--muted);font-size:0.96rem;margin-bottom:18px;flex:1}
+
+  /* guest form */
+  .guest{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;align-items:start}
+  .form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .form .full{grid-column:1/-1}
+  .form input,.form select{width:100%;background:var(--surface);border:1px solid var(--hairline-2);border-radius:8px;padding:14px 16px;color:var(--ink);font-family:var(--body);font-size:15px}
+  .form input::placeholder{color:var(--muted)}
+  .form input:focus,.form select:focus{outline:none;border-color:var(--accent)}
+  .radio{grid-column:1/-1;display:grid;gap:10px;margin-top:4px}
+  .radio label{display:flex;align-items:center;gap:10px;font-size:14px;color:#d6d2c8;border:1px solid var(--hairline);border-radius:10px;padding:13px 16px;cursor:pointer}
+  .radio label:hover{border-color:var(--hairline-2)}
+
+  /* cross-sell */
+  .xsell{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;border:1px solid rgba(198,160,106,0.28);background:linear-gradient(160deg,#1c1712,var(--surface));border-radius:16px;padding:34px 38px;margin-top:44px}
+  .xsell h3{font-size:1.4rem;margin-bottom:6px}
+  .xsell p{color:var(--muted);font-size:0.98rem}
+
+  .news{text-align:center}
+  .news .sec-head{margin:0 auto}
+  .newsform{display:flex;gap:12px;max-width:460px;margin:32px auto 0}
+  .newsform input{flex:1;background:var(--surface);border:1px solid var(--hairline-2);border-radius:8px;padding:15px 18px;color:var(--ink);font-family:var(--body);font-size:16px}
+  .newsform input:focus{outline:none;border-color:var(--accent)}
+
+  footer{padding:52px 0;border:none}
+  .foot-in{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  .socials{display:flex;gap:20px}
+  .socials a{color:var(--muted);font-size:14px;font-weight:500}
+  .socials a:hover{color:var(--accent)}
+  .foot-in p{color:var(--muted);font-size:14px}
+
+  @media(max-width:860px){
+    .nav-links a:not(.btn){display:none}
+    .hero,.guest{grid-template-columns:1fr;gap:38px}
+    .eps{grid-template-columns:1fr}
+    .form{grid-template-columns:1fr}
+    header{padding:30px 0 60px}section{padding:66px 0}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="logo">Mike<span>.</span>Moll</div>
+    <div class="nav-links">
+      <a href="/">How I help</a>
+      <a href="/#podcast">Free resources</a>
+      <a href="#" class="active">Podcast</a>
+      <a href="/" class="btn btn-primary">Apply to Work With Me</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="crumbs"><a href="#">Home</a> › Podcast</div>
+    <div class="hero">
+      <div>
+        <span class="eyebrow">The Undervalued Expert · The Podcast</span>
+        <h1>A podcast for growing your service business.</h1>
+        <p class="sub">Short, practical episodes for experts who undercharge. Live coaching sessions, expert interviews, and trainings you can use the same day.</p>
+        <div class="subs">
+          <span class="lab">Listen on</span>
+          <div class="subrow">
+            <a class="sub-btn" href="https://podcasts.apple.com/ca/podcast/the-profitable-solopreneur/id1798563683"><span class="d"></span> Apple Podcasts</a>
+            <a class="sub-btn" href="https://open.spotify.com/show/2BpB6zzFSXhimB6fFqH3wj"><span class="d"></span> Spotify</a>
+            <a class="sub-btn" href="https://www.youtube.com/@mikemollco"><span class="d"></span> YouTube</a>
+          </div>
+        </div>
+        <a href="#application" class="text-link">Want to be on the show? Apply to come on →</a>
+      </div>
+      <div class="embed">
+        <iframe src="https://open.spotify.com/embed/show/2BpB6zzFSXhimB6fFqH3wj?theme=0" height="392" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="The Undervalued Expert on Spotify"></iframe>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- EPISODES -->
+<section id="episodes">
+  <div class="wrap">
+    <span class="eyebrow">Episodes &amp; guests</span>
+    <div class="sec-head"><h2>Explore episodes and guests.</h2><p>Every episode is one clear idea you can put to work the same day.</p></div>
+    <!-- Episodes render from the podcast feed / Supabase. Sample cards below. -->
+    <div class="eps">
+      <a class="ep" href="#">
+        <div class="art"><div class="play">▶</div><div class="n">Episode</div></div>
+        <div class="body"><div class="meta">Coaching · May 15, 2026</div><h3>Raise your price</h3><p>Most experts undercharge because they're afraid, not because they lack skill. The exact steps to raise your price and keep your best clients.</p><span class="text-link">Listen →</span></div>
+      </a>
+      <a class="ep" href="#">
+        <div class="art"><div class="play">▶</div><div class="n">Episode</div></div>
+        <div class="body"><div class="meta">Coaching · May 08, 2026</div><h3>The offer is the problem, not sales</h3><p>When your offer leaves you underpriced and overworked, part of you dreads selling it. Fix the offer and selling gets easier.</p><span class="text-link">Listen →</span></div>
+      </a>
+      <a class="ep" href="#">
+        <div class="art"><div class="play">▶</div><div class="n">Guest</div></div>
+        <div class="body"><div class="meta">Interview · May 01, 2026</div><h3>How to get booked on podcasts</h3><p>You don't need a big following to get booked. How to borrow the trust of shows your buyers already listen to.</p><span class="text-link">Listen →</span></div>
+      </a>
+    </div>
+    <div style="margin-top:34px"><a href="#" class="text-link">See all episodes →</a></div>
+  </div>
+</section>
+
+<!-- BE A GUEST -->
+<section id="application">
+  <div class="wrap guest">
+    <div>
+      <span class="eyebrow">Be a guest</span>
+      <div class="sec-head"><h2>Want to come on the show?</h2><p>Two ways on: come teach as an expert, or bring a real problem for a live coaching session on air.</p></div>
+      <a href="#episodes" class="text-link">Hear the format first →</a>
+    </div>
+    <form class="form" onsubmit="return false">
+      <input class="full" type="text" placeholder="First name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="text" placeholder="Business name" required>
+      <input class="full" type="url" placeholder="Website" required>
+      <select class="full" required><option value="" disabled selected>Business type</option><option>Consulting</option><option>Coaching</option><option>Agency</option><option>Advisory / fractional</option><option>Other</option></select>
+      <div class="radio">
+        <label><input type="radio" name="guest" checked> I'm an expert looking to teach</label>
+        <label><input type="radio" name="guest"> I'm looking for the free coaching session</label>
+      </div>
+      <button class="btn btn-primary full" type="submit">Apply to Come On</button>
+    </form>
+  </div>
+</section>
+
+<!-- CROSS-SELL -->
+<section id="more">
+  <div class="wrap">
+    <div class="xsell">
+      <div>
+        <h3>Looking for help with your offer?</h3>
+        <p>Ninety days to fix your pricing, sales, and delivery.</p>
+      </div>
+      <a href="#" class="btn btn-primary">See the coaching program →</a>
+    </div>
+    <div class="xsell" style="border-color:var(--hairline);background:var(--surface)">
+      <div>
+        <h3>Want to get booked on shows like this?</h3>
+        <p>The podcast workshop shows you how to get in front of your buyers.</p>
+      </div>
+      <a href="#" class="btn btn-ghost">Explore the workshop →</a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="news">
+  <div class="wrap">
+    <span class="eyebrow">Never miss an episode</span>
+    <div class="sec-head"><h2>New episodes, workshop invites, and practical business notes.</h2></div>
+    <form class="newsform" onsubmit="return false">
+      <input type="email" placeholder="you@yourbusiness.com" aria-label="Email">
+      <button class="btn btn-primary" type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <div class="logo">Mike<span style="color:var(--accent)">.</span>Moll</div>
+    <div class="socials"><a href="#">Instagram</a><a href="#">YouTube</a><a href="#">LinkedIn</a></div>
+    <p>© 2026 Mike Moll</p>
+  </div>
+</footer>
+
+</body>
+</html>

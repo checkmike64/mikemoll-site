@@ -1,0 +1,17 @@
+# Allow all search + AI crawlers
+User-agent: *
+Allow: /
+
+# Named AI crawlers (explicit allow)
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://www.mikemoll.co/sitemap.xml
