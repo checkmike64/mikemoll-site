@@ -257,7 +257,7 @@
     <div class="regcard">
       <div class="dt">Wednesday, August 12 · 4:00 PM ET</div>
       <!-- Set data-webhook to your GoHighLevel Inbound Webhook URL to capture registrations. -->
-      <form class="regform" data-webhook="" onsubmit="return false">
+      <form class="regform" data-webhook="https://services.leadconnectorhq.com/hooks/Y6tiQHe96XbqVkTeRY8J/webhook-trigger/77a4ea3f-caaa-4efc-8c0e-e3ac06fea851">
         <input type="text" name="name" placeholder="Your name" required>
         <input type="email" name="email" placeholder="you@email.com" required>
         <button class="btn btn-primary btn-lg" type="submit">Save My Seat</button>
@@ -274,5 +274,23 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var f=document.querySelector('.regform'); if(!f) return;
+  var url=f.getAttribute('data-webhook');
+  f.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn=f.querySelector('button');
+    var name=(f.querySelector('input[name=name]')||{}).value||'';
+    var email=(f.querySelector('input[name=email]')||{}).value||'';
+    if(!email.trim()) return;
+    btn.disabled=true; var orig=btn.textContent; btn.textContent='Saving your seat...';
+    try{
+      await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name.trim(),email:email.trim(),source:'podcast-workshop'})});
+      f.innerHTML='<p style="font-family:var(--display);font-weight:600;font-size:1.2rem;color:var(--accent);margin:6px 0">You\'re in.</p><p style="color:var(--muted)">Check your email for the link, plus a reminder before we go live on August 12.</p>';
+    }catch(err){ btn.disabled=false; btn.textContent=orig; alert('Something went wrong. Please try again.'); }
+  });
+})();
+</script>
 </body>
 </html>
