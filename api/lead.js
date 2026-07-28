@@ -19,7 +19,7 @@ const FORMS = {
   'consulting-application': {
     tags: ['consulting-application'],
     customByKey: {
-      years_in_business: 'years_operating',
+      years_in_business: 'years_in_business',
       deal_size: 'average_deal_size',
       annual_revenue: 'annual_revenue',
       close_rate: 'sales_close_rate',
