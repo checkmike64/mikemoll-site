@@ -195,15 +195,15 @@
       <div class="sec-head"><h2>Want to come on the show?</h2><p>Two ways on: come teach as an expert, or bring a real problem for a live coaching session on air.</p></div>
       <a href="#episodes" class="text-link">Hear the format first →</a>
     </div>
-    <form class="form" onsubmit="return false">
-      <input class="full" type="text" placeholder="First name" required>
-      <input type="email" placeholder="Email" required>
-      <input type="text" placeholder="Business name" required>
-      <input class="full" type="url" placeholder="Website" required>
-      <select class="full" required><option value="" disabled selected>Business type</option><option>Consulting</option><option>Coaching</option><option>Agency</option><option>Advisory / fractional</option><option>Other</option></select>
+    <form class="form" data-lead="podcast-guest" data-success="Application received." data-success-note="If it's a fit for the show, I'll reach out with next steps.">
+      <input class="full" type="text" name="name" placeholder="First name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="text" name="business_name" placeholder="Business name" required>
+      <input class="full" type="url" name="website" placeholder="Website" required>
+      <select class="full" name="business_type" required><option value="" disabled selected>Business type</option><option>Consulting</option><option>Coaching</option><option>Agency</option><option>Advisory / fractional</option><option>Other</option></select>
       <div class="radio">
-        <label><input type="radio" name="guest" checked> I'm an expert looking to teach</label>
-        <label><input type="radio" name="guest"> I'm looking for the free coaching session</label>
+        <label><input type="radio" name="guest_type" value="expert" checked> I'm an expert looking to teach</label>
+        <label><input type="radio" name="guest_type" value="coaching"> I'm looking for the free coaching session</label>
       </div>
       <button class="btn btn-primary full" type="submit">Apply to Come On</button>
     </form>
@@ -235,8 +235,8 @@
   <div class="wrap">
     <span class="eyebrow">Never miss an episode</span>
     <div class="sec-head"><h2>New episodes, workshop invites, and practical business notes.</h2></div>
-    <form class="newsform" onsubmit="return false">
-      <input type="email" placeholder="you@yourbusiness.com" aria-label="Email">
+    <form class="newsform" data-lead="newsletter" data-success="You're subscribed." data-success-note="New episodes, workshop invites, and practical business notes.">
+      <input type="email" name="email" placeholder="you@yourbusiness.com" aria-label="Email" required>
       <button class="btn btn-primary" type="submit">Subscribe</button>
     </form>
   </div>
@@ -250,5 +250,6 @@
   </div>
 </footer>
 
+<script src="/forms.js"></script>
 </body>
 </html>

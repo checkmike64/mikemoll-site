@@ -305,8 +305,8 @@
       <div class="scard">
         <div class="tag">The Newsletter</div>
         <h3>The marketing offer and AI experiments that I share.</h3>
-        <form class="form" onsubmit="return false">
-          <input type="email" placeholder="you@yourbusiness.com" aria-label="Email">
+        <form class="form" data-lead="newsletter" data-success="You're subscribed." data-success-note="Owner-to-owner notes on offers, pricing, and getting paid.">
+          <input type="email" name="email" placeholder="you@yourbusiness.com" aria-label="Email" required>
           <button class="btn btn-primary" type="submit">Subscribe</button>
         </form>
       </div>
@@ -342,5 +342,6 @@
   sc.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd); upd();
 })();
 </script>
+<script src="/forms.js"></script>
 </body>
 </html>

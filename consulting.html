@@ -361,16 +361,16 @@
   <div class="wrap">
     <span class="eyebrow" style="text-align:center">Apply</span>
     <div class="sec-head"><h2>Apply to join the next cohort.</h2><p>Fill out the form. If it's a fit, we'll follow up with next steps.</p></div>
-    <form class="ap" onsubmit="return false">
-      <input class="full" type="text" placeholder="Name" required>
-      <input type="email" placeholder="Email" required>
-      <input type="text" placeholder="Business name" required>
-      <input class="full" type="url" placeholder="Website" required>
-      <input type="text" placeholder="Years in business" required>
-      <select required><option value="" disabled selected>Average deal size</option><option>Under $2K</option><option>$2K&ndash;$5K</option><option>$5K&ndash;$10K</option><option>$10K+</option></select>
-      <input type="text" placeholder="Annual revenue" required>
-      <input type="text" placeholder="Sales close rate" required>
-      <select class="full" required><option value="" disabled selected>When do you want help with your offer?</option><option>Immediately</option><option>Within the next month</option><option>Within the next quarter</option><option>Just looking around</option></select>
+    <form class="ap" data-lead="consulting-application" data-success="Application received." data-success-note="I review every application personally. If it looks like a fit, you'll hear from me with next steps.">
+      <input class="full" type="text" name="name" placeholder="Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="text" name="business_name" placeholder="Business name" required>
+      <input class="full" type="url" name="website" placeholder="Website" required>
+      <input type="text" name="years_in_business" placeholder="Years in business" required>
+      <select name="deal_size" required><option value="" disabled selected>Average deal size</option><option>Under $2K</option><option>$2K&ndash;$5K</option><option>$5K&ndash;$10K</option><option>$10K+</option></select>
+      <input type="text" name="annual_revenue" placeholder="Annual revenue" required>
+      <input type="text" name="close_rate" placeholder="Sales close rate" required>
+      <select class="full" name="timeline" required><option value="" disabled selected>When do you want help with your offer?</option><option>Immediately</option><option>Within the next month</option><option>Within the next quarter</option><option>Just looking around</option></select>
       <button class="btn btn-primary btn-lg full" type="submit">Submit Application</button>
     </form>
   </div>
@@ -384,5 +384,6 @@
   </div>
 </footer>
 
+<script src="/forms.js"></script>
 </body>
 </html>
