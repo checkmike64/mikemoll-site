@@ -60,7 +60,7 @@
   .filters button.active{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-bottom:96px}
-  .pcard{border:1px solid var(--hairline);border-radius:16px;background:var(--surface);padding:26px 26px 24px;display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
+  .pcard{border:1px solid var(--hairline);border-radius:16px;background:var(--surface);display:flex;flex-direction:column;overflow:hidden;transition:transform .2s,border-color .2s}
   .pcard:hover{transform:translateY(-4px);border-color:var(--accent)}
   .pc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
   .pc-kind{font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)}
@@ -68,6 +68,12 @@
   .pcard h3{font-size:1.2rem;margin-bottom:10px;line-height:1.15}
   .pcard p{color:var(--muted);font-size:0.95rem;flex:1;margin-bottom:18px}
   .pc-read{font-family:var(--display);font-weight:600;font-size:14px;color:var(--accent)}
+  .pc-art{aspect-ratio:16/9;background:radial-gradient(120% 120% at 30% 18%,#2a241c,#14110d);display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid var(--hairline)}
+  .pc-badge{position:absolute;top:12px;left:14px;font-family:var(--display);font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);border:1px solid var(--hairline-2);border-radius:100px;padding:5px 11px;background:rgba(20,18,16,.45)}
+  .pc-avatar{width:84px;height:84px;border-radius:50%;background:rgba(198,160,106,.10);border:1.5px solid rgba(198,160,106,.45);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+  .pc-avatar svg{width:42px;height:36px}
+  .pc-avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+  .pc-body{padding:24px 24px 24px;display:flex;flex-direction:column;flex:1}
 
   .empty{grid-column:1/-1;border:1px dashed var(--hairline-2);border-radius:16px;padding:56px 30px;text-align:center;color:var(--muted)}
   .empty h3{font-size:1.3rem;color:var(--ink);margin-bottom:8px}
@@ -109,70 +115,103 @@
 
   <div class="grid" id="grid">
       <a class="pcard" href="/blog/how-i-quit-my-comfortable-job-to-pursue-business" data-tag="podcast-episode">
-        <div class="pc-top"><span class="pc-kind">Personal</span><span class="pc-tag">Podcast Episode</span></div>
-        <h3>How I quit my comfortable job to pursue business</h3>
-        <p>The personal story behind the business. The day I walked out of a corporate job with no plan, and what it taught me about building on my own terms.</p>
-        <span class="pc-read">Read the episode &rarr;</span>
+        <div class="pc-art"><div class="pc-badge">Personal</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="pc-body">
+          <span class="pc-tag">Podcast Episode</span>
+          <h3>How I quit my comfortable job to pursue business</h3>
+          <p>The personal story behind the business. The day I walked out of a corporate job with no plan, and what it taught me about building on my own terms.</p>
+          <span class="pc-read">Read the episode &rarr;</span>
+        </div>
       </a>
       <a class="pcard" href="/blog/how-to-vet-service-providers-behdad-jamshidi" data-tag="podcast-episode">
-        <div class="pc-top"><span class="pc-kind">Interview</span><span class="pc-tag">Podcast Episode</span></div>
-        <h3>How to Vet Service Providers - Behdad Jamshidi</h3>
-        <p>How to vet service providers so you stop hiring the wrong people, with Behdad Jamshidi of CJAM Marketing.</p>
-        <span class="pc-read">Read the episode &rarr;</span>
+        <div class="pc-art"><div class="pc-badge">Interview</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="pc-body">
+          <span class="pc-tag">Podcast Episode</span>
+          <h3>How to Vet Service Providers - Behdad Jamshidi</h3>
+          <p>How to vet service providers so you stop hiring the wrong people, with Behdad Jamshidi of CJAM Marketing.</p>
+          <span class="pc-read">Read the episode &rarr;</span>
+        </div>
       </a>
       <a class="pcard" href="/blog/following-your-nudges-how-to-trust-your-intuition-more-jason-brown" data-tag="podcast-episode">
-        <div class="pc-top"><span class="pc-kind">Interview</span><span class="pc-tag">Podcast Episode</span></div>
-        <h3>Following Your Nudges - How to Trust Your Intuition More - Jason Brown</h3>
-        <p>Following your nudges: how to trust your intuition more when you make business decisions, with Jason Brown.</p>
-        <span class="pc-read">Read the episode &rarr;</span>
+        <div class="pc-art"><div class="pc-badge">Interview</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="pc-body">
+          <span class="pc-tag">Podcast Episode</span>
+          <h3>Following Your Nudges - How to Trust Your Intuition More - Jason Brown</h3>
+          <p>Following your nudges: how to trust your intuition more when you make business decisions, with Jason Brown.</p>
+          <span class="pc-read">Read the episode &rarr;</span>
+        </div>
       </a>
       <a class="pcard" href="/blog/how-to-time-block-to-maximize-productivity-tiffany-taylor" data-tag="podcast-episode">
-        <div class="pc-top"><span class="pc-kind">Interview</span><span class="pc-tag">Podcast Episode</span></div>
-        <h3>How to Time Block to Maximize Productivity - Tiffany Taylor</h3>
-        <p>How to time-block so you actually protect your focus and get more done, with Tiffany Taylor.</p>
-        <span class="pc-read">Read the episode &rarr;</span>
+        <div class="pc-art"><div class="pc-badge">Interview</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="pc-body">
+          <span class="pc-tag">Podcast Episode</span>
+          <h3>How to Time Block to Maximize Productivity - Tiffany Taylor</h3>
+          <p>How to time-block so you actually protect your focus and get more done, with Tiffany Taylor.</p>
+          <span class="pc-read">Read the episode &rarr;</span>
+        </div>
       </a>
       <a class="pcard" href="/blog/marketing-a-live-learning-cohort-mark-latimer" data-tag="podcast-episode">
-        <div class="pc-top"><span class="pc-kind">Live Coaching</span><span class="pc-tag">Podcast Episode</span></div>
-        <h3>Marketing a Live Learning Cohort - Mark Latimer</h3>
-        <p>Live coaching: how to market a live learning cohort so the right people enroll, with Mark Latimer.</p>
-        <span class="pc-read">Read the episode &rarr;</span>
+        <div class="pc-art"><div class="pc-badge">Live Coaching</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="pc-body">
+          <span class="pc-tag">Podcast Episode</span>
+          <h3>Marketing a Live Learning Cohort - Mark Latimer</h3>
+          <p>Live coaching: how to market a live learning cohort so the right people enroll, with Mark Latimer.</p>
+          <span class="pc-read">Read the episode &rarr;</span>
+        </div>
       </a>
       <a class="pcard" href="/blog/3-steps-to-raising-your-price" data-tag="podcast-episode">
-        <div class="pc-top"><span class="pc-kind">Masterclass</span><span class="pc-tag">Podcast Episode</span></div>
-        <h3>3 Steps to Raising Your Price</h3>
-        <p>The three steps to raising your price without losing the clients you want to keep.</p>
-        <span class="pc-read">Read the episode &rarr;</span>
+        <div class="pc-art"><div class="pc-badge">Masterclass</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="pc-body">
+          <span class="pc-tag">Podcast Episode</span>
+          <h3>3 Steps to Raising Your Price</h3>
+          <p>The three steps to raising your price without losing the clients you want to keep.</p>
+          <span class="pc-read">Read the episode &rarr;</span>
+        </div>
       </a>
       <a class="pcard" href="/blog/monetizing-ideas-for-a-free-newsletter-patrick-kucharson" data-tag="podcast-episode">
-        <div class="pc-top"><span class="pc-kind">Live Coaching</span><span class="pc-tag">Podcast Episode</span></div>
-        <h3>Monetizing Ideas for a Free Newsletter - Patrick Kucharson</h3>
-        <p>Live coaching: turning free-newsletter ideas into real revenue, with Patrick Kucharson.</p>
-        <span class="pc-read">Read the episode &rarr;</span>
+        <div class="pc-art"><div class="pc-badge">Live Coaching</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="pc-body">
+          <span class="pc-tag">Podcast Episode</span>
+          <h3>Monetizing Ideas for a Free Newsletter - Patrick Kucharson</h3>
+          <p>Live coaching: turning free-newsletter ideas into real revenue, with Patrick Kucharson.</p>
+          <span class="pc-read">Read the episode &rarr;</span>
+        </div>
       </a>
       <a class="pcard" href="/blog/defining-your-ideal-client-ignore-everyone-else-susie-ippolito" data-tag="podcast-episode">
-        <div class="pc-top"><span class="pc-kind">Live Coaching</span><span class="pc-tag">Podcast Episode</span></div>
-        <h3>Defining your Ideal Client, Ignore Everyone Else - Susie Ippolito</h3>
-        <p>Live coaching: defining your ideal client and confidently ignoring everyone else, with Susie Ippolito.</p>
-        <span class="pc-read">Read the episode &rarr;</span>
+        <div class="pc-art"><div class="pc-badge">Live Coaching</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="pc-body">
+          <span class="pc-tag">Podcast Episode</span>
+          <h3>Defining your Ideal Client, Ignore Everyone Else - Susie Ippolito</h3>
+          <p>Live coaching: defining your ideal client and confidently ignoring everyone else, with Susie Ippolito.</p>
+          <span class="pc-read">Read the episode &rarr;</span>
+        </div>
       </a>
       <a class="pcard" href="/blog/marketing-your-coaching-offer-on-facebook-megan-van-noy" data-tag="podcast-episode">
-        <div class="pc-top"><span class="pc-kind">Live Coaching</span><span class="pc-tag">Podcast Episode</span></div>
-        <h3>Marketing your Coaching Offer on Facebook - Megan Van Noy</h3>
-        <p>Live coaching: marketing your coaching offer on Facebook without wasting spend, with Megan Van Noy.</p>
-        <span class="pc-read">Read the episode &rarr;</span>
+        <div class="pc-art"><div class="pc-badge">Live Coaching</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="pc-body">
+          <span class="pc-tag">Podcast Episode</span>
+          <h3>Marketing your Coaching Offer on Facebook - Megan Van Noy</h3>
+          <p>Live coaching: marketing your coaching offer on Facebook without wasting spend, with Megan Van Noy.</p>
+          <span class="pc-read">Read the episode &rarr;</span>
+        </div>
       </a>
       <a class="pcard" href="/blog/gaining-confidence-to-charge-more-dusty-jenkins" data-tag="podcast-episode">
-        <div class="pc-top"><span class="pc-kind">Live Coaching</span><span class="pc-tag">Podcast Episode</span></div>
-        <h3>Gaining Confidence  to Charge More - Dusty Jenkins</h3>
-        <p>Live coaching: gaining the confidence to charge more for work you already deliver, with Dusty Jenkins.</p>
-        <span class="pc-read">Read the episode &rarr;</span>
+        <div class="pc-art"><div class="pc-badge">Live Coaching</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="pc-body">
+          <span class="pc-tag">Podcast Episode</span>
+          <h3>Gaining Confidence  to Charge More - Dusty Jenkins</h3>
+          <p>Live coaching: gaining the confidence to charge more for work you already deliver, with Dusty Jenkins.</p>
+          <span class="pc-read">Read the episode &rarr;</span>
+        </div>
       </a>
       <a class="pcard" href="/blog/the-solopreneur-success-cycle-joe-rando" data-tag="podcast-episode">
-        <div class="pc-top"><span class="pc-kind">Interview</span><span class="pc-tag">Podcast Episode</span></div>
-        <h3>The Solopreneur Success Cycle - Joe Rando</h3>
-        <p>The solopreneur success cycle: the repeatable loop behind a durable one-person business, with Joe Rando.</p>
-        <span class="pc-read">Read the episode &rarr;</span>
+        <div class="pc-art"><div class="pc-badge">Interview</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="pc-body">
+          <span class="pc-tag">Podcast Episode</span>
+          <h3>The Solopreneur Success Cycle - Joe Rando</h3>
+          <p>The solopreneur success cycle: the repeatable loop behind a durable one-person business, with Joe Rando.</p>
+          <span class="pc-read">Read the episode &rarr;</span>
+        </div>
       </a>
 
     <div class="empty" data-empty="guest-appearance" style="display:none">
