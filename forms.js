@@ -17,6 +17,8 @@
           body: JSON.stringify(data)
         });
         if (!res.ok) throw new Error('bad status ' + res.status);
+        var redirect = form.getAttribute('data-redirect');
+        if (redirect) { window.location.href = redirect; return; }
         var msg = form.getAttribute('data-success') || "You're in.";
         var note = form.getAttribute('data-success-note') || '';
         form.innerHTML =

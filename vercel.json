@@ -3,11 +3,50 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/my-story", "destination": "/about", "permanent": true },
-    { "source": "/90-days-growth-intensive", "destination": "/consulting", "permanent": true },
-    { "source": "/join-mastermind", "destination": "/mastermind", "permanent": true },
-    { "source": "/leads-from-linkedin", "destination": "/free/linkedin-leads", "permanent": true },
-    { "source": "/get-on-podcasts-training", "destination": "/free/podcast-guesting", "permanent": true },
-    { "source": "/claude-basics-training", "destination": "/free/claude-basics", "permanent": true }
+    {
+      "source": "/my-story",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/90-days-growth-intensive",
+      "destination": "/consulting",
+      "permanent": true
+    },
+    {
+      "source": "/join-mastermind",
+      "destination": "/mastermind",
+      "permanent": true
+    },
+    {
+      "source": "/leads-from-linkedin",
+      "destination": "/free/linkedin-leads",
+      "permanent": true
+    },
+    {
+      "source": "/get-on-podcasts-training",
+      "destination": "/free/podcast-guesting",
+      "permanent": true
+    },
+    {
+      "source": "/claude-basics-training",
+      "destination": "/free/claude-basics",
+      "permanent": true
+    },
+    {
+      "source": "/linkedin-lead-thank-you",
+      "destination": "/free/linkedin-leads-thanks",
+      "permanent": true
+    },
+    {
+      "source": "/thank-you-basic-claude-training",
+      "destination": "/free/claude-basics-thanks",
+      "permanent": true
+    },
+    {
+      "source": "/thank-you-podcast-training",
+      "destination": "/free/podcast-guesting-thanks",
+      "permanent": true
+    }
   ]
 }
