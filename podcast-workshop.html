@@ -256,8 +256,8 @@
     <div class="sec-head"><h2>Save your seat.</h2><p>Live Wednesday, August 12 at 4:00 PM ET. It's a free workshop, and it's live, so you can ask your questions in the room. Seats are limited.</p></div>
     <div class="regcard">
       <div class="dt">Wednesday, August 12 · 4:00 PM ET</div>
-      <!-- Set data-webhook to your GoHighLevel Inbound Webhook URL to capture registrations. -->
-      <form class="regform" data-webhook="https://services.leadconnectorhq.com/hooks/Y6tiQHe96XbqVkTeRY8J/webhook-trigger/77a4ea3f-caaa-4efc-8c0e-e3ac06fea851">
+      <!-- Posts to /api/register (Vercel serverless -> GoHighLevel Contacts API). -->
+      <form class="regform" action="/api/register" method="post">
         <input type="text" name="name" placeholder="Your name" required>
         <input type="email" name="email" placeholder="you@email.com" required>
         <button class="btn btn-primary btn-lg" type="submit">Save My Seat</button>
@@ -277,7 +277,6 @@
 <script>
 (function(){
   var f=document.querySelector('.regform'); if(!f) return;
-  var url=f.getAttribute('data-webhook');
   f.addEventListener('submit', async function(e){
     e.preventDefault();
     var btn=f.querySelector('button');
@@ -286,7 +285,8 @@
     if(!email.trim()) return;
     btn.disabled=true; var orig=btn.textContent; btn.textContent='Saving your seat...';
     try{
-      await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name.trim(),email:email.trim(),source:'podcast-workshop'})});
+      var res=await fetch('/api/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name.trim(),email:email.trim(),source:'podcast-workshop'})});
+      if(!res.ok) throw new Error('bad status '+res.status);
       f.innerHTML='<p style="font-family:var(--display);font-weight:600;font-size:1.2rem;color:var(--accent);margin:6px 0">You\'re in.</p><p style="color:var(--muted)">Check your email for the link, plus a reminder before we go live on August 12.</p>';
     }catch(err){ btn.disabled=false; btn.textContent=orig; alert('Something went wrong. Please try again.'); }
   });
