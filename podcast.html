@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Undervalued Expert — A Podcast for Growing Your Service Business | Mike Moll</title>
+<title>The Undervalued Expert: A Podcast for Growing Your Service Business | Mike Moll</title>
 <meta name="description" content="Short, practical episodes for experts who undercharge. Live coaching sessions, expert interviews, and trainings you can use the same day.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <link rel="canonical" href="https://www.mikemoll.co/podcast">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mike Moll">
-<meta property="og:title" content="The Undervalued Expert — A Podcast for Growing Your Service Business">
+<meta property="og:title" content="The Undervalued Expert: A Podcast for Growing Your Service Business">
 <meta property="og:description" content="Short, practical episodes for experts who undercharge. Live coaching, expert interviews, and same-day trainings.">
 <meta property="og:url" content="https://www.mikemoll.co/podcast">
 <meta name="twitter:card" content="summary_large_image">
@@ -78,9 +78,11 @@
   .eps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
   .ep{border:1px solid var(--hairline);border-radius:16px;overflow:hidden;background:var(--surface);display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
   .ep:hover{transform:translateY(-4px);border-color:var(--accent)}
-  .ep .art{aspect-ratio:16/9;background:linear-gradient(150deg,#241f18,#171410);display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid var(--hairline)}
-  .ep .play{width:48px;height:48px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;font-size:16px;padding-left:3px}
-  .ep .art .n{position:absolute;bottom:12px;left:14px;font-family:var(--display);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)}
+  .ep .art{aspect-ratio:16/9;background:radial-gradient(120% 120% at 30% 18%,#2a241c,#14110d);display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid var(--hairline);overflow:hidden}
+  .ep .badge{position:absolute;top:12px;left:14px;font-family:var(--display);font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);border:1px solid var(--hairline-2);border-radius:100px;padding:5px 11px;background:rgba(20,18,16,.45)}
+  .ep .avatar{width:92px;height:92px;border-radius:50%;background:rgba(198,160,106,.10);border:1.5px solid rgba(198,160,106,.45);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+  .ep .avatar svg{width:46px;height:40px}
+  .ep .avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover}
   .ep .body{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1}
   .ep .meta{font-family:var(--display);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
   .ep h3{font-size:1.25rem;margin-bottom:10px}
@@ -128,19 +130,18 @@
 
 <nav>
   <div class="wrap nav-in">
-    <div class="logo">Mike<span>.</span>Moll</div>
+    <a href="/" class="logo">Mike<span>.</span>Moll</a>
     <div class="nav-links">
-      <a href="/">How I help</a>
-      <a href="/#podcast">Free resources</a>
-      <a href="#" class="active">Podcast</a>
-      <a href="/" class="btn btn-primary">Apply to Work With Me</a>
+      <a href="/podcast" class="active">Podcast</a>
+      <a href="/blog">Blog</a>
+      <a href="/consulting" class="btn btn-primary">Work with me</a>
     </div>
   </div>
 </nav>
 
 <header>
   <div class="wrap">
-    <div class="crumbs"><a href="#">Home</a> › Podcast</div>
+    <div class="crumbs"><a href="/">Home</a> › Podcast</div>
     <div class="hero">
       <div>
         <span class="eyebrow">The Undervalued Expert · The Podcast</span>
@@ -168,22 +169,21 @@
   <div class="wrap">
     <span class="eyebrow">Episodes &amp; guests</span>
     <div class="sec-head"><h2>Explore episodes and guests.</h2><p>Every episode is one clear idea you can put to work the same day.</p></div>
-    <!-- Episodes render from the podcast feed / Supabase. Sample cards below. -->
     <div class="eps">
-      <a class="ep" href="#">
-        <div class="art"><div class="play">▶</div><div class="n">Episode</div></div>
-        <div class="body"><div class="meta">Coaching · May 15, 2026</div><h3>Raise your price</h3><p>Most experts undercharge because they're afraid, not because they lack skill. The exact steps to raise your price and keep your best clients.</p><span class="text-link">Listen →</span></div>
+      <a class="ep" href="/blog/how-i-quit-my-comfortable-job-to-pursue-business">
+        <div class="art"><div class="badge">Personal</div><div class="avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="body"><div class="meta">Personal · April 21, 2026</div><h3>How I quit my comfortable job</h3><p>The day I walked out of a corporate job with no plan, and what it taught me about building on my own terms.</p><span class="text-link">Read the episode &rarr;</span></div>
       </a>
-      <a class="ep" href="#">
-        <div class="art"><div class="play">▶</div><div class="n">Episode</div></div>
-        <div class="body"><div class="meta">Coaching · May 08, 2026</div><h3>The offer is the problem, not sales</h3><p>When your offer leaves you underpriced and overworked, part of you dreads selling it. Fix the offer and selling gets easier.</p><span class="text-link">Listen →</span></div>
+      <a class="ep" href="/blog/how-to-vet-service-providers-behdad-jamshidi">
+        <div class="art"><div class="badge">Interview</div><div class="avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="body"><div class="meta">Interview · May 29, 2025</div><h3>How to vet a service provider</h3><p>How to vet service providers so you stop hiring the wrong people, with Behdad Jamshidi.</p><span class="text-link">Read the episode &rarr;</span></div>
       </a>
-      <a class="ep" href="#">
-        <div class="art"><div class="play">▶</div><div class="n">Guest</div></div>
-        <div class="body"><div class="meta">Interview · May 01, 2026</div><h3>How to get booked on podcasts</h3><p>You don't need a big following to get booked. How to borrow the trust of shows your buyers already listen to.</p><span class="text-link">Listen →</span></div>
+      <a class="ep" href="/blog/following-your-nudges-how-to-trust-your-intuition-more-jason-brown">
+        <div class="art"><div class="badge">Interview</div><div class="avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="body"><div class="meta">Interview · May 1, 2025</div><h3>Learn to trust your intuition</h3><p>How to trust your intuition when you make business decisions, with Jason Brown.</p><span class="text-link">Read the episode &rarr;</span></div>
       </a>
     </div>
-    <div style="margin-top:34px"><a href="#" class="text-link">See all episodes →</a></div>
+    <div style="margin-top:34px"><a href="/blog" class="text-link">See all episodes &rarr;</a></div>
   </div>
 </section>
 
@@ -245,7 +245,7 @@
 <footer>
   <div class="wrap foot-in">
     <div class="logo">Mike<span style="color:var(--accent)">.</span>Moll</div>
-    <div class="socials"><a href="#">Instagram</a><a href="#">YouTube</a><a href="#">LinkedIn</a></div>
+    <div class="socials"><a href="https://www.youtube.com/@mikemollco">YouTube</a><a href="https://www.linkedin.com/in/solopreneurcoach/">LinkedIn</a></div>
     <p>© 2026 Mike Moll</p>
   </div>
 </footer>
