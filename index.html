@@ -97,7 +97,9 @@
   .mike{display:grid;grid-template-columns:0.85fr 1.15fr;gap:60px;align-items:center}
   .mike-photo{aspect-ratio:1/1;border:1px solid var(--hairline);border-radius:16px;background:linear-gradient(150deg,var(--surface),var(--surface-2));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
   .mike-photo .big{font-family:var(--display);font-weight:700;font-size:8rem;color:var(--hairline-2)}
-  .mike-photo .tag{position:absolute;bottom:24px;font-family:var(--display);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent)}
+  .mike-photo .tag{position:absolute;bottom:24px;font-family:var(--display);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);z-index:2}
+  .mike-photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block}
+  .mike-photo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:96px;background:linear-gradient(to top,rgba(20,18,16,0.9),transparent);pointer-events:none;z-index:1}
   .mike-copy p{color:#d6d2c8;margin-bottom:18px}
   .creds{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
   .creds li{font-family:var(--display);font-size:13px;color:var(--muted);border:1px solid var(--hairline);border-radius:100px;padding:8px 14px}
@@ -224,7 +226,7 @@
 <!-- MEET MIKE -->
 <section id="mike">
   <div class="wrap mike">
-    <div class="mike-photo"><div class="big">MM</div><div class="tag">Mike Moll</div></div>
+    <div class="mike-photo"><img src="/images/mike-moll-solopreneur-coach.jpg" alt="Mike Moll, solopreneur coach" loading="lazy"><div class="tag">Mike Moll</div></div>
     <div class="mike-copy">
       <span class="eyebrow">Meet Mike</span>
       <div class="sec-head"><h2>I've done both for my own business.</h2></div>

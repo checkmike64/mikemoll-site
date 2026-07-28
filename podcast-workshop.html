@@ -58,8 +58,13 @@
   .datepill{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:14px;color:var(--accent);border:1px solid rgba(198,160,106,0.35);border-radius:100px;padding:9px 18px;margin-bottom:28px}
   .hero .cta-note{color:var(--muted);font-size:14px;margin-top:14px}
   .host{display:inline-flex;align-items:center;gap:12px;margin-top:44px;color:var(--muted);font-size:14px}
-  .host .av{width:40px;height:40px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-family:var(--display);font-weight:700;display:flex;align-items:center;justify-content:center}
+  .host .av{width:40px;height:40px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-family:var(--display);font-weight:700;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .host .av img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
   .host b{color:var(--ink);font-family:var(--display)}
+  .proofshot{padding:56px 0;border-bottom:1px solid var(--hairline)}
+  .proofshot figure{margin:0 auto;max-width:900px}
+  .proofshot img{width:100%;display:block;border-radius:16px;border:1px solid var(--hairline);box-shadow:0 24px 60px rgba(0,0,0,0.45)}
+  .proofshot figcaption{text-align:center;color:var(--muted);font-size:14px;margin-top:16px;font-family:var(--display);letter-spacing:0.02em}
 
   section{padding:84px 0;border-bottom:1px solid var(--hairline)}
   .sec-head{max-width:60ch;margin-bottom:14px}
@@ -95,7 +100,8 @@
   .step p{color:var(--muted);font-size:0.98rem}
 
   .mike{display:grid;grid-template-columns:0.8fr 1.2fr;gap:50px;align-items:center}
-  .mike-photo{aspect-ratio:1/1;border:1px solid var(--hairline);border-radius:16px;background:linear-gradient(150deg,var(--surface),var(--surface-2));display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:5rem;color:var(--hairline-2)}
+  .mike-photo{aspect-ratio:1/1;border:1px solid var(--hairline);border-radius:16px;background:linear-gradient(150deg,var(--surface),var(--surface-2));display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:5rem;color:var(--hairline-2);overflow:hidden}
+  .mike-photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block}
   .mike p{color:#d6d2c8;margin-bottom:18px}
   .creds{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
   .creds li{font-family:var(--display);font-size:13px;color:var(--muted);border:1px solid var(--hairline);border-radius:100px;padding:8px 14px}
@@ -148,9 +154,18 @@
     <div class="datepill">● Live Wednesday, August 12 at 4:00 PM ET</div>
     <div><a href="#register" class="btn btn-primary btn-lg">Save My Seat</a></div>
     <div class="cta-note">Free to join. Seats are limited.</div>
-    <div class="host"><span class="av">MM</span><span>Hosted by <b>Mike Moll</b> · 65+ shows guested, 120 episodes hosted.</span></div>
+    <div class="host"><span class="av"><img src="/images/mike-moll-solopreneur-coach.jpg" alt="Mike Moll"></span><span>Hosted by <b>Mike Moll</b> · 65+ shows guested, 120 episodes hosted.</span></div>
   </div>
 </header>
+
+<section class="proofshot">
+  <div class="wrap">
+    <figure>
+      <img src="/images/mike-moll-podcast-interview.jpg" alt="Mike Moll being interviewed on a podcast" loading="lazy">
+      <figcaption>On the mic. This is the channel that put $386,000 on the board without a big following.</figcaption>
+    </figure>
+  </div>
+</section>
 
 <!-- DURABILITY -->
 <section>
@@ -232,7 +247,7 @@
 <!-- MEET MIKE -->
 <section>
   <div class="wrap mike">
-    <div class="mike-photo">MM</div>
+    <div class="mike-photo"><img src="/images/mike-moll-solopreneur-coach.jpg" alt="Mike Moll" loading="lazy"></div>
     <div>
       <span class="eyebrow">Meet Mike</span>
       <div class="sec-head"><h2>Mike Moll</h2><p>Marketing coach &amp; fractional CMO</p></div>
