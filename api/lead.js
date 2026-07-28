@@ -32,6 +32,17 @@ const FORMS = {
   'newsletter': {
     tags: ['newsletter'],
   },
+  // Lead magnets: each fires one tag. Wire the matching GHL workflow's
+  // "Contact Tag Added" trigger to this tag so the email sequence still runs.
+  'linkedin-leads': {
+    tags: ['lm-linkedin-leads'],
+  },
+  'claude-basics': {
+    tags: ['lm-claude-basics'],
+  },
+  'podcast-guesting': {
+    tags: ['lm-podcast-guesting'],
+  },
 };
 
 function slug(s) {
