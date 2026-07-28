@@ -114,8 +114,7 @@ footer{border-top:1px solid var(--hairline);padding:30px 0;color:var(--muted);fo
 <script>
 (function(){
   var v=document.getElementById('lm-video');var src=v.getAttribute('data-hls');
-  if(v.canPlayType('application/vnd.apple.mpegurl')){v.src=src;}
-  else if(window.Hls&&window.Hls.isSupported()){var h=new Hls();h.loadSource(src);h.attachMedia(v);}
+  if(window.Hls&&window.Hls.isSupported()){var h=new Hls();h.loadSource(src);h.attachMedia(v);}
   else{v.src=src;}
 })();
 </script>
