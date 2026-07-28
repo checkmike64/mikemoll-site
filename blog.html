@@ -175,11 +175,11 @@
         <span class="pc-read">Read the episode &rarr;</span>
       </a>
 
-    <div class="empty" data-empty="guest-appearance" hidden>
+    <div class="empty" data-empty="guest-appearance" style="display:none">
       <h3>Guest appearances are coming soon</h3>
       <p>Shows I've been a guest on will land here.</p>
     </div>
-    <div class="empty" data-empty="writing" hidden>
+    <div class="empty" data-empty="writing" style="display:none">
       <h3>Writing is coming soon</h3>
       <p>Essays and newsletter notes will land here.</p>
     </div>
@@ -198,20 +198,25 @@
   var btns=document.querySelectorAll('.filters button');
   var cards=document.querySelectorAll('.pcard');
   var empties=document.querySelectorAll('.empty');
+  function apply(f){
+    var shown=0;
+    cards.forEach(function(c){
+      var show = (f==='all') || (c.getAttribute('data-tag')===f);
+      c.style.display = show ? 'flex' : 'none';
+      if(show) shown++;
+    });
+    empties.forEach(function(e){
+      var showEmpty = (f===e.getAttribute('data-empty')) && shown===0;
+      e.style.display = showEmpty ? 'block' : 'none';
+    });
+  }
   btns.forEach(function(b){
     b.addEventListener('click',function(){
-      var f=b.getAttribute('data-filter');
       btns.forEach(function(x){x.classList.remove('active')}); b.classList.add('active');
-      var shown=0;
-      cards.forEach(function(c){
-        var show = (f==='all') || (c.getAttribute('data-tag')===f);
-        c.hidden=!show; if(show)shown++;
-      });
-      empties.forEach(function(e){
-        e.hidden = !((f===e.getAttribute('data-empty')) && shown===0);
-      });
+      apply(b.getAttribute('data-filter'));
     });
   });
+  apply('all');
 })();
 </script>
 </body>
