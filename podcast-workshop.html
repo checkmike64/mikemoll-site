@@ -61,10 +61,10 @@
   .host .av{width:40px;height:40px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-family:var(--display);font-weight:700;display:flex;align-items:center;justify-content:center;overflow:hidden}
   .host .av img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
   .host b{color:var(--ink);font-family:var(--display)}
-  .proofshot{padding:44px 0 8px}
-  .proofshot figure{margin:0 auto;max-width:520px}
-  .proofshot img{width:100%;display:block;border-radius:14px;border:1px solid var(--hairline);box-shadow:0 16px 38px rgba(0,0,0,0.4)}
-  .proofshot figcaption{text-align:center;color:var(--muted);font-size:14px;margin-top:16px;font-family:var(--display);letter-spacing:0.02em}
+  .whyrow{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center}
+  .whyrow .sec-head{max-width:none;margin-bottom:14px}
+  .whyphoto{margin:0}
+  .whyphoto img{width:100%;display:block;border-radius:14px;border:1px solid var(--hairline);box-shadow:0 18px 42px rgba(0,0,0,0.45)}
 
   section{padding:84px 0;border-bottom:1px solid var(--hairline)}
   .sec-head{max-width:60ch;margin-bottom:14px}
@@ -129,7 +129,7 @@
   @media(max-width:860px){
     .nav-links a:not(.btn){display:none}
     .three,.myths{grid-template-columns:1fr}
-    .proof,.mike{grid-template-columns:1fr;gap:28px}
+    .proof,.mike,.whyrow{grid-template-columns:1fr;gap:28px}
     .whofor{grid-template-columns:1fr 1fr}
     header{padding:56px 0 50px}section{padding:60px 0}
   }
@@ -163,9 +163,16 @@
 <!-- DURABILITY -->
 <section>
   <div class="wrap">
-    <span class="eyebrow">Why podcasts</span>
-    <div class="sec-head"><h2>Ads and posts stop working the day you stop.</h2></div>
-    <p class="lead-para">A boosted post is gone by the weekend. A podcast appearance still gets found a year later, ranking in search and turning up in someone's feed. Guesting takes work to land. The difference is the work keeps paying after you stop.</p>
+    <div class="whyrow">
+      <div class="whytext">
+        <span class="eyebrow">Why podcasts</span>
+        <div class="sec-head"><h2>Ads and posts stop working the day you stop.</h2></div>
+        <p class="lead-para">A boosted post is gone by the weekend. A podcast appearance still gets found a year later, ranking in search and turning up in someone's feed. Guesting takes work to land. The difference is the work keeps paying after you stop.</p>
+      </div>
+      <figure class="whyphoto">
+        <img src="/images/mike-moll-podcast-interview.jpg" alt="Mike Moll being interviewed on a podcast" loading="lazy">
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -254,15 +261,6 @@
         <li>$386K traced to appearances</li>
       </ul>
     </div>
-  </div>
-</section>
-
-<section class="proofshot">
-  <div class="wrap">
-    <figure>
-      <img src="/images/mike-moll-podcast-interview.jpg" alt="Mike Moll being interviewed on a podcast" loading="lazy">
-      <figcaption>On the mic. This is the channel that put $386,000 on the board without a big following.</figcaption>
-    </figure>
   </div>
 </section>
 
