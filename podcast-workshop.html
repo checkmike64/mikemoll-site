@@ -114,10 +114,12 @@
      Workflow > Inbound Webhook URL (it will create + tag the contact and fire the
      reminder emails). Stopgap: delete this form and paste your GHL JavaScript embed
      into #register instead. -->
-  .regform{display:grid;gap:12px}
-  .regform input{width:100%;background:var(--canvas);border:1px solid var(--hairline-2);border-radius:8px;padding:15px 18px;color:var(--ink);font-family:var(--body);font-size:16px}
+  .regform{display:grid;gap:14px;margin-top:4px}
+  .regform .field{text-align:left}
+  .regform label{display:block;font-size:12.5px;color:var(--muted);font-family:var(--display);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:6px}
+  .regform input{width:100%;background:var(--canvas);border:1px solid var(--hairline-2);border-radius:10px;padding:14px 16px;color:var(--ink);font-family:var(--body);font-size:16px}
   .regform input:focus{outline:none;border-color:var(--accent)}
-  .regform .btn{width:100%;text-align:center}
+  .regform .btn{width:100%;text-align:center;margin-top:6px}
   .regnote{color:var(--muted);font-size:13px;margin-top:16px}
 
   footer{padding:48px 0;border:none}
@@ -266,15 +268,21 @@
 
 <!-- REGISTER -->
 <section id="register" class="register">
-  <div class="wrap">
-    <span class="eyebrow" style="text-align:center">Save your seat</span>
+  <div class="wrap center">
+    <span class="eyebrow">Save your seat</span>
     <div class="sec-head"><h2>Save your seat.</h2><p>Live Wednesday, August 12 at 4:00 PM ET. It's a free workshop, and it's live, so you can ask your questions in the room. Seats are limited.</p></div>
     <div class="regcard">
       <div class="dt">Wednesday, August 12 · 4:00 PM ET</div>
       <!-- Posts to /api/register (Vercel serverless -> GoHighLevel Contacts API). -->
       <form class="regform" action="/api/register" method="post">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="you@email.com" required>
+        <div class="field">
+          <label for="reg-name">Full name</label>
+          <input id="reg-name" type="text" name="name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="reg-email">Email</label>
+          <input id="reg-email" type="email" name="email" autocomplete="email" required>
+        </div>
         <button class="btn btn-primary btn-lg" type="submit">Save My Seat</button>
       </form>
       <p class="regnote">Register with your name and email. We'll send the link, plus a reminder before we go live.</p>
