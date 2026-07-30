@@ -37,3 +37,23 @@ GHL_TOKEN/upsert pattern as `api/lead.js`. It never creates a new contact,
 only tags an existing one, and only for paths listed in `api/track.js`'s
 `PAGES` allowlist (anything else is rejected with 400). Anonymous visitors
 (no cookie yet) are a silent no-op.
+
+### Tags are merged, not replaced (and why that's slower)
+GHL's `/contacts/upsert` treats the `tags` field you send as a full
+**replacement** of the contact's tag list, not an addition — a known,
+officially-acknowledged GHL API limitation. `api/lead.js` and `api/track.js`
+both call `getExistingTags()` (in `api/_ghl.js`) before every upsert, merge
+the new tag(s) in, and send the complete set — otherwise every new tag
+silently erases whatever was applied before it.
+
+There's no reliable "search contact by email" endpoint on this account —
+GHL's list endpoint's `query` param mis-parses `+`/`@` in raw email
+addresses, so `getExistingTags()` instead paginates the (confirmed
+reliable) contact list and matches the email exactly, client-side, capped
+at 1,000 contacts. This adds real latency to every form submission —
+worst case (a brand-new contact, the common case for lead-magnet forms)
+has to scan every page before concluding "not found," which took ~2.5s
+against a ~480-contact account in testing. This will get slower as the
+contact list grows. If GHL's search-by-email ever gets fixed/documented
+properly, replacing the pagination scan with a single indexed lookup would
+remove most of this latency.

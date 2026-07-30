@@ -5,8 +5,7 @@
 // only adds a tag to one identified by email, same GHL_TOKEN/upsert pattern
 // as api/lead.js.
 
-const GHL_LOCATION_ID = 'Y6tiQHe96XbqVkTeRY8J';
-const GHL_UPSERT_URL = 'https://services.leadconnectorhq.com/contacts/upsert';
+import { GHL_LOCATION_ID, GHL_UPSERT_URL, getExistingTags, mergeTags } from './_ghl.js';
 
 // Path -> tag. Explicit allowlist so this endpoint can't be used to write
 // arbitrary tags onto a contact. Add new pages here (and to sitemap.xml).
@@ -61,10 +60,13 @@ export default async function handler(req, res) {
     return res.status(400).json({ ok: false, error: 'Unknown page' });
   }
 
+  // GHL upsert replaces the whole tags array rather than adding to it, so
+  // merge with whatever tags are already on this contact first.
+  const existingTags = await getExistingTags(email, token);
   const payload = {
     locationId: GHL_LOCATION_ID,
     email,
-    tags: [tag],
+    tags: mergeTags(existingTags, [tag]),
   };
 
   try {

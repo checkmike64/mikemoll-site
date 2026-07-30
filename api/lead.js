@@ -5,8 +5,7 @@
 // mapping. The GHL Private Integration token lives ONLY in the GHL_TOKEN env
 // var (also accepts lowercase ghl_token) — never in client-side code.
 
-const GHL_LOCATION_ID = 'Y6tiQHe96XbqVkTeRY8J';
-const GHL_UPSERT_URL = 'https://services.leadconnectorhq.com/contacts/upsert';
+import { GHL_LOCATION_ID, GHL_UPSERT_URL, getExistingTags, mergeTags } from './_ghl.js';
 
 // Per-form configuration.
 //  tags       : tags always applied for this form.
@@ -106,7 +105,10 @@ export function createHandler(defaultFormId) {
       const g = slug(body.guest_type);
       tags.push(g.includes('coach') ? 'guest-coaching' : 'guest-expert');
     }
-    payload.tags = tags;
+    // GHL upsert replaces the whole tags array rather than adding to it, so
+    // merge with whatever tags are already on this contact first.
+    const existingTags = await getExistingTags(email, token);
+    payload.tags = mergeTags(existingTags, tags);
 
     // Custom fields mapped by GHL field key.
     if (cfg.customByKey) {
