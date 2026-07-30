@@ -2,7 +2,8 @@
   PAGE TEMPLATE — copy this file to start a new page.
   This is a static site with no build step, so there is no way for pages to
   "inherit" shared markup automatically — copying this file is the convention
-  instead. It already has GTM and the scroll-to-top script wired in correctly.
+  instead. It already has GTM, the scroll-to-top script, and the high-intent
+  page-view tracker (track-view.js) wired in correctly.
 
   Checklist when creating a new page from this file:
   1. Rename it (e.g. new-page.html) and place it at the right path.
@@ -10,7 +11,10 @@
   3. Replace the <main> placeholder with real content.
   4. Add the new URL to sitemap.xml (unless it should stay noindex, like a
      thank-you page — see free/*-thanks.html for that pattern).
-  5. Delete this comment block.
+  5. If this page should tag a known visitor's GHL contact on view, add its
+     path to the PAGES allowlist in api/track.js — track-view.js's request
+     is silently rejected (400) for any path not listed there.
+  6. Delete this comment block.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -138,5 +142,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 <script src="/scroll-top.js" defer></script>
+<script src="/track-view.js" defer></script>
 </body>
 </html>

@@ -27,3 +27,13 @@ Drop images into `public/media/` and reference them as `/media/your-file.webp`.
 
 ## Forms
 The opt-in and apply forms are placeholders. Point them at your GoHighLevel form embed, or Formspree, before launch.
+
+## High-intent page-view tagging
+`forms.js` (and the podcast-workshop registration form) set an `mm_id` cookie
+(the visitor's email) after any successful submission. On pages that include
+`track-view.js`, a known visitor's page view POSTs `{email, page}` to
+`api/track.js`, which tags their GHL contact `viewed-<page>` — same
+GHL_TOKEN/upsert pattern as `api/lead.js`. It never creates a new contact,
+only tags an existing one, and only for paths listed in `api/track.js`'s
+`PAGES` allowlist (anything else is rejected with 400). Anonymous visitors
+(no cookie yet) are a silent no-op.
