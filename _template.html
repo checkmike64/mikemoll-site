@@ -1,0 +1,142 @@
+<!--
+  PAGE TEMPLATE — copy this file to start a new page.
+  This is a static site with no build step, so there is no way for pages to
+  "inherit" shared markup automatically — copying this file is the convention
+  instead. It already has GTM and the scroll-to-top script wired in correctly.
+
+  Checklist when creating a new page from this file:
+  1. Rename it (e.g. new-page.html) and place it at the right path.
+  2. Fill in <title>, meta description, canonical URL, and OG tags below.
+  3. Replace the <main> placeholder with real content.
+  4. Add the new URL to sitemap.xml (unless it should stay noindex, like a
+     thank-you page — see free/*-thanks.html for that pattern).
+  5. Delete this comment block.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-55MG6M63');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Title — Mike Moll</title>
+<meta name="description" content="Page description for search results.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://www.mikemoll.co/PATH">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mike Moll">
+<meta property="og:title" content="Page Title">
+<meta property="og:description" content="Page description for social shares.">
+<meta property="og:url" content="https://www.mikemoll.co/PATH">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --canvas:#141210;--surface:#1b1815;--surface-2:#221e19;
+    --ink:#ece6da;--muted:#948f84;
+    --hairline:rgba(236,230,218,0.10);--hairline-2:rgba(236,230,218,0.18);
+    --accent:#c6a06a;--accent-ink:#141210;
+    --display:'Space Grotesk',sans-serif;--body:'Hanken Grotesk',sans-serif;--max:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:0.03;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;position:relative;z-index:2}
+  a{color:inherit;text-decoration:none}
+  .eyebrow{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:0.26em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:block}
+  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-0.03em;line-height:1.04}
+
+  nav{position:sticky;top:0;z-index:10;background:rgba(20,18,16,0.75);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-0.02em}
+  .logo span{color:var(--accent)}
+  .nav-links{display:flex;align-items:center;gap:28px}
+  .nav-links a:not(.btn){color:var(--muted);font-size:15px;font-weight:500;transition:color .2s}
+  .nav-links a:not(.btn):hover{color:var(--ink)}
+  .btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:15px;padding:12px 22px;border-radius:8px;transition:transform .2s,background .2s,border-color .2s;border:none;cursor:pointer}
+  .btn-primary{background:var(--accent);color:var(--accent-ink)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{border:1px solid var(--hairline-2);color:var(--ink);background:none}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+  header{padding:44px 0 90px;border-bottom:1px solid var(--hairline)}
+  header h1{font-size:clamp(2.7rem,7vw,5rem);font-weight:700;max-width:16ch;margin-bottom:24px}
+  header .sub{color:var(--muted);font-size:clamp(1.05rem,2vw,1.3rem);max-width:52ch;margin-bottom:32px}
+
+  section{padding:96px 0;border-bottom:1px solid var(--hairline)}
+  .sec-head{max-width:60ch;margin-bottom:14px}
+  .sec-head h2{font-size:clamp(2rem,4.5vw,3.1rem);margin-bottom:14px}
+  .sec-head p{color:var(--muted);font-size:1.08rem}
+
+  footer{padding:52px 0;border-top:1px solid var(--hairline)}
+  .foot-in{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  .socials{display:flex;gap:20px}
+  .socials a{color:var(--muted);font-size:14px;font-weight:500}
+  .socials a:hover{color:var(--accent)}
+  .foot-in p{color:var(--muted);font-size:14px}
+  .foot-legal{display:flex;gap:18px;margin-top:14px;width:100%;border-top:1px solid var(--hairline);padding-top:16px}
+  .foot-legal a{color:var(--muted);font-size:13px}
+  .foot-legal a:hover{color:var(--accent)}
+
+  @media(max-width:860px){
+    .nav-links a:not(.btn){display:none}
+    header{padding:30px 0 60px}
+    section{padding:66px 0}
+  }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55MG6M63"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav>
+  <div class="wrap nav-in">
+    <a href="/" class="logo">Mike<span>.</span>Moll</a>
+    <div class="nav-links">
+      <a href="/#free-resources">Free Resources</a>
+      <a href="/#work" class="btn btn-primary">How I Help</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <h1>Page heading goes here.</h1>
+    <p class="sub">Supporting subtext goes here.</p>
+  </div>
+</header>
+
+<!-- Replace with real page content. Use <section><div class="wrap">...</div></section>
+     for each content block — do not put class="wrap" directly on <section>,
+     it silently overrides the section's own vertical padding (see the
+     section.wrap bug fixed in free/*.html for why). -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><h2>Section heading</h2></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <a href="/" class="logo">Mike<span style="color:var(--accent)">.</span>Moll</a>
+    <div class="socials"><a href="https://www.instagram.com/themikemoll/">Instagram</a><a href="https://www.youtube.com/@mikemollco">YouTube</a><a href="https://www.linkedin.com/in/solopreneurcoach/">LinkedIn</a></div>
+    <p>&copy; 2026 Impact Leads LLC</p>
+    <div class="foot-legal">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms &amp; Conditions</a>
+    </div>
+  </div>
+</footer>
+<script src="/scroll-top.js" defer></script>
+</body>
+</html>

@@ -9,6 +9,13 @@ Static site for Mike Moll. Plain HTML/CSS, no build step. Deploys on Vercel.
 - `public/audio/` — DO NOT commit audio/video. Host on YouTube/Spotify and embed.
 - `vercel.json` — clean URLs + 301 redirects from the old GoHighLevel slugs
 - `robots.txt`, `sitemap.xml`, `llms.txt` — SEO + AI-SEO
+- `_template.html` — starting point for new pages. Has GTM and the scroll-to-top
+  script already wired in. No build step means no automatic includes, so copy
+  this file rather than starting a page from scratch. When you add a page,
+  also add its URL to `sitemap.xml` (unless it should stay `noindex`, like a
+  thank-you page).
+- `scroll-top.js` — shared "back to top" button, included via `<script src="/scroll-top.js" defer></script>` before `</body>` on every page.
+- Every page includes the same Google Tag Manager container (`GTM-55MG6M63`) — script tag high in `<head>`, noscript iframe right after `<body>`. Keep both when copying/editing pages.
 
 ## Get it live (first time, ~10 minutes)
 1. **GitHub:** create a new repo at github.com/new named `mikemoll-site`. Upload this folder (drag-and-drop in the browser works, or use GitHub Desktop).

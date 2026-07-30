@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.mikemoll.co/</loc><lastmod>2026-07-26</lastmod></url>
-  <url><loc>https://www.mikemoll.co/podcast</loc><lastmod>2026-07-26</lastmod></url>
-  <url><loc>https://www.mikemoll.co/consulting</loc><lastmod>2026-07-26</lastmod></url>
-  <url><loc>https://www.mikemoll.co/podcast-workshop</loc><lastmod>2026-07-26</lastmod></url>
-  <!-- Add as each page ships: -->
-  <!-- /consulting  /about  /free-resources  /free/linkedin-leads  /free/podcast-guesting  /free/claude-basics  /newsletter  /reviews  /podcast-workshop -->
+  <url><loc>https://www.mikemoll.co/</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://www.mikemoll.co/podcast</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://www.mikemoll.co/consulting</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://www.mikemoll.co/podcast-workshop</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://www.mikemoll.co/blog</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://www.mikemoll.co/blog/3-steps-to-raising-your-price</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://www.mikemoll.co/blog/defining-your-ideal-client-ignore-everyone-else-susie-ippolito</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://www.mikemoll.co/blog/following-your-nudges-how-to-trust-your-intuition-more-jason-brown</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://www.mikemoll.co/blog/gaining-confidence-to-charge-more-dusty-jenkins</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://www.mikemoll.co/blog/how-i-quit-my-comfortable-job-to-pursue-business</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://www.mikemoll.co/blog/how-to-time-block-to-maximize-productivity-tiffany-taylor</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://www.mikemoll.co/blog/how-to-vet-service-providers-behdad-jamshidi</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://www.mikemoll.co/blog/marketing-a-live-learning-cohort-mark-latimer</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://www.mikemoll.co/blog/marketing-your-coaching-offer-on-facebook-megan-van-noy</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://www.mikemoll.co/blog/monetizing-ideas-for-a-free-newsletter-patrick-kucharson</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://www.mikemoll.co/blog/the-solopreneur-success-cycle-joe-rando</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://www.mikemoll.co/free/linkedin-leads</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://www.mikemoll.co/free/claude-basics</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://www.mikemoll.co/free/podcast-guesting</loc><lastmod>2026-07-31</lastmod></url>
 </urlset>

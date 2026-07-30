@@ -1,6 +1,7 @@
 .DS_Store
 node_modules/
 .vercel
+.env
 *.log
 # Do NOT commit large media/video. Host video on YouTube/Vimeo and embed.
 public/audio/*.mp3
