@@ -127,6 +127,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var v=document.getElementById('lm-video');var src=v.getAttribute('data-hls');
   if(window.Hls&&window.Hls.isSupported()){var h=new Hls();h.loadSource(src);h.attachMedia(v);}
   else{v.src=src;}
+
+  // GA4 doesn't auto-track self-hosted (non-YouTube) video, so push these
+  // manually to dataLayer for a GTM GA4 Event tag to pick up.
+  window.dataLayer=window.dataLayer||[];
+  var fired={start:false,p25:false,p50:false,p75:false,complete:false};
+  function pushVideo(name,percent){
+    var payload={event:name,video_title:document.title,page_path:window.location.pathname};
+    if(percent!=null) payload.video_percent=percent;
+    window.dataLayer.push(payload);
+  }
+  v.addEventListener('play',function(){ if(!fired.start){fired.start=true;pushVideo('video_start');} });
+  v.addEventListener('timeupdate',function(){
+    if(!v.duration) return;
+    var pct=(v.currentTime/v.duration)*100;
+    if(pct>=25&&!fired.p25){fired.p25=true;pushVideo('video_progress',25);}
+    if(pct>=50&&!fired.p50){fired.p50=true;pushVideo('video_progress',50);}
+    if(pct>=75&&!fired.p75){fired.p75=true;pushVideo('video_progress',75);}
+  });
+  v.addEventListener('ended',function(){ if(!fired.complete){fired.complete=true;pushVideo('video_complete');} });
 })();
 </script>
 <script src="/scroll-top.js" defer></script>

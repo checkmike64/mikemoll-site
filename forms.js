@@ -1,7 +1,21 @@
 // Shared form handler. Any <form data-lead="FORM_ID"> posts its named fields
 // to /api/lead as JSON, then swaps in a success message on success.
 // Optional attributes: data-success (message), data-success-note (second line).
+//
+// Also pushes GA4 events to dataLayer (picked up by a GTM GA4 Event tag) —
+// generate_lead on success, lead_form_error on failure. GA4's own Enhanced
+// Measurement already sees clicks/scroll/generic form_submit, but it can't
+// know whether OUR fetch to /api/lead actually succeeded.
 (function () {
+  function pushEvent(name, formId) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: name,
+      form_id: formId || '',
+      page_path: window.location.pathname,
+    });
+  }
+
   function wire(form) {
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
@@ -17,6 +31,7 @@
           body: JSON.stringify(data)
         });
         if (!res.ok) throw new Error('bad status ' + res.status);
+        pushEvent('generate_lead', data.formId);
         var redirect = form.getAttribute('data-redirect');
         if (redirect) { window.location.href = redirect; return; }
         var msg = form.getAttribute('data-success') || "You're in.";
@@ -25,6 +40,7 @@
           '<p style="font-family:var(--display);font-weight:600;font-size:1.15rem;color:var(--accent);margin:6px 0">' + msg + '</p>' +
           (note ? '<p style="color:var(--muted);margin:0">' + note + '</p>' : '');
       } catch (err) {
+        pushEvent('lead_form_error', data.formId);
         if (btn) { btn.disabled = false; btn.textContent = orig; }
         alert('Something went wrong. Please try again.');
       }
