@@ -28,23 +28,13 @@ Drop images into `public/media/` and reference them as `/media/your-file.webp`.
 ## Forms
 The opt-in and apply forms are placeholders. Point them at your GoHighLevel form embed, or Formspree, before launch.
 
-## High-intent page-view tagging
-`forms.js` (and the podcast-workshop registration form) set an `mm_id` cookie
-(the visitor's email) after any successful submission. On pages that include
-`track-view.js`, a known visitor's page view POSTs `{email, page}` to
-`api/track.js`, which tags their GHL contact `viewed-<page>` — same
-GHL_TOKEN/upsert pattern as `api/lead.js`. It never creates a new contact,
-only tags an existing one, and only for paths listed in `api/track.js`'s
-`PAGES` allowlist (anything else is rejected with 400). Anonymous visitors
-(no cookie yet) are a silent no-op.
-
-### Tags are merged, not replaced (and why that's slower)
+## Tags are merged, not replaced (and why that's slower)
 GHL's `/contacts/upsert` treats the `tags` field you send as a full
 **replacement** of the contact's tag list, not an addition — a known,
-officially-acknowledged GHL API limitation. `api/lead.js` and `api/track.js`
-both call `getExistingTags()` (in `api/_ghl.js`) before every upsert, merge
-the new tag(s) in, and send the complete set — otherwise every new tag
-silently erases whatever was applied before it.
+officially-acknowledged GHL API limitation. `api/lead.js` calls
+`getExistingTags()` (in `api/_ghl.js`) before every upsert, merges the new
+tag(s) in, and sends the complete set — otherwise every new form submission
+would silently erase whatever tags were already on that contact.
 
 There's no reliable "search contact by email" endpoint on this account —
 GHL's list endpoint's `query` param mis-parses `+`/`@` in raw email

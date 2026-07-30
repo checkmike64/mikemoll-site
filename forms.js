@@ -1,17 +1,7 @@
 // Shared form handler. Any <form data-lead="FORM_ID"> posts its named fields
 // to /api/lead as JSON, then swaps in a success message on success.
 // Optional attributes: data-success (message), data-success-note (second line).
-//
-// Also sets the mm_id cookie (their email) on success, so track-view.js can
-// recognize them as a known contact on later page views and tag high-intent
-// pages via /api/track.
 (function () {
-  function rememberVisitor(email) {
-    if (!email) return;
-    document.cookie = 'mm_id=' + encodeURIComponent(email) + '; path=/; max-age=31536000; SameSite=Lax';
-  }
-  window.mmRememberVisitor = rememberVisitor;
-
   function wire(form) {
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
@@ -27,7 +17,6 @@
           body: JSON.stringify(data)
         });
         if (!res.ok) throw new Error('bad status ' + res.status);
-        rememberVisitor(data.email);
         var redirect = form.getAttribute('data-redirect');
         if (redirect) { window.location.href = redirect; return; }
         var msg = form.getAttribute('data-success') || "You're in.";

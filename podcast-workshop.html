@@ -318,13 +318,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     try{
       var res=await fetch('/api/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name.trim(),email:email.trim(),source:'podcast-workshop'})});
       if(!res.ok) throw new Error('bad status '+res.status);
-      document.cookie='mm_id='+encodeURIComponent(email.trim())+'; path=/; max-age=31536000; SameSite=Lax';
       f.innerHTML='<p style="font-family:var(--display);font-weight:600;font-size:1.2rem;color:var(--accent);margin:6px 0">You\'re in.</p><p style="color:var(--muted)">Check your email for the link, plus a reminder before we go live on August 12.</p>';
     }catch(err){ btn.disabled=false; btn.textContent=orig; alert('Something went wrong. Please try again.'); }
   });
 })();
 </script>
 <script src="/scroll-top.js" defer></script>
-<script src="/track-view.js" defer></script>
 </body>
 </html>
