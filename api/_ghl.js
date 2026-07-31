@@ -1,4 +1,4 @@
-// Shared GHL helpers for api/lead.js and api/track.js.
+// Shared GHL helpers for api/lead.js.
 // Filename starts with "_" so Vercel does not deploy it as its own route.
 //
 // GHL's /contacts/upsert treats the "tags" field as a full REPLACEMENT of
@@ -42,7 +42,13 @@ export async function getExistingTags(email, token) {
     for (let page = 1; page <= MAX_PAGES; page++) {
       const url = `${GHL_BASE}/contacts/?locationId=${GHL_LOCATION_ID}&limit=${PAGE_LIMIT}&page=${page}`;
       const res = await fetch(url, { headers });
-      if (!res.ok) return [];
+      if (!res.ok) {
+        // Fails open (proceeds as if no existing tags) rather than blocking
+        // the form. Logged so a mysteriously-un-merged tag is traceable to
+        // a GHL-side error (rate limit, downtime) instead of a silent gap.
+        console.error('getExistingTags: page fetch failed', res.status, await res.text());
+        return [];
+      }
       const data = await res.json();
       const contacts = Array.isArray(data.contacts) ? data.contacts : [];
       const match = contacts.find((c) => String(c.email || '').toLowerCase() === target);
