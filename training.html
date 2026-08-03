@@ -127,7 +127,16 @@
      hls:"https://content.apisystem.tech/hls/medias/Y6tiQHe96XbqVkTeRY8J/media/transcoded_videos/cts-00fc13d16ea6fcc9_,360,480,720,1080,p.mp4.urlset/master.m3u8"}
   ];
 
-  var KEY='mm_training_unlocked';
+  var KEY='mm_training_unlocked', EMAIL_KEY='mm_training_email';
+  // Engagement signal: pushes an analytics event (dataLayer, ready for GTM/GA4)
+  // and, for a known contact, tags them in GoHighLevel via /api/lead.
+  function track(kind,item){
+    try{window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'training_'+kind,training_item:item||undefined});}catch(e){}
+    var em;try{em=localStorage.getItem(EMAIL_KEY);}catch(e){}
+    if(!em)return;
+    var ev = kind==='video_play' ? ('watched-'+item) : ('training-'+kind);
+    fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({formId:'training-engagement',email:em,event:ev})}).catch(function(){});
+  }
   function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
   function renderGrid(){
     var g=document.getElementById('grid');
@@ -146,6 +155,7 @@
   // Player
   var hls=null;
   function openVideo(v){
+    track('video_play',v.slug);
     var p=document.getElementById('player');
     document.getElementById('m-title').textContent=v.title;
     document.getElementById('m-desc').textContent=v.blurb;
@@ -166,7 +176,7 @@
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVideo();});
 
   // Gate
-  if(localStorage.getItem(KEY)==='1'){ reveal(); }
+  if(localStorage.getItem(KEY)==='1'){ reveal(); track('return',''); }
   document.getElementById('gate-form').addEventListener('submit',function(e){
     e.preventDefault();
     var email=document.getElementById('gate-email').value.trim();
@@ -174,7 +184,7 @@
     var btn=document.getElementById('gate-btn');btn.disabled=true;btn.textContent='Opening...';
     // capture into GHL (best-effort), then reveal regardless
     fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({formId:'training-library',email:email})})
-      .catch(function(){}).finally(function(){localStorage.setItem(KEY,'1');reveal();});
+      .catch(function(){}).finally(function(){localStorage.setItem(KEY,'1');try{localStorage.setItem(EMAIL_KEY,email);}catch(e){}track('unlock','');reveal();});
   });
 })();
 </script>
