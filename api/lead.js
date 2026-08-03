@@ -37,6 +37,10 @@ const FORMS = {
   'training-library': {
     tags: ['training-library'],
   },
+  // Engagement pings from the /training library (return visits, video plays).
+  'training-engagement': {
+    tags: ['training-engaged'],
+  },
   // Lead magnets: each fires one tag. Wire the matching GHL workflow's
   // "Contact Tag Added" trigger to this tag so the email sequence still runs.
   'linkedin-leads': {
@@ -108,6 +112,11 @@ export function createHandler(defaultFormId) {
     if (body.guest_type) {
       const g = slug(body.guest_type);
       tags.push(g.includes('coach') ? 'guest-coaching' : 'guest-expert');
+    }
+    if (formId === 'training-engagement' && body.event) {
+      const ev = slug(body.event);
+      const allow = ['training-unlock','training-return','watched-linkedin-leads','watched-podcast-guesting','watched-claude-basics'];
+      if (allow.includes(ev)) tags.push(ev);
     }
     payload.tags = tags;
 
