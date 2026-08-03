@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WD3WQ8N');</script>
-<!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Offer &amp; Sales Consulting — The Compression Method | Mike Moll</title>
@@ -73,8 +66,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .crumbs a:hover{color:var(--ink)}
 
   header{padding:44px 0 90px;border-bottom:1px solid var(--hairline)}
-  header h1{font-size:clamp(2.7rem,7vw,5rem);font-weight:700;max-width:12ch;margin-bottom:24px}
-  header .sub{color:var(--muted);font-size:clamp(1.05rem,2vw,1.3rem);max-width:52ch;margin-bottom:32px}
+  .hero h1{font-size:clamp(2.7rem,7vw,5rem);font-weight:700;max-width:12ch;margin-bottom:24px}
+  .hero .sub{color:var(--muted);font-size:clamp(1.05rem,2vw,1.3rem);max-width:52ch;margin-bottom:34px}
   .hero-cta{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:60px}
   .statband{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--hairline);border-radius:16px;overflow:hidden}
   .statband .cell{padding:30px 26px;border-right:1px solid var(--hairline)}
@@ -84,7 +77,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   section{padding:96px 0;border-bottom:1px solid var(--hairline)}
   .sec-head{max-width:60ch;margin-bottom:14px}
-  .sec-head h2{font-size:clamp(2rem,4.5vw,3.1rem);margin-bottom:14px}
+  .sec-head h2{font-size:clamp(2rem,4.5vw,3.1rem);margin-bottom:16px}
   .sec-head p{color:var(--muted);font-size:1.08rem}
 
   .three{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
@@ -101,7 +94,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .step h3{font-size:1.12rem;margin-bottom:5px}
   .step p{color:var(--muted);font-size:0.95rem}
 
-  .math{border:1px solid var(--hairline);border-radius:16px;background:var(--surface);padding:36px 34px;margin-top:52px;display:grid;grid-template-columns:1fr auto 1fr;gap:26px;align-items:center}
+  .math{border:1px solid var(--hairline);border-radius:16px;background:var(--surface);padding:36px 34px;margin-top:44px;display:grid;grid-template-columns:1fr auto 1fr;gap:26px;align-items:center}
   .math .col .t{font-family:var(--display);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
   .math .row{display:flex;justify-content:space-between;padding:8px 0;border-top:1px solid var(--hairline);font-size:0.95rem;color:#d6d2c8}
   .math .row b{font-family:var(--display)}
@@ -140,7 +133,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .pricebox .note{font-size:14px;color:var(--muted);margin:16px 0 24px;padding-top:16px;border-top:1px solid var(--hairline)}
   .pricebox .btn{width:100%;text-align:center}
 
-  .faq{display:grid;gap:14px;margin-top:52px;max-width:80ch}
+  .faq{display:grid;gap:14px;margin-top:44px;max-width:80ch}
   .faq details{border:1px solid var(--hairline);border-radius:12px;background:var(--surface);padding:0 24px}
   .faq summary{font-family:var(--display);font-weight:600;font-size:1.05rem;padding:20px 0;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
   .faq summary::-webkit-details-marker{display:none}
@@ -157,14 +150,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   form.ap input:focus,form.ap select:focus{outline:none;border-color:var(--accent)}
 
   footer{padding:52px 0;border:none}
-  .foot-in{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
+  .foot-in{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
   .socials{display:flex;gap:20px} .socials a{color:var(--muted);font-size:14px;font-weight:500} .socials a:hover{color:var(--accent)}
   .foot-in p{color:var(--muted);font-size:14px}
 
   @media(max-width:860px){
     .nav-links a:not(.btn){display:none}
     .three,.results,.quotes,.fit,.invest{grid-template-columns:1fr}
-    .statband{grid-template-columns:1fr}.statband .cell{border-right:none;border-bottom:1px solid var(--hairline);text-align:center}
+    .statband{grid-template-columns:1fr}.statband .cell{border-right:none;border-bottom:1px solid var(--hairline)}
     .steps{grid-template-columns:1fr}
     .math{grid-template-columns:1fr}.math .arrow{transform:rotate(90deg);justify-self:center}
     form.ap{grid-template-columns:1fr}
@@ -173,16 +166,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD3WQ8N"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
 <nav>
   <div class="wrap nav-in">
     <a href="/" class="logo">Mike<span>.</span>Moll</a>
     <div class="nav-links">
       <a href="/#free-resources">Free Resources</a>
+      <a href="/media">Media</a>
       <a href="/#work" class="btn btn-primary">How I Help</a>
     </div>
   </div>
@@ -391,11 +381,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="/" class="logo">Mike<span style="color:var(--accent)">.</span>Moll</a>
     <div class="socials"><a href="/podcast">Podcast</a><a href="/">Home</a></div>
     <p>© 2026 Impact Leads LLC</p>
-    <div style="flex-basis:100%;width:100%;border-top:1px solid rgba(236,230,218,0.10);padding-top:14px;display:flex;justify-content:center;gap:18px"><a href="/privacy" style="color:#948f84;font-size:13px;text-decoration:none">Privacy Policy</a><a href="/terms" style="color:#948f84;font-size:13px;text-decoration:none">Terms &amp; Conditions</a></div>
+    <div style="flex-basis:100%;width:100%;border-top:1px solid rgba(236,230,218,0.10);margin-top:6px;padding-top:14px;display:flex;gap:18px"><a href="/privacy" style="color:#948f84;font-size:13px;text-decoration:none">Privacy Policy</a><a href="/terms" style="color:#948f84;font-size:13px;text-decoration:none">Terms &amp; Conditions</a></div>
   </div>
 </footer>
 
 <script src="/forms.js"></script>
-<script src="/scroll-top.js" defer></script>
 </body>
 </html>
