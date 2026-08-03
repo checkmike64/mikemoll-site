@@ -1,13 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WD3WQ8N');</script>
-<!-- End Google Tag Manager -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Your training is ready | Mike Moll</title>
@@ -98,10 +91,6 @@ footer{border-top:1px solid var(--hairline);padding:30px 0;color:var(--muted);fo
 </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD3WQ8N"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 <nav><div class="wrap">
   <a href="/" class="logo">Mike<span class="dot">.</span>Moll</a>
   <a href="/consulting" class="nav-cta">Work with me &rarr;</a>
@@ -113,7 +102,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="player">
     <video id="lm-video" controls playsinline preload="metadata" data-hls="https://content.apisystem.tech/hls/medias/Y6tiQHe96XbqVkTeRY8J/media/transcoded_videos/cts-00fc13d16ea6fcc9_,360,480,720,1080,p.mp4.urlset/master.m3u8"></video>
   </div>
-  <p class="portal">If you are already a member of the free training portal, head over and access all your content. If you are new, check your inbox. You will receive an email with a link to create your free account and get instant access.</p>
+  <p class="portal">Want more like this? I keep a full library of free trainings on offers, pricing, sales, and getting seen. No account, no login required.</p>
+  <a href="/training" class="btn-accent" style="margin:4px 0 8px">Browse the training library &rarr;</a>
   <div class="coach">
     <h3>Looking for hands on help?</h3>
     <p>The Compression Method Mastermind is where we work through simplifying offers, improving positioning, increasing pricing, and building leverage with personalized guidance from Mike.</p>
@@ -127,27 +117,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var v=document.getElementById('lm-video');var src=v.getAttribute('data-hls');
   if(window.Hls&&window.Hls.isSupported()){var h=new Hls();h.loadSource(src);h.attachMedia(v);}
   else{v.src=src;}
-
-  // GA4 doesn't auto-track self-hosted (non-YouTube) video, so push these
-  // manually to dataLayer for a GTM GA4 Event tag to pick up.
-  window.dataLayer=window.dataLayer||[];
-  var fired={start:false,p25:false,p50:false,p75:false,complete:false};
-  function pushVideo(name,percent){
-    var payload={event:name,video_title:document.title,page_path:window.location.pathname};
-    if(percent!=null) payload.video_percent=percent;
-    window.dataLayer.push(payload);
-  }
-  v.addEventListener('play',function(){ if(!fired.start){fired.start=true;pushVideo('video_start');} });
-  v.addEventListener('timeupdate',function(){
-    if(!v.duration) return;
-    var pct=(v.currentTime/v.duration)*100;
-    if(pct>=25&&!fired.p25){fired.p25=true;pushVideo('video_progress',25);}
-    if(pct>=50&&!fired.p50){fired.p50=true;pushVideo('video_progress',50);}
-    if(pct>=75&&!fired.p75){fired.p75=true;pushVideo('video_progress',75);}
-  });
-  v.addEventListener('ended',function(){ if(!fired.complete){fired.complete=true;pushVideo('video_complete');} });
 })();
 </script>
-<script src="/scroll-top.js" defer></script>
 </body>
 </html>
