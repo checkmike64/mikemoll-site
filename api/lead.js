@@ -5,7 +5,8 @@
 // mapping. The GHL Private Integration token lives ONLY in the GHL_TOKEN env
 // var (also accepts lowercase ghl_token) — never in client-side code.
 
-import { GHL_LOCATION_ID, GHL_UPSERT_URL, getExistingTags, mergeTags } from './_ghl.js';
+const GHL_LOCATION_ID = 'Y6tiQHe96XbqVkTeRY8J';
+const GHL_UPSERT_URL = 'https://services.leadconnectorhq.com/contacts/upsert';
 
 // Per-form configuration.
 //  tags       : tags always applied for this form.
@@ -78,10 +79,10 @@ export function createHandler(defaultFormId) {
       return res.status(400).json({ ok: false, error: 'Valid email required' });
     }
 
-    const name = String(body.name || '').trim();
-    const parts = name.split(/\s+/).filter(Boolean);
-    const firstName = parts.length ? parts[0] : '';
-    const lastName = parts.length > 1 ? parts.slice(1).join(' ') : '';
+    // We only collect a first name. Take the first token defensively and store
+    // it as firstName only (no last name, no combined name field) so the CRM
+    // stays clean for first-name personalization.
+    const firstName = String(body.first_name || body.name || '').trim().split(/\s+/)[0] || '';
 
     const payload = {
       locationId: GHL_LOCATION_ID,
@@ -89,8 +90,6 @@ export function createHandler(defaultFormId) {
       source: formId,
     };
     if (firstName) payload.firstName = firstName;
-    if (lastName) payload.lastName = lastName;
-    if (name) payload.name = name;
     const company = String(body.company || body.business_name || '').trim();
     if (company) payload.companyName = company;
     const website = String(body.website || '').trim();
@@ -105,10 +104,7 @@ export function createHandler(defaultFormId) {
       const g = slug(body.guest_type);
       tags.push(g.includes('coach') ? 'guest-coaching' : 'guest-expert');
     }
-    // GHL upsert replaces the whole tags array rather than adding to it, so
-    // merge with whatever tags are already on this contact first.
-    const existingTags = await getExistingTags(email, token);
-    payload.tags = mergeTags(existingTags, tags);
+    payload.tags = tags;
 
     // Custom fields mapped by GHL field key.
     if (cfg.customByKey) {
