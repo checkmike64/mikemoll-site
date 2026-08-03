@@ -32,6 +32,11 @@ const FORMS = {
   'newsletter': {
     tags: ['newsletter'],
   },
+  // Training library: light email unlock on /training. Re-captures the email
+  // and tags them so you can see who is browsing your trainings.
+  'training-library': {
+    tags: ['training-library'],
+  },
   // Lead magnets: each fires one tag. Wire the matching GHL workflow's
   // "Contact Tag Added" trigger to this tag so the email sequence still runs.
   'linkedin-leads': {
