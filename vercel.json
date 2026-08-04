@@ -25,7 +25,7 @@
     },
     {
       "source": "/get-on-podcasts-training",
-      "destination": "/free/podcast-guesting",
+      "destination": "/podcast-workshop",
       "permanent": true
     },
     {
@@ -45,7 +45,17 @@
     },
     {
       "source": "/thank-you-podcast-training",
-      "destination": "/free/podcast-guesting-thanks",
+      "destination": "/podcast-workshop",
+      "permanent": true
+    },
+    {
+      "source": "/free/podcast-guesting",
+      "destination": "/podcast-workshop",
+      "permanent": true
+    },
+    {
+      "source": "/free/podcast-guesting-thanks",
+      "destination": "/podcast-workshop",
       "permanent": true
     }
   ]

@@ -127,7 +127,7 @@
 
   /* STAY */
   .stay{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:52px}
-  .scard{border:1px solid var(--hairline);border-radius:16px;padding:38px 34px;background:var(--surface);display:flex;flex-direction:column;min-width:0}
+  .scard{border:1px solid var(--hairline);border-radius:16px;padding:38px 34px;background:var(--surface);display:flex;flex-direction:column}
   .scard>.btn{margin-top:auto}
   .scard .tag{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
   .scard h3{font-size:1.5rem;margin-bottom:12px}
@@ -135,16 +135,16 @@
   .scard.wide{grid-column:1/-1}
   .train-btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:4px}
   .form{display:flex;gap:10px}
-  .form input{flex:1;min-width:0;background:var(--canvas);border:1px solid var(--hairline-2);border-radius:8px;padding:13px 16px;color:var(--ink);font-family:var(--body);font-size:15px}
+  .form input{flex:1;background:var(--canvas);border:1px solid var(--hairline-2);border-radius:8px;padding:13px 16px;color:var(--ink);font-family:var(--body);font-size:15px}
   .form input:focus{outline:none;border-color:var(--accent)}
 
   footer{padding:52px 0;border:none}
-  .foot-in{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
+  .foot-in{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
   .socials{display:flex;gap:20px}
   .socials a{color:var(--muted);font-size:14px;font-weight:500}
   .socials a:hover{color:var(--accent)}
   .foot-in p{color:var(--muted);font-size:14px}
-  .foot-legal{display:flex;justify-content:center;gap:18px;width:100%;border-top:1px solid var(--hairline);padding-top:16px}
+  .foot-legal{display:flex;gap:18px;margin-top:14px;width:100%;border-top:1px solid var(--hairline);padding-top:16px}
   .foot-legal a{color:var(--muted);font-size:13px}
   .foot-legal a:hover{color:var(--accent)}
 
@@ -158,7 +158,7 @@
     .branches,.mike,.stay{grid-template-columns:1fr}
     .treview{flex-basis:84%}
     .train-btns .btn{width:100%;text-align:center}
-    .mike-photo{max-width:300px;margin:0 auto}
+    .mike-photo{max-width:300px}
     header{padding:76px 0 0}section{padding:70px 0}
     .proofband{grid-template-columns:1fr;margin-top:40px}.proofband .cell{border-right:none;border-bottom:1px solid var(--hairline)}
   }
@@ -314,7 +314,6 @@
         <h3>Videos and tools.</h3>
         <div class="train-btns">
           <a href="/free/linkedin-leads" class="btn btn-ghost">Generate Leads on LinkedIn →</a>
-          <a href="/free/podcast-guesting" class="btn btn-ghost">Grow Through Podcast Guesting →</a>
           <a href="/free/claude-basics" class="btn btn-ghost">Claude for the Boring Work →</a>
         </div>
       </div>
@@ -324,7 +323,7 @@
 
 <footer>
   <div class="wrap foot-in">
-    <a href="/" class="logo">Mike<span style="color:var(--accent)">.</span>Moll</a>
+    <div class="logo">Mike<span style="color:var(--accent)">.</span>Moll</div>
     <div class="socials"><a href="https://www.instagram.com/themikemoll/">Instagram</a><a href="https://www.youtube.com/@mikemollco">YouTube</a><a href="https://www.linkedin.com/in/solopreneurcoach/">LinkedIn</a></div>
     <p>&copy; 2026 Impact Leads LLC</p>
     <div class="foot-legal">
