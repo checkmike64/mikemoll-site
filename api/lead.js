@@ -49,9 +49,6 @@ const FORMS = {
   'claude-basics': {
     tags: ['lm-claude-basics'],
   },
-  'podcast-guesting': {
-    tags: ['lm-podcast-guesting'],
-  },
 };
 
 function slug(s) {
@@ -115,7 +112,7 @@ export function createHandler(defaultFormId) {
     }
     if (formId === 'training-engagement' && body.event) {
       const ev = slug(body.event);
-      const allow = ['training-unlock','training-return','watched-linkedin-leads','watched-podcast-guesting','watched-claude-basics'];
+      const allow = ['training-unlock','training-return','watched-linkedin-leads','watched-claude-basics'];
       if (allow.includes(ev)) tags.push(ev);
     }
     payload.tags = tags;
