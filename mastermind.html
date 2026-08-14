@@ -49,13 +49,15 @@
   .btn-lg{padding:16px 30px;font-size:16px}
 
   header{padding:104px 0 0;border-bottom:1px solid var(--hairline)}
-  .hero h1{font-size:clamp(2.6rem,6.2vw,4.9rem);font-weight:700;max-width:18ch;margin-bottom:24px}
+  .hero-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:52px;align-items:center}
+  .hero h1{font-size:clamp(2.4rem,4.6vw,3.9rem);font-weight:700;max-width:18ch;margin-bottom:24px}
   .hero h1 .accent{color:var(--accent)}
-  .hero .sub{font-size:clamp(1.05rem,2vw,1.3rem);color:var(--muted);max-width:52ch;margin-bottom:30px}
+  .hero .sub{font-size:clamp(1.05rem,2vw,1.25rem);color:var(--muted);max-width:52ch;margin-bottom:30px}
   .hero-cta{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
   .price{font-family:var(--display);font-size:14px;color:var(--muted)}
-  .hero-media{margin-top:56px;border-radius:18px;overflow:hidden;border:1px solid var(--hairline-2);box-shadow:0 18px 44px rgba(0,0,0,.4)}
-  .hero-media img{width:100%;display:block;aspect-ratio:21/9;object-fit:cover}
+  .hero-media{border-radius:18px;overflow:hidden;border:1px solid var(--hairline-2);box-shadow:0 18px 44px rgba(0,0,0,.4)}
+  .hero-media img{width:100%;display:block}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:36px}}
   .proofband{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--hairline);margin-top:56px}
   .proofband .cell{padding:24px 18px;border-right:1px solid var(--hairline);text-align:center}
   .proofband .cell:last-child{border-right:none}
@@ -119,9 +121,9 @@
   .qcard{border:1px solid var(--hairline);border-radius:16px;padding:28px 26px;background:var(--surface);border-top:2px solid var(--accent)}
   .qcard p{font-size:1rem;color:#d6d2c8;font-style:italic}
   .qcard cite{display:block;margin-top:14px;font-family:var(--display);font-size:13px;color:var(--muted);font-style:normal}
-  .photo-row{margin-top:16px}
-  .photo-row img{width:100%;border-radius:16px;border:1px solid var(--hairline-2);display:block}
-  @media(max-width:820px){.qgrid{grid-template-columns:1fr}}
+  .photo-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+  .photo-row img{width:100%;border-radius:16px;border:1px solid var(--hairline-2);display:block;aspect-ratio:16/9;object-fit:cover}
+  @media(max-width:820px){.qgrid{grid-template-columns:1fr}.photo-row{grid-template-columns:1fr}}
 
   /* faq */
   .faq{max-width:820px}
@@ -189,15 +191,19 @@
 <!-- HERO -->
 <header>
   <div class="wrap hero">
-    <span class="eyebrow reveal">AI Mastermind</span>
-    <h1 class="reveal">A hand-picked room of founders who <span class="accent">use AI to run leaner</span>.</h1>
-    <p class="sub reveal">Men only. Established operators with paying clients, using AI to run the business better. I interview every member myself.</p>
-    <div class="hero-cta reveal">
-      <a href="#apply" class="btn btn-primary btn-lg">Apply for a Seat</a>
-      <span class="price">$85/month, billed quarterly.</span>
-    </div>
-    <div class="hero-media reveal">
-      <img src="/media/mastermind-group.jpg" alt="Mastermind members talking over dinner">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow reveal">AI Mastermind</span>
+        <h1 class="reveal">A hand-picked room of founders who <span class="accent">use AI to run leaner</span>.</h1>
+        <p class="sub reveal">Men only. Established operators with paying clients, using AI to run the business better. I interview every member myself.</p>
+        <div class="hero-cta reveal">
+          <a href="#apply" class="btn btn-primary btn-lg">Apply for a Seat</a>
+          <span class="price">$85/month, billed quarterly.</span>
+        </div>
+      </div>
+      <div class="hero-media reveal">
+        <img src="/media/mastermind-group.jpg" alt="The mastermind group on a monthly call">
+      </div>
     </div>
     <div class="proofband">
       <div class="cell"><b>Since 2018</b><span>Founder rooms, 7 countries</span></div>
@@ -328,7 +334,8 @@
       <div class="qcard"><p>"It helped me move from an individual-contributor freelancer to actually feeling like a business owner."</p><cite>Tyler, agency owner</cite></div>
     </div>
     <div class="photo-row">
-      <img src="/media/mastermind-room-1.jpg" alt="The mastermind group on a monthly call">
+      <img src="/media/mastermind-room-1.jpg" alt="Mastermind members at dinner">
+      <img src="/media/mastermind-room-2.jpg" alt="A mastermind dinner in another city">
     </div>
   </div>
 </section>
