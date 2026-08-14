@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WD3WQ8N');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Mastermind — Mike Moll</title>
+<meta name="description" content="A hand-picked room of established founders who use AI to run leaner. Men only, vetted, and nothing like the free AI groups. Apply to join.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://www.mikemoll.co/mastermind">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mike Moll">
+<meta property="og:title" content="AI Mastermind — Mike Moll">
+<meta property="og:description" content="A hand-picked room of established founders who use AI to run leaner. Not the beginner AI groups. Apply to join.">
+<meta property="og:url" content="https://www.mikemoll.co/mastermind">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --canvas:#141210;--surface:#1b1815;--surface-2:#221e19;
+    --ink:#ece6da;--muted:#948f84;
+    --hairline:rgba(236,230,218,0.10);--hairline-2:rgba(236,230,218,0.18);
+    --accent:#c6a06a;--accent-2:#c6a06a;--accent-ink:#141210;
+    --display:'Space Grotesk',sans-serif;--body:'Hanken Grotesk',sans-serif;--max:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:90px}
+  body{background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;position:relative;overflow-x:clip}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:0.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;position:relative;z-index:2}
+  a{color:inherit;text-decoration:none}
+  .eyebrow{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:block}
+  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-0.03em;line-height:1.05}
+  p{color:#d6d2c8}
+  nav{position:sticky;top:0;z-index:10;background:rgba(20,18,16,0.75);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-0.02em}
+  .logo span{color:var(--accent)}
+  .nav-links{display:flex;align-items:center;gap:28px}
+  .nav-links a:not(.btn){color:var(--muted);font-size:15px;font-weight:500;transition:color .2s}
+  .nav-links a:not(.btn):hover{color:var(--ink)}
+  .btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:15px;padding:12px 22px;border-radius:8px;transition:transform .2s,background .2s,border-color .2s;border:none;cursor:pointer}
+  .btn-primary{background:var(--accent);color:var(--accent-ink)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{border:1px solid var(--hairline-2);color:var(--ink);background:none}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+  .btn-lg{padding:16px 30px;font-size:16px}
+
+  header{padding:104px 0 0;border-bottom:1px solid var(--hairline)}
+  .hero h1{font-size:clamp(2.6rem,6.2vw,4.9rem);font-weight:700;max-width:18ch;margin-bottom:24px}
+  .hero h1 .accent{color:var(--accent)}
+  .hero .sub{font-size:clamp(1.05rem,2vw,1.3rem);color:var(--muted);max-width:52ch;margin-bottom:24px}
+  .cred{border-left:2px solid var(--accent);padding-left:16px;color:#d6d2c8;font-size:1rem;max-width:60ch;margin-bottom:30px}
+  .hero-cta{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+  .price{font-family:var(--display);font-size:14px;color:var(--muted)}
+  .proofband{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--hairline);margin-top:60px}
+  .proofband .cell{padding:24px 18px;border-right:1px solid var(--hairline);text-align:center}
+  .proofband .cell:last-child{border-right:none}
+  .proofband b{font-family:var(--display);font-weight:700;font-size:1.35rem;color:var(--ink);letter-spacing:-0.02em;display:block}
+  .proofband span{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:8px;display:block}
+
+  section{padding:88px 0;border-bottom:1px solid var(--hairline)}
+  .sec-head{max-width:60ch;margin-bottom:14px}
+  .sec-head h2{font-size:clamp(1.9rem,4vw,2.9rem);margin-bottom:14px}
+  .sec-head p{color:var(--muted);font-size:1.06rem}
+  .narrow{max-width:760px}
+
+  /* beats */
+  .beats{display:grid;gap:1px;background:var(--hairline);border:1px solid var(--hairline);border-radius:16px;overflow:hidden;margin-top:8px}
+  .beat{background:var(--surface);padding:26px 30px;display:grid;grid-template-columns:44px 1fr;gap:20px;align-items:start}
+  .beat .bn{font-family:var(--display);font-weight:700;font-size:15px;color:var(--accent);border:1px solid rgba(198,160,106,.5);border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center}
+  .beat p{margin:0;font-size:1.06rem}
+  .beat.punch{background:linear-gradient(165deg,#1a1712,var(--surface))}
+  .lead-line{font-size:clamp(1.3rem,2.6vw,1.7rem);font-family:var(--display);font-weight:600;letter-spacing:-.02em;color:var(--ink);max-width:22ch;margin-bottom:30px;line-height:1.15}
+  .lead-line .accent{color:var(--accent)}
+
+  /* screenshot wall */
+  .wall-sub{color:var(--muted);font-size:1.06rem;max-width:54ch;margin-bottom:8px}
+  .wall{columns:3;column-gap:16px;margin-top:34px}
+  .shot{break-inside:avoid;margin:0 0 16px;border:1px solid var(--hairline-2);border-radius:12px;overflow:hidden;background:var(--surface);box-shadow:0 10px 26px rgba(0,0,0,.35)}
+  .shot img{width:100%;display:block}
+  .resolve{margin-top:46px;border:1px solid rgba(198,160,106,.3);border-radius:16px;background:linear-gradient(165deg,#1a1712,var(--surface));padding:34px 34px}
+  .resolve .h{font-family:var(--display);font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+  .resolve ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 30px}
+  .resolve li{display:flex;gap:11px;color:var(--ink);font-size:1rem}
+  .resolve li::before{content:"+";color:var(--accent);font-family:var(--display);font-weight:700}
+  @media(max-width:820px){.wall{columns:2}}
+  @media(max-width:560px){.wall{columns:1}.resolve ul{grid-template-columns:1fr}}
+
+  .lede-p{font-size:1.22rem;color:var(--ink)}
+
+  /* who for */
+  .fit{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:12px}
+  .fit .card{border:1px solid var(--hairline);border-radius:16px;padding:30px;background:var(--surface);border-top:2px solid var(--accent)}
+  .fit .card h3{font-size:1.3rem;margin-bottom:10px}
+  .fit .card p{color:var(--muted);font-size:1rem}
+
+  /* included */
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:12px}
+  .icell{border:1px solid var(--hairline);border-radius:16px;padding:28px 26px;background:var(--surface)}
+  .icell .ic{width:38px;height:38px;border-radius:9px;border:1px solid rgba(198,160,106,.5);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .icell .ic svg{width:19px;height:19px;stroke:var(--accent);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .icell h3{font-size:1.12rem;margin-bottom:6px}
+  .icell p{color:var(--muted);font-size:0.97rem}
+  @media(max-width:820px){.igrid{grid-template-columns:1fr}.fit{grid-template-columns:1fr}}
+
+  /* not list */
+  .not-list{list-style:none;display:grid;gap:14px;max-width:760px;margin-top:8px}
+  .not-list li{padding-left:32px;position:relative;color:var(--muted)}
+  .not-list li::before{content:"✕";position:absolute;left:0;top:0;color:var(--accent);font-family:var(--display);font-weight:700}
+  .not-list li strong{color:var(--ink)}
+
+  /* who gets in */
+  .prose-vet{font-size:1.1rem;color:#d6d2c8;max-width:64ch}
+  .protect{margin-top:18px;font-family:var(--display);font-size:1.15rem;color:var(--ink);font-weight:600}
+  .credit{margin-top:12px;font-size:0.9rem;color:var(--muted)}
+
+  /* about */
+  .creds{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+  .creds li{font-family:var(--display);font-size:13px;color:var(--muted);border:1px solid var(--hairline);border-radius:100px;padding:8px 14px}
+
+  /* faq */
+  .faq{max-width:820px}
+  .faq details{border-bottom:1px solid var(--hairline);padding:22px 0}
+  .faq summary{font-family:var(--display);font-weight:600;font-size:1.12rem;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;align-items:center}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--accent);font-size:22px;font-weight:400;transition:.2s}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq .a{padding-top:14px;color:#d6d2c8}
+
+  /* apply */
+  .apply{background:linear-gradient(180deg,var(--canvas),#1a1611)}
+  .apply-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+  .steps{list-style:none;display:grid;gap:16px}
+  .steps li{display:grid;grid-template-columns:34px 1fr;gap:16px;align-items:start}
+  .steps .n{font-family:var(--display);font-weight:700;color:var(--accent);border:1px solid rgba(198,160,106,.5);border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font-size:13px}
+  .steps .h{font-family:var(--display);font-weight:600;color:var(--ink)}
+  .steps p{color:var(--muted);font-size:0.98rem;margin-top:2px}
+  .applybox{border:1px solid var(--hairline-2);border-radius:18px;background:var(--surface);padding:32px 30px}
+  .applybox h3{font-size:1.3rem;margin-bottom:6px}
+  .applybox .fine{color:var(--muted);font-size:0.95rem;margin-bottom:20px}
+  .field{display:block;margin-bottom:14px}
+  .field input,.field select{width:100%;background:var(--canvas);border:1px solid var(--hairline-2);border-radius:8px;padding:14px 16px;color:var(--ink);font-family:var(--body);font-size:15px}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--accent)}
+  .applybox .btn{width:100%;text-align:center;margin-top:6px}
+  .wa{display:block;margin-top:14px;text-align:center;font-size:14px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+  .wa:hover{color:var(--accent)}
+  .price-note{font-family:var(--display);font-size:14px;color:var(--muted);margin-top:16px}
+  @media(max-width:820px){.apply-grid{grid-template-columns:1fr;gap:34px}}
+
+  footer{padding:52px 0;border:none}
+  .foot-in{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  .socials{display:flex;gap:20px}
+  .socials a{color:var(--muted);font-size:14px;font-weight:500}
+  .socials a:hover{color:var(--accent)}
+  .foot-in p{color:var(--muted);font-size:14px}
+  .foot-legal{display:flex;gap:18px;margin-top:14px;width:100%;border-top:1px solid var(--hairline);padding-top:16px}
+  .foot-legal a{color:var(--muted);font-size:13px}
+
+  .reveal{opacity:0;transform:translateY(18px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.reveal{animation:none;opacity:1;transform:none}}
+
+  @media(max-width:860px){
+    .nav-links a:not(.btn){display:none}
+    header{padding:70px 0 0}section{padding:64px 0}
+    .proofband{grid-template-columns:1fr 1fr}.proofband .cell:nth-child(2){border-right:none}
+  }
+</style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD3WQ8N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<nav>
+  <div class="wrap nav-in">
+    <a href="/" class="logo">Mike<span>.</span>Moll</a>
+    <div class="nav-links">
+      <a href="/#free-resources">Free Resources</a>
+      <a href="/media">Media</a>
+      <a href="#apply" class="btn btn-primary">Apply</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header>
+  <div class="wrap hero">
+    <span class="eyebrow reveal">AI Mastermind</span>
+    <h1 class="reveal">A hand-picked room of founders who <span class="accent">use AI to run leaner</span>.</h1>
+    <p class="sub reveal">Men only. Established operators with real businesses and real clients, using AI to streamline their operations and cut the busywork. Not beginners. Not another course.</p>
+    <p class="cred reveal">I've been hosting founder dinners and running private rooms since 2018, in seven different countries. I interview and pick every member myself.</p>
+    <div class="hero-cta reveal">
+      <a href="#apply" class="btn btn-primary btn-lg">Apply for a Seat</a>
+      <span class="price">$85/month, billed quarterly</span>
+    </div>
+    <div class="proofband">
+      <div class="cell"><b>Since 2018</b><span>Hosting founders</span></div>
+      <div class="cell"><b>7</b><span>Countries, dinners hosted</span></div>
+      <div class="cell"><b>1&#58;1</b><span>Every member interviewed</span></div>
+      <div class="cell"><b>Give &gt; take</b><span>The room's only rule</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- WHY NOW -->
+<section>
+  <div class="wrap narrow">
+    <span class="eyebrow">Why now</span>
+    <p class="lead-line">You're the most advanced operator in every room you're in, and <span class="accent">it's gotten quiet</span>.</p>
+    <div class="beats">
+      <div class="beat"><div class="bn">1</div><p>The models are on everyone's desk now. Knowing a tactic first stopped being the edge. The edge is who you're comparing notes with.</p></div>
+      <div class="beat"><div class="bn">2</div><p>When you're the furthest ahead in the room, you're making big calls with nobody around to check your read.</p></div>
+      <div class="beat punch"><div class="bn">3</div><p>Here, someone's already built the automation you were about to lose a weekend to, and they'll hand it over. You skip the dead ends they already paid for.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCREENSHOT WALL -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">What's out there</span>
+    <div class="sec-head"><h2>This is the conversation in the free AI groups.</h2></div>
+    <p class="wall-sub">If you're past this, you already know why you're leaving it.</p>
+    <div class="wall">
+      <div class="shot"><img src="/media/fb-actual-products.jpg" alt="Facebook post asking if anyone has actual products built with Claude making money" loading="lazy"></div>
+      <div class="shot"><img src="/media/fb-nothing-new.jpg" alt="Facebook post claiming there is nothing new to create and the AI market is full" loading="lazy"></div>
+      <div class="shot"><img src="/media/fb-weekly-limits.jpg" alt="Facebook post feeling hopeless after hitting weekly limits" loading="lazy"></div>
+      <div class="shot"><img src="/media/fb-react-tailwind.jpg" alt="Facebook post with a basic React and Tailwind generation issue" loading="lazy"></div>
+      <div class="shot"><img src="/media/fb-fallen-behind.jpg" alt="Facebook post asking if Claude has fallen behind" loading="lazy"></div>
+      <div class="shot"><img src="/media/fb-docx-error.jpg" alt="Facebook post asking for help opening a docx download" loading="lazy"></div>
+    </div>
+    <div class="resolve">
+      <div class="h">This room is the opposite</div>
+      <ul>
+        <li>Established operators already running on AI</li>
+        <li>Real builds handed over, member to member</li>
+        <li>Every seat interviewed and hand-picked</li>
+        <li>The conversation starts way ahead</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT THIS IS -->
+<section>
+  <div class="wrap narrow">
+    <span class="eyebrow">What this is</span>
+    <div class="sec-head"><h2>A board of advisors who don't take equity or a salary.</h2></div>
+    <p class="lede-p">You stop building alone. Most meetings are somebody's real problem: a price they're scared to raise, a hire they can't get right, an offer that won't close. The first question in the room usually isn't "what would you do." It's "what did you build or automate so you never have to touch this again."</p>
+  </div>
+</section>
+
+<!-- WHO THIS IS FOR -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Who this is for</span>
+    <div class="sec-head"><h2>Established operators. Both need to be true.</h2></div>
+    <div class="fit">
+      <div class="card"><h3>You've built something real</h3><p>You've run the same core offer for at least a year, and you've got a stable base of clients. You make decisions and live with them.</p></div>
+      <div class="card"><h3>You use AI to run it better</h3><p>Streamlining operations, building out processes, wiring up your own internal tools. Your product can be anything. What matters is that you reach for a model before you reach for busywork.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">What's included</span>
+    <div class="igrid">
+      <div class="icell"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 3z"/></svg></div><h3>Two calls a month</h3><p>75 minutes. Bring a problem, leave with a decision. Or sit in and take notes.</p></div>
+      <div class="icell"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21 11.5a8 8 0 0 1-11.6 7.1L4 20l1.4-5A8 8 0 1 1 21 11.5z"/></svg></div><h3>A WhatsApp thread</h3><p>Intros, quick "here's what I'd do," and the odd "I built this, take it." Low noise.</p></div>
+      <div class="icell"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><h3>Travel and meetups</h3><p>We track where everyone's headed so we can grab dinner when paths cross.</p></div>
+      <div class="icell"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div><h3>The member black book</h3><p>My personal list of operators, builders, and closers. Warm intros only.</p></div>
+      <div class="icell"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></div><h3>The shared vault</h3><p>A collection that grows as members drop in the tools, prompts, and builds they're using. It's ours, built over time.</p></div>
+      <div class="icell"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M17 11l2 2 4-4"/></svg></div><h3>A small, vetted room</h3><p>Established founders who give more than they take. That's the point of it.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT THIS IS NOT -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">What this is not</span>
+    <ul class="not-list">
+      <li><strong>Not group coaching.</strong> No weekly check-ins, no sprints, no share-your-wins circle.</li>
+      <li><strong>Not a beginner AI group.</strong> Nobody's teaching you AI 101. You saw the screenshots.</li>
+      <li><strong>Not a big room.</strong> It stays small and vetted on purpose.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- WHO GETS IN -->
+<section>
+  <div class="wrap narrow">
+    <span class="eyebrow">Who gets in</span>
+    <div class="sec-head"><h2>I interview and pick every person myself.</h2></div>
+    <p class="prose-vet">I'm looking for operators, not dabblers. People who give more than they take. High-integrity guys who can be honest, take a joke, and would be good company at dinner in a random city.</p>
+    <p class="protect">My job is simple. Keep the wrong people out and protect the room.</p>
+    <p class="credit">(Credit to Kevin Nations for that line.)</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section>
+  <div class="wrap narrow">
+    <span class="eyebrow">Who runs the room</span>
+    <div class="sec-head"><h2>Mike Moll</h2></div>
+    <p>I've been running service businesses since 2013. I built a marketing agency to 700K a year and nearly went bankrupt twice because I made it too complicated. Since 2019 I've helped other founders skip the mistakes I made the hard way.</p>
+    <p style="margin-top:16px">Since 2018 I've been bringing founders together: dinners in seven different countries, small private groups, and for the last stretch, this room. What I'm good at is the room itself. I keep the quality high, keep the noise down, and make the introductions that move you forward.</p>
+    <ul class="creds">
+      <li>Agency to $700K/yr</li><li>Fractional CMO</li><li>Founder rooms since 2018</li><li>Dinners in 7 countries</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap narrow">
+    <span class="eyebrow">FAQ</span>
+    <div class="faq">
+      <details open><summary>Do I need to be building an AI product?</summary><div class="a">No. Your business can be anything. What matters is that you use AI to run it better: operations, processes, your own internal tools.</div></details>
+      <details><summary>How technical do I need to be?</summary><div class="a">Not much. Plenty of members aren't engineers. They've taught themselves to wire up automations and tools with AI. You have to be someone who does it, not someone who means to.</div></details>
+      <details><summary>What if I can't make every call?</summary><div class="a">That's fine. Nothing's mandatory. The room's built for busy people.</div></details>
+      <details><summary>Why men only?</summary><div class="a">It's men only. That's the room I set out to build, and it's the one I can keep at the standard I want. No deeper reason than that.</div></details>
+      <details><summary>How do you vet people?</summary><div class="a">We talk. You come in through me or an existing member. If it's not a fit, I'll tell you straight, and it's nothing personal.</div></details>
+      <details><summary>What's it cost?</summary><div class="a">85 a month, billed quarterly. It's priced low on purpose, so money isn't the point. The bar is.</div></details>
+      <details><summary>Can I bring people in?</summary><div class="a">Yeah, once you're in. Same bar as everyone else.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY -->
+<section class="apply" id="apply">
+  <div class="wrap">
+    <span class="eyebrow">Apply</span>
+    <div class="apply-grid">
+      <div>
+        <div class="sec-head"><h2>You don't buy your way in. You apply, and if it's a fit, we talk.</h2></div>
+        <ul class="steps">
+          <li><span class="n">1</span><div><span class="h">A short application</span><p>A couple of questions about your business and how you use AI.</p></div></li>
+          <li><span class="n">2</span><div><span class="h">I read it</span><p>I read every one myself. If it clears the bar, we book a call.</p></div></li>
+          <li><span class="n">3</span><div><span class="h">We talk</span><p>And we both decide if you belong in the room.</p></div></li>
+        </ul>
+        <p class="price-note">$85/month, billed quarterly.</p>
+      </div>
+      <div class="applybox">
+        <h3>Start your application</h3>
+        <p class="fine">Takes a minute. I read every one.</p>
+        <form data-lead="mastermind-application" data-success="Got it. I read every application myself." data-success-note="If it's a fit, I'll be in touch to book a call.">
+          <label class="field"><input type="text" name="first_name" placeholder="First name" required></label>
+          <label class="field"><input type="email" name="email" placeholder="Email" required></label>
+          <label class="field"><input type="text" name="business_name" placeholder="Your business" required></label>
+          <label class="field">
+            <select name="business_type" required>
+              <option value="" disabled selected>How do you use AI in your business?</option>
+              <option value="ai-daily-operator">I use it daily to run and build</option>
+              <option value="ai-some">I use it in a few places</option>
+              <option value="ai-exploring">Still getting started</option>
+            </select>
+          </label>
+          <button type="submit" class="btn btn-primary btn-lg">Apply for a Seat</button>
+        </form>
+        <a class="wa" href="https://wa.me/message/TNEUI3RIJ5Q4D1">Not sure yet? Message me on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <div class="logo">Mike<span>.</span>Moll</div>
+    <div class="socials"><a href="https://www.instagram.com/themikemoll/">Instagram</a><a href="https://www.youtube.com/@mikemollco">YouTube</a><a href="https://www.linkedin.com/in/solopreneurcoach/">LinkedIn</a></div>
+    <p>&copy; 2026 Impact Leads LLC</p>
+    <div class="foot-legal">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms &amp; Conditions</a>
+    </div>
+  </div>
+</footer>
+<script src="/forms.js"></script>
+</body>
+</html>
