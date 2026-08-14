@@ -49,6 +49,11 @@ const FORMS = {
   'claude-basics': {
     tags: ['lm-claude-basics'],
   },
+  // AI Mastermind application. Tags the lead so the follow-up/interview
+  // workflow can trigger. Mike reviews and reaches out personally.
+  'mastermind-application': {
+    tags: ['mastermind-application'],
+  },
 };
 
 function slug(s) {
