@@ -10,20 +10,17 @@
 <meta name="robots" content="index,follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 <style>
-:root{
-  --canvas:#141210;--surface:#1b1815;--surface-2:#221e19;--ink:#ece6da;--muted:#948f84;
-  --accent:#c6a06a;--accent-ink:#241c10;--hairline:rgba(236,230,218,0.10);--hairline-2:rgba(236,230,218,0.18);
-  --display:'Space Grotesk',sans-serif;--body:'Hanken Grotesk',sans-serif;
-}
+:root{}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--body);line-height:1.6;
-  -webkit-font-smoothing:antialiased;background-image:radial-gradient(1200px 600px at 80% -10%,rgba(198,160,106,0.10),transparent 60%);}
+  -webkit-font-smoothing:antialiased;background-image:radial-gradient(1200px 600px at 80% -10%,rgba(56,182,255,0.10),transparent 60%);}
 a{color:inherit}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-nav{position:sticky;top:0;z-index:20;background:rgba(20,18,16,0.75);backdrop-filter:blur(10px);
+nav{position:sticky;top:0;z-index:20;background:rgba(0,0,0,0.75);backdrop-filter:blur(10px);
   border-bottom:1px solid var(--hairline)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
 .logo{font-family:var(--display);font-weight:700;font-size:1.15rem;letter-spacing:0.01em;text-decoration:none}
@@ -31,31 +28,31 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .nav-cta{font-family:var(--display);font-size:0.9rem;color:var(--muted);text-decoration:none}
 .nav-cta:hover{color:var(--ink)}
 .eyebrow{display:inline-block;font-family:var(--display);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;
-  color:var(--accent);border:1px solid var(--hairline-2);border-radius:999px;padding:7px 14px;margin-bottom:22px}
+  color:var(--accent);border:1px solid var(--hairline-2);padding:7px 14px;margin-bottom:22px}
 h1{font-family:var(--display);font-weight:700;line-height:1.04;letter-spacing:-0.01em;margin:0 0 16px}
 .hero h1{font-size:clamp(2.3rem,5vw,3.5rem);max-width:15ch}
-.sub{color:#d6d2c8;font-size:clamp(1.05rem,1.8vw,1.25rem);max-width:46ch;margin:0 0 24px}
+.sub{color:#d7d7d7;font-size:clamp(1.05rem,1.8vw,1.25rem);max-width:46ch;margin:0 0 24px}
 .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start;padding:64px 0 40px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px}
-.chip{font-size:12.5px;color:var(--muted);border:1px solid var(--hairline);border-radius:999px;padding:6px 12px;
+.chip{font-size:12.5px;color:var(--muted);border:1px solid var(--hairline);padding:6px 12px;
   font-family:var(--display);letter-spacing:0.02em}
 .learn{list-style:none;margin:0;padding:0;display:grid;gap:14px}
-.learn li{position:relative;padding-left:34px;color:#e4dfd4;font-size:1.02rem}
-.learn li::before{content:"";position:absolute;left:0;top:2px;width:22px;height:22px;border-radius:50%;
+.learn li{position:relative;padding-left:34px;color:#d7d7d7;font-size:1.02rem}
+.learn li::before{content:"";position:absolute;left:0;top:2px;width:22px;height:22px;
   background:var(--accent);}
 .learn li::after{content:"";position:absolute;left:7px;top:8px;width:8px;height:5px;border-left:2px solid var(--accent-ink);
   border-bottom:2px solid var(--accent-ink);transform:rotate(-45deg)}
 .card{background:linear-gradient(160deg,var(--surface-2),var(--surface));border:1px solid var(--hairline-2);
-  border-radius:18px;padding:30px 28px;box-shadow:0 30px 70px rgba(0,0,0,0.45);position:sticky;top:96px}
+  padding:30px 28px;position:sticky;top:96px}
 .card h2{font-family:var(--display);font-size:1.35rem;margin:0 0 4px}
 .card .card-note{color:var(--muted);font-size:0.95rem;margin:0 0 20px}
 .field{margin-bottom:14px}
 .field label{display:block;font-size:12.5px;color:var(--muted);font-family:var(--display);letter-spacing:0.04em;
   text-transform:uppercase;margin-bottom:6px}
-.field input{width:100%;background:var(--canvas);border:1px solid var(--hairline-2);border-radius:10px;
+.field input{width:100%;background:var(--canvas);border:1px solid var(--hairline-2);
   padding:13px 14px;color:var(--ink);font-family:var(--body);font-size:1rem}
 .field input:focus{outline:none;border-color:var(--accent)}
-button.submit{width:100%;margin-top:6px;background:var(--accent);color:var(--accent-ink);border:none;border-radius:11px;
+button.submit{width:100%;margin-top:6px;background:var(--accent);color:var(--accent-ink);border:none;
   padding:15px 18px;font-family:var(--display);font-weight:700;font-size:1.02rem;cursor:pointer;transition:filter .15s}
 button.submit:hover{filter:brightness(1.06)}
 .micro{color:var(--muted);font-size:12.5px;text-align:center;margin:14px 0 0}
@@ -71,18 +68,18 @@ section.wrap{padding:56px 24px}
 .closing h2{font-family:var(--display);font-size:clamp(1.6rem,3vw,2.1rem);margin:0 0 10px}
 .closing p{color:var(--muted);margin:0 0 24px}
 .btn-accent{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;
-  font-family:var(--display);font-weight:700;border-radius:11px;padding:15px 26px}
+  font-family:var(--display);font-weight:700;padding:15px 26px}
 footer{border-top:1px solid var(--hairline);padding:30px 0;color:var(--muted);font-size:13px;text-align:center}
 /* thank-you */
 .ty{max-width:840px;margin:0 auto;padding:60px 24px 20px;text-align:center}
 .ty h1{font-size:clamp(2.1rem,4.4vw,3rem)}
 .ty .sub{margin:0 auto 30px}
-.player{position:relative;aspect-ratio:16/9;background:#000;border:1px solid var(--hairline-2);border-radius:16px;
-  overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.5)}
+.player{position:relative;aspect-ratio:16/9;background:#000;border:1px solid var(--hairline-2);
+  overflow:hidden;}
 .player video{width:100%;height:100%;display:block}
 .portal{color:var(--muted);max-width:640px;margin:26px auto 0;font-size:0.98rem}
 .coach{max-width:720px;margin:44px auto 0;background:linear-gradient(160deg,var(--surface-2),var(--surface));
-  border:1px solid var(--hairline-2);border-radius:18px;padding:32px 28px;text-align:center}
+  border:1px solid var(--hairline-2);padding:32px 28px;text-align:center}
 .coach h3{font-family:var(--display);font-size:1.4rem;margin:0 0 10px}
 .coach p{color:var(--muted);margin:0 0 22px}
 @media(max-width:820px){
@@ -94,8 +91,8 @@ footer{border-top:1px solid var(--hairline);padding:30px 0;color:var(--muted);fo
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD3WQ8N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<nav><div class="wrap">
-  <a href="/" class="logo">Mike<span class="dot">.</span>Moll</a>
+<nav class="site-nav"><div class="wrap">
+  <a href="/" class="logo">Mike<i>.</i>Moll</a>
   <a href="/consulting" class="nav-cta">Work with me &rarr;</a>
 </div></nav>
 <header class="wrap">
@@ -153,7 +150,7 @@ footer{border-top:1px solid var(--hairline);padding:30px 0;color:var(--muted);fo
   <a href="#optin" class="btn-accent">Get Free LinkedIn Video Training</a>
 </section>
 
-<footer><div class="wrap">&copy; 2026 Impact Leads LLC. The Compression Method.<div style="margin-top:12px;display:flex;gap:16px;justify-content:center"><a href="/privacy" style="color:inherit;font-size:13px;text-decoration:underline">Privacy Policy</a><a href="/terms" style="color:inherit;font-size:13px;text-decoration:underline">Terms &amp; Conditions</a></div></div></footer>
+<footer class="site-foot"><div class="wrap">&copy; 2026 Impact Leads LLC. The Compression Method.<div style="margin-top:12px;display:flex;gap:16px;justify-content:center"><a href="/privacy" style="color:inherit;font-size:13px;text-decoration:underline">Privacy Policy</a><a href="/terms" style="color:inherit;font-size:13px;text-decoration:underline">Terms &amp; Conditions</a></div></div></footer>
 <script src="/forms.js" defer></script>
 </body>
 </html>

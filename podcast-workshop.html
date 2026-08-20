@@ -16,7 +16,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","@id":"https://www.mikemoll.co/#organization","name":"Mike Moll","url":"https://www.mikemoll.co/"},
@@ -25,29 +26,23 @@
 ]}
 </script>
 <style>
-  :root{
-    --canvas:#141210;--surface:#1b1815;--surface-2:#221e19;
-    --ink:#ece6da;--muted:#948f84;
-    --hairline:rgba(236,230,218,0.10);--hairline-2:rgba(236,230,218,0.18);
-    --accent:#c6a06a;--accent-ink:#141210;
-    --display:'Space Grotesk',sans-serif;--body:'Hanken Grotesk',sans-serif;--max:1080px;
-  }
+  :root{--max:1080px;}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
-  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:0.03;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  body{background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
+  
   .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;position:relative;z-index:2}
   a{color:inherit;text-decoration:none}
   .eyebrow{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:0.26em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:block}
   h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-0.03em;line-height:1.05}
-  nav{position:sticky;top:0;z-index:10;background:rgba(20,18,16,0.75);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline)}
+  nav{position:sticky;top:0;z-index:10;background:rgba(0,0,0,0.75);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
   .logo{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-0.02em}
   .logo span{color:var(--accent)}
   .nav-links{display:flex;align-items:center;gap:28px}
   .nav-links a:not(.btn){color:var(--muted);font-size:15px;font-weight:500;transition:color .2s}
   .nav-links a:not(.btn):hover{color:var(--ink)}
-  .btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:15px;padding:12px 22px;border-radius:8px;transition:transform .2s,background .2s;border:none;cursor:pointer}
+  .btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:15px;padding:12px 22px;transition:transform .2s,background .2s;border:none;cursor:pointer}
   .btn-primary{background:var(--accent);color:var(--accent-ink)}
   .btn-primary:hover{transform:translateY(-2px)}
   .btn-lg{padding:16px 32px;font-size:16px}
@@ -56,41 +51,41 @@
   .hero h1{font-size:clamp(2.4rem,5.4vw,3.9rem);max-width:20ch;margin:0 auto 20px}
   .hero h1 em{font-style:normal;color:var(--accent)}
   .hero .sub{color:var(--muted);font-size:clamp(1.05rem,2vw,1.3rem);max-width:44ch;margin:0 auto 26px}
-  .datepill{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:14px;color:var(--accent);border:1px solid rgba(198,160,106,0.35);border-radius:100px;padding:9px 18px;margin-bottom:28px}
+  .datepill{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:14px;color:var(--accent);border:1px solid rgba(56,182,255,0.35);padding:9px 18px;margin-bottom:28px}
   .hero .cta-note{color:var(--muted);font-size:14px;margin-top:14px}
   .host{display:inline-flex;align-items:center;gap:12px;margin-top:44px;color:var(--muted);font-size:14px}
-  .host .av{width:40px;height:40px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-family:var(--display);font-weight:700;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .host .av{width:40px;height:40px;background:var(--accent);color:var(--accent-ink);font-family:var(--display);font-weight:700;display:flex;align-items:center;justify-content:center;overflow:hidden}
   .host .av img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
   .host b{color:var(--ink);font-family:var(--display)}
   .whyrow{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center}
   .whyrow .sec-head{max-width:none;margin-bottom:14px}
   .whyphoto{margin:0}
-  .whyphoto img{width:100%;display:block;border-radius:14px;border:1px solid var(--hairline);box-shadow:0 18px 42px rgba(0,0,0,0.45)}
+  .whyphoto img{width:100%;display:block;border:1px solid var(--hairline);}
 
   section{padding:84px 0;border-bottom:1px solid var(--hairline)}
   .sec-head{max-width:60ch;margin-bottom:14px}
   .center{text-align:center}.center .sec-head{margin-left:auto;margin-right:auto}
   .sec-head h2{font-size:clamp(1.9rem,4.4vw,2.9rem);margin-bottom:14px}
   .sec-head p{color:var(--muted);font-size:1.08rem}
-  .lead-para{color:#d6d2c8;font-size:1.1rem;max-width:60ch}
+  .lead-para{color:#d7d7d7;font-size:1.1rem;max-width:60ch}
 
   .three{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
-  .card{border:1px solid var(--hairline);border-radius:16px;padding:32px 28px;background:var(--surface)}
+  .card{border:1px solid var(--hairline);padding:32px 28px;background:var(--surface)}
   .card h3{font-size:1.2rem;margin-bottom:10px;color:var(--accent)}
   .card p{color:var(--muted);font-size:0.98rem}
 
   .proof{display:grid;grid-template-columns:0.8fr 1.2fr;gap:50px;align-items:center;margin-top:20px}
   .proof .big{font-family:var(--display);font-weight:700;font-size:clamp(3rem,8vw,4.6rem);color:var(--accent);letter-spacing:-0.03em;line-height:1}
   .proof .cap{color:var(--muted);margin-top:8px}
-  .proof p{color:#d6d2c8}
+  .proof p{color:#d7d7d7}
   .proof .hl{color:var(--accent);font-weight:600}
 
   .myths{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:36px 0}
-  .myth{border:1px solid var(--hairline);border-radius:10px;padding:16px 18px;color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(198,160,106,0.6);font-size:1rem}
+  .myth{border:1px solid var(--hairline);padding:16px 18px;color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(56,182,255,0.6);font-size:1rem}
   .close{font-family:var(--display);font-weight:600;font-size:1.3rem;color:var(--ink);max-width:40ch}
 
   .whofor{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:48px}
-  .who{border:1px solid var(--hairline);border-radius:14px;padding:24px 20px;background:var(--surface)}
+  .who{border:1px solid var(--hairline);padding:24px 20px;background:var(--surface)}
   .who b{font-family:var(--display);font-size:1.05rem;display:block;margin-bottom:8px}
   .who span{color:var(--muted);font-size:0.9rem}
 
@@ -101,14 +96,14 @@
   .step p{color:var(--muted);font-size:0.98rem}
 
   .mike{display:grid;grid-template-columns:0.8fr 1.2fr;gap:50px;align-items:center}
-  .mike-photo{aspect-ratio:1/1;border:1px solid var(--hairline);border-radius:16px;background:linear-gradient(150deg,var(--surface),var(--surface-2));display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:5rem;color:var(--hairline-2);overflow:hidden}
+  .mike-photo{aspect-ratio:1/1;border:1px solid var(--hairline);background:linear-gradient(150deg,var(--surface),var(--surface-2));display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:5rem;color:var(--hairline-2);overflow:hidden}
   .mike-photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block}
-  .mike p{color:#d6d2c8;margin-bottom:18px}
+  .mike p{color:#d7d7d7;margin-bottom:18px}
   .creds{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
-  .creds li{font-family:var(--display);font-size:13px;color:var(--muted);border:1px solid var(--hairline);border-radius:100px;padding:8px 14px}
+  .creds li{font-family:var(--display);font-size:13px;color:var(--muted);border:1px solid var(--hairline);padding:8px 14px}
 
   .register{text-align:center}
-  .regcard{max-width:520px;margin:36px auto 0;border:1px solid var(--hairline-2);border-radius:18px;background:var(--surface);padding:40px 36px}
+  .regcard{max-width:520px;margin:36px auto 0;border:1px solid var(--hairline-2);background:var(--surface);padding:40px 36px}
   .regcard .dt{font-family:var(--display);font-weight:600;color:var(--accent);margin-bottom:18px}
   /* --- REGISTER FORM ---
      Recommended: leave this custom form and set FORM_WEBHOOK to your GoHighLevel
@@ -118,7 +113,7 @@
   .regform{display:grid;gap:14px;margin-top:4px}
   .regform .field{text-align:left}
   .regform label{display:block;font-size:12.5px;color:var(--muted);font-family:var(--display);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:6px}
-  .regform input{width:100%;background:var(--canvas);border:1px solid var(--hairline-2);border-radius:10px;padding:14px 16px;color:var(--ink);font-family:var(--body);font-size:16px}
+  .regform input{width:100%;background:var(--canvas);border:1px solid var(--hairline-2);padding:14px 16px;color:var(--ink);font-family:var(--body);font-size:16px}
   .regform input:focus{outline:none;border-color:var(--accent)}
   .regform .btn{width:100%;text-align:center;margin-top:6px}
   .regnote{color:var(--muted);font-size:13px;margin-top:16px}
@@ -139,11 +134,11 @@
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD3WQ8N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<nav>
-  <div class="wrap nav-in">
-    <a href="/" class="logo">Mike<span>.</span>Moll</a>
-    <div class="nav-links">
-      <a href="#register" class="btn btn-primary">Save My Seat</a>
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="/" class="logo">Mike<i>.</i>Moll</a>
+    <div class="links">
+      <a href="#register" class="btn btn-ghost">Save My Seat</a>
     </div>
   </div>
 </nav>
@@ -288,11 +283,11 @@
   </div>
 </section>
 
-<footer>
-  <div class="wrap foot-in">
-    <a href="/" class="logo">Mike<span style="color:var(--accent)">.</span>Moll</a>
+<footer class="site-foot">
+  <div class="wrap">
+    <a href="/" class="logo">Mike<i>.</i>Moll</a>
     <p>© 2026 Impact Leads LLC</p>
-    <div style="flex-basis:100%;width:100%;border-top:1px solid rgba(236,230,218,0.10);padding-top:14px;display:flex;justify-content:center;gap:18px"><a href="/privacy" style="color:#948f84;font-size:13px;text-decoration:none">Privacy Policy</a><a href="/terms" style="color:#948f84;font-size:13px;text-decoration:none">Terms &amp; Conditions</a></div>
+    <div style="flex-basis:100%;width:100%;border-top:1px solid rgba(255,255,255,0.10);padding-top:14px;display:flex;justify-content:center;gap:18px"><a href="/privacy" style="color:#9a9a9a;font-size:13px;text-decoration:none">Privacy Policy</a><a href="/terms" style="color:#9a9a9a;font-size:13px;text-decoration:none">Terms &amp; Conditions</a></div>
   </div>
 </footer>
 

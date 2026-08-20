@@ -23,31 +23,26 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 <style>
-  :root{
-    --canvas:#141210;--surface:#1b1815;--surface-2:#221e19;
-    --ink:#ece6da;--muted:#948f84;
-    --hairline:rgba(236,230,218,0.10);--hairline-2:rgba(236,230,218,0.18);
-    --accent:#c6a06a;--accent-ink:#141210;
-    --display:'Space Grotesk',sans-serif;--body:'Hanken Grotesk',sans-serif;--max:1120px;
-  }
+  :root{--max:1120px;}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
-  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:0.03;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  body{background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
+  
   .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;position:relative;z-index:2}
   a{color:inherit;text-decoration:none}
   h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-0.03em;line-height:1.05}
   .eyebrow{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:0.26em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:block}
-  nav{position:sticky;top:0;z-index:10;background:rgba(20,18,16,0.75);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline)}
+  nav{position:sticky;top:0;z-index:10;background:rgba(0,0,0,0.75);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
   .logo{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-0.02em}
   .logo span{color:var(--accent)}
   .nav-links{display:flex;align-items:center;gap:28px}
   .nav-links a:not(.btn){color:var(--muted);font-size:15px;font-weight:500;transition:color .2s}
   .nav-links a:not(.btn):hover,.nav-links a.active{color:var(--ink)}
-  .btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:15px;padding:12px 22px;border-radius:8px;transition:transform .2s;border:none;cursor:pointer}
+  .btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:15px;padding:12px 22px;transition:transform .2s;border:none;cursor:pointer}
   .btn-primary{background:var(--accent);color:var(--accent-ink)}
   .btn-primary:hover{transform:translateY(-2px)}
 
@@ -56,27 +51,27 @@
   header p{color:var(--muted);font-size:1.15rem;max-width:52ch}
 
   .filters{display:flex;flex-wrap:wrap;gap:10px;padding:8px 0 44px}
-  .filters button{font-family:var(--display);font-weight:600;font-size:14px;padding:10px 18px;border-radius:100px;border:1px solid var(--hairline-2);background:none;color:var(--muted);cursor:pointer;transition:all .2s}
+  .filters button{font-family:var(--display);font-weight:600;font-size:14px;padding:10px 18px;border:1px solid var(--hairline-2);background:none;color:var(--muted);cursor:pointer;transition:all .2s}
   .filters button:hover{color:var(--ink)}
   .filters button.active{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-bottom:96px}
-  .pcard{border:1px solid var(--hairline);border-radius:16px;background:var(--surface);display:flex;flex-direction:column;overflow:hidden;transition:transform .2s,border-color .2s}
+  .pcard{border:1px solid var(--hairline);background:var(--surface);display:flex;flex-direction:column;overflow:hidden;transition:transform .2s,border-color .2s}
   .pcard:hover{transform:translateY(-4px);border-color:var(--accent)}
   .pc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
   .pc-kind{font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)}
-  .pc-tag{font-family:var(--display);font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);border:1px solid var(--hairline-2);border-radius:100px;padding:4px 10px}
+  .pc-tag{font-family:var(--display);font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);border:1px solid var(--hairline-2);padding:4px 10px}
   .pcard h3{font-size:1.2rem;margin-bottom:10px;line-height:1.15}
   .pcard p{color:var(--muted);font-size:0.95rem;flex:1;margin-bottom:18px}
   .pc-read{font-family:var(--display);font-weight:600;font-size:14px;color:var(--accent)}
-  .pc-art{aspect-ratio:16/9;background:radial-gradient(120% 120% at 30% 18%,#2a241c,#14110d);display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid var(--hairline)}
-  .pc-badge{position:absolute;top:12px;left:14px;font-family:var(--display);font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);border:1px solid var(--hairline-2);border-radius:100px;padding:5px 11px;background:rgba(20,18,16,.45)}
-  .pc-avatar{width:84px;height:84px;border-radius:50%;background:rgba(198,160,106,.10);border:1.5px solid rgba(198,160,106,.45);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+  .pc-art{aspect-ratio:16/9;background:radial-gradient(120% 120% at 30% 18%,#000000,#000000);display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid var(--hairline)}
+  .pc-badge{position:absolute;top:12px;left:14px;font-family:var(--display);font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);border:1px solid var(--hairline-2);padding:5px 11px;background:rgba(0,0,0,.45)}
+  .pc-avatar{width:84px;height:84px;background:rgba(56,182,255,.10);border:1.5px solid rgba(56,182,255,.45);display:flex;align-items:center;justify-content:center;}
   .pc-avatar svg{width:42px;height:36px}
-  .pc-avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+  .pc-avatar img{width:100%;height:100%;object-fit:cover}
   .pc-body{padding:24px 24px 24px;display:flex;flex-direction:column;flex:1}
 
-  .empty{grid-column:1/-1;border:1px dashed var(--hairline-2);border-radius:16px;padding:56px 30px;text-align:center;color:var(--muted)}
+  .empty{grid-column:1/-1;border:1px dashed var(--hairline-2);padding:56px 30px;text-align:center;color:var(--muted)}
   .empty h3{font-size:1.3rem;color:var(--ink);margin-bottom:8px}
 
   footer{border-top:1px solid var(--hairline);padding:40px 0}
@@ -90,13 +85,13 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD3WQ8N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- rebuild 2026-07-29T15:35:48.868821 -->
 
-<nav>
-  <div class="wrap nav-in">
-    <a href="/" class="logo">Mike<span>.</span>Moll</a>
-    <div class="nav-links">
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="/" class="logo">Mike<i>.</i>Moll</a>
+    <div class="links">
       <a href="/#free-resources">Free Resources</a>
       <a href="/media">Media</a>
-      <a href="/#work" class="btn btn-primary">How I Help</a>
+      <a href="/#work" class="btn btn-ghost">How I Help</a>
     </div>
   </div>
 </nav>
@@ -119,7 +114,7 @@
 
   <div class="grid" id="grid">
       <a class="pcard" href="/blog/how-i-quit-my-comfortable-job-to-pursue-business" data-tag="podcast-episode">
-        <div class="pc-art"><div class="pc-badge">Personal</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="pc-art"><div class="pc-badge">Personal</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#38b6ff" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
         <div class="pc-body">
           <span class="pc-tag">Podcast Episode</span>
           <h3>How I quit my comfortable job to pursue business</h3>
@@ -128,7 +123,7 @@
         </div>
       </a>
       <a class="pcard" href="/blog/how-to-vet-service-providers-behdad-jamshidi" data-tag="podcast-episode">
-        <div class="pc-art"><div class="pc-badge">Interview</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="pc-art"><div class="pc-badge">Interview</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#38b6ff" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
         <div class="pc-body">
           <span class="pc-tag">Podcast Episode</span>
           <h3>How to Vet Service Providers - Behdad Jamshidi</h3>
@@ -137,7 +132,7 @@
         </div>
       </a>
       <a class="pcard" href="/blog/following-your-nudges-how-to-trust-your-intuition-more-jason-brown" data-tag="podcast-episode">
-        <div class="pc-art"><div class="pc-badge">Interview</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="pc-art"><div class="pc-badge">Interview</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#38b6ff" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
         <div class="pc-body">
           <span class="pc-tag">Podcast Episode</span>
           <h3>Following Your Nudges - How to Trust Your Intuition More - Jason Brown</h3>
@@ -146,7 +141,7 @@
         </div>
       </a>
       <a class="pcard" href="/blog/how-to-time-block-to-maximize-productivity-tiffany-taylor" data-tag="podcast-episode">
-        <div class="pc-art"><div class="pc-badge">Interview</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="pc-art"><div class="pc-badge">Interview</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#38b6ff" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
         <div class="pc-body">
           <span class="pc-tag">Podcast Episode</span>
           <h3>How to Time Block to Maximize Productivity - Tiffany Taylor</h3>
@@ -155,7 +150,7 @@
         </div>
       </a>
       <a class="pcard" href="/blog/marketing-a-live-learning-cohort-mark-latimer" data-tag="podcast-episode">
-        <div class="pc-art"><div class="pc-badge">Live Coaching</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="pc-art"><div class="pc-badge">Live Coaching</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#38b6ff" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
         <div class="pc-body">
           <span class="pc-tag">Podcast Episode</span>
           <h3>Marketing a Live Learning Cohort - Mark Latimer</h3>
@@ -164,7 +159,7 @@
         </div>
       </a>
       <a class="pcard" href="/blog/3-steps-to-raising-your-price" data-tag="podcast-episode">
-        <div class="pc-art"><div class="pc-badge">Masterclass</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="pc-art"><div class="pc-badge">Masterclass</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#38b6ff" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
         <div class="pc-body">
           <span class="pc-tag">Podcast Episode</span>
           <h3>3 Steps to Raising Your Price</h3>
@@ -173,7 +168,7 @@
         </div>
       </a>
       <a class="pcard" href="/blog/monetizing-ideas-for-a-free-newsletter-patrick-kucharson" data-tag="podcast-episode">
-        <div class="pc-art"><div class="pc-badge">Live Coaching</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="pc-art"><div class="pc-badge">Live Coaching</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#38b6ff" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
         <div class="pc-body">
           <span class="pc-tag">Podcast Episode</span>
           <h3>Monetizing Ideas for a Free Newsletter - Patrick Kucharson</h3>
@@ -182,7 +177,7 @@
         </div>
       </a>
       <a class="pcard" href="/blog/defining-your-ideal-client-ignore-everyone-else-susie-ippolito" data-tag="podcast-episode">
-        <div class="pc-art"><div class="pc-badge">Live Coaching</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="pc-art"><div class="pc-badge">Live Coaching</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#38b6ff" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
         <div class="pc-body">
           <span class="pc-tag">Podcast Episode</span>
           <h3>Defining your Ideal Client, Ignore Everyone Else - Susie Ippolito</h3>
@@ -191,7 +186,7 @@
         </div>
       </a>
       <a class="pcard" href="/blog/marketing-your-coaching-offer-on-facebook-megan-van-noy" data-tag="podcast-episode">
-        <div class="pc-art"><div class="pc-badge">Live Coaching</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="pc-art"><div class="pc-badge">Live Coaching</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#38b6ff" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
         <div class="pc-body">
           <span class="pc-tag">Podcast Episode</span>
           <h3>Marketing your Coaching Offer on Facebook - Megan Van Noy</h3>
@@ -200,7 +195,7 @@
         </div>
       </a>
       <a class="pcard" href="/blog/gaining-confidence-to-charge-more-dusty-jenkins" data-tag="podcast-episode">
-        <div class="pc-art"><div class="pc-badge">Live Coaching</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="pc-art"><div class="pc-badge">Live Coaching</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#38b6ff" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
         <div class="pc-body">
           <span class="pc-tag">Podcast Episode</span>
           <h3>Gaining Confidence  to Charge More - Dusty Jenkins</h3>
@@ -209,7 +204,7 @@
         </div>
       </a>
       <a class="pcard" href="/blog/the-solopreneur-success-cycle-joe-rando" data-tag="podcast-episode">
-        <div class="pc-art"><div class="pc-badge">Interview</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#c6a06a" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
+        <div class="pc-art"><div class="pc-badge">Interview</div><div class="pc-avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#38b6ff" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
         <div class="pc-body">
           <span class="pc-tag">Podcast Episode</span>
           <h3>The Solopreneur Success Cycle - Joe Rando</h3>
@@ -229,11 +224,11 @@
   </div>
 </div>
 
-<footer>
-  <div class="wrap foot-in">
-    <a href="/" class="logo">Mike<span>.</span>Moll</a>
+<footer class="site-foot">
+  <div class="wrap">
+    <a href="/" class="logo">Mike<i>.</i>Moll</a>
     <p>&copy; 2026 Impact Leads LLC</p>
-    <div style="flex-basis:100%;width:100%;border-top:1px solid rgba(236,230,218,0.10);padding-top:14px;display:flex;justify-content:center;gap:18px"><a href="/privacy" style="color:#948f84;font-size:13px;text-decoration:none">Privacy Policy</a><a href="/terms" style="color:#948f84;font-size:13px;text-decoration:none">Terms &amp; Conditions</a></div>
+    <div style="flex-basis:100%;width:100%;border-top:1px solid rgba(255,255,255,0.10);padding-top:14px;display:flex;justify-content:center;gap:18px"><a href="/privacy" style="color:#9a9a9a;font-size:13px;text-decoration:none">Privacy Policy</a><a href="/terms" style="color:#9a9a9a;font-size:13px;text-decoration:none">Terms &amp; Conditions</a></div>
   </div>
 </footer>
 

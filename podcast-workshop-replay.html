@@ -10,20 +10,21 @@
 <link rel="canonical" href="https://www.mikemoll.co/podcast-workshop-replay">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 <style>
-  :root{--canvas:#141210;--surface:#1b1815;--surface-2:#221e19;--ink:#ece6da;--muted:#948f84;--hairline:rgba(236,230,218,0.10);--hairline-2:rgba(236,230,218,0.18);--accent:#c6a06a;--accent-ink:#141210;--display:'Space Grotesk',sans-serif;--body:'Hanken Grotesk',sans-serif;--max:1120px}
+  :root{--max:1120px;}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  body{background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
   .narrow{max-width:900px;margin:0 auto;padding:0 28px}
   a{color:inherit;text-decoration:none}
   h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-0.03em;line-height:1.05}
-  nav{position:sticky;top:0;z-index:20;background:rgba(20,18,16,0.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline)}
+  nav{position:sticky;top:0;z-index:20;background:rgba(0,0,0,0.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
   .logo{font-family:var(--display);font-weight:700;font-size:20px}.logo span{color:var(--accent)}
-  .btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:15px;padding:13px 24px;border-radius:8px;border:none;cursor:pointer;transition:transform .2s,background .2s,border-color .2s,color .2s}
+  .btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:15px;padding:13px 24px;border:none;cursor:pointer;transition:transform .2s,background .2s,border-color .2s,color .2s}
   .btn-primary{background:var(--accent);color:var(--accent-ink)}.btn-primary:hover{transform:translateY(-2px)}
   .btn-ghost{border:1px solid var(--hairline-2);color:var(--ink);background:none}.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
   .btn-lg{font-size:16px;padding:16px 30px}
@@ -32,22 +33,22 @@
   header h1{font-size:clamp(2.3rem,5vw,3.5rem);font-weight:700;max-width:20ch;margin:0 auto 20px}
   header p.lead{color:var(--muted);font-size:1.15rem;max-width:60ch;margin:0 auto}
   .videosec{padding:14px 0 20px}
-  .videobox{position:relative;width:100%;aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:1px solid var(--hairline-2);background:#000;box-shadow:0 30px 80px -40px rgba(0,0,0,0.9)}
+  .videobox{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--hairline-2);background:#000;}
   .videobox iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   section.block{padding:56px 0}
-  .card{background:var(--surface);border:1px solid var(--hairline);border-radius:18px;padding:40px 40px}
+  .card{background:var(--surface);border:1px solid var(--hairline);padding:40px 40px}
   .card .eyebrow{margin-bottom:14px}
   .card h2{font-size:1.7rem;margin-bottom:14px}
   .card p.sub{color:var(--muted);font-size:1.05rem;max-width:60ch;margin-bottom:22px}
   ul.checks{list-style:none;margin:0 0 26px;display:grid;gap:11px}
   ul.checks li{position:relative;padding-left:30px;color:var(--ink);font-size:1rem}
-  ul.checks li::before{content:"";position:absolute;left:0;top:9px;width:16px;height:16px;border-radius:50%;background:rgba(198,160,106,0.16);border:1px solid var(--accent)}
+  ul.checks li::before{content:"";position:absolute;left:0;top:9px;width:16px;height:16px;background:rgba(56,182,255,0.16);border:1px solid var(--accent)}
   ul.checks li::after{content:"";position:absolute;left:5px;top:12px;width:5px;height:9px;border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(45deg)}
   .opts{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-  .opt{background:var(--surface);border:1px solid var(--hairline);border-radius:18px;padding:36px 34px;display:flex;flex-direction:column}
-  .opt.feat{border-color:rgba(198,160,106,0.45)}
+  .opt{background:var(--surface);border:1px solid var(--hairline);padding:36px 34px;display:flex;flex-direction:column}
+  .opt.feat{border-color:rgba(56,182,255,0.45)}
   .opt .tagrow{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-  .opt .otag{font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);background:rgba(198,160,106,0.10);border:1px solid var(--hairline-2);padding:5px 11px;border-radius:999px}
+  .opt .otag{font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);background:rgba(56,182,255,0.10);border:1px solid var(--hairline-2);padding:5px 11px;}
   .opt h3{font-size:1.4rem;margin-bottom:10px}
   .opt .price{font-family:var(--display);font-weight:600;color:var(--ink);font-size:1.05rem;margin-bottom:14px}
   .opt .price span{color:var(--muted);font-weight:400;font-size:.95rem}
@@ -71,9 +72,9 @@
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD3WQ8N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<nav><div class="wrap nav-in">
-  <a href="/" class="logo">Mike<span>.</span>Moll</a>
-  <a href="#next-steps" class="btn btn-primary">Work with me</a>
+<nav class="site-nav"><div class="wrap">
+  <a href="/" class="logo">Mike<i>.</i>Moll</a>
+  <a href="#next-steps" class="btn btn-ghost">Work with me</a>
 </div></nav>
 <header class="narrow">
   <span class="eyebrow">Workshop Replay</span>
@@ -129,8 +130,8 @@
     </div>
   </div>
 </div></section>
-<footer><div class="wrap foot-in">
-  <div class="logo">Mike<span>.</span>Moll</div>
+<footer class="site-foot"><div class="wrap">
+  <div class="logo">Mike<i>.</i>Moll</div>
   <div class="socials">
     <a href="https://www.instagram.com/themikemoll/">Instagram</a>
     <a href="https://www.youtube.com/@mikemollco">YouTube</a>

@@ -10,30 +10,25 @@
 <link rel="canonical" href="https://www.mikemoll.co/privacy">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 <style>
-  :root{
-    --canvas:#141210;--surface:#1b1815;--surface-2:#221e19;
-    --ink:#ece6da;--muted:#948f84;
-    --hairline:rgba(236,230,218,0.10);--hairline-2:rgba(236,230,218,0.18);
-    --accent:#c6a06a;--accent-ink:#141210;
-    --display:'Space Grotesk',sans-serif;--body:'Hanken Grotesk',sans-serif;--max:1120px;
-  }
+  :root{--max:1120px;}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;scroll-padding-top:90px}
-  body{background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;position:relative;overflow-x:clip}
-  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:0.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  body{background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;position:relative;overflow-x:clip}
+  
   .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;position:relative;z-index:2}
   a{color:inherit;text-decoration:none}
   h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-0.03em;line-height:1.1}
-  nav{position:sticky;top:0;z-index:10;background:rgba(20,18,16,0.75);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline)}
+  nav{position:sticky;top:0;z-index:10;background:rgba(0,0,0,0.75);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
   .logo{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-0.02em}
   .logo span{color:var(--accent)}
   .nav-links{display:flex;align-items:center;gap:28px}
   .nav-links a:not(.btn){color:var(--muted);font-size:15px;font-weight:500;transition:color .2s}
   .nav-links a:not(.btn):hover{color:var(--ink)}
-  .btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:15px;padding:12px 22px;border-radius:8px;transition:transform .2s;border:none;cursor:pointer}
+  .btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:15px;padding:12px 22px;transition:transform .2s;border:none;cursor:pointer}
   .btn-primary{background:var(--accent);color:var(--accent-ink)}
   .btn-primary:hover{transform:translateY(-2px)}
 
@@ -45,12 +40,12 @@
   .legal h2{font-size:1.5rem;margin:46px 0 14px;color:var(--ink)}
   .legal h2:first-of-type{margin-top:0}
   .legal h3{font-size:1.12rem;font-weight:600;margin:26px 0 10px;color:var(--ink)}
-  .legal p{color:#cfc9be;margin-bottom:16px;font-size:1.02rem}
-  .legal ul{margin:0 0 18px 22px;color:#cfc9be}
+  .legal p{color:#d7d7d7;margin-bottom:16px;font-size:1.02rem}
+  .legal ul{margin:0 0 18px 22px;color:#d7d7d7}
   .legal li{margin-bottom:9px}
   .legal a{color:var(--accent);text-decoration:underline}
   .legal strong{color:var(--ink);font-weight:600}
-  .legal .intro{color:#d6d2c8;font-size:1.1rem}
+  .legal .intro{color:#d7d7d7;font-size:1.1rem}
 
   footer{padding:52px 0;border-top:1px solid var(--hairline)}
   .foot-in{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
@@ -66,13 +61,13 @@
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD3WQ8N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<nav>
-  <div class="wrap nav-in">
-    <a href="/" class="logo">Mike<span>.</span>Moll</a>
-    <div class="nav-links">
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="/" class="logo">Mike<i>.</i>Moll</a>
+    <div class="links">
       <a href="/#free-resources">Free Resources</a>
       <a href="/media">Media</a>
-      <a href="/#work" class="btn btn-primary">How I Help</a>
+      <a href="/#work" class="btn btn-ghost">How I Help</a>
     </div>
   </div>
 </nav>
@@ -151,9 +146,9 @@
   <a href="mailto:mike@mikemoll.co">mike@mikemoll.co</a></p>
 </main>
 
-<footer>
-  <div class="wrap foot-in">
-    <a href="/" class="logo">Mike<span>.</span>Moll</a>
+<footer class="site-foot">
+  <div class="wrap">
+    <a href="/" class="logo">Mike<i>.</i>Moll</a>
     <div class="socials"><a href="https://www.instagram.com/themikemoll/">Instagram</a><a href="https://www.youtube.com/@mikemollco">YouTube</a><a href="https://www.linkedin.com/in/solopreneurcoach/">LinkedIn</a></div>
     <p>&copy; 2026 Impact Leads LLC</p>
     <div class="foot-legal">

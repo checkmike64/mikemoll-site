@@ -10,22 +10,23 @@
 <link rel="canonical" href="https://www.mikemoll.co/training">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 <style>
-  :root{--canvas:#141210;--surface:#1b1815;--surface-2:#221e19;--ink:#ece6da;--muted:#948f84;--hairline:rgba(236,230,218,0.10);--hairline-2:rgba(236,230,218,0.18);--accent:#c6a06a;--accent-ink:#141210;--display:'Space Grotesk',sans-serif;--body:'Hanken Grotesk',sans-serif;--max:1120px}
+  :root{--max:1120px;}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  body{background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
   a{color:inherit;text-decoration:none}
   h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-0.03em;line-height:1.04}
-  nav{position:sticky;top:0;z-index:20;background:rgba(20,18,16,0.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline)}
+  nav{position:sticky;top:0;z-index:20;background:rgba(0,0,0,0.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
   .logo{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-0.02em}.logo span{color:var(--accent)}
   .nav-links{display:flex;align-items:center;gap:28px}
   .nav-links a:not(.btn){font-family:var(--display);font-weight:500;font-size:15px;color:var(--muted);transition:color .2s}
   .nav-links a:not(.btn):hover{color:var(--ink)}
-  .btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:15px;padding:12px 22px;border-radius:8px;border:none;cursor:pointer;transition:transform .2s,background .2s,border-color .2s,color .2s}
+  .btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:15px;padding:12px 22px;border:none;cursor:pointer;transition:transform .2s,background .2s,border-color .2s,color .2s}
   .btn-primary{background:var(--accent);color:var(--accent-ink)}.btn-primary:hover{transform:translateY(-2px)}
   .btn-ghost{border:1px solid var(--hairline-2);color:var(--ink);background:none}.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
   /* HERO */
@@ -35,11 +36,11 @@
   header p.lead{color:var(--muted);font-size:1.18rem;max-width:56ch}
   .divider{border:none;border-top:1px solid var(--hairline);margin:0}
   /* GATE */
-  .gate{max-width:560px;margin:8px 0 40px;background:var(--surface);border:1px solid var(--hairline);border-radius:18px;padding:38px 36px}
+  .gate{max-width:560px;margin:8px 0 40px;background:var(--surface);border:1px solid var(--hairline);padding:38px 36px}
   .gate h2{font-size:1.5rem;margin-bottom:10px}
   .gate p{color:var(--muted);font-size:1.02rem;margin-bottom:22px}
   .gate form{display:flex;gap:10px;flex-wrap:wrap}
-  .gate input{flex:1;min-width:220px;background:var(--canvas);border:1px solid var(--hairline-2);border-radius:8px;padding:15px 16px;color:var(--ink);font-family:var(--body);font-size:15px}
+  .gate input{flex:1;min-width:220px;background:var(--canvas);border:1px solid var(--hairline-2);padding:15px 16px;color:var(--ink);font-family:var(--body);font-size:15px}
   .gate input:focus{outline:none;border-color:var(--accent)}
   .gate .fine{font-size:12px;color:var(--muted);margin-top:16px;margin-bottom:0}
   /* LIBRARY */
@@ -51,17 +52,17 @@
   .cat-head .rule{flex:1;height:1px;background:var(--hairline)}
   .cat-head .count{font-family:var(--display);font-size:13px;color:var(--muted)}
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:24px}
-  .card{background:var(--surface);border:1px solid var(--hairline);border-radius:16px;overflow:hidden;cursor:pointer;transition:transform .2s,border-color .2s,box-shadow .2s;text-align:left;color:inherit;font:inherit;padding:0;display:block;width:100%}
-  .card:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:0 18px 40px -24px rgba(0,0,0,0.7)}
+  .card{background:var(--surface);border:1px solid var(--hairline);overflow:hidden;cursor:pointer;transition:transform .2s,border-color .2s,box-shadow .2s;text-align:left;color:inherit;font:inherit;padding:0;display:block;width:100%}
+  .card:hover{transform:translateY(-5px);border-color:var(--accent);}
   .card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   /* branded cover (fallback when no image) */
-  .thumb{aspect-ratio:16/9;position:relative;overflow:hidden;border-bottom:1px solid var(--hairline);background:radial-gradient(120% 140% at 15% 10%,#2a241c 0%,#1a1713 55%,#131009 100%)}
+  .thumb{aspect-ratio:16/9;position:relative;overflow:hidden;border-bottom:1px solid var(--hairline);background:radial-gradient(120% 140% at 15% 10%,#000000 0%,#000000 55%,#000000 100%)}
   .thumb .cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-  .thumb .word{position:absolute;right:-6px;bottom:-14px;font-family:var(--display);font-weight:700;font-size:4.6rem;line-height:0.9;letter-spacing:-0.04em;color:rgba(198,160,106,0.09);text-transform:uppercase;text-align:right;max-width:82%;pointer-events:none}
-  .thumb .tp{position:absolute;top:16px;left:16px;font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);background:rgba(20,18,16,0.55);padding:5px 10px;border-radius:999px;border:1px solid var(--hairline-2)}
-  .thumb .play{position:absolute;left:20px;bottom:18px;width:52px;height:52px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;font-size:19px;padding-left:4px;transition:transform .2s}
+  .thumb .word{position:absolute;right:-6px;bottom:-14px;font-family:var(--display);font-weight:700;font-size:4.6rem;line-height:0.9;letter-spacing:-0.04em;color:rgba(56,182,255,0.09);text-transform:uppercase;text-align:right;max-width:82%;pointer-events:none}
+  .thumb .tp{position:absolute;top:16px;left:16px;font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);background:rgba(0,0,0,0.55);padding:5px 10px;border:1px solid var(--hairline-2)}
+  .thumb .play{position:absolute;left:20px;bottom:18px;width:52px;height:52px;background:var(--accent);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;font-size:19px;padding-left:4px;transition:transform .2s}
   .card:hover .thumb .play{transform:scale(1.08)}
-  .thumb .kind-ic{position:absolute;left:20px;bottom:18px;width:52px;height:52px;border-radius:14px;background:var(--accent);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;font-family:var(--display)}
+  .thumb .kind-ic{position:absolute;left:20px;bottom:18px;width:52px;height:52px;background:var(--accent);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;font-family:var(--display)}
   .card .b{padding:22px 24px 24px}
   .card h3{font-size:1.22rem;margin-bottom:9px}
   .card p{color:var(--muted);font-size:0.97rem;margin-bottom:16px}
@@ -71,15 +72,15 @@
   /* MODAL */
   .modal{position:fixed;inset:0;z-index:50;background:rgba(10,9,8,0.88);backdrop-filter:blur(6px);display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:44px 20px}
   .modal.open{display:flex}
-  .sheet{max-width:920px;width:100%;background:var(--surface);border:1px solid var(--hairline-2);border-radius:18px;overflow:hidden;position:relative}
+  .sheet{max-width:920px;width:100%;background:var(--surface);border:1px solid var(--hairline-2);overflow:hidden;position:relative}
   .sheet .vid{aspect-ratio:16/9;background:#000}
   .sheet video{width:100%;height:100%;display:block}
   .sheet .m{padding:28px 32px 34px}
   .sheet .m .tp{font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px}
   .sheet h2{font-size:1.7rem;margin-bottom:12px}
-  .sheet p{color:#d6d2c8;margin-bottom:24px;max-width:60ch}
+  .sheet p{color:#d7d7d7;margin-bottom:24px;max-width:60ch}
   .sheet .acts{display:flex;gap:12px;flex-wrap:wrap}
-  .sheet .close{position:absolute;top:16px;right:16px;width:42px;height:42px;border-radius:50%;background:rgba(20,18,16,0.7);border:1px solid var(--hairline-2);color:var(--ink);font-size:20px;cursor:pointer;z-index:60}
+  .sheet .close{position:absolute;top:16px;right:16px;width:42px;height:42px;background:rgba(0,0,0,0.7);border:1px solid var(--hairline-2);color:var(--ink);font-size:20px;cursor:pointer;z-index:60}
   .sheet .close:hover{border-color:var(--accent);color:var(--accent)}
   footer{padding:52px 0;border-top:1px solid var(--hairline);margin-top:40px}
   footer .foot-in{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;color:var(--muted);font-size:14px}
@@ -92,12 +93,12 @@
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD3WQ8N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<nav><div class="wrap nav-in">
-  <a href="/" class="logo">Mike<span>.</span>Moll</a>
-  <div class="nav-links">
+<nav class="site-nav"><div class="wrap">
+  <a href="/" class="logo">Mike<i>.</i>Moll</a>
+  <div class="links">
     <a href="/#free-resources">Free Resources</a>
     <a href="/media">Media</a>
-    <a href="/consulting" class="btn btn-primary">Work with me</a>
+    <a href="/consulting" class="btn btn-ghost">Work with me</a>
   </div>
 </div></nav>
 
@@ -140,8 +141,8 @@
   </div>
 </div>
 
-<footer><div class="wrap foot-in">
-  <div class="logo">Mike<span>.</span>Moll</div>
+<footer class="site-foot"><div class="wrap">
+  <div class="logo">Mike<i>.</i>Moll</div>
   <div class="socials">
     <a href="https://www.instagram.com/themikemoll/">Instagram</a>
     <a href="https://www.youtube.com/@mikemollco">YouTube</a>

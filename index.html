@@ -24,326 +24,138 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --canvas:#141210;--surface:#1b1815;--surface-2:#221e19;
-    --ink:#ece6da;--muted:#948f84;
-    --hairline:rgba(236,230,218,0.10);--hairline-2:rgba(236,230,218,0.18);
-    --accent:#c6a06a;--accent-2:#c6a06a;--accent-ink:#141210;
-    --display:'Space Grotesk',sans-serif;--body:'Hanken Grotesk',sans-serif;--max:1120px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;scroll-padding-top:90px}
-  body{background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;position:relative;overflow-x:clip}
-  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:0.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;position:relative;z-index:2}
-  a{color:inherit;text-decoration:none}
-  .eyebrow{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:block}
-  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-0.03em;line-height:1.03}
-  nav{position:sticky;top:0;z-index:10;background:rgba(20,18,16,0.75);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline)}
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
-  .logo{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-0.02em}
-  .logo span{color:var(--accent)}
-  .nav-links{display:flex;align-items:center;gap:28px}
-  .nav-links a:not(.btn){color:var(--muted);font-size:15px;font-weight:500;transition:color .2s}
-  .nav-links a:not(.btn):hover{color:var(--ink)}
-  .btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:15px;padding:12px 22px;border-radius:8px;transition:transform .2s,background .2s,border-color .2s;border:none;cursor:pointer}
-  .btn-primary{background:var(--accent);color:var(--accent-ink)}
-  .btn-primary:hover{transform:translateY(-2px)}
-  .btn-ghost{border:1px solid var(--hairline-2);color:var(--ink);background:none}
-  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
-  .btn-blue{background:none;border:1px solid rgba(198,160,106,0.5);color:var(--accent-2)}
-  .btn-blue:hover{border-color:var(--accent-2);background:rgba(198,160,106,0.08)}
-  .btn-lg{padding:16px 30px;font-size:16px}
-  .text-link{font-family:var(--display);font-weight:600;font-size:15px;color:var(--muted);display:inline-flex;gap:7px;transition:color .2s,gap .2s}
-  .text-link:hover{color:var(--ink);gap:11px}
-
-  header{padding:118px 0 0;border-bottom:1px solid var(--hairline)}
-  .proofband{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--hairline);margin-top:64px}
-  .proofband .cell{padding:26px 20px;border-right:1px solid var(--hairline);text-align:center}
-  .proofband .cell:last-child{border-right:none}
-  .proofband b{font-family:var(--display);font-weight:700;font-size:1.5rem;color:var(--ink);letter-spacing:-0.02em;display:block}
-  .proofband span{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:6px;display:block}
-  .hero h1{font-size:clamp(2.8rem,7.6vw,5.9rem);font-weight:700;max-width:15ch;margin-bottom:26px}
-  .hero h1 .you{color:var(--accent)}
-  .hero h1 .offer{color:var(--accent)}
-  .hero .sub{font-size:clamp(1.05rem,2vw,1.35rem);color:var(--muted);max-width:48ch;margin-bottom:36px}
-  .hero-cta{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-
-  section{padding:100px 0;border-bottom:1px solid var(--hairline)}
-  .sec-head{max-width:56ch;margin-bottom:12px}
-  .center{text-align:center}.center .sec-head{margin:0 auto}
-  .sec-head h2{font-size:clamp(2rem,4.5vw,3.1rem);margin-bottom:14px}
-  .sec-head p{color:var(--muted);font-size:1.08rem}
-
-  /* BRANCHES */
-  .branches{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:56px}
-  .branch{border:1px solid var(--hairline);border-radius:18px;padding:44px 38px;background:var(--surface);display:flex;flex-direction:column;transition:transform .25s,border-color .25s}
-  .branch:hover{transform:translateY(-5px)}
-  .branch.offer{background:linear-gradient(165deg,#1a1712,var(--surface));border-color:rgba(198,160,106,0.3)}
-  .branch.you{background:linear-gradient(165deg,#1a1712,var(--surface));border-color:rgba(198,160,106,0.3)}
-  .branch .tag{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:20px}
-  .branch.offer .tag{color:var(--accent)}
-  .branch.you .tag{color:var(--accent-2)}
-  .branch h3{font-size:1.85rem;margin-bottom:14px;letter-spacing:-0.02em}
-  .branch .lead{color:#d6d2c8;font-size:1.05rem;margin-bottom:24px}
-  .branch ul{list-style:none;display:grid;gap:12px;margin-bottom:30px;flex:1}
-  .branch li{font-size:0.98rem;color:var(--muted);display:flex;gap:11px}
-  .branch.offer li::before{content:"+";color:var(--accent);font-family:var(--display);font-weight:700}
-  .branch.you li::before{content:"+";color:var(--accent-2);font-family:var(--display);font-weight:700}
-  .branch .btn{align-self:flex-start}
-
-  /* MEET MIKE */
-  .mike{display:grid;grid-template-columns:0.85fr 1.15fr;gap:60px;align-items:center}
-  .mike-photo{aspect-ratio:1/1;border:1px solid var(--hairline);border-radius:16px;background:linear-gradient(150deg,var(--surface),var(--surface-2));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-  .mike-photo .big{font-family:var(--display);font-weight:700;font-size:8rem;color:var(--hairline-2)}
-  .mike-photo .tag{position:absolute;bottom:24px;font-family:var(--display);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);z-index:2}
-  .mike-photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block}
-  .mike-photo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:96px;background:linear-gradient(to top,rgba(20,18,16,0.9),transparent);pointer-events:none;z-index:1}
-  .mike-copy p{color:#d6d2c8;margin-bottom:18px}
-  .creds{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
-  .creds li{font-family:var(--display);font-size:13px;color:var(--muted);border:1px solid var(--hairline);border-radius:100px;padding:8px 14px}
-
-  /* PROOF */
-  .treviews{margin-top:52px}
-  .tscroll{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-  .tscroll::-webkit-scrollbar{display:none}
-  .tscroll-wrap{position:relative}
-  .tnav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:var(--surface);border:1px solid var(--hairline-2);color:var(--accent);font-family:var(--display);font-size:26px;line-height:0;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,0.5);transition:transform .15s,border-color .15s,opacity .2s;z-index:3}
-  .tnav:hover{border-color:var(--accent)}
-  .tnav.prev{left:-18px}
-  .tnav.next{right:-18px}
-  .tnav[disabled]{opacity:0;pointer-events:none}
-  .treview{flex:0 0 calc((100% - 44px)/3);scroll-snap-align:start;display:flex;flex-direction:column;border:1px solid var(--hairline);border-radius:14px;padding:28px 26px;background:var(--surface);text-decoration:none;transition:transform .2s,border-color .2s}
-  .treview:hover{transform:translateY(-4px);border-color:var(--accent)}
-  .treview p{color:#d6d2c8;font-size:1rem;margin-bottom:16px;flex:1}
-  .treview .who{font-family:var(--display);font-size:14px;color:var(--ink)}
-  .treview .who span{color:var(--muted);font-weight:400}
-  .treview .seefull{margin-top:16px;font-size:12px;letter-spacing:0.03em;color:var(--muted);display:inline-flex;gap:6px;transition:color .2s}
-  .treview:hover .seefull{color:var(--accent)}
-  .see-all{margin-top:24px;font-family:var(--display);font-weight:600;font-size:14px;color:var(--muted);display:inline-flex;gap:7px;transition:color .2s,gap .2s}
-  .see-all:hover{color:var(--accent);gap:11px}
-
-  /* STAY */
-  .stay{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:52px}
-  .scard{border:1px solid var(--hairline);border-radius:16px;padding:38px 34px;background:var(--surface);display:flex;flex-direction:column}
-  .scard>.btn{margin-top:auto}
-  .scard .tag{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
-  .scard h3{font-size:1.5rem;margin-bottom:12px}
-  .scard p{color:var(--muted);margin-bottom:24px}
-  .scard.wide{grid-column:1/-1}
-  .train-btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:4px}
-  .form{display:flex;gap:10px}
-  .form input{flex:1;background:var(--canvas);border:1px solid var(--hairline-2);border-radius:8px;padding:13px 16px;color:var(--ink);font-family:var(--body);font-size:15px}
-  .form input:focus{outline:none;border-color:var(--accent)}
-
-  footer{padding:52px 0;border:none}
-  .foot-in{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
-  .socials{display:flex;gap:20px}
-  .socials a{color:var(--muted);font-size:14px;font-weight:500}
-  .socials a:hover{color:var(--accent)}
-  .foot-in p{color:var(--muted);font-size:14px}
-  .foot-legal{display:flex;gap:18px;margin-top:14px;width:100%;border-top:1px solid var(--hairline);padding-top:16px}
-  .foot-legal a{color:var(--muted);font-size:13px}
-  .foot-legal a:hover{color:var(--accent)}
-
-  .reveal{opacity:0;transform:translateY(18px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
-  .reveal.d1{animation-delay:.08s}.reveal.d2{animation-delay:.16s}.reveal.d3{animation-delay:.24s}
-  @keyframes rise{to{opacity:1;transform:none}}
-  @media (prefers-reduced-motion:reduce){.reveal{animation:none;opacity:1;transform:none}}
-
-  @media(max-width:860px){
-    .nav-links a:not(.btn){display:none}
-    .branches,.mike,.stay{grid-template-columns:1fr}
-    .treview{flex-basis:84%}
-    .train-btns .btn{width:100%;text-align:center}
-    .mike-photo{max-width:300px}
-    header{padding:76px 0 0}section{padding:70px 0}
-    .proofband{grid-template-columns:1fr;margin-top:40px}.proofband .cell{border-right:none;border-bottom:1px solid var(--hairline)}
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD3WQ8N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<nav>
-  <div class="wrap nav-in">
-    <a href="/" class="logo">Mike<span style="color:var(--accent)">.</span>Moll</a>
-    <div class="nav-links">
-      <a href="#free-resources">Free Resources</a>
-      <a href="/media">Media</a>
-      <a href="#work" class="btn btn-primary">How I Help</a>
-    </div>
+<nav class="site-nav"><div class="wrap">
+  <a href="/" class="logo">Mike<i>.</i>Moll</a>
+  <div class="links">
+    <a href="#free-resources">Free Resources</a>
+    <a href="/media">Media</a>
+    <a href="#work" class="btn btn-ghost" style="padding:12px 16px">How I Help</a>
   </div>
-</nav>
+</div></nav>
 
-<header>
-  <div class="wrap hero">
-    <h1 class="reveal d1">I make <span class="you">you</span> and <span class="offer">your offer</span> more sellable.</h1>
-    <p class="sub reveal d2">I sharpen your offer so it sells for more, and get you on podcasts so the right buyers find you.</p>
-    <div class="hero-cta reveal d3">
-      <a href="#work" class="btn btn-primary btn-lg">How I Help</a>
-      <a href="#free-resources" class="btn btn-ghost btn-lg">Explore free resources</a>
-    </div>
+<header class="hero"><div class="wrap">
+  <h1>I make you and your offer more sellable.</h1>
+  <p>I sharpen your offer so it sells for more, and get you on podcasts so the right buyers find you.</p>
+  <div class="cta"><a href="#work" class="btn btn-primary">How I Help</a><a href="#free-resources" class="btn btn-ghost">Explore free resources</a></div>
+  <div class="stats">
+    <div><b>$2.5M+</b><span>Added for clients</span></div>
+    <div><b>2-4&times;</b><span>Clients' rates raised</span></div>
+    <div><b>$386K</b><span>From podcast guesting</span></div>
   </div>
-  <div class="wrap">
-    <div class="proofband">
-      <div class="cell"><b>$2.5M+</b><span>Added for clients</span></div>
-      <div class="cell"><b>2-4&times;</b><span>Clients' rates raised</span></div>
-      <div class="cell"><b>$386K</b><span>From podcast guesting</span></div>
-    </div>
-  </div>
-</header>
+</div></header>
 
 <!-- BRANCHES -->
-<section id="work">
-  <div class="wrap">
-    <span class="eyebrow">Work with me</span>
-    <div class="sec-head"><h2>How I help</h2><p>I can work with you on one or both of these, depending on your needs.</p></div>
-    <div class="branches">
-      <div class="branch offer">
-        <div class="tag">Your Offer &middot; Consulting</div>
-        <h3>Make your offer more sellable</h3>
-        <p class="lead">We simplify your offer and fix your pricing and sales so you enjoy delivering, done through the Compression Method.</p>
-        <ul>
-          <li>A simpler offer built around one clear outcome</li>
-          <li>Pricing set on the value you create</li>
-          <li>A sales process easy for you to deliver</li>
-        </ul>
-        <a href="/consulting" class="btn btn-primary">Explore Consulting →</a>
-      </div>
-      <div class="branch you">
-        <div class="tag">You &middot; Podcast Guesting</div>
-        <h3>Make yourself more sellable</h3>
-        <p class="lead">I get you booked on podcasts your buyers already trust, so the right people find you.</p>
-        <ul>
-          <li>Finding you the best shows for your offer</li>
-          <li>Pitches that get you booked</li>
-          <li>A guest appearance that turns into clients</li>
-        </ul>
-        <a href="/podcast-workshop" class="btn btn-blue">Get on podcasts →</a>
-      </div>
+<section id="work" class="section"><div class="wrap">
+  <div class="eye">Work with me</div>
+  <h2 class="h2">How I help</h2>
+  <p class="lead">I can work with you on one or both of these, depending on your needs.</p>
+  <div class="grid2">
+    <div class="card">
+      <div class="tag">Your Offer &middot; Consulting</div>
+      <h3>Make your offer more sellable</h3>
+      <p>We simplify your offer and fix your pricing and sales so you enjoy delivering, done through the Compression Method.</p>
+      <ul>
+        <li>A simpler offer built around one clear outcome</li>
+        <li>Pricing set on the value you create</li>
+        <li>A sales process easy for you to deliver</li>
+      </ul>
+      <span class="circled"><svg class="scribble" viewBox="0 0 300 92" preserveAspectRatio="none"><path d="M22,55 C9,23 96,9 170,13 C248,17 294,32 279,56 C267,76 186,86 106,81 C50,77 12,68 47,40"/></svg><a href="/consulting" class="alink">Explore Consulting &rarr;</a></span>
+    </div>
+    <div class="card">
+      <div class="tag">You &middot; Podcast Guesting</div>
+      <h3>Make yourself more sellable</h3>
+      <p>I get you booked on podcasts your buyers already trust, so the right people find you.</p>
+      <ul>
+        <li>Finding you the best shows for your offer</li>
+        <li>Pitches that get you booked</li>
+        <li>A guest appearance that turns into clients</li>
+      </ul>
+      <span class="circled"><svg class="scribble" viewBox="0 0 300 92" preserveAspectRatio="none"><path d="M22,55 C9,23 96,9 170,13 C248,17 294,32 279,56 C267,76 186,86 106,81 C50,77 12,68 47,40"/></svg><a href="/podcast-workshop" class="alink">Get on podcasts &rarr;</a></span>
     </div>
   </div>
-</section>
+</div></section>
 
 <!-- MEET MIKE -->
-<section id="mike">
-  <div class="wrap mike">
-    <div class="mike-photo"><img src="/images/mike-moll-solopreneur-coach.jpg" alt="Mike Moll, solopreneur coach" loading="lazy"><div class="tag">Mike Moll</div></div>
-    <div class="mike-copy">
-      <span class="eyebrow">Meet Mike</span>
-      <div class="sec-head"><h2>I've done both for my own business.</h2></div>
-      <p>I fixed my offer after near bankruptcy, then booked myself onto 65+ podcasts and added $386,000 in revenue.</p>
-      <ul class="creds">
-        <li>14 years in service business</li>
-        <li>Leads GTM at seven-figure company</li>
-        <li>Fractional CMO, $20M company</li>
-        <li>Digital lead, Volvo &amp; Patak's</li>
-        <li>65+ podcast appearances</li>
-        <li>120+ podcasts hosted</li>
-      </ul>
+<section id="mike" class="section"><div class="wrap">
+  <div class="meetgrid">
+    <div>
+      <div class="eye">Meet Mike</div>
+      <h2 class="h2">I've done both for my own business.</h2>
+      <p class="lede">I fixed my offer after near bankruptcy, then booked myself onto 65+ podcasts and added $386,000 in revenue.</p>
     </div>
+    <div class="meetphoto"><img src="/images/mike-moll-podcast-interview.jpg" alt="Mike Moll recording a podcast at the table" loading="lazy"></div>
   </div>
-</section>
+  <div class="creds">
+    <div>14 years in service business</div>
+    <div>Leads GTM at seven-figure company</div>
+    <div>Fractional CMO, $20M company</div>
+    <div>Digital lead, Volvo &amp; Patak's</div>
+    <div>65+ podcast appearances</div>
+    <div>120+ podcasts hosted</div>
+  </div>
+</div></section>
 
 <!-- TESTIMONIALS -->
-<section id="proof">
-  <div class="wrap">
-    <span class="eyebrow">Client results</span>
-    <div class="sec-head"><h2>What my clients say.</h2></div>
-    <!-- Testimonials are display-only. To link a review to its source later,
-         wrap the .treview in an <a href> keyed by data-review-id. -->
-    <div class="treviews">
-      <div class="tscroll-wrap">
-      <div class="tscroll">
-        <a class="treview" data-review-id="daniella" target="_blank" rel="noopener">
-          <p>"Now we're at $30&ndash;40K a month in recurring revenue, and I enjoy sales."</p>
-          <div class="who">Daniella <span>&middot; Findable Digital</span></div>
-        </a>
-        <a class="treview" data-review-id="jenni" target="_blank" rel="noopener">
-          <p>"My rates have quadrupled. Last month I did a $16K month without it feeling like a stretch."</p>
-          <div class="who">Jenni <span>&middot; Chill Creative</span></div>
-        </a>
-        <a class="treview" data-review-id="mark" target="_blank" rel="noopener">
-          <p>"A podcasting strategy that directly grew my client engagements and visibility."</p>
-          <div class="who">Mark <span>&middot; Solopreneur</span></div>
-        </a>
-        <a class="treview" data-review-id="sean" target="_blank" rel="noopener">
-          <p>"I'm making a few multiples more than when I came to Mike, working the same hours if not less."</p>
-          <div class="who">Sean <span>&middot; Keepers Digital</span></div>
-        </a>
-        <a class="treview" data-review-id="tyler" target="_blank" rel="noopener">
-          <p>"Within ten minutes he distills a business-crushing problem into three solutions that would all work."</p>
-          <div class="who">Tyler <span>&middot; Email Marketing Agency</span></div>
-        </a>
-        <a class="treview" data-review-id="alvin" target="_blank" rel="noopener">
-          <p>"Mike helped me go from doing everything myself to scaling through systems and people."</p>
-          <div class="who">Alvin <span>&middot; Consultant</span></div>
-        </a>
-      </div>
-      <button class="tnav prev" aria-label="Previous reviews">&#8249;</button>
-      <button class="tnav next" aria-label="Next reviews">&#8250;</button>
-      </div>
-    </div>
+<section id="proof" class="section"><div class="wrap">
+  <div class="eye loose">Client results</div>
+  <h2 class="sr-only">Client results</h2>
+  <!-- Testimonials are display-only. To link a review to its source later,
+       wrap the .rev in an <a href> keyed by data-review-id. -->
+  <div class="revs">
+    <div class="rev" data-review-id="daniella"><p>"Now we're at $30&ndash;40K a month in recurring revenue, and I enjoy sales."</p><b>Daniella <em>&middot; Findable Digital</em></b></div>
+    <div class="rev" data-review-id="jenni"><p>"My rates have quadrupled. Last month I did a $16K month without it feeling like a stretch."</p><b>Jenni <em>&middot; Chill Creative</em></b></div>
+    <div class="rev" data-review-id="mark"><p>"A podcasting strategy that directly grew my client engagements and visibility."</p><b>Mark <em>&middot; Solopreneur</em></b></div>
+    <div class="rev" data-review-id="sean"><p>"I'm making a few multiples more than when I came to Mike, working the same hours if not less."</p><b>Sean <em>&middot; Keepers Digital</em></b></div>
+    <div class="rev" data-review-id="tyler"><p>"Within ten minutes he distills a business-crushing problem into three solutions that would all work."</p><b>Tyler <em>&middot; Email Marketing Agency</em></b></div>
+    <div class="rev" data-review-id="alvin"><p>"Mike helped me go from doing everything myself to scaling through systems and people."</p><b>Alvin <em>&middot; Consultant</em></b></div>
   </div>
-</section>
+</div></section>
 
 <!-- STAY IN MY WORLD -->
-<section id="free-resources">
-  <div class="wrap">
-    <span class="eyebrow">Start for free</span>
-    <div class="sec-head"><h2>Free resources.</h2></div>
-    <div class="stay">
-      <div class="scard">
-        <div class="tag">The Podcast</div>
-        <h3>Short episodes on offers, pricing, and sales.</h3>
-        <a href="/podcast" class="btn btn-ghost">Listen Now →</a>
-      </div>
-      <div class="scard">
-        <div class="tag">The Newsletter</div>
-        <h3>The marketing offer and AI experiments that I share.</h3>
-        <form class="form" data-lead="newsletter" data-success="You're subscribed." data-success-note="Owner-to-owner notes on offers, pricing, and getting paid.">
-          <input type="email" name="email" placeholder="you@yourbusiness.com" aria-label="Email" required>
-          <button class="btn btn-primary" type="submit">Subscribe</button>
-        </form>
-      </div>
-      <div class="scard wide">
-        <div class="tag">More free resources</div>
-        <h3>Videos and tools.</h3>
-        <div class="train-btns">
-          <a href="/free/linkedin-leads" class="btn btn-ghost">Generate Leads on LinkedIn →</a>
-          <a href="/free/claude-basics" class="btn btn-ghost">Claude for the Boring Work →</a>
-        </div>
+<section id="free-resources" class="section"><div class="wrap">
+  <div class="eye loose">Start for free</div>
+  <h2 class="sr-only">Free resources</h2>
+  <div class="res">
+    <div class="card">
+      <h3>The Podcast</h3>
+      <p>Short episodes on offers, pricing, and sales.</p>
+      <a href="/podcast" class="alink">Listen Now &rarr;</a>
+    </div>
+    <div class="card">
+      <h3>The Newsletter</h3>
+      <p>The marketing offer and AI experiments that I share.</p>
+      <form class="nl" data-lead="newsletter" data-success="You're subscribed." data-success-note="Owner-to-owner notes on offers, pricing, and getting paid.">
+        <input type="email" name="email" placeholder="you@yourbusiness.com" aria-label="Email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+    <div class="card">
+      <h3>More free resources</h3>
+      <p>Videos and tools.</p>
+      <div class="rlinks">
+        <a href="/free/linkedin-leads" class="alink">Generate Leads on LinkedIn &rarr;</a>
+        <a href="/free/claude-basics" class="alink">Claude for the Boring Work &rarr;</a>
       </div>
     </div>
   </div>
-</section>
+</div></section>
 
-<footer>
-  <div class="wrap foot-in">
-    <div class="logo">Mike<span style="color:var(--accent)">.</span>Moll</div>
-    <div class="socials"><a href="https://www.instagram.com/themikemoll/">Instagram</a><a href="https://www.youtube.com/@mikemollco">YouTube</a><a href="https://www.linkedin.com/in/solopreneurcoach/">LinkedIn</a></div>
-    <p>&copy; 2026 Impact Leads LLC</p>
-    <div class="foot-legal">
-      <a href="/privacy">Privacy Policy</a>
-      <a href="/terms">Terms &amp; Conditions</a>
-    </div>
+<footer class="site-foot"><div class="wrap">
+  <a href="/" class="logo">Mike<i>.</i>Moll</a>
+  <div class="fl socials"><a href="https://www.instagram.com/themikemoll/">Instagram</a><a href="https://www.youtube.com/@mikemollco">YouTube</a><a href="https://www.linkedin.com/in/solopreneurcoach/">LinkedIn</a></div>
+  <p>&copy; 2026 Impact Leads LLC</p>
+  <div class="fl foot-legal">
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/terms">Terms &amp; Conditions</a>
   </div>
-</footer>
+</div></footer>
 
-<script>
-(function(){
-  var sc=document.querySelector('.tscroll'); if(!sc) return;
-  var prev=document.querySelector('.tnav.prev'), next=document.querySelector('.tnav.next');
-  function step(){var c=sc.querySelector('.treview'); return c?c.getBoundingClientRect().width+22:sc.clientWidth*0.8;}
-  function upd(){var max=sc.scrollWidth-sc.clientWidth-2; if(prev)prev.disabled=sc.scrollLeft<=2; if(next)next.disabled=sc.scrollLeft>=max;}
-  if(next)next.addEventListener('click',function(){sc.scrollBy({left:step(),behavior:'smooth'});});
-  if(prev)prev.addEventListener('click',function(){sc.scrollBy({left:-step(),behavior:'smooth'});});
-  sc.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd); upd();
-})();
-</script>
 <script src="/forms.js"></script>
 </body>
 </html>
