@@ -137,7 +137,7 @@
 <nav class="site-nav">
   <div class="wrap">
     <a href="/" class="logo">Mike<i>.</i>Moll</a>
-    <div class="links">
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu" onclick="var n=this.closest('.site-nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><span></span><span></span><span></span></button><div class="links" id="site-menu">
       <a href="#register" class="btn btn-ghost">Save My Seat</a>
     </div>
   </div>
