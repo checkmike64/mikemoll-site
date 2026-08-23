@@ -1,0 +1,35 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap');
+.wbhost{
+  --ink:#27323D;--slate:#4E6F8A;--sky:#38B6FF;--line:#E7EBEF;
+  font-family:'Poppins',system-ui,sans-serif;color:var(--ink);max-width:960px;margin:0 auto;padding:64px 28px;box-sizing:border-box;
+}
+.wbhost *{box-sizing:border-box}
+.wbhost .card{background:#F7F9FA;border:1px solid var(--line);border-radius:24px;padding:34px;display:flex;gap:28px;align-items:center}
+.wbhost .photo{flex:0 0 auto;width:132px;height:132px;border-radius:20px;object-fit:cover;border:1px solid var(--line)}
+.wbhost .nm{font-family:'League Spartan',sans-serif;font-weight:700;font-size:26px}
+.wbhost .role{font-size:13.5px;font-weight:600;color:var(--sky);margin-top:4px}
+.wbhost .bio{font-size:15px;font-weight:400;color:var(--slate);line-height:1.6;margin:12px 0 0}
+.wbhost .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.wbhost .chip{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 13px}
+.wbhost .chip svg{width:15px;height:15px}
+@media(max-width:760px){.wbhost{padding:48px 20px}.wbhost .card{flex-direction:column;text-align:center;padding:28px 22px}.wbhost .chips{justify-content:center}}
+</style>
+
+<div class="wbhost">
+  <div class="card">
+    <img class="photo" src="https://assets.cdn.filesafe.space/Y6tiQHe96XbqVkTeRY8J/media/69f22a9bfc17decc45ec79c9.webp" alt="Mike Moll">
+    <div>
+      <div class="nm">Mike Moll</div>
+      <div class="role">Marketing coach &amp; fractional CMO</div>
+      <p class="bio">I'm a marketing coach and fractional CMO, and I've spent years on both sides of the mic. I host The Undervalued Expert and I've guested on more than 65 shows, without a big audience. I've traced $386,000 in revenue back to those appearances.</p>
+      <div class="chips">
+        <span class="chip"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#22A45B"/><path d="M5.6 10.4l2.7 2.7 6-6.4" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Fractional CMO for a $20M company</span>
+        <span class="chip"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#22A45B"/><path d="M5.6 10.4l2.7 2.7 6-6.4" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Digital lead for Volvo &amp; Patak's</span>
+        <span class="chip"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#22A45B"/><path d="M5.6 10.4l2.7 2.7 6-6.4" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>65+ shows guested on</span>
+        <span class="chip"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#22A45B"/><path d="M5.6 10.4l2.7 2.7 6-6.4" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>120 episodes hosted</span>
+        <span class="chip"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#22A45B"/><path d="M5.6 10.4l2.7 2.7 6-6.4" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>$386K traced to appearances</span>
+      </div>
+    </div>
+  </div>
+</div>

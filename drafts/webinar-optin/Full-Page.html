@@ -1,0 +1,255 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap');
+html{scroll-behavior:smooth}
+.wbpage{
+  --ink:#27323D;--slate:#4E6F8A;--slate2:#607179;--sky:#38B6FF;--skyd:#1E9BE6;--skybg:#EAF6FF;
+  --navy:#3D5A72;--navybg:#EDF2F6;--terra:#C9773A;--terrabg:#FBF0E6;--line:#E7EBEF;--dark:#22384C;
+  font-family:'Poppins',system-ui,sans-serif;color:var(--ink);box-sizing:border-box;
+}
+.wbpage *{box-sizing:border-box}
+.wbpage h1,.wbpage h2,.wbpage h3{font-family:'League Spartan',sans-serif;font-weight:700;letter-spacing:normal;margin:0}
+.wbpage .wrap{max-width:960px;margin:0 auto;padding:64px 28px}
+.wbpage .eb{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate2);margin-bottom:14px}
+.wbpage .hl{background:linear-gradient(transparent 55%,#FAE3CC 55%);-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 .06em;margin:0 -.06em}
+.wbpage .cta{display:inline-flex;align-items:center;gap:11px;background:var(--sky);color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;border-radius:999px;padding:15px 32px;text-decoration:none;transition:background .15s ease}
+.wbpage .cta:hover{background:var(--skyd)}
+.wbpage .cta svg{width:16px;height:16px}
+
+/* HERO */
+.wbpage .hero{text-align:center}
+.wbpage .hero .pill{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);background:var(--navybg);border-radius:999px;padding:8px 16px}
+.wbpage .hero .pill i{width:6px;height:6px;border-radius:50%;background:var(--sky)}
+.wbpage .hero h1{font-size:50px;line-height:1.06;margin:22px auto 0;max-width:760px}
+.wbpage .hero .sub{font-size:18px;font-weight:400;color:var(--slate);max-width:560px;margin:16px auto 0;line-height:1.5}
+.wbpage .hero .when{display:inline-flex;align-items:center;gap:9px;margin-top:24px;font-size:14px;font-weight:600;background:var(--skybg);border:1px solid #CDE9FB;border-radius:999px;padding:9px 18px}
+.wbpage .hero .when svg{width:16px;height:16px;color:var(--skyd)}
+.wbpage .hero .ctarow{margin-top:20px}
+.wbpage .hero .free{margin-top:12px;font-size:13px;font-weight:600;color:var(--slate2)}
+.wbpage .hero .host{display:inline-flex;align-items:center;gap:12px;margin-top:30px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px 18px 10px 10px;font-size:13px;font-weight:500;color:var(--slate);text-align:left;max-width:520px;line-height:1.4}
+.wbpage .hero .host .av{flex:0 0 auto;width:38px;height:38px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+.wbpage .hero .host b{color:var(--ink);font-weight:700}
+.wbpage .hero .heroimg{margin:36px auto 0;max-width:600px}
+.wbpage .hero .heroimg img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center;border-radius:18px;display:block;border:1px solid var(--line)}
+
+/* DARK BANDS */
+.wbpage .band{background:var(--dark);color:#EAF2F8}
+.wbpage .band .eb{color:#8FA9BE}
+.wbpage .band h2{color:#fff}
+
+/* WHY NOW */
+.wbpage .now{text-align:center}
+.wbpage .now h2{font-size:34px;line-height:1.12;max-width:640px;margin:0 auto}
+.wbpage .now p{font-size:16.5px;color:#B7C7D5;line-height:1.6;max-width:600px;margin:16px auto 0}
+
+/* BENEFITS */
+.wbpage .ben{text-align:center}
+.wbpage .ben h2{font-size:34px;line-height:1.12;max-width:620px;margin:0 auto 34px}
+.wbpage .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:left}
+.wbpage .card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 26px;border-top:3px solid var(--line)}
+.wbpage .card.c1{border-top-color:var(--sky)}.wbpage .card.c2{border-top-color:var(--navy)}.wbpage .card.c3{border-top-color:var(--terra)}
+.wbpage .card .ic{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.wbpage .c1 .ic{background:var(--skybg);color:var(--skyd)}.wbpage .c2 .ic{background:var(--navybg);color:var(--navy)}.wbpage .c3 .ic{background:var(--terrabg);color:var(--terra)}
+.wbpage .card .ic svg{width:24px;height:24px}
+.wbpage .card h3{font-size:19px;margin-bottom:9px}
+.wbpage .card p{font-size:14.5px;font-weight:400;color:var(--slate);line-height:1.55;margin:0}
+
+/* STAT */
+.wbpage .stat{background:var(--skybg)}
+.wbpage .stat .in{text-align:center}
+.wbpage .stat .kick{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--skyd);margin-bottom:12px}
+.wbpage .stat .big{font-family:'League Spartan',sans-serif;font-weight:800;font-size:78px;line-height:1;letter-spacing:-.02em;color:var(--skyd)}
+.wbpage .stat .cap{font-size:16px;font-weight:600;color:var(--ink);margin-top:8px}
+.wbpage .breakdown{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:26px}
+.wbpage .bd{background:#fff;border:1px solid #CDE9FB;border-radius:14px;padding:14px 20px;min-width:150px}
+.wbpage .bd .n{font-family:'League Spartan',sans-serif;font-weight:800;font-size:26px;color:var(--ink)}
+.wbpage .bd .l{font-size:12.5px;font-weight:500;color:var(--slate);margin-top:3px;line-height:1.35}
+.wbpage .stat .story{font-size:16px;font-weight:500;color:var(--slate);line-height:1.6;max-width:620px;margin:26px auto 0}
+.wbpage .stat .anchor{font-family:'League Spartan',sans-serif;font-weight:700;font-size:22px;color:var(--ink);margin-top:20px}
+
+/* YOU DON'T NEED */
+.wbpage .fit{text-align:center}
+.wbpage .fit h2{font-size:32px;line-height:1.12;max-width:620px;margin:0 auto}
+.wbpage .fit p{font-size:17px;font-weight:400;color:var(--slate);line-height:1.6;max-width:600px;margin:16px auto 0}
+.wbpage .fit .who{font-size:15.5px;font-weight:600;color:var(--ink);margin-top:22px;padding-top:20px;border-top:1px solid var(--line);max-width:640px;margin-left:auto;margin-right:auto;line-height:1.5}
+
+/* LEARN */
+.wbpage .learn{text-align:center}
+.wbpage .learn h2{font-size:34px;line-height:1.12;max-width:600px;margin:0 auto 30px}
+.wbpage .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:left}
+.wbpage .step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 24px}
+.wbpage .step .num{font-family:'League Spartan',sans-serif;font-weight:800;font-size:14px;color:var(--sky)}
+.wbpage .step h3{font-size:17px;margin:8px 0 7px}
+.wbpage .step p{font-size:14px;font-weight:400;color:var(--slate);line-height:1.5;margin:0}
+.wbpage .learn .plus{font-size:15px;font-weight:500;color:var(--slate);margin-top:22px}
+.wbpage .learn .ctarow{margin-top:24px}
+
+/* HOST */
+.wbpage .host2 .card{background:#F7F9FA;border:1px solid var(--line);border-radius:24px;padding:34px;display:flex;gap:28px;align-items:center}
+.wbpage .host2 .photo{flex:0 0 auto;width:132px;height:132px;border-radius:20px;object-fit:cover;border:1px solid var(--line)}
+.wbpage .host2 .nm{font-family:'League Spartan',sans-serif;font-weight:700;font-size:26px}
+.wbpage .host2 .role{font-size:13.5px;font-weight:600;color:var(--sky);margin-top:4px}
+.wbpage .host2 .bio{font-size:15px;font-weight:400;color:var(--slate);line-height:1.6;margin:12px 0 0}
+.wbpage .host2 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.wbpage .host2 .chip{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 13px}
+.wbpage .host2 .chip svg{width:15px;height:15px}
+
+/* ASPIRATION */
+.wbpage .asp{text-align:center}
+.wbpage .asp h2{font-size:36px;line-height:1.1;max-width:680px;margin:0 auto;color:#fff}
+.wbpage .asp p{font-size:17px;font-weight:400;color:#B7C7D5;line-height:1.6;max-width:600px;margin:18px auto 0}
+
+/* REGISTER */
+.wbpage .reg{background:var(--skybg)}
+.wbpage .reg .in{text-align:center;max-width:600px;margin:0 auto}
+.wbpage .reg h2{font-size:34px;line-height:1.1}
+.wbpage .reg .when{display:inline-block;margin-top:14px;font-size:14px;font-weight:600;color:var(--ink)}
+.wbpage .reg .formbox{background:#fff;border:2px dashed #9FCBE6;border-radius:18px;padding:44px 24px;margin-top:22px;color:var(--slate2);font-size:14px;font-weight:600}
+.wbpage .reg .next{font-size:13px;font-weight:500;color:var(--slate2);margin-top:16px;line-height:1.5}
+/* MYTHS */
+.wbpage .myth{text-align:center}
+.wbpage .myth h2{font-size:32px;line-height:1.12;margin:0 auto 24px;max-width:560px}
+.wbpage .mythlist{list-style:none;margin:0 auto;padding:0;max-width:470px;text-align:left;display:flex;flex-direction:column;gap:10px}
+.wbpage .mythlist li{display:flex;align-items:center;gap:12px;font-size:16.5px;font-weight:600;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px}
+.wbpage .mythlist li svg{flex:0 0 22px;width:22px;height:22px}
+.wbpage .reframe{font-size:17px;font-weight:400;color:var(--slate);line-height:1.6;max-width:600px;margin:26px auto 0}
+.wbpage .reframe b{color:var(--ink);font-weight:600}
+/* WHO FOR */
+.wbpage .whofor{text-align:center}
+.wbpage .whofor h2{font-size:32px;line-height:1.12;margin:0 auto 30px;max-width:560px}
+.wbpage .buckets{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;text-align:left}
+.wbpage .bkt{background:#F7F9FA;border:1px solid var(--line);border-radius:16px;padding:20px 16px}
+.wbpage .bkt .bt{font-family:'League Spartan',sans-serif;font-weight:700;font-size:16.5px;color:var(--ink)}
+.wbpage .bkt .bd{font-size:12.5px;font-weight:400;color:var(--slate);line-height:1.45;margin-top:6px}
+.wbpage .learn .lead{font-size:16.5px;font-weight:500;color:var(--slate);max-width:560px;margin:0 auto 28px;line-height:1.5}
+
+@media(max-width:760px){
+  .wbpage .wrap{padding:48px 20px}
+  .wbpage .hero h1{font-size:34px}
+  .wbpage .now h2,.wbpage .ben h2,.wbpage .learn h2,.wbpage .reg h2,.wbpage .myth h2,.wbpage .whofor h2{font-size:27px}
+  .wbpage .stat .big{font-size:58px}
+  .wbpage .cards,.wbpage .steps{grid-template-columns:1fr}
+  .wbpage .buckets{grid-template-columns:1fr 1fr}
+  .wbpage .host2 .card{flex-direction:column;text-align:center}.wbpage .host2 .chips{justify-content:center}
+}
+</style>
+
+<div class="wbpage">
+
+  <!-- 1. HERO -->
+  <section class="wrap hero">
+    <h1>Get your first (or next) podcast interview and turn it into <span class="hl">authority, audience, and revenue</span>.</h1>
+    <div class="sub">The one marketing channel that still compounds, no big following required.</div>
+    <div class="when"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="16" rx="3"/><path d="M3.5 9.5h17M8 3.5v3M16 3.5v3"/></svg>Live Wednesday, August 12 at 4:00 PM ET</div>
+    <div class="ctarow"><a class="cta" href="#register">Save My Seat <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"/><path d="M13 6l6 6-6 6"/></svg></a></div>
+    <div class="free">Free to join. Seats are limited.</div>
+    <div class="host"><span class="av">MM</span><span><b>Hosted by Mike Moll</b> &middot; 65+ shows guested, 120 episodes hosted.</span></div>
+    <div class="heroimg"><img src="https://assets.cdn.filesafe.space/Y6tiQHe96XbqVkTeRY8J/media/69f229bdfab44d4020a60851.jpg" alt="Mike Moll recording a podcast interview"></div>
+  </section>
+
+  <!-- 2. WHY NOW -->
+  <section class="band">
+    <div class="wrap now">
+      <h2>Ads and posts stop working the day you stop.</h2>
+      <p>A boosted post is gone by the weekend. A podcast appearance still gets found a year later, ranking in search and turning up in someone's feed. Guesting takes work to land. The difference is the work keeps paying after you stop.</p>
+    </div>
+  </section>
+
+  <!-- 3. BENEFITS -->
+  <section class="wrap ben">
+    <h2>Why one good interview beats a month of posting.</h2>
+    <div class="cards">
+      <div class="card c1">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.9 7.1 18.2l.9-5.5-4-3.9L9.5 8z"/></svg></div>
+        <h3>Authority transfer</h3>
+        <p>The host spent years earning their audience's trust. In one sentence, some of it becomes yours. On other channels that takes years.</p>
+      </div>
+      <div class="card c2">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"/><path d="M6 11a6 6 0 0 0 12 0M12 18v3"/></svg></div>
+        <h3>Undivided attention</h3>
+        <p>Listeners finish 80% of an episode. That's 30 to 60 minutes of full attention, not a three-second scroll. A post gets glanced at. An interview is a conversation.</p>
+      </div>
+      <div class="card c3">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V9l8-5 8 5v11M4 20h16M9 20v-6h6v6"/></svg></div>
+        <h3>Permanence</h3>
+        <p>Episodes keep working for years. They rank in search and bring people to you long after you've moved on. Every appearance is a brick in your wall of credibility.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. STAT -->
+  <section class="stat">
+    <div class="wrap in">
+      <div class="kick">No big following. No famous name.</div>
+      <div class="big">$386,000</div>
+      <div class="cap">in revenue I've traced back to podcast appearances.</div>
+      <div class="story">I started with fewer than 15,000 followers. Reach wasn't the point. I learned how to get booked, and how to show up once I did. Most of it, about <b>70%</b>, came from the hosts: referrals, introductions, and partnerships that began with one conversation.</div>
+    </div>
+  </section>
+
+  <!-- 5. MYTHS -->
+  <section class="wrap myth">
+    <h2>You might be thinking&hellip;</h2>
+    <ul class="mythlist">
+      <li><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#FBE9E7"/><path d="M6.6 6.6l6.8 6.8M13.4 6.6l-6.8 6.8" stroke="#E4574C" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>I need a big audience</li>
+      <li><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#FBE9E7"/><path d="M6.6 6.6l6.8 6.8M13.4 6.6l-6.8 6.8" stroke="#E4574C" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>I need a big social media following</li>
+      <li><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#FBE9E7"/><path d="M6.6 6.6l6.8 6.8M13.4 6.6l-6.8 6.8" stroke="#E4574C" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>I need a crazy story</li>
+      <li><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#FBE9E7"/><path d="M6.6 6.6l6.8 6.8M13.4 6.6l-6.8 6.8" stroke="#E4574C" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>I need a big company exit</li>
+    </ul>
+    <p class="reframe">None of these is what gets you booked. The host brings the audience. What they want is a guest with a clear point of view and something useful to say. <b>If you've written a book or built expertise people respect, you already have that.</b> You're more bookable than you think. You just need the system.</p>
+  </section>
+
+  <!-- 6. WHO IT'S FOR -->
+  <section class="wrap whofor">
+    <h2>Who this workshop is for</h2>
+    <div class="buckets">
+      <div class="bkt"><div class="bt">Coaches</div><div class="bd">Get in front of the people who need your help.</div></div>
+      <div class="bkt"><div class="bt">Consultants</div><div class="bd">Turn your expertise into inbound leads.</div></div>
+      <div class="bkt"><div class="bt">Agency owners</div><div class="bd">Win clients without cold outreach.</div></div>
+      <div class="bkt"><div class="bt">Authors</div><div class="bd">Put your book and ideas in front of new readers.</div></div>
+      <div class="bkt"><div class="bt">Speakers</div><div class="bd">Build the reputation that fills your calendar.</div></div>
+    </div>
+  </section>
+
+  <!-- 6. WHAT YOU'LL LEARN -->
+  <section class="wrap learn">
+    <h2>What You're Going to Learn</h2>
+    <p class="lead">You'll leave with a clear plan to land your next booking. In the workshop, you'll learn how to:</p>
+    <div class="steps">
+      <div class="step"><div class="num">01</div><h3>Make your story sellable</h3><p>Frame your experience so the right host says yes.</p></div>
+      <div class="step"><div class="num">02</div><h3>Build assets that get a yes</h3><p>The bio, speaker sheet, and titles a host needs.</p></div>
+      <div class="step"><div class="num">03</div><h3>Get the outreach right</h3><p>Stand out in a full inbox and win the host over.</p></div>
+    </div>
+    <div class="ctarow"><a class="cta" href="#register">Save My Seat <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"/><path d="M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <!-- 7. MEET MIKE -->
+  <section class="wrap host2">
+    <div class="card">
+      <img class="photo" src="https://assets.cdn.filesafe.space/Y6tiQHe96XbqVkTeRY8J/media/69f22a9bfc17decc45ec79c9.webp" alt="Mike Moll">
+      <div>
+        <div class="nm">Mike Moll</div>
+        <div class="role">Marketing coach &amp; fractional CMO</div>
+        <p class="bio">I'm a marketing coach and fractional CMO, and I've spent years on both sides of the mic. I host The Undervalued Expert and I've guested on more than 65 shows, without a big audience. I've traced $386,000 in revenue back to those appearances.</p>
+        <div class="chips">
+          <span class="chip"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#22A45B"/><path d="M5.6 10.4l2.7 2.7 6-6.4" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Fractional CMO for a $20M company</span>
+          <span class="chip"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#22A45B"/><path d="M5.6 10.4l2.7 2.7 6-6.4" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Digital lead for Volvo &amp; Patak's</span>
+          <span class="chip"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#22A45B"/><path d="M5.6 10.4l2.7 2.7 6-6.4" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>65+ shows guested on</span>
+          <span class="chip"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#22A45B"/><path d="M5.6 10.4l2.7 2.7 6-6.4" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>120 episodes hosted</span>
+          <span class="chip"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#22A45B"/><path d="M5.6 10.4l2.7 2.7 6-6.4" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>14 years running my company</span>
+          <span class="chip"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#22A45B"/><path d="M5.6 10.4l2.7 2.7 6-6.4" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>$386K traced to appearances</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTER -->
+  <section class="reg" id="register">
+    <div class="wrap in">
+      <h2>Save your seat.</h2>
+      <div class="when">Live Wednesday, August 12 at 4:00 PM ET. It's a free workshop, and it's live, so you can ask your questions in the room. Seats are limited.</div>
+      <div class="formbox">[ Your GoHighLevel registration form goes here ]</div>
+      <div class="next">Register with your name and email. We'll send the link, plus a reminder before we go live.</div>
+    </div>
+  </section>
+
+</div>

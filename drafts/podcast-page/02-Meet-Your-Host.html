@@ -1,0 +1,40 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap');
+.puhost{
+  --ink:#27323D;--slate:#4E6F8A;--slate2:#607179;--sky:#38B6FF;--skyd:#1E9BE6;--skybg:#EAF6FF;
+  --navy:#3D5A72;--navybg:#EDF2F6;--terra:#C9773A;--line:#E7EBEF;
+  font-family:'Poppins',system-ui,sans-serif;color:var(--ink);max-width:920px;margin:0 auto;padding:44px 28px;box-sizing:border-box;
+}
+.puhost *{box-sizing:border-box}
+.puhost .eb{display:block;text-align:center;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate2);margin-bottom:18px}
+.puhost .card{background:#F7F9FA;border:1px solid var(--line);border-radius:24px;padding:32px 34px;display:flex;gap:28px;align-items:center}
+.puhost .photo{flex:0 0 auto;width:128px;height:128px;border-radius:20px;object-fit:cover;border:1px solid var(--line)}
+.puhost .body{flex:1 1 auto;min-width:0}
+.puhost .name{font-family:'League Spartan',sans-serif;font-weight:700;font-size:26px;line-height:1.1;margin:0}
+.puhost .role{font-size:13.5px;font-weight:600;color:var(--sky);margin-top:4px}
+.puhost .bio{font-size:15px;font-weight:400;color:var(--slate);line-height:1.6;margin:12px 0 0}
+.puhost .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.puhost .chip{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 13px}
+.puhost .chip svg{width:15px;height:15px;flex:0 0 auto}
+@media(max-width:640px){.puhost .card{flex-direction:column;text-align:center;padding:28px 22px}.puhost .chips{justify-content:center}}
+</style>
+
+<div class="puhost">
+  <span class="eb">Meet your host</span>
+  <div class="card">
+    <img class="photo" src="https://assets.cdn.filesafe.space/Y6tiQHe96XbqVkTeRY8J/media/69f22a9bfc17decc45ec79c9.webp" alt="Mike Moll">
+    <div class="body">
+      <p class="name">Mike Moll</p>
+      <div class="role">Host &middot; Fractional CMO &amp; sales coach</div>
+      <p class="bio">I've led marketing and sales for companies from seven-figure agencies to a $20M brand, and I've been the digital lead for names like Volvo and Patak's. Now I coach service experts to get paid for the value they create. On the show I share what works, in short episodes you can use right away.</p>
+      <div class="chips">
+        <span class="chip"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#22A45B"/><path d="M5.6 10.4l2.7 2.7 6-6.4" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Fractional CMO for a $20M company</span>
+        <span class="chip"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#22A45B"/><path d="M5.6 10.4l2.7 2.7 6-6.4" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Digital lead for Volvo &amp; Patak's</span>
+        <span class="chip"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#22A45B"/><path d="M5.6 10.4l2.7 2.7 6-6.4" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>1,000+ sales calls reviewed</span>
+        <span class="chip"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#22A45B"/><path d="M5.6 10.4l2.7 2.7 6-6.4" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Client rates raised 2&ndash;4&times;</span>
+        <span class="chip"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#22A45B"/><path d="M5.6 10.4l2.7 2.7 6-6.4" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Guest on 65+ podcasts</span>
+        <span class="chip"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#22A45B"/><path d="M5.6 10.4l2.7 2.7 6-6.4" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Guest lecturer at universities</span>
+      </div>
+    </div>
+  </div>
+</div>

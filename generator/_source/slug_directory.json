@@ -1,0 +1,516 @@
+{
+ "1": {
+  "slug": "startup-canada-podcast",
+  "show": "Startup Canada Podcast",
+  "host": "Rick Spence",
+  "themes": [
+   "authority"
+  ]
+ },
+ "2": {
+  "slug": "21st-century-entrepreneurship",
+  "show": "21st Century Entrepreneurship",
+  "host": "Martin Piskoric",
+  "themes": [
+   "authority"
+  ]
+ },
+ "3": {
+  "slug": "business-infrastructure-curing-back-office-blues",
+  "show": "Business Infrastructure - Curing Back Office Blues",
+  "host": "Alicia Butler Pierre",
+  "themes": [
+   "pricing",
+   "sales",
+   "leadgen",
+   "delegation",
+   "authority"
+  ]
+ },
+ "4": {
+  "slug": "be-bonfire-entrepreneurs",
+  "show": "BE-Bonfire Entrepreneurs",
+  "host": "Kajal Khurana",
+  "themes": [
+   "sales",
+   "authority",
+   "mindset"
+  ]
+ },
+ "5": {
+  "slug": "fox-talks-business-podcast",
+  "show": "Fox Talks Business Podcast",
+  "host": "Tanya Fox",
+  "themes": [
+   "pricing",
+   "video",
+   "sales",
+   "leadgen",
+   "authority",
+   "mindset"
+  ]
+ },
+ "6": {
+  "slug": "livin-that-life-digital-nomad-lifestyles",
+  "show": "Livin That Life - Digital Nomad Lifestyles",
+  "host": "Riley Bennett",
+  "themes": [
+   "video",
+   "sales",
+   "leadgen",
+   "authority",
+   "mindset",
+   "remote"
+  ]
+ },
+ "7": {
+  "slug": "digital-nomad-stories",
+  "show": "Digital Nomad Stories",
+  "host": "Anne Classen",
+  "themes": [
+   "sales",
+   "leadgen",
+   "authority",
+   "mindset",
+   "remote"
+  ]
+ },
+ "8": {
+  "slug": "hailey-rowe-podcast",
+  "show": "Hailey Rowe Podcast",
+  "host": "Hailey Rowe",
+  "themes": [
+   "pricing",
+   "sales",
+   "leadgen",
+   "delegation",
+   "niche",
+   "authority",
+   "mindset"
+  ]
+ },
+ "9": {
+  "slug": "sproutworth-predictable-b2b-success",
+  "show": "Sproutworth (Predictable B2B Success)",
+  "host": "Vinay Koshy",
+  "themes": [
+   "pricing",
+   "sales",
+   "leadgen",
+   "delegation",
+   "authority"
+  ]
+ },
+ "10": {
+  "slug": "find-it-with-debbie",
+  "show": "Find It! With Debbie",
+  "host": "Debbie Bettendorf",
+  "themes": [
+   "sales",
+   "leadgen",
+   "authority"
+  ]
+ },
+ "11": {
+  "slug": "the-thoughtful-entrepreneur",
+  "show": "The Thoughtful Entrepreneur",
+  "host": "Josh Elledge of UpMyInfluence",
+  "themes": [
+   "leadgen",
+   "authority"
+  ]
+ },
+ "12": {
+  "slug": "innovabuzz-podcast",
+  "show": "Innovabuzz Podcast",
+  "host": "Jurgen Strauss",
+  "themes": [
+   "pricing",
+   "sales",
+   "leadgen",
+   "delegation",
+   "authority",
+   "mindset"
+  ]
+ },
+ "13": {
+  "slug": "the-maverick-paradox-podcast",
+  "show": "The Maverick Paradox Podcast",
+  "host": "Judith Germain",
+  "themes": [
+   "sales",
+   "leadgen",
+   "authority"
+  ]
+ },
+ "14": {
+  "slug": "win-the-hour-win-the-day",
+  "show": "Win The Hour, Win The Day",
+  "host": "Kris Ward",
+  "themes": [
+   "video",
+   "leadgen",
+   "delegation",
+   "authority"
+  ]
+ },
+ "15": {
+  "slug": "business-mastermind-podcast",
+  "show": "Business Mastermind Podcast",
+  "host": "Gavin Preston",
+  "themes": [
+   "pricing",
+   "sales",
+   "leadgen",
+   "delegation",
+   "authority",
+   "mindset"
+  ]
+ },
+ "16": {
+  "slug": "the-resourceful-agent-radio-show",
+  "show": "The Resourceful Agent Radio Show",
+  "host": "Andy Silvius",
+  "themes": [
+   "leadgen",
+   "delegation",
+   "authority"
+  ]
+ },
+ "17": {
+  "slug": "dogoodwork-podcast",
+  "show": "DoGoodWork Podcast",
+  "host": "Raul Hernandez",
+  "themes": [
+   "pricing",
+   "offer",
+   "sales",
+   "leadgen",
+   "niche",
+   "authority"
+  ]
+ },
+ "18": {
+  "slug": "build-your-network",
+  "show": "Build Your Network",
+  "host": "Travis Chappell",
+  "themes": [
+   "sales",
+   "authority"
+  ]
+ },
+ "19": {
+  "slug": "the-100-mba-show",
+  "show": "The $100 MBA Show",
+  "host": "Omar Zenhom",
+  "themes": [
+   "video",
+   "sales",
+   "leadgen",
+   "authority"
+  ]
+ },
+ "20": {
+  "slug": "sales-genius",
+  "show": "Sales Genius",
+  "host": "Joe Ingram",
+  "themes": [
+   "pricing",
+   "sales",
+   "leadgen",
+   "authority"
+  ]
+ },
+ "21": {
+  "slug": "the-unforget-yourself-show",
+  "show": "The Unforget Yourself Show",
+  "host": "Mark Adams",
+  "themes": [
+   "authority"
+  ]
+ },
+ "22": {
+  "slug": "global-citizen-life-podcast",
+  "show": "Global Citizen Life Podcast",
+  "host": "Sally Pederson",
+  "themes": [
+   "pricing",
+   "sales",
+   "authority",
+   "remote"
+  ]
+ },
+ "23": {
+  "slug": "from-the-frame-up",
+  "show": "From the Frame Up",
+  "host": "Jarred Jones",
+  "themes": [
+   "video",
+   "leadgen",
+   "authority"
+  ]
+ },
+ "24": {
+  "slug": "the-solopreneur-grind-podcast",
+  "show": "The Solopreneur Grind Podcast",
+  "host": "Josh Schachnow",
+  "themes": [
+   "sales",
+   "authority"
+  ]
+ },
+ "25": {
+  "slug": "the-entrepreneurs-tribe-podcast",
+  "show": "The Entrepreneur's Tribe Podcast",
+  "host": "Joel Ong",
+  "themes": [
+   "pricing",
+   "leadgen",
+   "delegation",
+   "niche",
+   "authority",
+   "mindset",
+   "remote"
+  ]
+ },
+ "26": {
+  "slug": "agency-profit-podcast",
+  "show": "Agency Profit Podcast",
+  "host": "Marcel Petitpas",
+  "themes": [
+   "pricing",
+   "sales",
+   "leadgen",
+   "delegation",
+   "authority"
+  ]
+ },
+ "27": {
+  "slug": "sage-thought-leadership-podcast",
+  "show": "Sage Thought Leadership Podcast",
+  "host": "Ed Kless",
+  "themes": [
+   "offer",
+   "sales",
+   "leadgen",
+   "delegation",
+   "authority"
+  ]
+ },
+ "28": {
+  "slug": "the-more-life-podcast",
+  "show": "The More Life Podcast",
+  "host": "Bart Anestin",
+  "themes": [
+   "leadgen",
+   "authority",
+   "mindset"
+  ]
+ },
+ "29": {
+  "slug": "the-course-creation-podcast",
+  "show": "The Course Creation Podcast",
+  "host": "Yas and Nat",
+  "themes": [
+   "authority"
+  ]
+ },
+ "30": {
+  "slug": "you-can-overcome-anything-podcast-show",
+  "show": "You Can Overcome Anything! Podcast Show",
+  "host": "Cesar R. Espino",
+  "themes": [
+   "pricing",
+   "sales",
+   "authority",
+   "mindset"
+  ]
+ },
+ "31": {
+  "slug": "step-it-up-entrepreneur",
+  "show": "Step It Up Entrepreneur",
+  "host": "Tomas Keenan",
+  "themes": [
+   "pricing",
+   "sales",
+   "delegation",
+   "authority",
+   "mindset"
+  ]
+ },
+ "32": {
+  "slug": "the-sales-evangelist",
+  "show": "The Sales Evangelist",
+  "host": "Donald C. Kelly",
+  "themes": [
+   "pricing",
+   "sales",
+   "leadgen",
+   "authority"
+  ]
+ },
+ "33": {
+  "slug": "work-in-programming",
+  "show": "Work in Programming",
+  "host": "Matthew Weeks",
+  "themes": [
+   "sales",
+   "delegation",
+   "authority",
+   "remote"
+  ]
+ },
+ "34": {
+  "slug": "the-story-engine",
+  "show": "The Story Engine",
+  "host": "Kyle Gray",
+  "themes": [
+   "authority"
+  ]
+ },
+ "35": {
+  "slug": "coach-up-with-kaneshi",
+  "show": "Coach Up with Kaneshi",
+  "host": "Kaneshi Hart",
+  "themes": [
+   "pricing",
+   "sales",
+   "leadgen",
+   "delegation",
+   "authority",
+   "mindset"
+  ]
+ },
+ "36": {
+  "slug": "misfit-entrepreneur",
+  "show": "Misfit Entrepreneur",
+  "host": "Dave Lukas",
+  "themes": [
+   "pricing",
+   "sales",
+   "authority"
+  ]
+ },
+ "37": {
+  "slug": "that-entrepreneur-life",
+  "show": "That Entrepreneur Life",
+  "host": "Andrew Lees and Clint McPherson",
+  "themes": [
+   "delegation",
+   "authority"
+  ]
+ },
+ "38": {
+  "slug": "the-10-minute-entrepreneur",
+  "show": "The 10 Minute Entrepreneur",
+  "host": "Sean Castrina",
+  "themes": [
+   "pricing",
+   "sales",
+   "authority"
+  ]
+ },
+ "39": {
+  "slug": "the-agency-spark",
+  "show": "The Agency Spark",
+  "host": "Sara Nay",
+  "themes": [
+   "video",
+   "sales"
+  ]
+ },
+ "40": {
+  "slug": "the-cannoli-coach",
+  "show": "The Cannoli Coach",
+  "host": "Kimberly Hambrick",
+  "themes": [
+   "leadgen",
+   "delegation"
+  ]
+ },
+ "41": {
+  "slug": "the-peak-performance-greatness-show",
+  "show": "The Peak Performance Greatness Show",
+  "host": "Christopher Dedeyan",
+  "themes": [
+   "leadgen",
+   "authority",
+   "mindset"
+  ]
+ },
+ "42": {
+  "slug": "the-authors-unite-show",
+  "show": "The Authors Unite Show",
+  "host": "Tyler Wagner",
+  "themes": [
+   "authority",
+   "mindset"
+  ]
+ },
+ "43": {
+  "slug": "the-aspiring-solopreneur-lifestarr",
+  "show": "The Aspiring Solopreneur (LifeStarr)",
+  "host": "Joe Rando",
+  "themes": [
+   "authority"
+  ]
+ },
+ "44": {
+  "slug": "keepin-it-real-wcaramel-as-we-say-100",
+  "show": "Keepin It Real w/Caramel \"As We Say 100\"",
+  "host": "Caramel Lucas",
+  "themes": [
+   "authority"
+  ]
+ },
+ "46": {
+  "slug": "tribe-of-leaders",
+  "show": "Tribe of Leaders",
+  "host": "Emi Kirschner",
+  "themes": [
+   "leadgen",
+   "delegation",
+   "authority"
+  ]
+ },
+ "47": {
+  "slug": "take-back-time",
+  "show": "Take Back Time",
+  "host": "Penny Zenker",
+  "themes": [
+   "pricing",
+   "sales",
+   "leadgen",
+   "delegation",
+   "authority"
+  ]
+ },
+ "49": {
+  "slug": "work-home-rockstar",
+  "show": "Work @ Home RockStar",
+  "host": "Tim Melanson",
+  "themes": [
+   "sales",
+   "authority",
+   "remote"
+  ]
+ },
+ "50": {
+  "slug": "6-figure-rebels-podcast",
+  "show": "6 Figure Rebels Podcast",
+  "host": "Jaime Atkinson",
+  "themes": [
+   "sales",
+   "delegation",
+   "authority"
+  ]
+ },
+ "51": {
+  "slug": "the-brand-called-you-tbcy",
+  "show": "The Brand Called You (tbcy)",
+  "host": "Frits Bussemaker, Ashutosh Garg",
+  "themes": [
+   "authority"
+  ]
+ }
+}

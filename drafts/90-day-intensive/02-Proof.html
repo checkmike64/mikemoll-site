@@ -1,0 +1,82 @@
+<!--
+  CURATED PROOF SECTION — one complete block.
+  Paste the <style> + <div class="mmproof"> into ONE Custom HTML element, high on the page.
+  Two links to wire:
+    1. Each card's "See full review" -> replace href="#" with that review's URL (Google/LinkedIn/YouTube).
+    2. "See all reviews" -> points to #reviews. Drop <div id="reviews" style="scroll-margin-top:100px"></div>
+       at the top of your full review-widget section at the bottom (same trick as #apply).
+  Replace each [Company name] with the client's real company.
+-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap');
+html{scroll-behavior:smooth}
+.mmproof{
+  --ink:#27323D;--slate:#4E6F8A;--slate2:#607179;--sky:#38B6FF;--skyd:#1E9BE6;--navy:#3D5A72;--navybg:#EDF2F6;--terra:#C9773A;--line:#E7EBEF;
+  font-family:'Poppins',system-ui,sans-serif;color:var(--ink);max-width:1040px;margin:0 auto;padding:56px 28px;text-align:center;box-sizing:border-box;
+}
+.mmproof *{box-sizing:border-box}
+.mmproof .eb{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--slate2);margin-bottom:12px}
+.mmproof h2{font-weight:900;font-size:34px;line-height:1.08;letter-spacing:-.02em;margin:0 auto 34px;max-width:640px}
+
+.mmproof .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:left}
+.mmproof .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px 22px;display:flex;flex-direction:column}
+.mmproof .top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.mmproof .av{flex:0 0 auto;width:46px;height:46px;border-radius:50%;color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center}
+.mmproof .c1 .av{background:var(--sky)} .mmproof .c2 .av{background:var(--navy)} .mmproof .c3 .av{background:var(--terra)}
+.mmproof .who{font-size:15px;font-weight:800;line-height:1.1}
+.mmproof .co{font-size:13px;font-weight:700;margin-top:2px}
+.mmproof .c1 .co{color:var(--skyd)} .mmproof .c2 .co{color:var(--navy)} .mmproof .c3 .co{color:var(--terra)}
+.mmproof .stars{font-size:11px;letter-spacing:2px;color:var(--terra);margin-top:3px}
+.mmproof .big{font-weight:900;font-size:22px;letter-spacing:-.02em;margin-bottom:7px}
+.mmproof .c1 .big{color:var(--skyd)} .mmproof .c2 .big{color:var(--navy)} .mmproof .c3 .big{color:var(--terra)}
+.mmproof .q{font-size:13.5px;font-weight:500;font-style:italic;color:var(--slate);line-height:1.5}
+.mmproof .full{margin-top:16px;font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--slate2);text-decoration:none}
+.mmproof .full:hover{color:var(--skyd);text-decoration:underline}
+
+.mmproof .all{display:inline-block;margin-top:28px;font-size:14px;font-weight:600;color:var(--slate2);text-decoration:none;border-bottom:1px solid transparent}
+.mmproof .all:hover{color:var(--slate);border-bottom-color:var(--line)}
+
+@media(max-width:680px){.mmproof{padding:44px 20px}.mmproof h2{font-size:27px}.mmproof .cards{grid-template-columns:1fr}}
+.mmproof h1,.mmproof h2,.mmproof h3{font-family:'League Spartan',sans-serif;font-weight:700;letter-spacing:normal}
+.mmproof .big,.mmproof .who{font-family:'League Spartan',sans-serif}
+.mmproof .hl{background:linear-gradient(transparent 55%,#FAE3CC 55%);-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 .06em;margin:0 -.06em}
+</style>
+
+<div class="mmproof">
+  <div class="eb">What clients say</div>
+  <h2>Results Speak <span class="hl">Louder Than Promises</span>.</h2>
+
+  <div class="cards">
+    <div class="card c1">
+      <div class="top">
+        <div class="av">D</div>
+        <div><div class="who">Daniella</div><div class="co">Findable Digital Marketing</div><div class="stars">★★★★★</div></div>
+      </div>
+      <div class="big">$30–40K/mo recurring</div>
+      <div class="q">"I used to be terrified of sales. Now we're at $30–40K a month in recurring revenue, and I actually enjoy it."</div>
+      <a class="full" href="#">See full review →</a>
+    </div>
+
+    <div class="card c2">
+      <div class="top">
+        <div class="av">J</div>
+        <div><div class="who">Jenni</div><div class="co">Chill Creative Co</div><div class="stars">★★★★★</div></div>
+      </div>
+      <div class="big">Rates quadrupled</div>
+      <div class="q">"My rates have quadrupled. Last month I did a $16K month without it feeling like a stretch."</div>
+      <a class="full" href="#">See full review →</a>
+    </div>
+
+    <div class="card c3">
+      <div class="top">
+        <div class="av">S</div>
+        <div><div class="who">Sean</div><div class="co">Keepers Digital Marketing</div><div class="stars">★★★★★</div></div>
+      </div>
+      <div class="big">A few multiples more</div>
+      <div class="q">"I'm making a few multiples more than when I came to Mike, working the same hours if not less."</div>
+      <a class="full" href="#">See full review →</a>
+    </div>
+  </div>
+
+  <a class="all" href="#reviews">See all reviews ↓</a>
+</div>

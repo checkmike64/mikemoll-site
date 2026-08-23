@@ -1,0 +1,51 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap');
+html{scroll-behavior:smooth}
+.puhero{
+  --ink:#27323D;--slate:#4E6F8A;--slate2:#607179;--sky:#38B6FF;--skyd:#1E9BE6;--skybg:#EAF6FF;
+  --navy:#3D5A72;--navybg:#EDF2F6;--terra:#C9773A;--terrabg:#FBF0E6;--line:#E7EBEF;
+  font-family:'Poppins',system-ui,sans-serif;color:var(--ink);max-width:900px;margin:0 auto;padding:64px 28px;text-align:center;box-sizing:border-box;
+}
+.puhero *{box-sizing:border-box}
+.puhero .eb{display:inline-flex;align-items:center;gap:8px;font-family:'Poppins',sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);background:var(--navybg);border-radius:999px;padding:8px 16px}
+.puhero .eb i{width:6px;height:6px;border-radius:50%;background:var(--sky);display:inline-block}
+.puhero h1{font-family:'League Spartan',sans-serif;font-weight:700;font-size:48px;line-height:1.07;letter-spacing:normal;margin:22px auto 0;max-width:720px}
+.puhero .hl{background:linear-gradient(transparent 55%,#FAE3CC 55%);-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 .06em;margin:0 -.06em}
+.puhero .sub{font-size:18px;font-weight:400;color:var(--slate);line-height:1.55;max-width:600px;margin:18px auto 0}
+
+.puhero .slbl{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate2);margin-top:30px}
+.puhero .subs{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:14px}
+.puhero .sbtn{display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:999px;padding:11px 20px;transition:border-color .15s ease,box-shadow .15s ease}
+.puhero .sbtn:hover{border-color:var(--sky);box-shadow:0 4px 14px -8px rgba(56,182,255,.6)}
+.puhero .sbtn svg{width:17px;height:17px;flex:0 0 auto}
+.puhero .apply{display:inline-block;margin-top:26px;font-size:14px;font-weight:600;color:var(--skyd);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s ease}
+.puhero .apply:hover{border-bottom-color:var(--skyd)}
+
+@media(max-width:600px){.puhero{padding:48px 20px}.puhero h1{font-size:33px}.puhero .sub{font-size:16px}}
+</style>
+
+<div class="puhero">
+  <span class="eb"><i></i>The Undervalued Expert</span>
+
+  <h1>A Podcast For <span class="hl">Growing Your Service Business</span>.</h1>
+
+  <div class="sub">Short, practical episodes for experts who undercharge. Live coaching sessions, expert interviews, and trainings you can use the same day.</div>
+
+  <div class="slbl">Subscribe on</div>
+  <div class="subs">
+    <a class="sbtn" href="https://podcasts.apple.com/ca/podcast/the-profitable-solopreneur/id1798563683" target="_blank" rel="noopener" aria-label="Listen on Apple Podcasts">
+      <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.4" r="2.3"/><path d="M8.4 16.5c.4-2 1.6-3 3.6-3s3.2 1 3.6 3c.2 1-.5 1.6-1.3 1.6H9.7c-.8 0-1.5-.6-1.3-1.6z"/></svg>
+      Apple Podcasts
+    </a>
+    <a class="sbtn" href="https://open.spotify.com/show/2BpB6zzFSXhimB6fFqH3wj" target="_blank" rel="noopener" aria-label="Listen on Spotify">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M7.5 9.6c3-.9 6.4-.6 9 1"/><path d="M8 12.6c2.4-.7 5-.4 7.1.8"/><path d="M8.6 15.4c1.8-.5 3.8-.3 5.4.6"/></svg>
+      Spotify
+    </a>
+    <a class="sbtn" href="https://www.youtube.com/@mikemollco" target="_blank" rel="noopener" aria-label="Watch on YouTube">
+      <svg viewBox="0 0 24 24" fill="none"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5" stroke="currentColor" stroke-width="1.7"/><path d="M10.5 9.2l4.2 2.8-4.2 2.8z" fill="currentColor"/></svg>
+      YouTube
+    </a>
+  </div>
+
+  <a class="apply" href="#application">Want to be on the show? Apply to come on the podcast &rarr;</a>
+</div>

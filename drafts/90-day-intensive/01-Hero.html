@@ -1,0 +1,87 @@
+<!--
+  30-30-30 HERO — one complete block.
+  Paste everything below (the <style> and the <div class="mmhero">) into ONE
+  Custom HTML / Code element. All spacing is handled inside the block.
+  If you already have an Apply button in the hero, delete the <a class="cta">...</a>
+  line so you don't show two.
+-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap');
+html{scroll-behavior:smooth}
+.mmhero{
+  --ink:#27323D;--slate:#4E6F8A;--slate2:#607179;--sky:#38B6FF;--skyd:#1E9BE6;
+  --skybg:#EAF6FF;--navy:#3D5A72;--navybg:#EDF2F6;--terra:#C9773A;--terrabg:#FBF0E6;--line:#E7EBEF;
+  font-family:'Poppins',system-ui,sans-serif;color:var(--ink);
+  max-width:1040px;margin:0 auto;padding:60px 28px;text-align:center;box-sizing:border-box;
+}
+.mmhero *{box-sizing:border-box}
+
+.mmhero .eb{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--slate);background:var(--navybg);border-radius:999px;padding:8px 16px}
+.mmhero .eb i{width:6px;height:6px;border-radius:50%;background:var(--sky);display:inline-block}
+
+.mmhero h1{font-weight:900;font-size:46px;line-height:1.05;letter-spacing:-.02em;margin:22px auto 0;max-width:820px}
+.mmhero .sub{font-size:18px;font-weight:500;color:var(--slate);line-height:1.5;max-width:640px;margin:20px auto 0}
+.mmhero .desc{font-size:13.5px;font-weight:600;color:var(--slate2);margin:16px auto 0}
+
+.mmhero .cta{display:inline-flex;align-items:center;gap:12px;background:var(--sky);color:#fff;font-weight:800;font-size:18px;border-radius:999px;padding:15px 30px 15px 15px;margin-top:30px;text-decoration:none}
+.mmhero .cta .ic{width:34px;height:34px;border-radius:50%;background:#fff;color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:16px}
+
+.mmhero .proof{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:24px}
+.mmhero .pchip{font-size:13px;font-weight:600;background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 16px}
+.mmhero .pchip b{font-weight:900;color:var(--skyd)}
+.mmhero .pchip.t b{color:var(--terra)}
+
+.mmhero .coach{display:flex;justify-content:center;margin-top:14px}
+.mmhero .coachpill{display:inline-flex;align-items:center;gap:12px;max-width:660px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:10px 20px 10px 10px;font-size:13px;font-weight:600;color:var(--slate);line-height:1.4;text-align:left}
+.mmhero .coachpill .av{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;font-size:12px;letter-spacing:.02em;display:flex;align-items:center;justify-content:center}
+.mmhero .coachpill b{color:var(--ink);font-weight:800}
+
+.mmhero .tiles-wrap{margin-top:44px;border-top:1px solid var(--line);padding-top:34px}
+.mmhero .tiles-eb{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--slate2);margin-bottom:18px}
+.mmhero .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.mmhero .tile{border:1px solid var(--line);border-radius:18px;padding:24px 20px}
+.mmhero .tile.b1{background:var(--skybg)} .mmhero .tile.b2{background:var(--navybg)} .mmhero .tile.b3{background:var(--terrabg)}
+.mmhero .tile .k{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin-bottom:8px}
+.mmhero .tile .fig{font-weight:900;font-size:48px;line-height:1;letter-spacing:-.03em}
+.mmhero .b1 .fig{color:var(--skyd)} .mmhero .b2 .fig{color:var(--navy)} .mmhero .b3 .fig{color:var(--terra)}
+.mmhero .tile .tag{font-size:13px;font-weight:600;margin-top:8px}
+.mmhero .floor{margin-top:18px;font-size:12.5px;font-weight:700;color:var(--slate2)}
+.mmhero .floor em{color:var(--skyd);font-style:normal}
+
+@media(max-width:680px){.mmhero{padding:44px 20px}.mmhero h1{font-size:32px}.mmhero .sub{font-size:16px}}
+@media(max-width:560px){.mmhero .tiles{grid-template-columns:1fr}}
+.mmhero h1,.mmhero h2,.mmhero h3{font-family:'League Spartan',sans-serif;font-weight:700;letter-spacing:normal}
+.mmhero .tile .fig{font-family:'League Spartan',sans-serif}
+.mmhero .cta{font-weight:600}
+.mmhero .hl{background:linear-gradient(transparent 55%,#FAE3CC 55%);-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 .06em;margin:0 -.06em}
+</style>
+
+<div class="mmhero">
+  <span class="eb"><i></i>The Compression Method &nbsp;·&nbsp; $2.5M+ added for clients</span>
+
+  <h1>Get Paid For The <span class="hl">Value Your Work Creates</span>.</h1>
+
+  <div class="sub">You already know you're not getting paid for the value you create. In 90 days we move the three things keeping you there: what you charge, how you close, and the hours it takes to deliver.</div>
+
+  <div class="desc">A 90-day program for service owners stuck under $20,000 per month.</div>
+
+  <a class="cta" href="#apply"><span class="ic">&#8594;</span>Apply to Work With Me</a>
+
+  <div class="proof">
+    <span class="pchip t">Tyler tripled his retainer: <b>$1,500 &rarr; $4,500</b></span>
+    <span class="pchip">Sean: <b>$16K &rarr; $30K</b> a month, fewer hours</span>
+  </div>
+
+  <div class="coach">
+    <span class="coachpill"><span class="av">MM</span><span><b>Taught by</b> a fractional CMO ($20M) who's led digital for Volvo &amp; Patak's and reviewed 1,000+ sales calls.</span></span>
+  </div>
+
+  <div class="tiles-wrap">
+    <div class="tiles-eb">The minimum improvement within 90 days</div>
+    <div class="tiles">
+      <div class="tile b1"><div class="k">Price</div><div class="fig">+30%</div><div class="tag">Get paid for the value you create</div></div>
+      <div class="tile b2"><div class="k">Close rate</div><div class="fig">+30%</div><div class="tag">Win more of the calls you take</div></div>
+      <div class="tile b3"><div class="k">Delivery hours</div><div class="fig">&minus;30%</div><div class="tag">Get your week back</div></div>
+    </div>
+  </div>
+</div>

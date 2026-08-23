@@ -1,0 +1,28 @@
+{
+  "ref": 33,
+  "post_title": "Remote Working and Managing a Team",
+  "meta_description": "Mike Moll joins Work in Programming with Matthew Weeks to talk about remote work, managing a distributed team, and building systems that scale.",
+  "date": "",
+  "length_min": "",
+  "tldr": [
+    "Remote teams run on written process, not on hoping people remember what you said.",
+    "Record Looms for anything you do more than once, then bucket the work so it can be handed off.",
+    "Hire against the most painful bucket first instead of looking for one person who does everything."
+  ],
+  "intro_html": "<p>Work in Programming, hosted by Matthew Weeks, looks at what it is like working on a product team. So this conversation stayed on the ground: how you run a distributed team and the systems that keep it from falling apart.</p><p>Managing people you do not sit next to is a different skill. The teams that do it well lean hard on written process and clear ownership.</p>",
+  "sections": [
+    {
+      "h2": "Systems beat memory on a remote team",
+      "html": "<p>When everyone is remote, the stuff living in your head is invisible to everyone else. So it has to come out of your head and into a process. I record Looms for anything I do more than once. A short video of the actual work beats a page of instructions almost every time.</p><p>Then I bucket the tasks by type. That gives everyone a clear map of what they own and where the edges are, which is what remote work needs to run smoothly.</p>"
+    },
+    {
+      "h2": "Handing off work without the drop",
+      "html": "<p>Once the process is recorded, you can hand it off. Hire against the most painful bucket first. Do not go looking for one person who can do everything, because that person does not exist and you will wait forever for them.</p><p>The payoff is that you stop being the single point of failure. The work keeps moving when you step away. I talked through rebuilding a team on <a href=\"/blog/downsizing-and-rebuilding-a-team-alicia-butler-pierre\">business infrastructure and curing back office blues</a>, and the systems angle on <a href=\"/blog/sproutworth-predictable-b2b-success\">Sproutworth</a>.</p>"
+    }
+  ],
+  "about_blurb_html": "<p>Work in Programming, hosted by Matthew Weeks, is a show about life on a tech product team. He talks with developers, product managers, and engineering managers about their day-to-day work, team practices, and what makes a team run well.</p>",
+  "internal_links": [
+    "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "sproutworth-predictable-b2b-success"
+  ]
+}

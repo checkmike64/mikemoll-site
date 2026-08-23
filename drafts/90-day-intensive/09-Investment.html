@@ -1,0 +1,76 @@
+<!--
+  INVESTMENT + "NOT READY?" SOFT CTA — one complete block.
+  Application-based: the primary CTA is Apply (#apply), NOT a purchase.
+  The soft CTA "Message Mike" opens WhatsApp chat — confirm the number below.
+  WhatsApp link: https://wa.me/16466208082  (from tel:+1 646-620-8082 on the live page)
+  Paste the <style> + <div class="mminvest"> into ONE Custom HTML element.
+-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap');
+html{scroll-behavior:smooth}
+.mminvest{
+  --ink:#27323D;--slate:#4E6F8A;--slate2:#607179;--sky:#38B6FF;--skyd:#1E9BE6;--skybg:#EAF6FF;
+  --navy:#3D5A72;--navybg:#EDF2F6;--terra:#C9773A;--terrabg:#FBF0E6;--line:#E7EBEF;
+  font-family:'Poppins',system-ui,sans-serif;color:var(--ink);max-width:720px;margin:0 auto;padding:60px 28px;text-align:center;box-sizing:border-box;
+}
+.mminvest *{box-sizing:border-box}
+.mminvest .eb{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--slate2);margin-bottom:20px}
+
+.mminvest .payback{background:var(--navybg);border:1px solid #DCE6EE;border-radius:22px;padding:34px 30px}
+.mminvest .plabel{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin-bottom:8px}
+.mminvest .bignum{font-weight:900;font-size:62px;line-height:1;letter-spacing:-.03em;color:var(--terra)}
+.mminvest .bigcap{font-size:14.5px;font-weight:500;color:var(--slate);margin-top:10px;line-height:1.45;max-width:420px;margin-left:auto;margin-right:auto}
+.mminvest .rule{height:1px;background:#DCE6EE;margin:26px auto;max-width:280px}
+.mminvest .price{font-size:20px;font-weight:600;color:var(--ink)}
+.mminvest .price b{font-weight:900}
+.mminvest .paysub{font-size:13.5px;font-weight:500;color:var(--slate);margin-top:8px}
+
+.mminvest .plan{font-size:13.5px;font-weight:500;color:var(--slate2);line-height:1.5;margin-top:20px;max-width:520px;margin-left:auto;margin-right:auto}
+.mminvest .disc{font-size:13px;font-weight:600;color:var(--slate2);margin-top:16px}
+
+.mminvest .cta{display:inline-flex;align-items:center;gap:12px;background:var(--sky);color:#fff;font-weight:800;font-size:18px;border-radius:999px;padding:15px 30px 15px 15px;margin-top:22px;text-decoration:none;transition:background .15s ease}
+.mminvest .cta:hover{background:var(--skyd)}
+.mminvest .cta .ic{width:34px;height:34px;border-radius:50%;background:#fff;color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:16px}
+
+.mminvest .day91{font-size:12.5px;font-weight:500;color:var(--slate2);line-height:1.5;margin-top:24px;max-width:520px;margin-left:auto;margin-right:auto}
+
+/* --- Not ready? soft CTA --- */
+.mminvest .soft{margin-top:46px;padding-top:42px;border-top:1px solid var(--line)}
+.mminvest .soft h3{font-size:24px;font-weight:900;letter-spacing:-.01em;margin:0;line-height:1.15}
+.mminvest .soft p{font-size:15.5px;font-weight:500;color:var(--slate);line-height:1.55;margin:12px auto 0;max-width:460px}
+.mminvest .msg{display:inline-flex;align-items:center;gap:9px;margin-top:22px;background:#fff;color:var(--skyd);font-family:inherit;font-weight:800;font-size:15.5px;border:1.6px solid var(--sky);border-radius:999px;padding:12px 26px;text-decoration:none;transition:background .15s ease,color .15s ease}
+.mminvest .msg:hover{background:var(--sky);color:#fff}
+.mminvest .msg svg{width:16px;height:16px}
+
+@media(max-width:680px){.mminvest{padding:44px 20px}.mminvest .bignum{font-size:48px}.mminvest .payback{padding:28px 22px}.mminvest .soft h3{font-size:21px}}
+.mminvest h3{font-family:'League Spartan',sans-serif;font-weight:700;letter-spacing:normal}
+.mminvest .bignum,.mminvest .price{font-family:'League Spartan',sans-serif}
+.mminvest .cta,.mminvest .msg{font-weight:600}
+</style>
+
+<div class="mminvest">
+  <div class="eb">Investment</div>
+
+  <div class="payback">
+    <div class="plabel">What one client's shift is worth</div>
+    <div class="bignum">+$14,000<span style="font-size:26px;font-weight:800">/mo</span></div>
+    <div class="bigcap">That's Sean, at the same hours he was already working.</div>
+    <div class="rule"></div>
+    <div class="price">The 90-day program is <b>$5,000</b>.</div>
+  </div>
+
+  <div class="plan">Prefer to split into two payments of $2,700, 30 days apart.</div>
+
+  <div class="disc">There is a capacity of 10 active members.</div>
+
+  <a class="cta" href="#apply"><span class="ic">&#8594;</span>Apply to Work With Me</a>
+
+  <div class="soft">
+    <h3>Not ready for the group yet?</h3>
+    <p>Send me a voice note with a few questions and we can explore if this group is a good fit.</p>
+    <a class="msg" href="https://wa.me/16466208082">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"/><path d="M13 6l6 6-6 6"/></svg>
+      Message Mike
+    </a>
+  </div>
+</div>

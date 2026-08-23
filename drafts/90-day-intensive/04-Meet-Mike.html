@@ -1,0 +1,68 @@
+<!--
+  MEET MIKE SECTION — one complete block (lean version).
+  Paste the <style> + <div class="mmabout"> into ONE Custom HTML element.
+  PHOTO: replace <div class="photo">...</div> with <img class="photo" src="YOUR_PHOTO_URL" alt="Mike Moll">
+-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap');
+.mmabout{
+  --ink:#27323D;--slate:#4E6F8A;--slate2:#607179;--sky:#38B6FF;--skyd:#1E9BE6;--skybg:#EAF6FF;
+  --navy:#3D5A72;--navybg:#EDF2F6;--terra:#C9773A;--terrabg:#FBF0E6;--line:#E7EBEF;
+  font-family:'Poppins',system-ui,sans-serif;color:var(--ink);max-width:1000px;margin:0 auto;padding:60px 28px;box-sizing:border-box;
+}
+.mmabout *{box-sizing:border-box}
+.mmabout .grid{display:grid;grid-template-columns:300px 1fr;gap:38px;align-items:start}
+.mmabout .photo{width:100%;aspect-ratio:4/5;border-radius:22px;border:1px solid var(--line);background:linear-gradient(180deg,var(--skybg),var(--navybg));object-fit:cover;display:flex;align-items:center;justify-content:center;color:var(--slate2);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.mmabout .eb{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--slate2);margin-bottom:10px}
+.mmabout h2{font-weight:900;font-size:32px;line-height:1.08;letter-spacing:-.02em;margin:0 0 16px}
+.mmabout .intro{font-size:15.5px;font-weight:500;color:var(--slate);line-height:1.6;margin:0}
+.mmabout .quote{margin-top:20px;border-left:3px solid var(--sky);background:var(--skybg);border-radius:0 12px 12px 0;padding:16px 20px}
+.mmabout .quote .q{font-size:17px;font-weight:700;font-style:italic;color:var(--ink);line-height:1.4}
+.mmabout .quote .cap{font-size:12px;font-weight:600;color:var(--slate2);margin-top:8px}
+
+.mmabout .creds{margin-top:36px}
+.mmabout .credhead{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--slate2);margin-bottom:16px;text-align:center}
+.mmabout .credgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px 30px;max-width:720px;margin:0 auto}
+.mmabout .cred{display:flex;align-items:flex-start;gap:11px;font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.4}
+.mmabout .cred svg{flex:0 0 auto;margin-top:1px}
+.mmabout .recog{text-align:center;margin-top:24px;font-size:13px;font-weight:600;color:var(--slate2)}
+.mmabout .recog b{color:var(--slate)}
+
+@media(max-width:760px){
+  .mmabout{padding:44px 20px}
+  .mmabout .grid{grid-template-columns:1fr;gap:22px}
+  .mmabout .photo{max-width:220px;margin:0 auto;aspect-ratio:1/1}
+  .mmabout h2{font-size:27px}
+  .mmabout .credgrid{grid-template-columns:1fr}
+}
+.mmabout h1,.mmabout h2,.mmabout h3{font-family:'League Spartan',sans-serif;font-weight:700;letter-spacing:normal}
+</style>
+
+<div class="mmabout">
+  <div class="grid">
+    <img class="photo" src="https://assets.cdn.filesafe.space/Y6tiQHe96XbqVkTeRY8J/media/69f22a9bfc17decc45ec79c9.webp" alt="Mike Moll">
+    <div class="body">
+      <div class="eb">Meet Mike</div>
+      <h2>I've been on your side of this.</h2>
+      <p class="intro">I've run service businesses since 2013. I undercharged for years and made everything more complicated than it needed to be, nearly going under twice, before I learned to rebuild an offer for profit. Since 2019, that's the shift I make for other owners.</p>
+      <div class="quote">
+        <div class="q">"Why charge $2,000 for work that creates $100,000?"</div>
+        <div class="cap">The question that changed how I price. Corktown, 2017.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="creds">
+    <div class="credhead">Why I can find your constraint fast</div>
+    <div class="credgrid">
+      <div class="cred"><svg viewBox="0 0 20 20" width="19" height="19" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#22A45B"/><path d="M5.6 10.4l2.7 2.7 6-6.4" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>12 years running service businesses</div>
+      <div class="cred"><svg viewBox="0 0 20 20" width="19" height="19" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#22A45B"/><path d="M5.6 10.4l2.7 2.7 6-6.4" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Led go-to-market for a seven-figure agency</div>
+      <div class="cred"><svg viewBox="0 0 20 20" width="19" height="19" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#22A45B"/><path d="M5.6 10.4l2.7 2.7 6-6.4" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Fractional CMO for a $20M company</div>
+      <div class="cred"><svg viewBox="0 0 20 20" width="19" height="19" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#22A45B"/><path d="M5.6 10.4l2.7 2.7 6-6.4" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Digital lead for Volvo &amp; Patak's</div>
+      <div class="cred"><svg viewBox="0 0 20 20" width="19" height="19" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#22A45B"/><path d="M5.6 10.4l2.7 2.7 6-6.4" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Built the sales process for $100K+ media packages</div>
+      <div class="cred"><svg viewBox="0 0 20 20" width="19" height="19" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#22A45B"/><path d="M5.6 10.4l2.7 2.7 6-6.4" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>1,000+ sales calls reviewed</div>
+      <div class="cred"><svg viewBox="0 0 20 20" width="19" height="19" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#22A45B"/><path d="M5.6 10.4l2.7 2.7 6-6.4" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Client rates raised 2–4×, core accounts kept</div>
+    </div>
+    <div class="recog">Also spoken on <b>65+ podcasts</b> and guest lectured at universities.</div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap');
+.wbben{
+  --ink:#27323D;--slate:#4E6F8A;--sky:#38B6FF;--skyd:#1E9BE6;--skybg:#EAF6FF;--navy:#3D5A72;--navybg:#EDF2F6;--terra:#C9773A;--terrabg:#FBF0E6;--line:#E7EBEF;
+  font-family:'Poppins',system-ui,sans-serif;color:var(--ink);max-width:960px;margin:0 auto;padding:64px 28px;text-align:center;box-sizing:border-box;
+}
+.wbben *{box-sizing:border-box}
+.wbben h2{font-family:'League Spartan',sans-serif;font-weight:700;letter-spacing:normal;font-size:34px;line-height:1.12;max-width:620px;margin:0 auto 34px}
+.wbben .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:left}
+.wbben .card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 26px;border-top:3px solid var(--line)}
+.wbben .card.c1{border-top-color:var(--sky)}.wbben .card.c2{border-top-color:var(--navy)}.wbben .card.c3{border-top-color:var(--terra)}
+.wbben .ic{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.wbben .c1 .ic{background:var(--skybg);color:var(--skyd)}.wbben .c2 .ic{background:var(--navybg);color:var(--navy)}.wbben .c3 .ic{background:var(--terrabg);color:var(--terra)}
+.wbben .ic svg{width:24px;height:24px}
+.wbben .card h3{font-family:'League Spartan',sans-serif;font-weight:700;font-size:19px;margin:0 0 9px}
+.wbben .card p{font-size:14.5px;font-weight:400;color:var(--slate);line-height:1.55;margin:0}
+@media(max-width:760px){.wbben{padding:48px 20px}.wbben h2{font-size:27px}.wbben .cards{grid-template-columns:1fr}}
+</style>
+
+<div class="wbben">
+  <h2>Why one good interview beats a month of posting.</h2>
+  <div class="cards">
+    <div class="card c1">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.9 7.1 18.2l.9-5.5-4-3.9L9.5 8z"/></svg></div>
+      <h3>Authority transfer</h3>
+      <p>The host spent years earning their audience's trust. In one sentence, some of it becomes yours. On other channels that takes years.</p>
+    </div>
+    <div class="card c2">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"/><path d="M6 11a6 6 0 0 0 12 0M12 18v3"/></svg></div>
+      <h3>Undivided attention</h3>
+      <p>Listeners finish 80% of an episode. That's 30 to 60 minutes of full attention, not a three-second scroll. A post gets glanced at. An interview is a conversation.</p>
+    </div>
+    <div class="card c3">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V9l8-5 8 5v11M4 20h16M9 20v-6h6v6"/></svg></div>
+      <h3>Permanence</h3>
+      <p>Episodes keep working for years. They rank in search and bring people to you long after you've moved on. Every appearance is a brick in your wall of credibility.</p>
+    </div>
+  </div>
+</div>

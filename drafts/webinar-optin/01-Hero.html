@@ -1,0 +1,36 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap');
+html{scroll-behavior:smooth}
+.wbhero{
+  --ink:#27323D;--slate:#4E6F8A;--slate2:#607179;--sky:#38B6FF;--skyd:#1E9BE6;--skybg:#EAF6FF;
+  --navy:#3D5A72;--navybg:#EDF2F6;--terra:#C9773A;--line:#E7EBEF;
+  font-family:'Poppins',system-ui,sans-serif;color:var(--ink);max-width:960px;margin:0 auto;padding:64px 28px;text-align:center;box-sizing:border-box;
+}
+.wbhero *{box-sizing:border-box}
+.wbhero h1{font-family:'League Spartan',sans-serif;font-weight:700;font-size:50px;line-height:1.06;letter-spacing:normal;margin:0 auto;max-width:760px}
+.wbhero .hl{background:linear-gradient(transparent 55%,#FAE3CC 55%);-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 .06em;margin:0 -.06em}
+.wbhero .sub{font-size:18px;font-weight:400;color:var(--slate);max-width:560px;margin:16px auto 0;line-height:1.5}
+.wbhero .when{display:inline-flex;align-items:center;gap:9px;margin-top:24px;font-size:14px;font-weight:600;background:var(--skybg);border:1px solid #CDE9FB;border-radius:999px;padding:9px 18px}
+.wbhero .when svg{width:16px;height:16px;color:var(--skyd)}
+.wbhero .ctarow{margin-top:20px}
+.wbhero .cta{display:inline-flex;align-items:center;gap:11px;background:var(--sky);color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;border-radius:999px;padding:15px 32px;text-decoration:none;transition:background .15s ease}
+.wbhero .cta:hover{background:var(--skyd)}
+.wbhero .cta svg{width:16px;height:16px}
+.wbhero .free{margin-top:12px;font-size:13px;font-weight:600;color:var(--slate2)}
+.wbhero .host{display:inline-flex;align-items:center;gap:12px;margin-top:30px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px 18px 10px 10px;font-size:13px;font-weight:500;color:var(--slate);text-align:left;max-width:520px;line-height:1.4}
+.wbhero .host .av{flex:0 0 auto;width:38px;height:38px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+.wbhero .host b{color:var(--ink);font-weight:700}
+.wbhero .heroimg{margin:32px auto 0;max-width:600px}
+.wbhero .heroimg img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center;border-radius:18px;display:block;border:1px solid var(--line)}
+@media(max-width:600px){.wbhero{padding:48px 20px}.wbhero h1{font-size:34px}.wbhero .sub{font-size:16px}}
+</style>
+
+<div class="wbhero">
+  <h1>Get your first (or next) podcast interview and turn it into <span class="hl">authority, audience, and revenue</span>.</h1>
+  <div class="sub">The one marketing channel that still compounds, no big following required.</div>
+  <div class="when"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="16" rx="3"/><path d="M3.5 9.5h17M8 3.5v3M16 3.5v3"/></svg>Live Wednesday, August 12 at 4:00 PM ET</div>
+  <div class="ctarow"><a class="cta" href="#register">Save My Seat <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"/><path d="M13 6l6 6-6 6"/></svg></a></div>
+  <div class="free">Free to join. Seats are limited.</div>
+  <div class="host"><span class="av">MM</span><span><b>Hosted by Mike Moll</b> &middot; 65+ shows guested, 120 episodes hosted.</span></div>
+  <div class="heroimg"><img src="https://assets.cdn.filesafe.space/Y6tiQHe96XbqVkTeRY8J/media/69f229bdfab44d4020a60851.jpg" alt="Mike Moll recording a podcast interview"></div>
+</div>

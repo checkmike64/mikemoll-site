@@ -1,0 +1,37 @@
+<!--
+  THE CLOSE — final invitation + CTA, one complete block.
+  Goes near the bottom, after the Client Voices widget / Investment.
+  Button links to #apply (your native application section).
+  Paste the <style> + <div class="mmclose"> into ONE Custom HTML element.
+-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap');
+.mmclose{
+  --ink:#27323D;--slate:#4E6F8A;--slate2:#607179;--sky:#38B6FF;--skyd:#1E9BE6;--line:#E7EBEF;
+  font-family:'Poppins',system-ui,sans-serif;color:var(--ink);max-width:1000px;margin:0 auto;padding:66px 28px;box-sizing:border-box;text-align:center;
+}
+.mmclose *{box-sizing:border-box}
+.mmclose .wrap{max-width:600px;margin:0 auto}
+.mmclose .eb{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--slate2);margin-bottom:14px}
+.mmclose h2{font-weight:900;font-size:38px;line-height:1.08;letter-spacing:-.02em;margin:0}
+.mmclose p{font-size:17px;font-weight:500;color:var(--slate);line-height:1.6;margin:18px auto 0;max-width:560px}
+.mmclose .cta{display:inline-flex;align-items:center;gap:9px;margin-top:30px;background:var(--sky);color:#fff;font-family:inherit;font-size:16px;font-weight:800;text-decoration:none;padding:16px 34px;border-radius:999px;transition:background .15s ease}
+.mmclose .cta:hover{background:var(--skyd)}
+.mmclose .cta svg{width:17px;height:17px}
+.mmclose .micro{margin-top:16px;font-size:13.5px;font-weight:600;color:var(--slate2)}
+@media(max-width:560px){.mmclose{padding:50px 20px}.mmclose h2{font-size:29px}.mmclose p{font-size:16px}}
+.mmclose h1,.mmclose h2,.mmclose h3{font-family:'League Spartan',sans-serif;font-weight:700;letter-spacing:normal}
+.mmclose .cta{font-weight:600}
+</style>
+
+<div class="mmclose">
+  <div class="wrap">
+    <div class="eb">The next step</div>
+    <h2>You've already built something good.</h2>
+    <p>That part's done. What's left is the pricing, the close, and the hours, and those are the three things we fix. It runs ninety days, in a cohort of ten, by application. I read every one.</p>
+    <a class="cta" href="#apply">Apply to Work With Me
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"/><path d="M13 6l6 6-6 6"/></svg>
+    </a>
+    <div class="micro">A cohort of ten. When the ten fill, the next one starts.</div>
+  </div>
+</div>

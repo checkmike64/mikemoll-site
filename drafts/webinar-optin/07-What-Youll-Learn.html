@@ -1,0 +1,32 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap');
+html{scroll-behavior:smooth}
+.wblearn{
+  --ink:#27323D;--slate:#4E6F8A;--sky:#38B6FF;--skyd:#1E9BE6;--line:#E7EBEF;
+  font-family:'Poppins',system-ui,sans-serif;color:var(--ink);max-width:960px;margin:0 auto;padding:64px 28px;text-align:center;box-sizing:border-box;
+}
+.wblearn *{box-sizing:border-box}
+.wblearn h2{font-family:'League Spartan',sans-serif;font-weight:700;letter-spacing:normal;font-size:34px;line-height:1.12;max-width:600px;margin:0 auto}
+.wblearn .lead{font-size:16.5px;font-weight:500;color:var(--slate);max-width:560px;margin:16px auto 28px;line-height:1.5}
+.wblearn .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:left}
+.wblearn .step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 24px}
+.wblearn .step .num{font-family:'League Spartan',sans-serif;font-weight:800;font-size:14px;color:var(--sky)}
+.wblearn .step h3{font-family:'League Spartan',sans-serif;font-weight:700;font-size:17px;margin:8px 0 7px}
+.wblearn .step p{font-size:14px;font-weight:400;color:var(--slate);line-height:1.5;margin:0}
+.wblearn .ctarow{margin-top:26px}
+.wblearn .cta{display:inline-flex;align-items:center;gap:11px;background:var(--sky);color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;border-radius:999px;padding:15px 32px;text-decoration:none;transition:background .15s ease}
+.wblearn .cta:hover{background:var(--skyd)}
+.wblearn .cta svg{width:16px;height:16px}
+@media(max-width:760px){.wblearn{padding:48px 20px}.wblearn h2{font-size:27px}.wblearn .steps{grid-template-columns:1fr}}
+</style>
+
+<div class="wblearn">
+  <h2>What You're Going to Learn</h2>
+  <p class="lead">You'll leave with a clear plan to land your next booking. In the workshop, you'll learn how to:</p>
+  <div class="steps">
+    <div class="step"><div class="num">01</div><h3>Make your story sellable</h3><p>Frame your experience so the right host says yes.</p></div>
+    <div class="step"><div class="num">02</div><h3>Build assets that get a yes</h3><p>The bio, speaker sheet, and titles a host needs.</p></div>
+    <div class="step"><div class="num">03</div><h3>Get the outreach right</h3><p>Stand out in a full inbox and win the host over.</p></div>
+  </div>
+  <div class="ctarow"><a class="cta" href="#register">Save My Seat <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"/><path d="M13 6l6 6-6 6"/></svg></a></div>
+</div>

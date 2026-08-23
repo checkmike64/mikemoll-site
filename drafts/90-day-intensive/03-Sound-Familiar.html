@@ -1,0 +1,113 @@
+<!--
+  SOUND FAMILIAR? — the single problem/agitation section.
+  This MERGES the old "Is this you?" block and the loop/constraints — use this ONE
+  section and delete the separate "Is this you?" (mmprob) block from the page.
+  Goes AFTER the hero + proof and BEFORE "Meet Mike".
+  Paste the <style> + <div class="mmreal"> into ONE Custom HTML element.
+-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap');
+.mmreal{
+  --ink:#27323D;--slate:#4E6F8A;--slate2:#607179;--sky:#38B6FF;--skyd:#1E9BE6;--skybg:#EAF6FF;
+  --navy:#3D5A72;--navybg:#EDF2F6;--terra:#C9773A;--terrabg:#FBF0E6;--line:#E7EBEF;
+  font-family:'Poppins',system-ui,sans-serif;color:var(--ink);max-width:960px;margin:0 auto;padding:60px 28px;box-sizing:border-box;
+}
+.mmreal *{box-sizing:border-box}
+.mmreal .head{text-align:center;max-width:660px;margin:0 auto}
+.mmreal .eb{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--slate2);margin-bottom:12px}
+.mmreal h2{font-weight:900;font-size:37px;line-height:1.07;letter-spacing:-.02em;margin:0}
+.mmreal .intro{font-size:16.5px;font-weight:500;color:var(--slate);line-height:1.6;margin-top:18px}
+
+/* the loop */
+.mmreal .loop{background:var(--navybg);border:1px solid #DCE6EE;border-radius:20px;padding:24px 26px;margin:34px auto 0;max-width:860px;text-align:center}
+.mmreal .lh{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-bottom:16px}
+.mmreal .lh svg{color:var(--terra)}
+.mmreal .steps{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:9px}
+.mmreal .st{background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:13.5px;font-weight:700;color:var(--ink)}
+.mmreal .ar{color:var(--terra);font-weight:800;font-size:16px}
+.mmreal .rep{margin-top:15px;font-size:13.5px;font-style:italic;color:var(--slate2)}
+
+.mmreal .bridge{text-align:center;font-size:15px;font-weight:600;color:var(--ink);max-width:620px;margin:38px auto 0;line-height:1.5}
+
+/* deep-dive rows */
+.mmreal .rows{margin-top:22px;display:flex;flex-direction:column;gap:16px}
+.mmreal .row{display:grid;grid-template-columns:220px 1fr;gap:30px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:18px;border-left:4px solid var(--line);padding:28px 30px}
+.mmreal .r1{border-left-color:var(--sky)} .mmreal .r2{border-left-color:var(--navy)} .mmreal .r3{border-left-color:var(--terra)}
+.mmreal .cn{font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--slate2)}
+.mmreal .name{font-size:23px;font-weight:900;letter-spacing:-.01em;margin:6px 0 12px;line-height:1.1}
+.mmreal .pill{display:inline-block;font-size:12.5px;font-weight:800;border-radius:999px;padding:6px 13px}
+.mmreal .r1 .pill{background:var(--skybg);color:var(--skyd)} .mmreal .r2 .pill{background:var(--navybg);color:var(--navy)} .mmreal .r3 .pill{background:var(--terrabg);color:var(--terra)}
+.mmreal .row p{font-size:15px;font-weight:500;color:var(--slate);line-height:1.65;margin:0}
+
+.mmreal .close{text-align:center;max-width:640px;margin:36px auto 0;font-size:17px;font-weight:500;color:var(--ink);line-height:1.55}
+.mmreal .close b{font-weight:800}
+
+@media(max-width:760px){
+  .mmreal{padding:44px 20px}
+  .mmreal h2{font-size:28px}
+  .mmreal .row{grid-template-columns:1fr;gap:14px;padding:24px 22px}
+}
+.mmreal h1,.mmreal h2,.mmreal h3{font-family:'League Spartan',sans-serif;font-weight:700;letter-spacing:normal}
+.mmreal .name{font-family:'League Spartan',sans-serif}
+</style>
+
+<div class="mmreal">
+  <div class="head">
+    <div class="eb">Sound familiar?</div>
+    <h2>You make good money, but it's wearing you out.</h2>
+    <p class="intro">You're good at what you do, and your clients get results because of it. But most of that work can only be done by you, so the whole business runs on you and never slows down. Here's the cycle:</p>
+  </div>
+
+  <div class="loop">
+    <div class="lh">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 12a8.5 8.5 0 0 1 14.5-6l2 2"/><path d="M20 4v4h-4"/><path d="M20.5 12a8.5 8.5 0 0 1-14.5 6l-2-2"/><path d="M4 20v-4h4"/></svg>
+      The loop you're caught in
+    </div>
+    <div class="steps">
+      <span class="st">Price low to win it</span>
+      <span class="ar">&rarr;</span>
+      <span class="st">Say yes to keep moving</span>
+      <span class="ar">&rarr;</span>
+      <span class="st">Do all the work yourself</span>
+      <span class="ar">&rarr;</span>
+      <span class="st">No time to build or market</span>
+    </div>
+    <div class="rep">You have no time to work on the business because you're drowning in it.</div>
+  </div>
+
+  <div class="bridge">It shows up in three places.</div>
+
+  <div class="rows">
+    <div class="row r1">
+      <div class="lc">
+        <div class="cn">Constraint 1</div>
+        <div class="name">Offer &amp; Belief</div>
+      </div>
+      <div class="rc">
+        <p>You write the number, then you talk yourself down and send a smaller one. You price on what the client can afford, not on the value you create, because you can't afford to lose the deal. You've meant to raise your rates for a while, but you don't fully believe the higher number yet, so it never comes out of your mouth.</p>
+      </div>
+    </div>
+
+    <div class="row r2">
+      <div class="lc">
+        <div class="cn">Constraint 2</div>
+        <div class="name">Sales</div>
+      </div>
+      <div class="rc">
+        <p>You don't have a sales process, so a good call ends and you can't tell if it's a yes. You couldn't say what made it land, so you can't do it on purpose next time. When the silence runs long, you drop the price before they push back. Playing small shows, so even the clients who sign walk away a little unsure they picked right.</p>
+      </div>
+    </div>
+
+    <div class="row r3">
+      <div class="lc">
+        <div class="cn">Constraint 3</div>
+        <div class="name">Delivery</div>
+      </div>
+      <div class="rc">
+        <p>The scope drifts a little each week, and you take the unpaid extra because saying no is harder. It all runs through you. You hand work to a contractor and it comes back wrong, because there's no process to give them. You've thought about hiring and backed off, so the systems never get built. You wanted freedom, and instead the business runs on you.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="close">These three feed each other, so working on all of them at once gets you nowhere. One of them is the bottleneck right now, and <b>that's the one to fix first.</b></div>
+</div>

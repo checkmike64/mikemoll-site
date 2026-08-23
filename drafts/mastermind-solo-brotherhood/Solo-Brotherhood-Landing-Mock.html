@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Solo Brotherhood — Landing Mock v4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0c0e;--bg-2:#111114;--panel:#151519;--line:#26262c;
+    --cream:#efe7d8;--cream-dim:#c8c0b2;--muted:#8c867a;
+    --gold:#c9a44e;--gold-soft:#d8bd77;--maxw:1060px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--cream);font-family:"Hanken Grotesk",system-ui,sans-serif;line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;letter-spacing:.005em}
+  h1,h2,h3,.eyebrow,.logo,.stat .num,.chip .t,.k{font-family:"Space Grotesk",system-ui,sans-serif}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  section{padding:70px 0;border-top:1px solid var(--line)}
+  .eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:20px;display:block}
+  h2{font-size:clamp(24px,3.2vw,36px);line-height:1.14;font-weight:600;letter-spacing:-.01em;margin-bottom:22px}
+  h3{font-size:18px;font-weight:600;color:var(--cream);margin-bottom:6px;letter-spacing:-.01em}
+  p{color:var(--cream-dim);margin-bottom:14px}
+  p:last-child{margin-bottom:0}
+  strong{color:var(--cream);font-weight:600}
+  em{color:var(--gold-soft);font-style:italic}
+  .narrow{max-width:720px}
+
+  .review-note{background:#161006;border-bottom:1px dashed var(--gold)}
+  .review-note .wrap{padding:9px 28px;font-family:"Space Grotesk";font-size:12px;letter-spacing:.02em;color:var(--gold-soft)}
+  .review-note b{color:var(--gold);letter-spacing:.14em;font-size:10.5px;text-transform:uppercase;margin-right:8px}
+
+  .topbar{position:sticky;top:0;z-index:20;background:rgba(12,12,14,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding:15px 28px}
+  .logo{font-weight:600;letter-spacing:.02em;font-size:15px}
+  .logo .dot{color:var(--gold)}
+  .nav-cta{font-family:"Space Grotesk";font-size:13px;font-weight:600;letter-spacing:.04em;background:var(--gold);color:#151007;padding:9px 18px;border-radius:2px;text-decoration:none;transition:.2s}
+  .nav-cta:hover{background:var(--gold-soft)}
+
+  .hero{padding:88px 0 46px;border-top:none;position:relative;overflow:hidden}
+  .hero:before{content:"";position:absolute;top:-30%;right:-12%;width:62%;height:130%;background:radial-gradient(ellipse at center,rgba(201,164,78,.10),transparent 62%);pointer-events:none}
+  .hero h1{position:relative;font-size:clamp(34px,5vw,54px);line-height:1.07;font-weight:600;letter-spacing:-.025em;max-width:19ch;margin-bottom:22px}
+  .hero h1 .accent{color:var(--gold)}
+  .hero .sub{font-size:19px;color:var(--cream);max-width:54ch;margin-bottom:26px}
+  .cred{position:relative;padding-left:16px;border-left:2px solid var(--gold);font-style:italic;color:var(--cream-dim);font-size:16px;max-width:58ch;margin-bottom:30px}
+  .hero-cta{position:relative;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+  .btn{font-family:"Space Grotesk";font-weight:600;font-size:15px;letter-spacing:.02em;text-decoration:none;display:inline-block;padding:15px 32px;border-radius:2px;transition:.2s}
+  .btn-primary{background:var(--gold);color:#151007}
+  .btn-primary:hover{background:var(--gold-soft)}
+  .price-tag{font-family:"Space Grotesk";font-size:14px;color:var(--muted)}
+
+  .statband{background:var(--bg-2);padding:26px 0}
+  .statband .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0;text-align:center}
+  .stat{padding:6px 14px;border-right:1px solid var(--line)}
+  .stat:last-child{border-right:none}
+  .stat .num{font-size:27px;font-weight:600;color:var(--gold);letter-spacing:-.01em;line-height:1.05}
+  .stat .lab{font-size:12.5px;color:var(--muted);margin-top:9px;letter-spacing:.01em;line-height:1.4}
+  @media(max-width:640px){.statband .wrap{grid-template-columns:repeat(2,1fr);gap:24px 0}.stat:nth-child(2){border-right:none}}
+
+  .beats{display:grid;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:5px;overflow:hidden;margin-top:6px}
+  .beat{background:var(--panel);padding:24px 28px;display:grid;grid-template-columns:44px 1fr;gap:18px;align-items:start}
+  .beat .bn{font-family:"Space Grotesk";font-size:15px;font-weight:700;color:var(--gold);border:1px solid var(--gold);border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center}
+  .beat p{margin:0;color:var(--cream-dim);font-size:16.5px}
+  .beat.punch{background:var(--bg-2)}
+  .beat.punch p{color:var(--cream)}
+
+  .lede-p{font-size:19px;color:var(--cream)}
+
+  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);border-radius:5px;overflow:hidden}
+  .icell{background:var(--panel);padding:26px 22px}
+  .icell .ic{width:34px;height:34px;border-radius:7px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .icell .ic svg{width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .icell h3{font-size:16px;margin-bottom:5px}
+  .icell p{font-size:14.5px;margin:0}
+  @media(max-width:760px){.igrid{grid-template-columns:1fr}}
+
+  .vs{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:5px;overflow:hidden;margin-top:6px}
+  .vs .col{padding:26px 26px}
+  .vs .them{background:var(--panel)}
+  .vs .us{background:linear-gradient(180deg,rgba(201,164,78,.08),var(--bg-2))}
+  .vs .h{font-family:"Space Grotesk";font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}
+  .vs .them .h{color:var(--muted)}
+  .vs .us .h{color:var(--gold)}
+  .vs ul{list-style:none;display:grid;gap:11px}
+  .vs li{padding-left:26px;position:relative;font-size:15px}
+  .vs .them li{color:var(--muted)}
+  .vs .them li:before{content:"–";position:absolute;left:4px;color:var(--muted)}
+  .vs .us li{color:var(--cream)}
+  .vs .us li:before{content:"→";position:absolute;left:0;color:var(--gold)}
+  @media(max-width:600px){.vs{grid-template-columns:1fr}}
+
+  .not-list{list-style:none;display:grid;gap:12px;max-width:780px}
+  .not-list li{padding-left:32px;position:relative;color:var(--cream-dim)}
+  .not-list li:before{content:"✕";position:absolute;left:0;top:0;color:var(--gold);font-weight:600}
+  .not-list li strong{color:var(--cream)}
+
+  .fit-lede{font-size:20px;color:var(--cream);max-width:60ch}
+  .fit-lede strong{color:var(--gold-soft)}
+
+  .prose-vet{max-width:640px;font-size:17.5px;color:var(--cream-dim)}
+  .protect{margin-top:18px;font-family:"Space Grotesk";font-size:18px;color:var(--cream);font-weight:500}
+  .credit{margin-top:12px;font-size:13.5px;color:var(--muted);font-style:italic}
+
+  .about{background:var(--bg-2)}
+  .about .wrap{display:grid;grid-template-columns:170px 1fr;gap:38px;align-items:center}
+  .portrait{width:170px;height:200px;border-radius:6px;border:1px solid var(--line);background:linear-gradient(160deg,#1c1c20,#111);display:flex;align-items:center;justify-content:center;color:var(--muted);font-family:"Space Grotesk";font-size:11px;letter-spacing:.1em;text-align:center;padding:14px}
+  .earned-line{display:flex;gap:22px;flex-wrap:wrap;margin-top:16px;font-family:"Space Grotesk";font-size:13px;color:var(--gold-soft)}
+  .earned-line span{border-left:1px solid var(--line);padding-left:14px}
+  @media(max-width:640px){.about .wrap{grid-template-columns:1fr}.portrait{width:130px;height:150px}}
+
+  .commit{display:grid;grid-template-columns:repeat(2,1fr);gap:16px 26px;max-width:860px}
+  .commit .item{padding-left:18px;border-left:2px solid var(--gold);font-size:16px;color:var(--cream-dim)}
+  .commit .item strong{color:var(--cream)}
+  @media(max-width:600px){.commit{grid-template-columns:1fr}}
+
+  .ph{border:1.5px dashed var(--gold);border-radius:6px;background:repeating-linear-gradient(-45deg,rgba(201,164,78,.05),rgba(201,164,78,.05) 12px,transparent 12px,transparent 24px);padding:30px 28px;position:relative}
+  .ph .ph-tag{position:absolute;top:-11px;left:20px;background:var(--bg);color:var(--gold);font-family:"Space Grotesk";font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:2px 12px;border:1px solid var(--gold);border-radius:2px}
+  .ph p{color:var(--cream-dim);font-size:14.5px}
+  .ghost-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+  .ghost{border:1px solid var(--line);border-radius:5px;padding:22px;background:var(--bg-2)}
+  .ghost .bar{height:8px;border-radius:3px;background:var(--line);margin-bottom:10px}
+  .ghost .bar.w1{width:92%}.ghost .bar.w2{width:76%}.ghost .bar.w3{width:58%}
+  .ghost .who{margin-top:14px;font-family:"Space Grotesk";font-size:12.5px;color:var(--gold);letter-spacing:.03em}
+  @media(max-width:720px){.ghost-row{grid-template-columns:1fr}}
+
+  .faq details{border-bottom:1px solid var(--line);padding:20px 0}
+  .faq summary{font-family:"Space Grotesk";font-weight:600;font-size:17px;color:var(--cream);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;align-items:center}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary:after{content:"+";color:var(--gold);font-size:21px;font-weight:400;transition:.2s}
+  .faq details[open] summary:after{transform:rotate(45deg)}
+  .faq .a{padding-top:12px;max-width:760px}
+
+  .apply{background:linear-gradient(180deg,var(--bg),#151109);text-align:center}
+  .apply .wrap{max-width:760px}
+  .flow{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:30px 0 26px;text-align:left}
+  .step{flex:1;min-width:200px;border:1px solid var(--line);border-radius:5px;padding:20px;background:var(--bg-2);position:relative}
+  .step .num{font-family:"Space Grotesk";color:var(--gold);font-weight:700;font-size:13px;letter-spacing:.1em}
+  .step .h{font-family:"Space Grotesk";color:var(--cream);font-weight:600;margin:5px 0}
+  .step p{font-size:14px;margin:0}
+  .step:not(:last-child):after{content:"→";position:absolute;right:-13px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:16px;z-index:2}
+  @media(max-width:680px){.step:not(:last-child):after{display:none}}
+  .apply-cta{display:flex;flex-direction:column;gap:14px;align-items:center;margin-top:8px}
+  .form-note{font-size:11px;color:var(--muted);font-family:"Space Grotesk";letter-spacing:.05em}
+  .wa-link{font-size:14px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+  .wa-link:hover{color:var(--gold)}
+
+  footer{border-top:1px solid var(--line);padding:36px 0;text-align:center}
+  footer p{font-style:italic;color:var(--muted);font-size:15px}
+</style>
+</head>
+<body>
+
+<div class="review-note"><div class="wrap"><b>Internal · Name TBD</b> "The Solo Brotherhood" is a working title (holdover from the men's-mastermind version). Open given the AI shift. Remove this bar before publish.</div></div>
+
+<div class="topbar"><div class="wrap">
+  <span class="logo">THE SOLO BROTHERHOOD<span class="dot">.</span></span>
+  <a href="#apply" class="nav-cta">Apply for a Seat</a>
+</div></div>
+
+<!-- HERO -->
+<header class="hero"><div class="wrap">
+  <h1>A hand-picked room of established founders who <span class="accent">use AI to run leaner</span>.</h1>
+  <p class="sub">Men only. People with real businesses and real clients, using AI to streamline their operations and cut the busywork. Not beginners. Not another course.</p>
+  <p class="cred">I've been hosting founder dinners and running private rooms since 2018, in seven different countries. I interview and pick every member myself.</p>
+  <div class="hero-cta">
+    <a href="#apply" class="btn btn-primary">Apply for a Seat</a>
+    <span class="price-tag">$85/month, billed quarterly</span>
+  </div>
+</div></header>
+
+<!-- CREDIBILITY STAT BAND -->
+<div class="statband"><div class="wrap">
+  <div class="stat"><div class="num">Since 2018</div><div class="lab">bringing founders together</div></div>
+  <div class="stat"><div class="num">7</div><div class="lab">countries, dinners hosted</div></div>
+  <div class="stat"><div class="num">1:1</div><div class="lab">every member interviewed by me</div></div>
+  <div class="stat"><div class="num">Give &gt; take</div><div class="lab">the room's only real rule</div></div>
+</div></div>
+
+<!-- WHY NOW -->
+<section id="why"><div class="wrap narrow">
+  <span class="eyebrow">Why now</span>
+  <div class="beats">
+    <div class="beat"><div class="bn">1</div><p>The models are on everyone's desk now. Knowing a tactic first stopped being the edge. The edge is who you're comparing notes with.</p></div>
+    <div class="beat"><div class="bn">2</div><p>When you're the most advanced operator in every room you're in, it gets quiet. You're making big calls with nobody around to check your read.</p></div>
+    <div class="beat punch"><div class="bn">3</div><p>Here, someone's already built the automation you were about to lose a weekend to, and they'll hand it over. You skip the dead ends they already paid for.</p></div>
+  </div>
+  <p style="margin-top:24px;font-size:18px;color:var(--cream)">Most AI groups are thousands of beginners learning the basics. This isn't that. Everyone here already runs their business on this stuff, so the conversation starts way ahead.</p>
+</div></section>
+
+<!-- WHAT THIS IS -->
+<section id="what"><div class="wrap narrow">
+  <span class="eyebrow">What this is</span>
+  <h2>A board of advisors who don't take equity or a salary.</h2>
+  <p class="lede-p">You stop building alone. Most meetings are somebody's real problem: a price they're scared to raise, a hire they can't get right, an offer that won't close. The first question in the room usually isn't "what would you do." It's "what did you build or automate so you never have to touch this again."</p>
+</div></section>
+
+<!-- WHO THIS IS FOR -->
+<section id="fit"><div class="wrap narrow">
+  <span class="eyebrow">Who this is for</span>
+  <p class="fit-lede"><strong>Established operators.</strong> You've run the same core offer for at least a year, you've got a stable base of clients, and you use AI to run the business better: streamlining operations, building out processes, wiring up your own internal tools.</p>
+  <p style="margin-top:16px;max-width:60ch">You don't have to run an AI company. Your product can be anything. What matters is that you reach for a model before you reach for busywork.</p>
+</div></section>
+
+<!-- INCLUDED -->
+<section id="included"><div class="wrap">
+  <span class="eyebrow">What's included</span>
+  <div class="igrid">
+    <div class="icell"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 3z"/></svg></div><h3>Two calls a month</h3><p>75 minutes. Bring a problem, leave with a decision. Or sit in and take notes.</p></div>
+    <div class="icell"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21 11.5a8 8 0 0 1-11.6 7.1L4 20l1.4-5A8 8 0 1 1 21 11.5z"/></svg></div><h3>A WhatsApp thread</h3><p>Intros, quick "here's what I'd do," and the odd "I built this, take it." Low noise.</p></div>
+    <div class="icell"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><h3>Travel and meetups</h3><p>We track where everyone's headed so we can grab dinner when paths cross.</p></div>
+    <div class="icell"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div><h3>The member black book</h3><p>My personal list of operators, builders, and closers. Warm intros only.</p></div>
+    <div class="icell"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></div><h3>The shared vault</h3><p>A collection that grows as members drop in the tools, prompts, and builds they're using. It's ours, built over time.</p></div>
+    <div class="icell"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M17 11l2 2 4-4"/></svg></div><h3>A small, vetted room</h3><p>Established founders who give more than they take. That's the point of it.</p></div>
+  </div>
+</div></section>
+
+<!-- VS COMPARISON -->
+<section id="vs"><div class="wrap narrow">
+  <span class="eyebrow">Not the beginner AI groups</span>
+  <div class="vs">
+    <div class="col them"><div class="h">The free and cheap AI groups</div><ul>
+      <li>Thousands of beginners learning the tools</li>
+      <li>Prompt packs and workflow dumps</li>
+      <li>Anyone with a credit card gets in</li>
+      <li>You're the most advanced person there</li>
+    </ul></div>
+    <div class="col us"><div class="h">This room</div><ul>
+      <li>Established operators already running on AI</li>
+      <li>Real builds handed over, member to member</li>
+      <li>Every seat interviewed and hand-picked</li>
+      <li>The conversation starts way ahead</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<!-- WHAT THIS IS NOT -->
+<section id="not"><div class="wrap">
+  <span class="eyebrow">What this is not</span>
+  <ul class="not-list">
+    <li><strong>Not group coaching.</strong> No weekly check-ins, no sprints, no share-your-wins circle.</li>
+    <li><strong>Not a course.</strong> Nobody's teaching you AI 101. You're past that.</li>
+    <li><strong>Not a noisy Skool feed.</strong> No polls, no badges, no posting streaks.</li>
+    <li><strong>Not a big room.</strong> It stays small and vetted on purpose.</li>
+  </ul>
+</div></section>
+
+<!-- WHO GETS IN -->
+<section id="getsin"><div class="wrap narrow">
+  <span class="eyebrow">Who gets in</span>
+  <h2>I interview and pick every person myself.</h2>
+  <p class="prose-vet">I'm looking for operators, not dabblers. People who give more than they take. High-integrity guys who can be honest, take a joke, and would be good company at dinner in a random city.</p>
+  <p class="protect">My job is simple. Keep the wrong people out and protect the room.</p>
+  <p class="credit">(Credit to Kevin Nations for that line.)</p>
+</div></section>
+
+<!-- ABOUT MIKE -->
+<section class="about" id="about"><div class="wrap">
+  <div class="portrait">PHOTO<br>Mike Moll</div>
+  <div>
+    <span class="eyebrow">Who runs the room</span>
+    <p>I've been running service businesses since 2013. I built a marketing agency to 700K a year and nearly went bankrupt twice because I made it too complicated. Since 2019 I've helped other founders skip the mistakes I made the hard way.</p>
+    <p>Since 2018 I've been bringing founders together: dinners in seven different countries, small private groups, and for the last stretch, this room. What I'm good at is the room itself. I keep the quality high, keep the noise down, and make the introductions that move you forward.</p>
+    <div class="earned-line"><span>Agency to $700K/yr</span><span>Fractional CMO</span><span>Founder rooms since 2018</span></div>
+  </div>
+</div></section>
+
+<!-- TESTIMONIALS PLACEHOLDER -->
+<section id="proof"><div class="wrap">
+  <span class="eyebrow">What members say</span>
+  <div class="ph">
+    <span class="ph-tag">Placeholder — testimonials coming</span>
+    <p>Proof database is being cleaned up. Slot 3 to 5 short, real quotes: a decision the room helped make, an intro that paid off, or a build a member handed over. In their words. A few, not a wall.</p>
+    <div class="ghost-row">
+      <div class="ghost"><div class="bar w1"></div><div class="bar w2"></div><div class="bar w3"></div><div class="who">— Member, decision made</div></div>
+      <div class="ghost"><div class="bar w1"></div><div class="bar w2"></div><div class="bar w3"></div><div class="who">— Member, build handed over</div></div>
+      <div class="ghost"><div class="bar w1"></div><div class="bar w2"></div><div class="bar w3"></div><div class="who">— Member, intro that paid off</div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- COMMITMENTS -->
+<section id="commit"><div class="wrap">
+  <span class="eyebrow">My commitments</span>
+  <div class="commit">
+    <div class="item"><strong>Tight, useful calls.</strong> Direct questions, no rambling.</div>
+    <div class="item"><strong>Your time protected.</strong> High signal, no performative updates.</div>
+    <div class="item"><strong>Introductions made,</strong> inside the room and out.</div>
+    <div class="item"><strong>Anyone who drains the group</strong> gets removed.</div>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section id="faq"><div class="wrap narrow">
+  <span class="eyebrow">FAQ</span>
+  <div class="faq">
+    <details open><summary>Do I need to be building an AI product?</summary><div class="a"><p>No. Your business can be anything. What matters is that you use AI to run it better: operations, processes, your own internal tools.</p></div></details>
+    <details><summary>How technical do I need to be?</summary><div class="a"><p>Not much. Plenty of members aren't engineers. They've taught themselves to wire up automations and tools with AI. You have to be someone who does it, not someone who means to.</p></div></details>
+    <details><summary>What if I can't make every call?</summary><div class="a"><p>That's fine. Nothing's mandatory. The room's built for busy people.</p></div></details>
+    <details><summary>Why men only?</summary><div class="a"><div class="ph" style="padding:22px 24px"><span class="ph-tag">Placeholder — Mike to add</span><p>One honest line from Mike goes here.</p></div></div></details>
+    <details><summary>How do you vet people?</summary><div class="a"><p>We talk. You come in through me or an existing member. If it's not a fit, I'll tell you straight, and it's nothing personal.</p></div></details>
+    <details><summary>What's it cost?</summary><div class="a"><p>85 a month, billed quarterly. It's priced low on purpose, so money isn't the point. The bar is.</p></div></details>
+    <details><summary>Can I bring people in?</summary><div class="a"><p>Yeah, once you're in. Same bar as everyone else.</p></div></details>
+  </div>
+</div></section>
+
+<!-- APPLY -->
+<section class="apply" id="apply"><div class="wrap">
+  <span class="eyebrow" style="display:inline-block">Apply</span>
+  <h2>You don't buy your way in. You apply, and if it's a fit, we talk.</h2>
+  <div class="flow">
+    <div class="step"><div class="num">01</div><div class="h">A short application</div><p>A couple of questions about your business and how you use AI.</p></div>
+    <div class="step"><div class="num">02</div><div class="h">I read it</div><p>If it clears the bar, we book a call.</p></div>
+    <div class="step"><div class="num">03</div><div class="h">We talk</div><p>And we both decide.</p></div>
+  </div>
+  <div class="apply-cta">
+    <a href="#" class="btn btn-primary">Apply for a Seat</a>
+    <span class="form-note">FORM TO BE BUILT</span>
+    <a href="#" class="wa-link">Not sure yet? Send me a message on WhatsApp</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <p>You've already built something real. This is about who's in the room while you keep going.</p>
+</div></footer>
+
+</body>
+</html>

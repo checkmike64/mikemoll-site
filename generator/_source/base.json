@@ -1,0 +1,4219 @@
+{
+ "1": {
+  "ref": 1,
+  "slug": "startup-canada-podcast",
+  "show": "Startup Canada Podcast",
+  "host": "Rick Spence",
+  "status": "Recorded",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts125/v4/61/b5/c6/61b5c6a6-41b7-6b0e-4f45-2de0bce4b40f/mza_13120557433559616196.png/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/us/podcast/startup-canada-podcast/id1037685040"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Startup Canada Podcast",
+    "url": "https://podcasts.apple.com/us/podcast/startup-canada-podcast/id1037685040"
+   }
+  ],
+  "themes": [
+   "offer",
+   "sales"
+  ],
+  "notion_description": "Mike Moll guest appearance on Startup Canada Podcast with host Rick Spence.",
+  "show_notes": "",
+  "guest_criteria": "",
+  "audience": "",
+  "episode_link": "",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "marketing-a-live-learning-cohort-mark-latimer",
+    "title": "marketing a live learning cohort",
+    "themes": [
+     "leadgen",
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "21st-century-entrepreneurship",
+    "title": "21st century entrepreneurship",
+    "themes": [
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "dogoodwork-podcast",
+    "title": "dogoodwork podcast",
+    "themes": [
+     "pricing",
+     "offer",
+     "sales",
+     "leadgen",
+     "niche"
+    ]
+   },
+   {
+    "slug": "sage-thought-leadership-podcast",
+    "title": "sage thought leadership podcast",
+    "themes": [
+     "offer",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-startup-canada-podcast.jpg",
+  "image_local": "images/mike-moll-startup-canada-podcast.jpg"
+ },
+ "2": {
+  "ref": 2,
+  "slug": "21st-century-entrepreneurship",
+  "show": "21st Century Entrepreneurship",
+  "host": "Martin Piskoric",
+  "status": "Recorded",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/f2/fc/04/f2fc04b1-5564-e7e1-d0e3-bff473abf8ff/mza_13378955575235722753.jpg/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/us/podcast/21st-century-entrepreneurship/id1224537445"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://www.21stcenturyentrepreneurship.com/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "21st Century Entrepreneurship",
+    "url": "https://www.21stcenturyentrepreneurship.com/"
+   },
+   {
+    "label": "Martin Piskoric on Instagram",
+    "url": "https://www.instagram.com/21cepodcast/"
+   }
+  ],
+  "themes": [
+   "offer",
+   "sales"
+  ],
+  "notion_description": "Mike Moll guest appearance on 21st Century Entrepreneurship with host Martin Piskoric.",
+  "show_notes": "",
+  "guest_criteria": "",
+  "audience": "",
+  "episode_link": "",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "marketing-a-live-learning-cohort-mark-latimer",
+    "title": "marketing a live learning cohort",
+    "themes": [
+     "leadgen",
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "startup-canada-podcast",
+    "title": "startup canada podcast",
+    "themes": [
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "dogoodwork-podcast",
+    "title": "dogoodwork podcast",
+    "themes": [
+     "pricing",
+     "offer",
+     "sales",
+     "leadgen",
+     "niche"
+    ]
+   },
+   {
+    "slug": "sage-thought-leadership-podcast",
+    "title": "sage thought leadership podcast",
+    "themes": [
+     "offer",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-21st-century-entrepreneurship.jpg",
+  "image_local": "images/mike-moll-21st-century-entrepreneurship.jpg"
+ },
+ "3": {
+  "ref": 3,
+  "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+  "show": "Business Infrastructure - Curing Back Office Blues",
+  "host": "Alicia Butler Pierre",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/9f/7b/0d/9f7b0d8a-f03d-4283-a135-2bcbc5105e1b/mza_7732826513233694804.png/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/ca/podcast/083-downsizing-rebuilding-a-team-with-mike-moll/id1436083621?i=1000465062715"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://businessinfrastructure.tv/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Business Infrastructure - Curing Back Office Blues",
+    "url": "https://businessinfrastructure.tv/"
+   },
+   {
+    "label": "Alicia Butler Pierre on Instagram",
+    "url": "https://www.instagram.com/alicia_b_pierre/"
+   }
+  ],
+  "themes": [
+   "pricing",
+   "sales",
+   "leadgen",
+   "delegation"
+  ],
+  "notion_description": "When Mike Moll\u2019s social media consultancy grew rapidly, he immediately hired more people. But he soon realized he didn\u2019t have the bandwidth or business infrastructure to scale at the same rate as his clients\u2019 varied requirements. Payroll expenses rose and, eventually, he had to downsize most of the team he built. In this episode, Mike details the specific actions he took to rebuild his team as he ",
+  "show_notes": "When Mike Moll\u2019s social media consultancy grew rapidly, he immediately hired more people. But he soon realized he didn\u2019t have the bandwidth or business infrastructure to scale at the same rate as his clients\u2019 varied requirements. Payroll expenses rose and, eventually, he had to downsize most of the team he built. In this episode, Mike details the specific actions he took to rebuild his team as he fine-tuned his pricing model, simplified and automated key processes, and became stricter about the clients his company works with.",
+  "guest_criteria": "Wants guests who speak concretely about back-office operations, systems, processes, and scaling infrastructure \u2014 the people, processes, and tools that let a business grow without breaking. Strong fits are operators, founders, and specialists with real stories about building capacity, structuring/rebuilding teams, downsizing, R&D/tax/fintech, software tools, and profitable scaling (observed from recent episodes and the host's Kasennu framework). Skews practical and detail-oriented ('great for big-picture thinkers who need the operational details') \u2014 pitch someone who can teach a real operations lesson, not surface-level advice. No public guest-application page found; observed pitch route https://aliciabutlerpierre.com/contact-alicia/. No stated revenue threshold or exclusions.",
+  "audience": "Small and medium business owners, founders, and operations leaders (global \u2014 host cites listeners across 35-68 countries) trying to scale operations profitably and fix back-office/capacity bottlenecks.",
+  "episode_link": "https://podcasts.apple.com/ca/podcast/083-downsizing-rebuilding-a-team-with-mike-moll/id1436083621?i=1000465062715",
+  "transcript_file": "notion_show_notes",
+  "internal_link_suggestions": [
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "sproutworth-predictable-b2b-success",
+    "title": "sproutworth (predictable b2b success)",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "innovabuzz-podcast",
+    "title": "innovabuzz podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "business-mastermind-podcast",
+    "title": "business mastermind podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "mindset"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-business-infrastructure-curing-back-office-blues.jpg",
+  "image_local": "images/mike-moll-business-infrastructure-curing-back-office-blues.jpg"
+ },
+ "4": {
+  "ref": 4,
+  "slug": "be-bonfire-entrepreneurs",
+  "show": "BE-Bonfire Entrepreneurs",
+  "host": "Kajal Khurana",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/a9/e3/0a/a9e30a6e-1b2c-f547-a0b9-f74329517deb/mza_4860241219171502760.jpg/600x600bb.jpg",
+  "cover_source": "apple",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Listen",
+    "url": "https://be-bonfire-entrepreneurs.simplecast.com/episodes/be160-mike-moll"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "BE-Bonfire Entrepreneurs",
+    "url": "https://be-bonfire-entrepreneurs.simplecast.com/"
+   },
+   {
+    "label": "Kajal Khurana on Instagram",
+    "url": "https://www.instagram.com/khurana.kajal/"
+   }
+  ],
+  "themes": [
+   "sales",
+   "mindset"
+  ],
+  "notion_description": "Mike Moll on BE-Bonfire Entrepreneurs",
+  "show_notes": "",
+  "guest_criteria": "A mindset, health, and personal-development show for entrepreneurs \u2014 NOT a business-tactics show. Host is a health & mindset coach, nutritionist, and yoga/meditation/Reiki practitioner who interviews experts on overcoming stress and burnout, confidence, mindset, energy, and wellbeing so entrepreneurs make better decisions and don't quit (observed from show description and episode titles: confidence, law of attraction, freedom, happiness, 'listen to your body'). Best fit is a coach, healer, author, or expert with a personal transformation story and practical tools around mental/physical/emotional health for founders; hard business/finance-only pitches are a poor fit (inferred). No public guest-application page found; pitch via the host's channels (verify).",
+  "audience": "Entrepreneurs \u2014 heavily coaches, solopreneurs, and small-business owners, with a notable lean toward women in business \u2014 dealing with stress/burnout who want mindset and wellbeing help (inferred from host focus and guest mix).",
+  "episode_link": "https://be-bonfire-entrepreneurs.simplecast.com/episodes/be160-mike-moll",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "fox-talks-business-podcast",
+    "title": "fox talks business podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "livin-that-life-digital-nomad-lifestyles",
+    "title": "livin that life - digital nomad lifestyles",
+    "themes": [
+     "video",
+     "sales",
+     "mindset",
+     "remote"
+    ]
+   },
+   {
+    "slug": "digital-nomad-stories",
+    "title": "digital nomad stories",
+    "themes": [
+     "sales",
+     "mindset",
+     "remote"
+    ]
+   },
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-be-bonfire-entrepreneurs.jpg",
+  "image_local": "images/mike-moll-be-bonfire-entrepreneurs.jpg"
+ },
+ "5": {
+  "ref": 5,
+  "slug": "fox-talks-business-podcast",
+  "show": "Fox Talks Business Podcast",
+  "host": "Tanya Fox",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/ae/51/85/ae5185ac-6741-153b-8567-9c2a8a998339/mza_536372478506254480.png/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/ca/podcast/video-connections-with-mike-moll/id1446684609?i=1000517884054"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://foxtalksbusiness.ca/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Fox Talks Business Podcast",
+    "url": "https://foxtalksbusiness.ca/"
+   },
+   {
+    "label": "Tanya Fox on Instagram",
+    "url": "https://www.instagram.com/foxtalksbusiness/?hl=en"
+   },
+   {
+    "label": "Tanya Fox on LinkedIn",
+    "url": "https://www.linkedin.com/in/tanya-fox-64b46b6a/"
+   }
+  ],
+  "themes": [
+   "pricing",
+   "sales",
+   "leadgen",
+   "mindset"
+  ],
+  "notion_description": "Mike Moll guest appearance on Fox Talks Business Podcast with host Tanya Fox.",
+  "show_notes": "",
+  "guest_criteria": "Positioned as 'where seasoned women entrepreneurs find the clarity, strategy, and mindset shifts needed to break through business plateaus.' Mix of solo episodes and guest interviews; core topics are money mastery/financial confidence, mindset, and growth through genuine connection and collaboration, delivered with humor. Wants guests \u2014 largely women entrepreneurs and business experts \u2014 who bring practical, honest strategies on profit, finances, mindset, sales, or collaboration; the broader description welcomes entrepreneurs at any stage. Strong preference for women guests given the framing. NOTE: foxtalksbusiness.ca redirects to foxtalksbusiness.com (same brand, live). Pitch via https://www.foxtalksbusiness.com/contact, Instagram @foxtalksbusiness, or LinkedIn (Tanya Fox).",
+  "audience": "Women entrepreneurs / small-business owners \u2014 often established but plateaued \u2014 who want to master their money, shift their mindset, and grow profitably without burnout.",
+  "episode_link": "https://podcasts.apple.com/ca/podcast/video-connections-with-mike-moll/id1446684609?i=1000517884054",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "innovabuzz-podcast",
+    "title": "innovabuzz podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "business-mastermind-podcast",
+    "title": "business mastermind podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "coach-up-with-kaneshi",
+    "title": "coach up with kaneshi",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "mindset"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-fox-talks-business-podcast.jpg",
+  "image_local": "images/mike-moll-fox-talks-business-podcast.jpg"
+ },
+ "6": {
+  "ref": 6,
+  "slug": "livin-that-life-digital-nomad-lifestyles",
+  "show": "Livin That Life - Digital Nomad Lifestyles",
+  "host": "Riley Bennett",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts128/v4/89/3e/e2/893ee218-a131-3a94-bc57-e5558afda72d/mza_3632390262981350760.jpg/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/us/podcast/livin-that-life-digital-nomad-podcast/id1312952023"
+   },
+   {
+    "label": "Episode page",
+    "url": "http://livinthatlife.com"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Livin That Life - Digital Nomad Lifestyles",
+    "url": "http://livinthatlife.com"
+   },
+   {
+    "label": "Riley Bennett on Facebook",
+    "url": "https://www.facebook.com/groups/livinthatlife/"
+   }
+  ],
+  "themes": [
+   "video",
+   "sales",
+   "mindset",
+   "remote"
+  ],
+  "notion_description": "Mike Moll guest appearance on Livin That Life - Digital Nomad Lifestyles with host Riley Bennett.",
+  "show_notes": "",
+  "guest_criteria": "OBSERVED: Digital-nomad video podcast by Riley Bennett (full-time nomad since 2015, based in SE Asia, 30+ countries). Interviews location-independent entrepreneurs, remote workers, freelancers, online business owners and full-time travelers about how they earn and live on the road ('new rich' lifestyle a la Tim Ferriss). Best fit: location-independent business owners / digital nomads with a concrete travel-plus-income story. Pitch info@livinthatlife.com.",
+  "audience": "Digital nomads, remote workers, and aspiring location-independent entrepreneurs.",
+  "episode_link": "",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "digital-nomad-stories",
+    "title": "digital nomad stories",
+    "themes": [
+     "sales",
+     "mindset",
+     "remote"
+    ]
+   },
+   {
+    "slug": "be-bonfire-entrepreneurs",
+    "title": "be-bonfire entrepreneurs",
+    "themes": [
+     "sales",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "fox-talks-business-podcast",
+    "title": "fox talks business podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-livin-that-life-digital-nomad-lifestyles.jpg",
+  "image_local": "images/mike-moll-livin-that-life-digital-nomad-lifestyles.jpg"
+ },
+ "7": {
+  "ref": 7,
+  "slug": "digital-nomad-stories",
+  "show": "Digital Nomad Stories",
+  "host": "Anne Classen",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/57/22/b7/5722b740-4114-3368-6891-f39d309cb147/mza_7873199693904396927.jpg/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/gb/podcast/how-mike-moll-runs-his-agency-in-2-hours-per-week-while/id1512171907?i=1000571047162"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://www.digitalnomadstories.co/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Digital Nomad Stories",
+    "url": "https://www.digitalnomadstories.co/"
+   },
+   {
+    "label": "Anne Classen on Instagram",
+    "url": "https://www.instagram.com/digitalnomadstoriespodcast/"
+   }
+  ],
+  "themes": [
+   "sales",
+   "mindset",
+   "remote"
+  ],
+  "notion_description": "Mike Moll guest appearance on Digital Nomad Stories with host Anne Classen.",
+  "show_notes": "",
+  "guest_criteria": "Weekly guest-interview show where each guest shares how they built a life of travel, remote work, online business, and personal growth. Wants working digital nomads / location-independent people with a real story: remote employees, freelancers, online business owners, coaches, and people running brick-and-mortar businesses remotely. Best fit is someone actually location-independent who can speak to the practical how (making money remotely, the lifestyle, the challenges) rather than pitch a product. WARNING: the website on file, digitalnomadstories.co, has lapsed \u2014 as of 2026-07-09 it redirects to a betting site (Melbet); do not link it. The podcast feed itself (Apple id1512171907, Spotify) is still live. Pitch via host Anne Claessen's Instagram @annes_nomadstory or thepodcastbabes.com.",
+  "audience": "Aspiring and current digital nomads / remote workers and online entrepreneurs who want inspiration plus practical tips on funding and sustaining a travel-based, location-independent life.",
+  "episode_link": "https://podcasts.apple.com/gb/podcast/how-mike-moll-runs-his-agency-in-2-hours-per-week-while/id1512171907?i=1000571047162",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "livin-that-life-digital-nomad-lifestyles",
+    "title": "livin that life - digital nomad lifestyles",
+    "themes": [
+     "video",
+     "sales",
+     "mindset",
+     "remote"
+    ]
+   },
+   {
+    "slug": "be-bonfire-entrepreneurs",
+    "title": "be-bonfire entrepreneurs",
+    "themes": [
+     "sales",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "fox-talks-business-podcast",
+    "title": "fox talks business podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-digital-nomad-stories.jpg",
+  "image_local": "images/mike-moll-digital-nomad-stories.jpg"
+ },
+ "8": {
+  "ref": 8,
+  "slug": "hailey-rowe-podcast",
+  "show": "Hailey Rowe Podcast",
+  "host": "Hailey Rowe",
+  "status": "Published",
+  "cover_url": "https://is4-ssl.mzstatic.com/image/thumb/Podcasts123/v4/5f/2b/58/5f2b582a-cbad-0c03-150d-42a2d1baedcd/mza_7861653143030270980.jpg/600x600bb.jpg",
+  "cover_source": "apple",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Episode page",
+    "url": "https://www.haileyrowe.com/online-networking/"
+   }
+  ],
+  "about_links": [],
+  "themes": [
+   "pricing",
+   "sales",
+   "leadgen",
+   "delegation",
+   "niche",
+   "mindset"
+  ],
+  "notion_description": "Mike Moll on Hailey Rowe Podcast",
+  "show_notes": "",
+  "guest_criteria": "Host Hailey Rowe is a marketing & sales strategist/business coach for health coaches, life coaches, and service-based entrepreneurs; her show 'Health Coach Nation' delivers marketing, sales, time-management, and mindset tactics to help coaches book clients and grow. Wants guests who are experts in coaching-business growth \u2014 client acquisition, marketing, sales, systems/AI workflows, partnerships, social media (LinkedIn/Instagram), and mindset \u2014 who can teach the audience something concrete and actionable. Best fit is a business/marketing expert or a coach with a proven, teachable system; avoid pure pitching. No public guest-application form found; contact https://www.haileyrowe.com/contact/.",
+  "audience": "Health coaches, life/wellness coaches, and service-based entrepreneurs \u2014 largely early-stage or with inconsistent results \u2014 who want to market themselves and get more clients (observed from site/podcast positioning).",
+  "episode_link": "https://www.haileyrowe.com/online-networking/",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "innovabuzz-podcast",
+    "title": "innovabuzz podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "business-mastermind-podcast",
+    "title": "business mastermind podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "coach-up-with-kaneshi",
+    "title": "coach up with kaneshi",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "title": "business infrastructure - curing back office blues",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-hailey-rowe-podcast.jpg",
+  "image_local": "images/mike-moll-hailey-rowe-podcast.jpg"
+ },
+ "9": {
+  "ref": 9,
+  "slug": "sproutworth-predictable-b2b-success",
+  "show": "Sproutworth (Predictable B2B Success)",
+  "host": "Vinay Koshy",
+  "status": "Published",
+  "cover_url": "https://i.ytimg.com/vi/Q3yDTRD_bAo/hqdefault.jpg",
+  "cover_source": "youtube",
+  "youtube_id": "Q3yDTRD_bAo",
+  "listen": [
+   {
+    "label": "Watch on YouTube",
+    "url": "https://www.youtube.com/watch?v=Q3yDTRD_bAo"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://www.sproutworth.com/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Sproutworth (Predictable B2B Success)",
+    "url": "https://www.sproutworth.com/"
+   }
+  ],
+  "themes": [
+   "pricing",
+   "sales",
+   "leadgen",
+   "delegation"
+  ],
+  "notion_description": "Mike Moll on Sproutworth (Predictable B2B Success)",
+  "show_notes": "",
+  "guest_criteria": "OBSERVED: 'Predictable B2B Success' podcast, hosted by Vinay Koshy (founder of Sproutworth, a B2B content agency); 500+ episodes since 2020. STATED SELECTION RULE: 'Every guest is chosen because they have built systems in sales, content, community, product, or customer success that made revenue predictable' \u2014 aimed at funded B2B tech. Best fit: revenue operators, GTM leaders and founders with a concrete system that made B2B growth predictable. NOTE (Mike's DB): host previously 'met but not compatible.'",
+  "audience": "B2B tech founders and GTM / revenue / marketing leaders at funded companies.",
+  "episode_link": "https://www.youtube.com/watch?v=Q3yDTRD_bAo",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "title": "business infrastructure - curing back office blues",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "innovabuzz-podcast",
+    "title": "innovabuzz podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "business-mastermind-podcast",
+    "title": "business mastermind podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "mindset"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-sproutworth-predictable-b2b-success.jpg",
+  "image_local": "images/mike-moll-sproutworth-predictable-b2b-success.jpg"
+ },
+ "10": {
+  "ref": 10,
+  "slug": "find-it-with-debbie",
+  "show": "Find It! With Debbie",
+  "host": "Debbie Bettendorf",
+  "status": "Published",
+  "cover_url": "https://i.ytimg.com/vi/QveriYveh_k/hqdefault.jpg",
+  "cover_source": "youtube",
+  "youtube_id": "QveriYveh_k",
+  "listen": [
+   {
+    "label": "Watch on YouTube",
+    "url": "https://www.youtube.com/watch?v=QveriYveh_k"
+   },
+   {
+    "label": "Listen",
+    "url": "https://www.youtube.com/watch?v=QveriYveh_k&t=59s&pp=ygUJbWlrZSBtb2xs"
+   }
+  ],
+  "about_links": [],
+  "themes": [
+   "sales",
+   "leadgen"
+  ],
+  "notion_description": "BOOKED for March 15. Mike met on the War Games podcast and she invited him on her show",
+  "show_notes": "BOOKED for March 15. Mike met on the War Games podcast and she invited him on her show",
+  "guest_criteria": "Inspiration/personal-growth interview show \u2014 the hook is that every guest is asked what they've 'found' in life (faith, love, health, success, or purpose) to help listeners find 'it' too. Host is fashion entrepreneur Debbie Bettendorf (founder of Studio 11 Style). Very broad guest mix: authors, coaches and speakers, mental-health/holistic-wellness experts, a sales author, a comedian, nonprofit leaders, and everyday people with a powerful story. Best fit is someone with an authentic, uplifting personal-transformation story and a clear 'what I found in life' takeaway; hard business/tactical pitches are a weaker fit. Faith-friendly (Christian testimony appears). CAUTION: latest episodes are dated 2023 (newest Aug 2023) \u2014 show may be dormant; VERIFY it's still recording before pitching. No public application URL; pitch directly via email debrakaybett@gmail.com.",
+  "audience": "General self-help / personal-growth listeners \u2014 skews women \u2014 looking for inspiration, faith, healing, and encouragement rather than business tactics.",
+  "episode_link": "https://www.youtube.com/watch?v=QveriYveh_k&t=59s&pp=ygUJbWlrZSBtb2xs",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "marketing-a-live-learning-cohort-mark-latimer",
+    "title": "marketing a live learning cohort",
+    "themes": [
+     "leadgen",
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "title": "business infrastructure - curing back office blues",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "fox-talks-business-podcast",
+    "title": "fox talks business podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-find-it-with-debbie.jpg",
+  "image_local": "images/mike-moll-find-it-with-debbie.jpg"
+ },
+ "11": {
+  "ref": 11,
+  "slug": "the-thoughtful-entrepreneur",
+  "show": "The Thoughtful Entrepreneur",
+  "host": "Josh Elledge of UpMyInfluence",
+  "status": "Published",
+  "cover_url": "https://artwork.captivate.fm/95a6cbd5-d1f9-46a5-8696-df9ce24ef103/FDGjBATMBCXEbR-xvZj3HmLW.png",
+  "cover_source": "captivate",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Episode page",
+    "url": "https://upmyinfluence.com/blog/603-being-an-impact-driven-entrepreneur-with-market-me-constulings-mike-moll/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "The Thoughtful Entrepreneur",
+    "url": "https://upmyinfluence.com/podcast/"
+   },
+   {
+    "label": "Josh Elledge of UpMyInfluence on Instagram",
+    "url": "https://www.instagram.com/upmyinfluence/"
+   }
+  ],
+  "themes": [
+   "leadgen",
+   "authority"
+  ],
+  "notion_description": "Mike Moll on The Thoughtful Entrepreneur",
+  "show_notes": "",
+  "guest_criteria": "OBSERVED: Very high-volume show (3,000+ interviews) by Josh Elledge of UpMyInfluence; short 15-25 min commercial-free conversations with founders, CEOs and B2B leaders. Guest selection now runs through PodVerified (no traditional application) \u2014 apply at https://upmyinfluence.com/guest/. Best fit: founders and executives with a story and a B2B angle; one of the most accessible shows to get booked on.",
+  "audience": "Founders, CEOs, and B2B business leaders and professionals.",
+  "episode_link": "https://upmyinfluence.com/blog/603-being-an-impact-driven-entrepreneur-with-market-me-constulings-mike-moll/",
+  "transcript_file": "already_captured",
+  "internal_link_suggestions": [
+   {
+    "slug": "innovabuzz-podcast",
+    "title": "innovabuzz podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "the-maverick-paradox-podcast",
+    "title": "the maverick paradox podcast",
+    "themes": [
+     "sales",
+     "leadgen",
+     "authority"
+    ]
+   },
+   {
+    "slug": "sage-thought-leadership-podcast",
+    "title": "sage thought leadership podcast",
+    "themes": [
+     "offer",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority"
+    ]
+   },
+   {
+    "slug": "the-story-engine",
+    "title": "the story engine",
+    "themes": [
+     "leadgen",
+     "authority"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-the-thoughtful-entrepreneur.jpg",
+  "image_local": "images/mike-moll-the-thoughtful-entrepreneur.jpg",
+  "captivate_id": "9d2a27ef-3fbd-4bc8-a06e-d55791f6615c"
+ },
+ "12": {
+  "ref": 12,
+  "slug": "innovabuzz-podcast",
+  "show": "Innovabuzz Podcast",
+  "host": "Jurgen Strauss",
+  "status": "Published",
+  "cover_url": "https://is4-ssl.mzstatic.com/image/thumb/Podcasts113/v4/55/df/1b/55df1b63-d13f-bae2-542e-2728876e8655/mza_846279329420354223.jpg/600x600bb.jpg",
+  "cover_source": "apple",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Episode page",
+    "url": "https://innovabiz.com.au/"
+   },
+   {
+    "label": "Listen",
+    "url": "https://innovabiz.com.au/podcast/mike-moll-innovabuzz-372/?cn-reloaded=1"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Innovabuzz Podcast",
+    "url": "https://innovabiz.com.au/"
+   },
+   {
+    "label": "Jurgen Strauss on Instagram",
+    "url": "https://www.instagram.com/innovabiz18/"
+   }
+  ],
+  "themes": [
+   "pricing",
+   "sales",
+   "leadgen",
+   "delegation",
+   "authority",
+   "mindset"
+  ],
+  "notion_description": "Mike Moll on Innovabuzz Podcast",
+  "show_notes": "",
+  "guest_criteria": "InnovaBuzz 'explores the minds of innovators, entrepreneurs, and creatives, diving deep into their values, strategies, and mindset,' with a current focus on the intersection of AI innovation and human connection. Host Dr Jurgen Strauss (a 'human-centred podcasting coach,' 650+ episodes) invites high-impact achievers \u2014 coaches, entrepreneurs, thought leaders, and authors \u2014 who can hold a deep, values-driven conversation about their journey, marketing, innovation, building community/relationships, systems, or AI + human connection. Warm, story-and-relationship-driven interview (NLP-informed), NOT a hard-pitch format; guests must add genuine value. Past guests include Michael E. Gerber, Kevin Kelly, Marcus Sheridan, Gino Wickman, Steve Blank, Mark Schaefer. Guest info page: https://innovabiz.com.au/jurgen-strauss-guest/",
+  "audience": "Entrepreneurs, business owners, marketers, coaches, and creatives worldwide who care about innovation, human-centred marketing, and building authentic business relationships (observed from show description and guest roster).",
+  "episode_link": "",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "business-mastermind-podcast",
+    "title": "business mastermind podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "coach-up-with-kaneshi",
+    "title": "coach up with kaneshi",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "title": "business infrastructure - curing back office blues",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-innovabuzz-podcast.jpg",
+  "image_local": "images/mike-moll-innovabuzz-podcast.jpg"
+ },
+ "13": {
+  "ref": 13,
+  "slug": "the-maverick-paradox-podcast",
+  "show": "The Maverick Paradox Podcast",
+  "host": "Judith Germain",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/00/ba/39/00ba3909-cc67-281c-e320-a8f1e713de37/mza_7671206930552931724.png/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/us/podcast/stress-to-success/id1321884957?i=1000575872799"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://www.maverickparadox.com/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "The Maverick Paradox Podcast",
+    "url": "https://www.maverickparadox.com/"
+   },
+   {
+    "label": "Judith Germain on Instagram",
+    "url": "https://www.instagram.com/maverick_paradox/"
+   }
+  ],
+  "themes": [
+   "sales",
+   "leadgen",
+   "authority"
+  ],
+  "notion_description": "Mike Moll guest appearance on The Maverick Paradox Podcast with host Judith Germain.",
+  "show_notes": "",
+  "guest_criteria": "OBSERVED: Top ~1.5% global podcast on Maverick Leadership, hosted by Judith Germain (C-suite mentor), twice weekly, listeners in 160+ countries. STATED RULE: every guest must be a 'Maverick Leader' \u2014 someone who challenges assumptions and disrupts convention (senior leaders, entrepreneurs, authors, even spies and fighter pilots). Focus is leadership, culture and influence. Best fit: strong-POV leaders/experts with fresh, unconventional takes on leadership \u2014 NOT generic business promotion or product pitches.",
+  "audience": "Leaders, business owners and change-makers (global, UK-centric) who want unconventional leadership perspectives.",
+  "episode_link": "https://podcasts.apple.com/us/podcast/stress-to-success/id1321884957?i=1000575872799",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "innovabuzz-podcast",
+    "title": "innovabuzz podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "sage-thought-leadership-podcast",
+    "title": "sage thought leadership podcast",
+    "themes": [
+     "offer",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority"
+    ]
+   },
+   {
+    "slug": "marketing-a-live-learning-cohort-mark-latimer",
+    "title": "marketing a live learning cohort",
+    "themes": [
+     "leadgen",
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "title": "business infrastructure - curing back office blues",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-the-maverick-paradox-podcast.jpg",
+  "image_local": "images/mike-moll-the-maverick-paradox-podcast.jpg"
+ },
+ "14": {
+  "ref": 14,
+  "slug": "win-the-hour-win-the-day",
+  "show": "Win The Hour, Win The Day",
+  "host": "Kris Ward",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/f2/98/b9/f298b90a-1b9e-3605-dc2b-8ae51687c869/mza_14612931344918475713.jpg/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/us/podcast/how-to-use-linkedin-video-to-grow-your-business-with/id1484859150?i=1000548901655"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://www.winthehourwintheday.com/optin-395810591590597370390"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Win The Hour, Win The Day",
+    "url": "https://www.winthehourwintheday.com/optin-395810591590597370390"
+   },
+   {
+    "label": "Kris Ward on Instagram",
+    "url": "https://www.instagram.com/kriswardlive/"
+   }
+  ],
+  "themes": [
+   "delegation"
+  ],
+  "notion_description": "Mike Moll guest appearance on Win The Hour, Win The Day with host Kris Ward.",
+  "show_notes": "",
+  "guest_criteria": "OBSERVED: Hosted by Kris Ward (productivity/team-building coach and author). Guests cover a range of business topics with a productivity, systems, team-building and entrepreneurship slant, in an upbeat 'business should be fun' tone. Has a dedicated guest booking page: https://winthehourwintheday.com/podcast-guest-spot (or email krisward@winthehourwintheday.com). Best fit: business owners and experts with actionable productivity, growth, or team-building insights.",
+  "audience": "Small business owners and entrepreneurs focused on productivity and scaling with a team.",
+  "episode_link": "https://podcasts.apple.com/us/podcast/how-to-use-linkedin-video-to-grow-your-business-with/id1484859150?i=1000548901655",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "how-to-vet-service-providers-behdad-jamshidi",
+    "title": "how to vet a marketing agency before you hire",
+    "themes": [
+     "niche",
+     "sales",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "the-solopreneur-success-cycle-joe-rando",
+    "title": "the solopreneur success cycle",
+    "themes": [
+     "delegation",
+     "mindset",
+     "offer"
+    ]
+   },
+   {
+    "slug": "how-to-time-block-to-maximize-productivity-tiffany-taylor",
+    "title": "how to time-block to protect your focus",
+    "themes": [
+     "delegation",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "title": "business infrastructure - curing back office blues",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-win-the-hour-win-the-day.jpg",
+  "image_local": "images/mike-moll-win-the-hour-win-the-day.jpg"
+ },
+ "15": {
+  "ref": 15,
+  "slug": "business-mastermind-podcast",
+  "show": "Business Mastermind Podcast",
+  "host": "Gavin Preston",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts124/v4/56/d8/3f/56d83fab-75db-8f2d-ff02-867f41da7527/mza_9845681804678370578.jpg/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/pl/podcast/mike-moll-from-market-me-on-getting-cut-through-with/id1462414516?i=1000524426700"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://gavinpreston.com/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Business Mastermind Podcast",
+    "url": "https://gavinpreston.com/"
+   },
+   {
+    "label": "Gavin Preston on Instagram",
+    "url": "https://www.instagram.com/gavin_preston/?hl=es"
+   }
+  ],
+  "themes": [
+   "pricing",
+   "sales",
+   "leadgen",
+   "delegation",
+   "mindset"
+  ],
+  "notion_description": "Mike Moll guest appearance on Business Mastermind Podcast with host Gavin Preston.",
+  "show_notes": "",
+  "guest_criteria": "Explicitly wants specialists and relatable business people who can share growth strategies, insights, and lessons for SMB owners \u2014 stated topics are marketing, leadership, systems, strategy, scaling, culture, resiliency, and mindset (observed verbatim on gavinpreston.com/podcast). Prizes 'richness in the variety of the guest's expertise, sector, and their own story,' so a guest needs both a real area of expertise AND a personal journey to tell. UK-based show framed around helping owners 'Survive and Thrive' and scale. No public guest-application page found; observed pitch route is the contact form at https://gavinpreston.com/podcast/ or https://gavinpreston.com/contact/.",
+  "audience": "Owners and leaders of small-to-medium businesses, explicitly those with revenue between \u00a3100,000 and \u00a320 million (stated on the show page); UK-weighted, seeking practical growth strategy and inspiration.",
+  "episode_link": "https://podcasts.apple.com/pl/podcast/mike-moll-from-market-me-on-getting-cut-through-with/id1462414516?i=1000524426700",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "innovabuzz-podcast",
+    "title": "innovabuzz podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "coach-up-with-kaneshi",
+    "title": "coach up with kaneshi",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "title": "business infrastructure - curing back office blues",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-business-mastermind-podcast.jpg",
+  "image_local": "images/mike-moll-business-mastermind-podcast.jpg"
+ },
+ "16": {
+  "ref": 16,
+  "slug": "the-resourceful-agent-radio-show",
+  "show": "The Resourceful Agent Radio Show",
+  "host": "Andy Silvius",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/89/b7/87/89b78746-6849-b414-1ad5-e4f8cac179e2/mza_10302401654449194508.jpg/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/ca/podcast/expand-your-environment-remove-your-limitations-with/id1498316242?i=1000493765702"
+   },
+   {
+    "label": "Episode page",
+    "url": "http://resourcefulagent.com/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "The Resourceful Agent Radio Show",
+    "url": "http://resourcefulagent.com/"
+   },
+   {
+    "label": "Andy Silvius on Instagram",
+    "url": "https://www.instagram.com/resourcefulagent/"
+   }
+  ],
+  "themes": [
+   "leadgen",
+   "delegation"
+  ],
+  "notion_description": "Mike Moll guest appearance on The Resourceful Agent Radio Show with host Andy Silvius.",
+  "show_notes": "",
+  "guest_criteria": "OBSERVED: Host Andy Silvius is a full-time Keller Williams realtor (Coeur d'Alene, ID). The show began focused on real estate, business, finance and personal development and has rebranded to 'Evolving Business Minds' with longer-form 'question everything' conversations. Guests are real estate figures and business/personal-development experts (e.g., real estate team leaders, goal-setting coaches). Best fit: real estate professionals, investors, and business/self-development experts. No formal guest-application page found.",
+  "audience": "Real estate agents and entrepreneurs interested in real estate investing, business, finance, and personal growth.",
+  "episode_link": "https://podcasts.apple.com/ca/podcast/expand-your-environment-remove-your-limitations-with/id1498316242?i=1000493765702",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "title": "business infrastructure - curing back office blues",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "sproutworth-predictable-b2b-success",
+    "title": "sproutworth (predictable b2b success)",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "innovabuzz-podcast",
+    "title": "innovabuzz podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority",
+     "mindset"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-the-resourceful-agent-radio-show.jpg",
+  "image_local": "images/mike-moll-the-resourceful-agent-radio-show.jpg"
+ },
+ "17": {
+  "ref": 17,
+  "slug": "dogoodwork-podcast",
+  "show": "DoGoodWork Podcast",
+  "host": "Raul Hernandez",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/88/64/01/8864018a-968c-007a-a73d-87cee7364219/mza_15244727182936011469.jpg/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/us/podcast/dogoodwork/id1476020784"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://dogoodwork.io/podcast"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "DoGoodWork Podcast",
+    "url": "https://dogoodwork.io/podcast"
+   },
+   {
+    "label": "Raul Hernandez on Instagram",
+    "url": "https://www.instagram.com/raulhdz.amdg/"
+   }
+  ],
+  "themes": [
+   "pricing",
+   "offer",
+   "sales",
+   "leadgen",
+   "niche"
+  ],
+  "notion_description": "Mike Moll guest appearance on DoGoodWork Podcast with host Raul Hernandez.",
+  "show_notes": "",
+  "guest_criteria": "Wants founders, CEOs, agency owners, consultants, and subject-matter experts/authors who operate at a peer level \u2014 treated as operators, not celebrities. Strong current tilt toward AI adoption for agencies/consultancies, plus positioning, pricing, offers, sales, predictable revenue, and leadership/purpose. Recent guests: John Johnson (CEO Patmos Hosting), Eli Rubel (CEO Profit Lab), Stacey Brown Randall (referrals author), Jim Ristuccia (founder/CEO, Vistage Chair). No public 'be a guest' page exists (verified) and no stated revenue/topic requirement or 'no pitching' rule; the only intake paths are the host's Calendly https://calendly.com/rherocho/performance or direct outreach via dogoodwork.io / his Substack. Worth checking https://dogoodwork.io/speaking before pitching.",
+  "audience": "Founders and owners of marketing agencies, consultancies, and B2B service firms (roughly the $1M-$10M+ segment) focused on AI, positioning, pricing, and sustainable growth.",
+  "episode_link": "",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "defining-your-ideal-client-ignore-everyone-else-susie-ippolito",
+    "title": "defining your ideal client",
+    "themes": [
+     "niche",
+     "offer",
+     "leadgen"
+    ]
+   },
+   {
+    "slug": "marketing-a-live-learning-cohort-mark-latimer",
+    "title": "marketing a live learning cohort",
+    "themes": [
+     "leadgen",
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "title": "business infrastructure - curing back office blues",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-dogoodwork-podcast.jpg",
+  "image_local": "images/mike-moll-dogoodwork-podcast.jpg"
+ },
+ "18": {
+  "ref": 18,
+  "slug": "build-your-network",
+  "show": "Build Your Network",
+  "host": "Travis Chappell",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/e2/02/b0/e202b0ab-5d2e-1877-1a00-f05830134ae1/mza_338074499493887310.jpg/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/us/podcast/722-mike-moll-building-your-business-by-understanding/id1268488944?i=1000548786009"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://travischappell.com/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Build Your Network",
+    "url": "https://travischappell.com/"
+   },
+   {
+    "label": "Travis Chappell on Instagram",
+    "url": "https://www.instagram.com/travischappell/"
+   }
+  ],
+  "themes": [
+   "sales",
+   "authority"
+  ],
+  "notion_description": "Mike Moll guest appearance on Build Your Network with host Travis Chappell.",
+  "show_notes": "",
+  "guest_criteria": "NOTE: rebranded from 'Build Your Network' to 'Travis Makes Friends' (observed on travischappell.com). A networking/relationships and personal-development interview show featuring successful entrepreneurs, authors, athletes, entertainers, and health & fitness figures (the show's own guest categories) who teach how they built valuable relationships, networks, and success. Strong fits have a compelling personal story plus a real angle on networking, business-building, or high performance. The host founded Guestio (a guest-booking platform) and books celebrity/top-tier guests, so the bar is high \u2014 pitch someone with genuine authority or a standout story. Observed pitch routes: Guestio (app.guestio.com) and https://travischappell.com/contact/. No stated revenue threshold found.",
+  "audience": "Entrepreneurs, business builders, and ambitious professionals interested in networking, relationship-building, and personal development / high performance (inferred: US-centric, self-improvement-minded listeners).",
+  "episode_link": "https://podcasts.apple.com/us/podcast/722-mike-moll-building-your-business-by-understanding/id1268488944?i=1000548786009",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "innovabuzz-podcast",
+    "title": "innovabuzz podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "the-maverick-paradox-podcast",
+    "title": "the maverick paradox podcast",
+    "themes": [
+     "sales",
+     "leadgen",
+     "authority"
+    ]
+   },
+   {
+    "slug": "sage-thought-leadership-podcast",
+    "title": "sage thought leadership podcast",
+    "themes": [
+     "offer",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority"
+    ]
+   },
+   {
+    "slug": "how-to-vet-service-providers-behdad-jamshidi",
+    "title": "how to vet a marketing agency before you hire",
+    "themes": [
+     "niche",
+     "sales",
+     "delegation"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-build-your-network.jpg",
+  "image_local": "images/mike-moll-build-your-network.jpg"
+ },
+ "19": {
+  "ref": 19,
+  "slug": "the-100-mba-show",
+  "show": "The $100 MBA Show",
+  "host": "Omar Zenhom",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/05/8b/b4/058bb444-21ad-44bb-241c-a1c1d8131403/mza_15142895205498082348.png/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/ca/podcast/mba2043-guest-teacher-mike-moll-how-to-leverage-video/id906218859?i=1000560012446"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://100mba.net/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "The $100 MBA Show",
+    "url": "https://100mba.net/"
+   },
+   {
+    "label": "Omar Zenhom on Instagram",
+    "url": "https://www.instagram.com/omarzenhom/"
+   }
+  ],
+  "themes": [
+   "sales",
+   "leadgen"
+  ],
+  "notion_description": "Mike Moll guest appearance on The $100 MBA Show with host Omar Zenhom.",
+  "show_notes": "",
+  "guest_criteria": "OBSERVED: Award-winning top business podcast (200M+ downloads, top-ranked in 30+ countries) delivering practical, no-fluff business-building training for online entrepreneurs. Guest segments ('Guest Teacher') have the guest TEACH one actionable lesson/tactic \u2014 the format is teaching, not a bio interview. Best fit: proven operators who can deliver a tight, tactical training on a specific business/marketing skill. No public guest-application page found; pitch contact@100mba.net with a concrete teachable topic (INFERRED route, verify).",
+  "audience": "Aspiring and early-stage online entrepreneurs and small-business owners worldwide who want quick, practical, no-fluff business training.",
+  "episode_link": "https://podcasts.apple.com/ca/podcast/mba2043-guest-teacher-mike-moll-how-to-leverage-video/id906218859?i=1000560012446",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "marketing-a-live-learning-cohort-mark-latimer",
+    "title": "marketing a live learning cohort",
+    "themes": [
+     "leadgen",
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "title": "business infrastructure - curing back office blues",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "fox-talks-business-podcast",
+    "title": "fox talks business podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-the-100-mba-show.jpg",
+  "image_local": "images/mike-moll-the-100-mba-show.jpg"
+ },
+ "20": {
+  "ref": 20,
+  "slug": "sales-genius",
+  "show": "Sales Genius",
+  "host": "Joe Ingram",
+  "status": "Published",
+  "cover_url": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1f382dccca8f5d50ef33c08c20",
+  "cover_source": "spotify",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Listen",
+    "url": "https://anchor.fm/salesgenius/episodes/The-Sales-Genius-with-Guest-Mike-Moll-e1n7lhi"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Joe Ingram on Instagram",
+    "url": "https://www.instagram.com/joe_ingram_sales/"
+   }
+  ],
+  "themes": [
+   "pricing",
+   "sales",
+   "leadgen"
+  ],
+  "notion_description": "Mike Moll on Sales Genius",
+  "show_notes": "",
+  "guest_criteria": "OBSERVED: Joe Ingram ('Sales Genius') hosts sales professionals, trainers and entrepreneurs sharing sales strategies, persuasion, customer experience and leadership (guest trainers include Paul Ross, Joseph Michelli, Tim Kintz). Best fit: sales trainers, experts and entrepreneurs with actionable selling and persuasion tactics. Pitch joe@ingraminteractive.com.",
+  "audience": "Salespeople, sales leaders, and entrepreneurs looking to sharpen their selling skills.",
+  "episode_link": "https://anchor.fm/salesgenius/episodes/The-Sales-Genius-with-Guest-Mike-Moll-e1n7lhi",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "title": "business infrastructure - curing back office blues",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "fox-talks-business-podcast",
+    "title": "fox talks business podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "sproutworth-predictable-b2b-success",
+    "title": "sproutworth (predictable b2b success)",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-sales-genius.jpg",
+  "image_local": "images/mike-moll-sales-genius.jpg"
+ },
+ "21": {
+  "ref": 21,
+  "slug": "the-unforget-yourself-show",
+  "show": "The Unforget Yourself Show",
+  "host": "Mark Adams",
+  "status": "Published",
+  "cover_url": "https://image-cdn-fa.spotifycdn.com/image/ab67656300005f1fb4ee7646b65bbd612f559414",
+  "cover_source": "spotify",
+  "youtube_id": null,
+  "listen": [],
+  "about_links": [],
+  "themes": [
+   "delegation"
+  ],
+  "notion_description": "Mike Moll guest appearance on The Unforget Yourself Show with host Mark Adams.",
+  "show_notes": "",
+  "guest_criteria": "OBSERVED: Top 1% podcast for entrepreneurs and business owners, co-hosted by Mark Adams and Katie (founders of the 'Unforget Yourself System'); real, unfiltered conversations about starting and growing a business. Dedicated guest page: https://unforgetyourselfpodcast.com ('Be a guest'). Best fit: entrepreneurs and business owners with an authentic story and practical lessons.",
+  "audience": "Entrepreneurs and business owners.",
+  "episode_link": "",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "how-to-vet-service-providers-behdad-jamshidi",
+    "title": "how to vet a marketing agency before you hire",
+    "themes": [
+     "niche",
+     "sales",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "the-solopreneur-success-cycle-joe-rando",
+    "title": "the solopreneur success cycle",
+    "themes": [
+     "delegation",
+     "mindset",
+     "offer"
+    ]
+   },
+   {
+    "slug": "how-to-time-block-to-maximize-productivity-tiffany-taylor",
+    "title": "how to time-block to protect your focus",
+    "themes": [
+     "delegation",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "title": "business infrastructure - curing back office blues",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-the-unforget-yourself-show.jpg",
+  "image_local": "images/mike-moll-the-unforget-yourself-show.jpg"
+ },
+ "22": {
+  "ref": 22,
+  "slug": "global-citizen-life-podcast",
+  "show": "Global Citizen Life Podcast",
+  "host": "Sally Pederson",
+  "status": "Published",
+  "cover_url": "https://r2.overcast-cdn.com/art/3887552?v55",
+  "cover_source": "overcast",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Listen",
+    "url": "https://overcast.fm/+7UcDxgO2o"
+   }
+  ],
+  "about_links": [],
+  "themes": [
+   "pricing",
+   "sales",
+   "remote"
+  ],
+  "notion_description": "Mike Moll guest appearance on Global Citizen Life Podcast with host Sally Pederson.",
+  "show_notes": "",
+  "guest_criteria": "Per the show's own description, 'Every Thursday, join expats and international entrepreneurs as they share their secrets to thriving across borders' \u2014 so it wants guests living the global/expat life: entrepreneurs who run location-independent or cross-border businesses, plus experts in global diversification, international living, offshore tax/banking, asset protection, second residencies/citizenships, and relocating abroad. Host Sally Pederson is a bestselling author and international-living consultant. No dedicated guest-application page found; contact info@globalcitizenlife.org. Website: https://www.globalcitizenlife.org/",
+  "audience": "Aspiring and current expats, remote entrepreneurs, retirees, and higher-net-worth individuals interested in moving abroad, tax optimization, and global diversification (observed from site messaging).",
+  "episode_link": "https://overcast.fm/+7UcDxgO2o",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "title": "business infrastructure - curing back office blues",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "fox-talks-business-podcast",
+    "title": "fox talks business podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "livin-that-life-digital-nomad-lifestyles",
+    "title": "livin that life - digital nomad lifestyles",
+    "themes": [
+     "video",
+     "sales",
+     "mindset",
+     "remote"
+    ]
+   },
+   {
+    "slug": "digital-nomad-stories",
+    "title": "digital nomad stories",
+    "themes": [
+     "sales",
+     "mindset",
+     "remote"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-global-citizen-life-podcast.jpg",
+  "image_local": "images/mike-moll-global-citizen-life-podcast.jpg"
+ },
+ "23": {
+  "ref": 23,
+  "slug": "from-the-frame-up",
+  "show": "From the Frame Up",
+  "host": "Jarred Jones",
+  "status": "Published",
+  "cover_url": "https://i.ytimg.com/vi/YQOTYbfRQx4/hqdefault.jpg",
+  "cover_source": "youtube",
+  "youtube_id": "YQOTYbfRQx4",
+  "listen": [
+   {
+    "label": "Watch on YouTube",
+    "url": "https://www.youtube.com/watch?v=YQOTYbfRQx4"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://csncollision.com/from-the-frame-up/podcast-home/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "From the Frame Up",
+    "url": "https://csncollision.com/from-the-frame-up/podcast-home/"
+   },
+   {
+    "label": "Jarred Jones on Instagram",
+    "url": "https://www.instagram.com/csncollisioncentres/?hl=en"
+   }
+  ],
+  "themes": [
+   "video",
+   "leadgen"
+  ],
+  "notion_description": "Mike Moll guest appearance on From the Frame Up with host Jarred Jones.",
+  "show_notes": "",
+  "guest_criteria": "A video podcast produced by CSN Collision (a collision-repair/auto-body network) that takes 'an industry professional off the floor or out of the office and puts them in the passenger's seat.' Wants guests with practical expertise relevant to running an automotive-service/collision-repair business \u2014 observed guest topics include digital marketing & SEO, data analytics, recruiting and retaining talent, auto-parts manufacturing, vehicle technology, brand-building, and the customer journey. Observed guests: Shelby Greer (OneLocal), Rebecca Fyfe (AutoHouse Technologies), Dahlin Brooks (Insight Global), Colin Singh Dhillon (APMA CTO). Best fit is a subject-matter expert who can teach collision-repair or small/mid auto-business owners something actionable. No public guest-application page or stated exclusions found. Website: https://csncollision.com/from-the-frame-up/podcast-home/",
+  "audience": "Owners, managers, and staff of collision-repair shops and the broader automotive-service industry (inferred from CSN's business and the show's explicit 'industry professional' framing).",
+  "episode_link": "https://www.youtube.com/watch?v=YQOTYbfRQx4",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "defining-your-ideal-client-ignore-everyone-else-susie-ippolito",
+    "title": "defining your ideal client",
+    "themes": [
+     "niche",
+     "offer",
+     "leadgen"
+    ]
+   },
+   {
+    "slug": "marketing-a-live-learning-cohort-mark-latimer",
+    "title": "marketing a live learning cohort",
+    "themes": [
+     "leadgen",
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "title": "business infrastructure - curing back office blues",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "fox-talks-business-podcast",
+    "title": "fox talks business podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "mindset"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-from-the-frame-up.jpg",
+  "image_local": "images/mike-moll-from-the-frame-up.jpg"
+ },
+ "24": {
+  "ref": 24,
+  "slug": "the-solopreneur-grind-podcast",
+  "show": "The Solopreneur Grind Podcast",
+  "host": "Josh Schachnow",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/61/88/1c/61881c66-52c4-1713-7de0-9c2b1187f4bf/mza_7888501469775859066.png/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/ca/podcast/episode-47-working-hard-figuring-out-your-career-path/id1436648549?i=1000447458441"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://www.solopreneurgrind.com/podcast/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "The Solopreneur Grind Podcast",
+    "url": "https://www.solopreneurgrind.com/podcast/"
+   },
+   {
+    "label": "Josh Schachnow on Instagram",
+    "url": "https://www.instagram.com/solopreneurgrind/"
+   }
+  ],
+  "themes": [
+   "sales"
+  ],
+  "notion_description": "Mike Moll guest appearance on The Solopreneur Grind Podcast with host Josh Schachnow.",
+  "show_notes": "",
+  "guest_criteria": "OBSERVED: Hosted by Josh Schachnow (Toronto lawyer and tech founder); interviews successful solopreneurs for their best stories, lessons and advice on building a business solo. Best fit: solopreneurs and founders who can share a candid growth journey plus practical, tactical advice. Pitch josh@solopreneurgrind.com.",
+  "audience": "Solopreneurs and aspiring solo / one-person business owners.",
+  "episode_link": "https://podcasts.apple.com/ca/podcast/episode-47-working-hard-figuring-out-your-career-path/id1436648549?i=1000447458441",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "how-to-vet-service-providers-behdad-jamshidi",
+    "title": "how to vet a marketing agency before you hire",
+    "themes": [
+     "niche",
+     "sales",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "marketing-a-live-learning-cohort-mark-latimer",
+    "title": "marketing a live learning cohort",
+    "themes": [
+     "leadgen",
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "startup-canada-podcast",
+    "title": "startup canada podcast",
+    "themes": [
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "21st-century-entrepreneurship",
+    "title": "21st century entrepreneurship",
+    "themes": [
+     "offer",
+     "sales"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-the-solopreneur-grind-podcast.jpg",
+  "image_local": "images/mike-moll-the-solopreneur-grind-podcast.jpg"
+ },
+ "25": {
+  "ref": 25,
+  "slug": "the-entrepreneurs-tribe-podcast",
+  "show": "The Entrepreneur's Tribe Podcast",
+  "host": "Joel Ong",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/f4/a7/78/f4a778f1-86fe-35cf-8121-95f5db1e158f/mza_11271955256709872616.jpg/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/sg/podcast/052-how-to-generate-leads-find-your-audience-online/id1488593008?i=1000507569650"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "The Entrepreneur's Tribe Podcast",
+    "url": "https://podcasts.apple.com/sg/podcast/052-how-to-generate-leads-find-your-audience-online/id1488593008"
+   },
+   {
+    "label": "Joel Ong on Instagram",
+    "url": "https://www.instagram.com/Tapeyourtime/"
+   }
+  ],
+  "themes": [
+   "leadgen",
+   "delegation",
+   "mindset",
+   "remote"
+  ],
+  "notion_description": "Mike is the founder of MarketMe, a consulting firm focused on helping entrepreneurs and business owners connect with the businesses who need them. He has worked with over 500 companies, spent over 5 million media dollars on Google and Facebook, and leads a remote team while traveling the world with his cat.",
+  "show_notes": "Mike is the founder of MarketMe, a consulting firm focused on helping entrepreneurs and business owners connect with the businesses who need them. He has worked with over 500 companies, spent over 5 million media dollars on Google and Facebook, and leads a remote team while traveling the world with his cat.",
+  "guest_criteria": "",
+  "audience": "",
+  "episode_link": "https://podcasts.apple.com/sg/podcast/052-how-to-generate-leads-find-your-audience-online/id1488593008?i=1000507569650",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "innovabuzz-podcast",
+    "title": "innovabuzz podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "business-mastermind-podcast",
+    "title": "business mastermind podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "coach-up-with-kaneshi",
+    "title": "coach up with kaneshi",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "mindset"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-the-entrepreneur-s-tribe-podcast.jpg",
+  "image_local": "images/mike-moll-the-entrepreneur-s-tribe-podcast.jpg"
+ },
+ "26": {
+  "ref": 26,
+  "slug": "agency-profit-podcast",
+  "show": "Agency Profit Podcast",
+  "host": "Marcel Petitpas",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts112/v4/33/ff/d6/33ffd6d8-42ba-ad22-a665-73c9cf3a83fd/mza_2702797021031131334.jpg/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/us/podcast/agency-profit-podcast-88-how-to-increase-your-profit/id1438972327?i=1000565236493"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://marcelpetitpas.com/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Agency Profit Podcast",
+    "url": "https://marcelpetitpas.com/"
+   },
+   {
+    "label": "Marcel Petitpas on Instagram",
+    "url": "https://www.instagram.com/marcel.petitpas/"
+   }
+  ],
+  "themes": [
+   "pricing",
+   "sales",
+   "leadgen",
+   "delegation"
+  ],
+  "notion_description": "Mike Moll guest appearance on Agency Profit Podcast with host Marcel Petitpas.",
+  "show_notes": "",
+  "guest_criteria": "Interviews agency owners, consultants, and operators who can teach specific, data-driven tactics for improving agency/consultancy profitability and operations \u2014 pricing models, margins, utilization, capacity planning, scope creep, forecasting, financial/operational systems. Best fit is a genuine subject-matter expert on agency/professional-services economics who can go deep on numbers, NOT a generalist motivational guest; the show teaches, it doesn't platform pitches (inferred that direct product/service pitching won't land). No public guest-application form found; observed pitch route is the host's contact page https://marcelpetitpas.com/contact/ ('Book a Keynote or Podcast'). No stated revenue threshold or exclusions found.",
+  "audience": "Owners and leaders of creative/digital agencies, consultancies, and other professional-service firms who care about profitability, margins, and operations (inferred stage: small-to-mid agencies scaling past founder-led sales into operational maturity).",
+  "episode_link": "https://podcasts.apple.com/us/podcast/agency-profit-podcast-88-how-to-increase-your-profit/id1438972327?i=1000565236493",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "title": "business infrastructure - curing back office blues",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "sproutworth-predictable-b2b-success",
+    "title": "sproutworth (predictable b2b success)",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "innovabuzz-podcast",
+    "title": "innovabuzz podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority",
+     "mindset"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-agency-profit-podcast.jpg",
+  "image_local": "images/mike-moll-agency-profit-podcast.jpg"
+ },
+ "27": {
+  "ref": 27,
+  "slug": "sage-thought-leadership-podcast",
+  "show": "Sage Thought Leadership Podcast",
+  "host": "Ed Kless",
+  "status": "Published",
+  "cover_url": "https://static.libsyn.com/p/assets/2/4/1/0/24101a8b5748d4c8d959afa2a1bf1c87/Sage_Thought_Leadership_Podcast-1400-sq.jpg",
+  "cover_source": "libsyn",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/us/podcast/thought-leader-mike-moll-on-creating-coaching-practice/id668653849?i=1000513550824"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://www.sagecity.com/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Sage Thought Leadership Podcast",
+    "url": "https://www.sagecity.com/"
+   },
+   {
+    "label": "Ed Kless on Instagram",
+    "url": "https://www.instagram.com/sageofficial/"
+   }
+  ],
+  "themes": [
+   "offer",
+   "sales",
+   "leadgen",
+   "delegation",
+   "authority"
+  ],
+  "notion_description": "Mike Moll is the founder of Market Me, a consulting firm focused on helping solopreneurs monetize their skillset and build systems to turn it into a real business.",
+  "show_notes": "Mike Moll is the founder of Market Me, a consulting firm focused on helping solopreneurs monetize their skillset and build systems to turn it into a real business.",
+  "guest_criteria": "OBSERVED: Long-running show (1,000+ episodes) hosted by Ed Kless (Sr. Director of Partner Development, Sage), sharing 'stories of entrepreneurs creating the future.' Guests are business leaders, founders, consultants, sales leaders, and authors. Best fit: thought leaders and executives with substantive ideas relevant to business, technology, and the accounting/advisory ecosystem. INFERRED (verify): Sage-affiliated, so business/tech thought-leadership angles fit best; no public application page found.",
+  "audience": "Business owners, accountants/advisors, and Sage's professional partner community.",
+  "episode_link": "https://podcasts.apple.com/us/podcast/thought-leader-mike-moll-on-creating-coaching-practice/id668653849?i=1000513550824",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "innovabuzz-podcast",
+    "title": "innovabuzz podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "marketing-a-live-learning-cohort-mark-latimer",
+    "title": "marketing a live learning cohort",
+    "themes": [
+     "leadgen",
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "title": "business infrastructure - curing back office blues",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-sage-thought-leadership-podcast.jpg",
+  "image_local": "images/mike-moll-sage-thought-leadership-podcast.jpg"
+ },
+ "28": {
+  "ref": 28,
+  "slug": "the-more-life-podcast",
+  "show": "The More Life Podcast",
+  "host": "Bart Anestin",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/46/60/b4/4660b4a8-b825-711e-814c-471efd4caf6d/mza_6394054122412287898.jpg/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/ca/podcast/s03-e01-generating-amazing-lead-for-your-business/id1503600025?i=1000507516373"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "The More Life Podcast",
+    "url": "https://podcasts.apple.com/ca/podcast/s03-e01-generating-amazing-lead-for-your-business/id1503600025"
+   },
+   {
+    "label": "Bart Anestin on Instagram",
+    "url": "https://www.instagram.com/bartanestin/"
+   }
+  ],
+  "themes": [
+   "leadgen",
+   "mindset"
+  ],
+  "notion_description": "Mike is the founder of MarketMe, a consulting firm focused on helping entrepreneurs and business owners connect with the businesses who need them. Constantly striving to provide his clients with simple, cost-effective ways to find new leads and quality clients, Mike's gained a reputation for using lean marketing to help his clients make more money. That reputation has landed him in hundreds of str",
+  "show_notes": "Mike is the founder of MarketMe, a consulting firm focused on helping entrepreneurs and business owners connect with the businesses who need them. Constantly striving to provide his clients with simple, cost-effective ways to find new leads and quality clients, Mike's gained a reputation for using lean marketing to help his clients make more money. That reputation has landed him in hundreds of strategy meetings, providing consulting on multi channel marketing and sales processes.",
+  "guest_criteria": "OBSERVED: Hosted by Bart Anestin, founder of brand/web design agency Creative Partner and a design professor in Toronto. Candid conversations with creative artists, problem-solvers and entrepreneurs about 'squeezing more out' of life and finding meaning \u2014 a personal-journey / creativity focus, NOT straight business tactics. Best fit: creatives, founders, and interesting people with a meaningful personal story to tell.",
+  "audience": "Creative professionals, designers, and entrepreneurs interested in meaning, purpose, and personal growth.",
+  "episode_link": "https://podcasts.apple.com/ca/podcast/s03-e01-generating-amazing-lead-for-your-business/id1503600025?i=1000507516373",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "fox-talks-business-podcast",
+    "title": "fox talks business podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "innovabuzz-podcast",
+    "title": "innovabuzz podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "business-mastermind-podcast",
+    "title": "business mastermind podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "mindset"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-the-more-life-podcast.jpg",
+  "image_local": "images/mike-moll-the-more-life-podcast.jpg"
+ },
+ "29": {
+  "ref": 29,
+  "slug": "the-course-creation-podcast",
+  "show": "The Course Creation Podcast",
+  "host": "Yas and Nat",
+  "status": "Published",
+  "cover_url": "https://is5-ssl.mzstatic.com/image/thumb/Podcasts115/v4/f9/c9/9e/f9c99e4c-0cbb-ae55-e141-901a518e0c8a/mza_10450695018338910191.png/600x600bb.jpg",
+  "cover_source": "apple",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/us/podcast/010-mike-moll-founder-of-market-me-on-marketing/id1518623320?i=1000488639192"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://linktr.ee/coursecreationpodcast"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "The Course Creation Podcast",
+    "url": "https://linktr.ee/coursecreationpodcast"
+   },
+   {
+    "label": "Yas and Nat on Instagram",
+    "url": "https://www.instagram.com/coursecreationdotcom/"
+   }
+  ],
+  "themes": [
+   "offer",
+   "sales"
+  ],
+  "notion_description": "Mike Moll guest appearance on The Course Creation Podcast with host Yas and Nat.",
+  "show_notes": "",
+  "guest_criteria": "",
+  "audience": "",
+  "episode_link": "https://podcasts.apple.com/us/podcast/010-mike-moll-founder-of-market-me-on-marketing/id1518623320?i=1000488639192",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "marketing-a-live-learning-cohort-mark-latimer",
+    "title": "marketing a live learning cohort",
+    "themes": [
+     "leadgen",
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "startup-canada-podcast",
+    "title": "startup canada podcast",
+    "themes": [
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "21st-century-entrepreneurship",
+    "title": "21st century entrepreneurship",
+    "themes": [
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "dogoodwork-podcast",
+    "title": "dogoodwork podcast",
+    "themes": [
+     "pricing",
+     "offer",
+     "sales",
+     "leadgen",
+     "niche"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-the-course-creation-podcast.jpg",
+  "image_local": "images/mike-moll-the-course-creation-podcast.jpg"
+ },
+ "30": {
+  "ref": 30,
+  "slug": "you-can-overcome-anything-podcast-show",
+  "show": "You Can Overcome Anything! Podcast Show",
+  "host": "Cesar R. Espino",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/7e/6a/49/7e6a4954-3982-cc71-6313-07e027670292/mza_14031800134816057869.jpg/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/us/podcast/you-can-overcome-anything-ep-214-not-having-an/id1497917624?i=1000564587863"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://cesarrespino.com/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "You Can Overcome Anything! Podcast Show",
+    "url": "https://cesarrespino.com/"
+   },
+   {
+    "label": "Cesar R. Espino on Instagram",
+    "url": "https://www.instagram.com/c2rei/"
+   }
+  ],
+  "themes": [
+   "pricing",
+   "sales",
+   "mindset"
+  ],
+  "notion_description": "Mike Moll guest appearance on You Can Overcome Anything! Podcast Show with host Cesar R. Espino.",
+  "show_notes": "",
+  "guest_criteria": "OBSERVED: Self-improvement / resilience show hosted by Cesar R. Espino; guests share personal stories of overcoming obstacles \u2014 survivors, coaches, entrepreneurs, and strategists (e.g., a stage-IV cancer survivor, career strategists, real estate brokers). Best fit: guests with a strong overcoming-adversity story and an inspirational, growth-minded message. Pitch cesar.espino.c2@gmail.com.",
+  "audience": "Listeners interested in personal development, resilience, and inspirational overcoming-adversity stories.",
+  "episode_link": "https://podcasts.apple.com/us/podcast/you-can-overcome-anything-ep-214-not-having-an/id1497917624?i=1000564587863",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "fox-talks-business-podcast",
+    "title": "fox talks business podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "innovabuzz-podcast",
+    "title": "innovabuzz podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "business-mastermind-podcast",
+    "title": "business mastermind podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "mindset"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-you-can-overcome-anything-podcast-show.jpg",
+  "image_local": "images/mike-moll-you-can-overcome-anything-podcast-show.jpg"
+ },
+ "31": {
+  "ref": 31,
+  "slug": "step-it-up-entrepreneur",
+  "show": "Step It Up Entrepreneur",
+  "host": "Tomas Keenan",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts125/v4/ec/0b/a0/ec0ba029-0f72-b5f9-a735-ffc1db88cd3f/mza_15900579854496044227.jpg/600x600bb.jpg",
+  "cover_source": "apple",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/us/podcast/239-essential-strategies-for-business-success-with/id1481092255?i=1000661782267"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://www.stepitupacademy.com/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Step It Up Entrepreneur",
+    "url": "https://www.stepitupacademy.com/"
+   },
+   {
+    "label": "Tomas Keenan on Instagram",
+    "url": "https://www.instagram.com/tomas_keenan/"
+   }
+  ],
+  "themes": [
+   "sales",
+   "delegation",
+   "mindset"
+  ],
+  "notion_description": "Mike Moll guest appearance on Step It Up Entrepreneur with host Tomas Keenan.",
+  "show_notes": "",
+  "guest_criteria": "OBSERVED: Hosted by Tomas Keenan (entrepreneur, author, Step It Up Academy); interviews entrepreneurs about building a lifestyle (not just a business), scaling, and personal/business growth. Best fit: established entrepreneurs and operators with candid growth-journey stories. Pitch tomas@tomaskeenan.com. NOTE (Mike's DB): host was previously interested but wanted an in-person interview in Dallas, TX.",
+  "audience": "Entrepreneurs and business owners scaling their companies.",
+  "episode_link": "https://podcasts.apple.com/us/podcast/239-essential-strategies-for-business-success-with/id1481092255?i=1000661782267",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "innovabuzz-podcast",
+    "title": "innovabuzz podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "business-mastermind-podcast",
+    "title": "business mastermind podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "coach-up-with-kaneshi",
+    "title": "coach up with kaneshi",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "mindset"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-step-it-up-entrepreneur.jpg",
+  "image_local": "images/mike-moll-step-it-up-entrepreneur.jpg"
+ },
+ "32": {
+  "ref": 32,
+  "slug": "the-sales-evangelist",
+  "show": "The Sales Evangelist",
+  "host": "Donald C. Kelly",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/7a/92/17/7a9217e2-6c66-b8a0-e763-2a42ca7f449b/mza_10359406606483886959.jpg/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/us/podcast/mike-moll-generating-more-high-quality-leads-without-ads/id788738885?i=1000565106039"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://thesalesevangelist.com/tse-podcast-sales-evangelist/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "The Sales Evangelist",
+    "url": "https://thesalesevangelist.com/tse-podcast-sales-evangelist/"
+   },
+   {
+    "label": "Donald C. Kelly on Instagram",
+    "url": "https://www.instagram.com/donaldckelly/"
+   }
+  ],
+  "themes": [
+   "pricing",
+   "sales",
+   "leadgen"
+  ],
+  "notion_description": "Mike Moll guest appearance on The Sales Evangelist with host Donald C. Kelly.",
+  "show_notes": "",
+  "guest_criteria": "OBSERVED: Heard in 155+ countries; Donald Kelly interviews top sales experts, successful sellers, sales leaders and entrepreneurs on strategies to sell better (past guests include Jill Konrath, Bob Burg, Guy Kawasaki, Jeffrey Gitomer). Best fit: recognized sales experts and leaders with tactical, teachable strategies (prospecting, pipeline, enablement, closing). No formal application page found; pitch donald@thesalesevangelist.com.",
+  "audience": "B2B sales reps, sales leaders, and sales-enablement professionals.",
+  "episode_link": "https://podcasts.apple.com/us/podcast/mike-moll-generating-more-high-quality-leads-without-ads/id788738885?i=1000565106039",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "title": "business infrastructure - curing back office blues",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "fox-talks-business-podcast",
+    "title": "fox talks business podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "sproutworth-predictable-b2b-success",
+    "title": "sproutworth (predictable b2b success)",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-the-sales-evangelist.jpg",
+  "image_local": "images/mike-moll-the-sales-evangelist.jpg"
+ },
+ "33": {
+  "ref": 33,
+  "slug": "work-in-programming",
+  "show": "Work in Programming",
+  "host": "Matthew Weeks",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/02/95/2d/02952d6a-af26-72bc-6e0a-573d7bdac62c/mza_14131280999117034177.jpg/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/us/podcast/mike-moll-remote-working-and-team-management-and-how/id1488403795?i=1000469805806"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Work in Programming",
+    "url": "https://podcasts.apple.com/us/podcast/mike-moll-remote-working-and-team-management-and-how/id1488403795"
+   },
+   {
+    "label": "Matthew Weeks on Facebook",
+    "url": "https://www.facebook.com/workinprogramming/"
+   }
+  ],
+  "themes": [
+   "sales",
+   "leadgen",
+   "delegation"
+  ],
+  "notion_description": "Mike Moll guest appearance on Work in Programming with host Matthew Weeks.",
+  "show_notes": "",
+  "guest_criteria": "OBSERVED: Show about what it's like working on a product team in tech; host Matthew Weeks interviews developers, product managers, scrum masters, and engineering managers about their day-to-day work, team practices, and what they look for in new team members. Best fit: software/tech practitioners and product-team members. Likely NOT a fit for general business/marketing guests. NOTE: appears inactive (episodes cluster around 2019-2020); verify before pitching.",
+  "audience": "Software developers, product managers, and tech product-team members.",
+  "episode_link": "https://podcasts.apple.com/us/podcast/mike-moll-remote-working-and-team-management-and-how/id1488403795?i=1000469805806",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "title": "business infrastructure - curing back office blues",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "sproutworth-predictable-b2b-success",
+    "title": "sproutworth (predictable b2b success)",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "innovabuzz-podcast",
+    "title": "innovabuzz podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority",
+     "mindset"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-work-in-programming.jpg",
+  "image_local": "images/mike-moll-work-in-programming.jpg"
+ },
+ "34": {
+  "ref": 34,
+  "slug": "the-story-engine",
+  "show": "The Story Engine",
+  "host": "Kyle Gray",
+  "status": "Published",
+  "cover_url": "https://is3-ssl.mzstatic.com/image/thumb/Podcasts113/v4/36/c5/cd/36c5cdf7-a18d-04e7-31c6-89a076263d32/mza_7888408454889946433.png/600x600bb.jpg",
+  "cover_source": "apple",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Listen",
+    "url": "https://podbay.fm/p/the-story-engine-podcast/e/1696935600"
+   }
+  ],
+  "about_links": [],
+  "themes": [
+   "leadgen",
+   "authority"
+  ],
+  "notion_description": "Mike Moll guest appearance on The Story Engine with host Kyle Gray.",
+  "show_notes": "",
+  "guest_criteria": "OBSERVED: Kyle Gray (business-storytelling expert) interviews founders, entrepreneurs and influencers on using storytelling, content, copywriting and speaking to make marketing easier and more powerful. Dedicated booking page: https://podcast.thestoryengine.co ('Book your podcast interview'). Best fit: founders and marketers with a strong personal story and expertise in content, storytelling, copywriting, or marketing.",
+  "audience": "Entrepreneurs, marketers and content creators who want to market through storytelling.",
+  "episode_link": "https://podbay.fm/p/the-story-engine-podcast/e/1696935600",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "the-thoughtful-entrepreneur",
+    "title": "the thoughtful entrepreneur",
+    "themes": [
+     "leadgen",
+     "authority"
+    ]
+   },
+   {
+    "slug": "innovabuzz-podcast",
+    "title": "innovabuzz podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "the-maverick-paradox-podcast",
+    "title": "the maverick paradox podcast",
+    "themes": [
+     "sales",
+     "leadgen",
+     "authority"
+    ]
+   },
+   {
+    "slug": "sage-thought-leadership-podcast",
+    "title": "sage thought leadership podcast",
+    "themes": [
+     "offer",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-the-story-engine.jpg",
+  "image_local": "images/mike-moll-the-story-engine.jpg"
+ },
+ "35": {
+  "ref": 35,
+  "slug": "coach-up-with-kaneshi",
+  "show": "Coach Up with Kaneshi",
+  "host": "Kaneshi Hart",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/23/a3/36/23a336e3-02ed-b483-dd25-cf6dbf364418/mza_10203826308912146830.jpg/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/us/podcast/why-your-marketing-is-not-making-you-money-and-how-to/id1674959141?i=1000625326540"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Coach Up with Kaneshi",
+    "url": "https://podcasts.apple.com/us/podcast/why-your-marketing-is-not-making-you-money-and-how-to/id1674959141"
+   }
+  ],
+  "themes": [
+   "pricing",
+   "sales",
+   "leadgen",
+   "delegation",
+   "mindset"
+  ],
+  "notion_description": "Mike Moll guest appearance on Coach Up with Kaneshi with host Kaneshi Hart.",
+  "show_notes": "",
+  "guest_criteria": "NOTE: this feed (Apple id1674959141) is now rebranded 'Build A Better Business' by Kaneshi Hart (previously 'Coach Up') \u2014 same host, same feed, active weekly through 2026. Wants six/seven-figure coaches, consultants, and business experts who give tangible, tactical advice to help small-business owners and coaches break through plateaus and scale \u2014 topics: prioritization/systems, sales without feeling 'salesy,' marketing, managing finances/mindset, and pushing through fear, procrastination, and imposter syndrome. Expert-interview format; recent guests include Nick Loper (Side Hustle Show), profitability consultant Fran Strickland, and publicity strategist Dr. Richard Kaye \u2014 the bar is a credible expert with a specific, teachable business angle. Faith/Christian-friendly. No public application URL; pitch via host's Instagram @theconnectioncollaborator or LinkedIn (Kaneshi Hart). (Inferred: leans toward women coaches/entrepreneurs.)",
+  "audience": "Coaches and small-business owners \u2014 heavily women \u2014 who are past startup but feel stuck and want practical strategies to grow, systematize, and sell.",
+  "episode_link": "https://podcasts.apple.com/us/podcast/why-your-marketing-is-not-making-you-money-and-how-to/id1674959141?i=1000625326540",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "innovabuzz-podcast",
+    "title": "innovabuzz podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "business-mastermind-podcast",
+    "title": "business mastermind podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "title": "business infrastructure - curing back office blues",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-coach-up-with-kaneshi.jpg",
+  "image_local": "images/mike-moll-coach-up-with-kaneshi.jpg"
+ },
+ "36": {
+  "ref": 36,
+  "slug": "misfit-entrepreneur",
+  "show": "Misfit Entrepreneur",
+  "host": "Dave Lukas",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/1a/ac/2b/1aac2bfb-4a12-dff4-b31f-3cbb6dee3909/mza_2198929308090326001.jpg/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/us/podcast/how-to-speak-to-the-customer-and-accelerate/id1145889006?i=1000554174275"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://www.misfitentrepreneur.com/podcast.html"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Misfit Entrepreneur",
+    "url": "https://www.misfitentrepreneur.com/podcast.html"
+   },
+   {
+    "label": "Dave Lukas on Instagram",
+    "url": "https://www.instagram.com/misfitentrepreneur/"
+   }
+  ],
+  "themes": [
+   "pricing",
+   "sales"
+  ],
+  "notion_description": "Mike Moll guest appearance on Misfit Entrepreneur with host Dave Lukas.",
+  "show_notes": "",
+  "guest_criteria": "OBSERVED: Weekly show with serial entrepreneur Dave Lukas featuring top entrepreneurs and their non-traditional ('Misfit') paths to success; signature 'Misfit 3' segment extracts actionable tools, tactics and tricks listeners can use immediately. Best fit: accomplished entrepreneurs with a compelling story and concrete, unconventional lessons. No formal application page found; pitch dave@misfitentrepreneur.com.",
+  "audience": "Entrepreneurs and business owners seeking unconventional, actionable strategies from high achievers.",
+  "episode_link": "https://podcasts.apple.com/us/podcast/how-to-speak-to-the-customer-and-accelerate/id1145889006?i=1000554174275",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "title": "business infrastructure - curing back office blues",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "fox-talks-business-podcast",
+    "title": "fox talks business podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "sproutworth-predictable-b2b-success",
+    "title": "sproutworth (predictable b2b success)",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-misfit-entrepreneur.jpg",
+  "image_local": "images/mike-moll-misfit-entrepreneur.jpg"
+ },
+ "37": {
+  "ref": 37,
+  "slug": "that-entrepreneur-life",
+  "show": "That Entrepreneur Life",
+  "host": "Andrew Lees and Clint McPherson",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts125/v4/ac/2e/a9/ac2ea9bb-e1c2-2ce3-2ff4-db69f7b22210/mza_14163266061096921225.jpg/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/ca/podcast/episode-7-learning-how-to-stay-organized-outsource/id1499290377?i=1000470469703"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://thatentrepreneurlife.com/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "That Entrepreneur Life",
+    "url": "https://thatentrepreneurlife.com/"
+   },
+   {
+    "label": "Andrew Lees and Clint McPherson on Instagram",
+    "url": "https://www.instagram.com/thatentrepreneurlifeusa/"
+   }
+  ],
+  "themes": [
+   "delegation"
+  ],
+  "notion_description": "Join Andrew Lees and Clint McPherson as they talk about learning how to stay organized and outsource what you're not good at with Mike Moll.",
+  "show_notes": "Join Andrew Lees and Clint McPherson as they talk about learning how to stay organized and outsource what you're not good at with Mike Moll.",
+  "guest_criteria": "",
+  "audience": "",
+  "episode_link": "https://podcasts.apple.com/ca/podcast/episode-7-learning-how-to-stay-organized-outsource/id1499290377?i=1000470469703",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "how-to-vet-service-providers-behdad-jamshidi",
+    "title": "how to vet a marketing agency before you hire",
+    "themes": [
+     "niche",
+     "sales",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "the-solopreneur-success-cycle-joe-rando",
+    "title": "the solopreneur success cycle",
+    "themes": [
+     "delegation",
+     "mindset",
+     "offer"
+    ]
+   },
+   {
+    "slug": "how-to-time-block-to-maximize-productivity-tiffany-taylor",
+    "title": "how to time-block to protect your focus",
+    "themes": [
+     "delegation",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "title": "business infrastructure - curing back office blues",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-that-entrepreneur-life.jpg",
+  "image_local": "images/mike-moll-that-entrepreneur-life.jpg"
+ },
+ "38": {
+  "ref": 38,
+  "slug": "the-10-minute-entrepreneur",
+  "show": "The 10 Minute Entrepreneur",
+  "host": "Sean Castrina",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/0d/f7/e3/0df7e3a7-0ee9-d4a4-7b16-e922a75fff96/mza_6218825277631471404.jpg/600x600bb.jpg",
+  "cover_source": "apple",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Episode page",
+    "url": "https://seancastrina.libsyn.com/interview-mike-moll-valuing-your-products-the-right-way"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "The 10 Minute Entrepreneur",
+    "url": "https://seancastrina.com"
+   },
+   {
+    "label": "Sean Castrina on Instagram",
+    "url": "https://www.instagram.com/sean.castrina/"
+   }
+  ],
+  "themes": [
+   "sales"
+  ],
+  "notion_description": "Mike Moll on The 10 Minute Entrepreneur",
+  "show_notes": "",
+  "guest_criteria": "OBSERVED: Sean Castrina (serial entrepreneur and author) shares quick, punchy tips for entrepreneurs and small-business owners; guests are proven founders/authors (e.g., Fred Cary, Jamie Kern Lima, Kevin Harrington's partners). Format is short and tactical. Best fit: accomplished entrepreneurs/founders who can deliver concise, high-value startup and small-business insights. Pitch sean@seancastrina.com.",
+  "audience": "Entrepreneurs, startup founders, and small-business owners.",
+  "episode_link": "https://seancastrina.libsyn.com/interview-mike-moll-valuing-your-products-the-right-way",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "how-to-vet-service-providers-behdad-jamshidi",
+    "title": "how to vet a marketing agency before you hire",
+    "themes": [
+     "niche",
+     "sales",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "marketing-a-live-learning-cohort-mark-latimer",
+    "title": "marketing a live learning cohort",
+    "themes": [
+     "leadgen",
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "startup-canada-podcast",
+    "title": "startup canada podcast",
+    "themes": [
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "21st-century-entrepreneurship",
+    "title": "21st century entrepreneurship",
+    "themes": [
+     "offer",
+     "sales"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-the-10-minute-entrepreneur.jpg",
+  "image_local": "images/mike-moll-the-10-minute-entrepreneur.jpg"
+ },
+ "39": {
+  "ref": 39,
+  "slug": "leveraging-video-to-close-contracts-sara-nay",
+  "show": "The Agency Spark",
+  "host": "Sara Nay",
+  "status": "Published",
+  "cover_url": "https://image-cdn-ak.spotifycdn.com/image/ab67656300005f1fde60a38970e407d51db57611",
+  "cover_source": "spotify",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Episode page",
+    "url": "https://sparklabconsulting.com/leveraging-video-to-close-contracts/"
+   }
+  ],
+  "about_links": [],
+  "themes": [
+   "offer",
+   "sales"
+  ],
+  "notion_description": "Mike Moll on The Agency Spark",
+  "show_notes": "",
+  "guest_criteria": "",
+  "audience": "",
+  "episode_link": "https://sparklabconsulting.com/leveraging-video-to-close-contracts/",
+  "transcript_file": "already_captured",
+  "internal_link_suggestions": [
+   {
+    "slug": "marketing-a-live-learning-cohort-mark-latimer",
+    "title": "marketing a live learning cohort",
+    "themes": [
+     "leadgen",
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "startup-canada-podcast",
+    "title": "startup canada podcast",
+    "themes": [
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "21st-century-entrepreneurship",
+    "title": "21st century entrepreneurship",
+    "themes": [
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "dogoodwork-podcast",
+    "title": "dogoodwork podcast",
+    "themes": [
+     "pricing",
+     "offer",
+     "sales",
+     "leadgen",
+     "niche"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-the-agency-spark.jpg",
+  "image_local": "images/mike-moll-the-agency-spark.jpg"
+ },
+ "40": {
+  "ref": 40,
+  "slug": "the-cannoli-coach",
+  "show": "The Cannoli Coach",
+  "host": "Kimberly Hambrick",
+  "status": "Published",
+  "cover_url": "https://d3wo5wojvuv7l.cloudfront.net/t_square_limited_480/images.spreaker.com/original/66405ac13ee36d18df3bb08edf7a8ffc.jpg",
+  "cover_source": "spreaker",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Episode page",
+    "url": "https://www.kimberlyhambrick.com/"
+   },
+   {
+    "label": "Listen",
+    "url": "https://www.spreaker.com/episode/creating-sustainability-in-leaders-and-organizations-w-mike-moll-episode-198--53884382"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "The Cannoli Coach",
+    "url": "https://www.kimberlyhambrick.com/"
+   },
+   {
+    "label": "Kimberly Hambrick on LinkedIn",
+    "url": "https://www.linkedin.com/in/kimberly-hambrick-73a14a7/"
+   }
+  ],
+  "themes": [
+   "offer",
+   "sales"
+  ],
+  "notion_description": "Had Meet n Greet - waiting to schedule interview",
+  "show_notes": "Had Meet n Greet - waiting to schedule interview",
+  "guest_criteria": "",
+  "audience": "",
+  "episode_link": "https://www.spreaker.com/episode/creating-sustainability-in-leaders-and-organizations-w-mike-moll-episode-198--53884382",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "marketing-a-live-learning-cohort-mark-latimer",
+    "title": "marketing a live learning cohort",
+    "themes": [
+     "leadgen",
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "startup-canada-podcast",
+    "title": "startup canada podcast",
+    "themes": [
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "21st-century-entrepreneurship",
+    "title": "21st century entrepreneurship",
+    "themes": [
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "dogoodwork-podcast",
+    "title": "dogoodwork podcast",
+    "themes": [
+     "pricing",
+     "offer",
+     "sales",
+     "leadgen",
+     "niche"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-the-cannoli-coach.jpg",
+  "image_local": "images/mike-moll-the-cannoli-coach.jpg",
+  "spotify_episode": "24cMiBU3gUz5WDUWejgfia"
+ },
+ "41": {
+  "ref": 41,
+  "slug": "the-peak-performance-greatness-show",
+  "show": "The Peak Performance Greatness Show",
+  "host": "Christopher Dedeyan",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/02/5d/01/025d01cc-26ce-0d04-32d4-6a946cb29b6f/mza_3353940453761055741.jpg/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/us/podcast/101-how-to-stand-out-effectively-with-mike-moll/id1569464845?i=1000610584999"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "The Peak Performance Greatness Show",
+    "url": "https://podcasts.apple.com/us/podcast/101-how-to-stand-out-effectively-with-mike-moll/id1569464845"
+   }
+  ],
+  "themes": [
+   "leadgen",
+   "mindset"
+  ],
+  "notion_description": "Mike Moll guest appearance on The Peak Performance Greatness Show with host Christopher Dedeyan.",
+  "show_notes": "",
+  "guest_criteria": "OBSERVED: Christopher Dedeyan invites seasoned business owners and leaders to share their journeys, growth mindset, and the habits of peak-performing individuals; topics include leadership, overcoming obstacles, and building high-performance habits. Guest application/booking page: https://www.christopherdedeyan.com/tppgs/. Best fit: established business owners and leaders with a growth-mindset and peak-performance angle.",
+  "audience": "Business owners and leaders interested in mindset, high performance, and personal growth.",
+  "episode_link": "https://podcasts.apple.com/us/podcast/101-how-to-stand-out-effectively-with-mike-moll/id1569464845?i=1000610584999",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "fox-talks-business-podcast",
+    "title": "fox talks business podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "innovabuzz-podcast",
+    "title": "innovabuzz podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "business-mastermind-podcast",
+    "title": "business mastermind podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "mindset"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-the-peak-performance-greatness-show.jpg",
+  "image_local": "images/mike-moll-the-peak-performance-greatness-show.jpg"
+ },
+ "42": {
+  "ref": 42,
+  "slug": "the-authors-unite-show",
+  "show": "The Authors Unite Show",
+  "host": "Tyler Wagner",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/99/84/71/99847177-d4db-ab36-314d-929d470d05be/mza_7204738224267558371.jpg/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/us/podcast/mike-moll-the-path-to-financial-freedom/id1330319237?i=1000566531537"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://authorsunite.com/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "The Authors Unite Show",
+    "url": "https://authorsunite.com/"
+   },
+   {
+    "label": "Tyler Wagner on Instagram",
+    "url": "https://www.instagram.com/tylerbwagner/"
+   }
+  ],
+  "themes": [
+   "offer",
+   "sales"
+  ],
+  "notion_description": "Mike Moll guest appearance on The Authors Unite Show with host Tyler Wagner.",
+  "show_notes": "",
+  "guest_criteria": "",
+  "audience": "",
+  "episode_link": "https://podcasts.apple.com/us/podcast/mike-moll-the-path-to-financial-freedom/id1330319237?i=1000566531537",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "marketing-a-live-learning-cohort-mark-latimer",
+    "title": "marketing a live learning cohort",
+    "themes": [
+     "leadgen",
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "startup-canada-podcast",
+    "title": "startup canada podcast",
+    "themes": [
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "21st-century-entrepreneurship",
+    "title": "21st century entrepreneurship",
+    "themes": [
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "dogoodwork-podcast",
+    "title": "dogoodwork podcast",
+    "themes": [
+     "pricing",
+     "offer",
+     "sales",
+     "leadgen",
+     "niche"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-the-authors-unite-show.jpg",
+  "image_local": "images/mike-moll-the-authors-unite-show.jpg"
+ },
+ "43": {
+  "ref": 43,
+  "slug": "why-youre-working-too-hard-for-too-little-joe-rando",
+  "show": "The Aspiring Solopreneur (LifeStarr)",
+  "host": "Joe Rando",
+  "status": "Published",
+  "cover_url": "https://www.lifestarr.com/hubfs/why%20youre%20working%20too%20hard%20for%20too%20little.png",
+  "cover_source": "hubspot",
+  "youtube_id": "ayp6h1to_h8",
+  "listen": [
+   {
+    "label": "Episode page",
+    "url": "https://www.lifestarr.com/podcast/why-youre-working-too-hard-for-too-little"
+   }
+  ],
+  "about_links": [],
+  "themes": [
+   "offer",
+   "sales"
+  ],
+  "notion_description": "Mike Moll on The Aspiring Solopreneur (LifeStarr)",
+  "show_notes": "",
+  "guest_criteria": "OBSERVED: Podcast by LifeStarr (software for one-person businesses), co-hosted by Joe Rando and Carly Ries; formerly 'The Aspiring Solopreneur,' now 'The Life-First Solopreneur.' Monday episodes interview an expert or solopreneur; guests include seasoned solopreneurs, marketers, financial experts, and productivity specialists giving practical insight for running a company of one. Best fit: genuine solopreneurs and experts with actionable advice for one-person businesses.",
+  "audience": "Solopreneurs and one-person / company-of-one business owners.",
+  "episode_link": "https://www.lifestarr.com/podcast/why-youre-working-too-hard-for-too-little",
+  "transcript_file": "already_captured",
+  "internal_link_suggestions": [
+   {
+    "slug": "marketing-a-live-learning-cohort-mark-latimer",
+    "title": "marketing a live learning cohort",
+    "themes": [
+     "leadgen",
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "startup-canada-podcast",
+    "title": "startup canada podcast",
+    "themes": [
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "21st-century-entrepreneurship",
+    "title": "21st century entrepreneurship",
+    "themes": [
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "dogoodwork-podcast",
+    "title": "dogoodwork podcast",
+    "themes": [
+     "pricing",
+     "offer",
+     "sales",
+     "leadgen",
+     "niche"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-the-aspiring-solopreneur-lifestarr.jpg",
+  "image_local": "images/mike-moll-the-aspiring-solopreneur-lifestarr.jpg"
+ },
+ "44": {
+  "ref": 44,
+  "slug": "keepin-it-real-wcaramel-as-we-say-100",
+  "show": "Keepin It Real w/Caramel \"As We Say 100\"",
+  "host": "Caramel Lucas",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts124/v4/3b/82/ec/3b82ecab-b7a5-080a-009a-3a0eeec80499/mza_17155408564600138351.jpg/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/us/podcast/spoke-with-founder-of-market-me-over-the/id1518316599?i=1000555411807"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Keepin It Real w/Caramel \"As We Say 100\"",
+    "url": "https://podcasts.apple.com/us/podcast/spoke-with-founder-of-market-me-over-the/id1518316599"
+   },
+   {
+    "label": "Caramel Lucas on Instagram",
+    "url": "https://www.instagram.com/mscaramellucas/?igshid=11mnm02xozqg8"
+   }
+  ],
+  "themes": [
+   "offer",
+   "sales"
+  ],
+  "notion_description": "Mike Moll guest appearance on Keepin It Real w/Caramel \"As We Say 100\" with host Caramel Lucas.",
+  "show_notes": "",
+  "guest_criteria": "A conversational interview show where Caramel Lucas interviews entrepreneurs about their journeys to success \u2014 'deep and real conversations with inspirational and creative entrepreneurs,' from beginners to seasoned pros, both US-based and international. The vibe is intentionally casual and fun ('like friends having a normal conversation'), designed to motivate and inspire, with the one rule that guests 'keep it real.' Low barrier to entry \u2014 early-stage founders are explicitly welcome \u2014 so the main fit criterion is an authentic entrepreneurial story and a personality suited to a warm, motivational chat rather than any revenue/expertise threshold. No formal application; to be featured, email mscaramellucas@gmail.com. Site: https://www.caramellucas.net/",
+  "audience": "General entrepreneurial/self-improvement listeners \u2014 aspiring and working entrepreneurs (US and international) looking for motivation and relatable success stories; likely skews toward Caramel's creative/entertainment and small-business following (inferred).",
+  "episode_link": "https://podcasts.apple.com/us/podcast/spoke-with-founder-of-market-me-over-the/id1518316599?i=1000555411807",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "marketing-a-live-learning-cohort-mark-latimer",
+    "title": "marketing a live learning cohort",
+    "themes": [
+     "leadgen",
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "startup-canada-podcast",
+    "title": "startup canada podcast",
+    "themes": [
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "21st-century-entrepreneurship",
+    "title": "21st century entrepreneurship",
+    "themes": [
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "dogoodwork-podcast",
+    "title": "dogoodwork podcast",
+    "themes": [
+     "pricing",
+     "offer",
+     "sales",
+     "leadgen",
+     "niche"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-keepin-it-real-w-caramel-as-we-say-100.jpg",
+  "image_local": "images/mike-moll-keepin-it-real-w-caramel-as-we-say-100.jpg"
+ },
+ "46": {
+  "ref": 46,
+  "slug": "tribe-of-leaders",
+  "show": "Tribe of Leaders",
+  "host": "Emi Kirschner",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts123/v4/e5/b5/39/e5b539a1-695b-e11e-22ef-571c8ebcfcd4/mza_12885252224069850.png/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/us/podcast/how-being-unconventional-solves-problems-more-effectively/id1453876608?i=1000516411136"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://www.thetribeofleaders.com/podcast/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Tribe of Leaders",
+    "url": "https://www.thetribeofleaders.com/podcast/"
+   },
+   {
+    "label": "Emi Kirschner on Instagram",
+    "url": "https://www.instagram.com/emi.kirschner/"
+   },
+   {
+    "label": "Emi Kirschner on Facebook",
+    "url": "https://www.facebook.com/EmiKirschnerCoaching/"
+   }
+  ],
+  "themes": [
+   "leadgen",
+   "delegation",
+   "authority"
+  ],
+  "notion_description": "Mike Moll guest appearance on Tribe of Leaders with host Emi Kirschner.",
+  "show_notes": "",
+  "guest_criteria": "OBSERVED: Hosted by Emi Kirschner (serial entrepreneur and coach); interviews successful entrepreneurs about their stories of success, failure, and the leadership skills they built while growing a business. Has evolved toward a 'Women Who Build Empires' theme celebrating women entrepreneurs and thought leaders. Best fit: established entrepreneurs (women-focused) with real leadership and business-growth stories.",
+  "audience": "Women entrepreneurs and business leaders scaling their companies.",
+  "episode_link": "https://podcasts.apple.com/us/podcast/how-being-unconventional-solves-problems-more-effectively/id1453876608?i=1000516411136",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "innovabuzz-podcast",
+    "title": "innovabuzz podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "sage-thought-leadership-podcast",
+    "title": "sage thought leadership podcast",
+    "themes": [
+     "offer",
+     "sales",
+     "leadgen",
+     "delegation",
+     "authority"
+    ]
+   },
+   {
+    "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "title": "business infrastructure - curing back office blues",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-tribe-of-leaders.jpg",
+  "image_local": "images/mike-moll-tribe-of-leaders.jpg"
+ },
+ "47": {
+  "ref": 47,
+  "slug": "take-back-time",
+  "show": "Take Back Time",
+  "host": "Penny Zenker",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/7a/b0/52/7ab052de-ebe4-1b41-3b44-1250db018bb0/mza_6032113700492969946.png/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/us/podcast/escape-micromanagement-through-excellent-work-delegation/id1364141623?i=1000578401919"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://tugofwarwithtime.com/podcast/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Take Back Time",
+    "url": "https://tugofwarwithtime.com/podcast/"
+   },
+   {
+    "label": "Penny Zenker on Instagram",
+    "url": "https://www.instagram.com/pennyzenker/"
+   }
+  ],
+  "themes": [
+   "pricing",
+   "sales",
+   "leadgen"
+  ],
+  "notion_description": "Mike Moll guest appearance on Take Back Time with host Penny Zenker.",
+  "show_notes": "",
+  "guest_criteria": "OBSERVED: Leadership and productivity show hosted by Penny Zenker (former Tony Robbins strategic business coach, 'focusologist,' bestselling author of The Productivity Zone). Guests discuss time management, the psychology of productivity, focus, self-leadership, and eliminating distraction, perfectionism and self-sabotage. Best fit: experts and leaders with a concrete productivity, focus, or self-leadership framework. Pitch penny.zenker@gmail.com.",
+  "audience": "Leaders, entrepreneurs and professionals who want better time management, focus and productivity.",
+  "episode_link": "https://podcasts.apple.com/us/podcast/escape-micromanagement-through-excellent-work-delegation/id1364141623?i=1000578401919",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "title": "business infrastructure - curing back office blues",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "fox-talks-business-podcast",
+    "title": "fox talks business podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "sproutworth-predictable-b2b-success",
+    "title": "sproutworth (predictable b2b success)",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-take-back-time.jpg",
+  "image_local": "images/mike-moll-take-back-time.jpg"
+ },
+ "49": {
+  "ref": 49,
+  "slug": "work-home-rockstar",
+  "show": "Work @ Home RockStar",
+  "host": "Tim Melanson",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/ed/3b/13/ed3b1352-1cf5-4b93-7497-797f45f532ef/mza_14334190205464673177.png/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/us/podcast/whr-3-59-mike-moll/id1042289117?i=1000554696499"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://workathomerockstar.com/rockstar-podcast-2/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Work @ Home RockStar",
+    "url": "https://workathomerockstar.com/rockstar-podcast-2/"
+   }
+  ],
+  "themes": [
+   "sales",
+   "remote"
+  ],
+  "notion_description": "Mike Moll guest appearance on Work @ Home RockStar with host Tim Melanson.",
+  "show_notes": "",
+  "guest_criteria": "OBSERVED: Tim Melanson interviews successful home-based entrepreneurs ('Work @ Home RockStars') to extract tips and tricks for building a business from home, using a rock-band framing. Guests include coaches, fractional execs, productivity experts and consultants. Best fit: self-employed, home-based business owners with practical lessons on running a business remotely. No formal application page found; pitch tim@workathomerockstar.com.",
+  "audience": "Home-based entrepreneurs, freelancers, coaches, and self-employed professionals.",
+  "episode_link": "https://podcasts.apple.com/us/podcast/whr-3-59-mike-moll/id1042289117?i=1000554696499",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "livin-that-life-digital-nomad-lifestyles",
+    "title": "livin that life - digital nomad lifestyles",
+    "themes": [
+     "video",
+     "sales",
+     "mindset",
+     "remote"
+    ]
+   },
+   {
+    "slug": "digital-nomad-stories",
+    "title": "digital nomad stories",
+    "themes": [
+     "sales",
+     "mindset",
+     "remote"
+    ]
+   },
+   {
+    "slug": "global-citizen-life-podcast",
+    "title": "global citizen life podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "remote"
+    ]
+   },
+   {
+    "slug": "how-to-vet-service-providers-behdad-jamshidi",
+    "title": "how to vet a marketing agency before you hire",
+    "themes": [
+     "niche",
+     "sales",
+     "delegation"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-work-home-rockstar.jpg",
+  "image_local": "images/mike-moll-work-home-rockstar.jpg"
+ },
+ "50": {
+  "ref": 50,
+  "slug": "6-figure-rebels-podcast",
+  "show": "6 Figure Rebels Podcast",
+  "host": "Jaime Atkinson",
+  "status": "Published",
+  "cover_url": "https://r2.overcast-cdn.com/art/4009258?v40",
+  "cover_source": "overcast",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Listen",
+    "url": "https://overcast.fm/+9LSp_wtW0"
+   }
+  ],
+  "about_links": [],
+  "themes": [
+   "sales",
+   "delegation"
+  ],
+  "notion_description": "Mike Moll guest appearance on 6 Figure Rebels Podcast with host Jaime Atkinson.",
+  "show_notes": "",
+  "guest_criteria": "OBSERVED: '6 Figure Podcast Rebels,' hosted by Jamie Atkinson (podcastclosing.com) with co-host Brittany Chetyrbok. NARROW FOCUS: built for online entrepreneurs who ALREADY have a podcast and want to scale it to multiple 6-7 figures; interviews 6-figure business owners with podcasts about the wins and challenges of client acquisition via a show. Best fit: online coaches/consultants who host their own podcast and use it to sell. Pitch help@thepodcastjunkie.com.",
+  "audience": "Online coaches and course/service entrepreneurs who run their own podcasts.",
+  "episode_link": "https://overcast.fm/+9LSp_wtW0",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "how-to-vet-service-providers-behdad-jamshidi",
+    "title": "how to vet a marketing agency before you hire",
+    "themes": [
+     "niche",
+     "sales",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "downsizing-and-rebuilding-a-team-alicia-butler-pierre",
+    "title": "business infrastructure - curing back office blues",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   },
+   {
+    "slug": "hailey-rowe-podcast",
+    "title": "hailey rowe podcast",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation",
+     "niche",
+     "mindset"
+    ]
+   },
+   {
+    "slug": "sproutworth-predictable-b2b-success",
+    "title": "sproutworth (predictable b2b success)",
+    "themes": [
+     "pricing",
+     "sales",
+     "leadgen",
+     "delegation"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-6-figure-rebels-podcast.jpg",
+  "image_local": "images/mike-moll-6-figure-rebels-podcast.jpg"
+ },
+ "51": {
+  "ref": 51,
+  "slug": "the-brand-called-you-tbcy",
+  "show": "The Brand Called You (tbcy)",
+  "host": "Frits Bussemaker, Ashutosh Garg",
+  "status": "Published",
+  "cover_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts114/v4/1e/eb/25/1eeb2570-16b5-d423-ab5d-7268aa4d8ea4/mza_7424330943957751863.jpg/600x600bf-60.jpg",
+  "cover_source": "itunes",
+  "youtube_id": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/in/podcast/learn-the-abc-of-marketing-mike-moll-founder-market/id1462533307?i=1000557112444"
+   },
+   {
+    "label": "Episode page",
+    "url": "https://tbcy.in/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "The Brand Called You (tbcy)",
+    "url": "https://tbcy.in/"
+   },
+   {
+    "label": "Frits Bussemaker, Ashutosh Garg on Instagram",
+    "url": "https://www.instagram.com/tbcy_podcast/"
+   }
+  ],
+  "themes": [
+   "offer",
+   "sales"
+  ],
+  "notion_description": "Mike Moll guest appearance on The Brand Called You (tbcy) with host Frits Bussemaker, Ashutosh Garg.",
+  "show_notes": "",
+  "guest_criteria": "",
+  "audience": "",
+  "episode_link": "https://podcasts.apple.com/in/podcast/learn-the-abc-of-marketing-mike-moll-founder-market/id1462533307?i=1000557112444",
+  "transcript_file": null,
+  "internal_link_suggestions": [
+   {
+    "slug": "marketing-a-live-learning-cohort-mark-latimer",
+    "title": "marketing a live learning cohort",
+    "themes": [
+     "leadgen",
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "startup-canada-podcast",
+    "title": "startup canada podcast",
+    "themes": [
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "21st-century-entrepreneurship",
+    "title": "21st century entrepreneurship",
+    "themes": [
+     "offer",
+     "sales"
+    ]
+   },
+   {
+    "slug": "dogoodwork-podcast",
+    "title": "dogoodwork podcast",
+    "themes": [
+     "pricing",
+     "offer",
+     "sales",
+     "leadgen",
+     "niche"
+    ]
+   }
+  ],
+  "seo_image": "mike-moll-the-brand-called-you-tbcy.jpg",
+  "image_local": "images/mike-moll-the-brand-called-you-tbcy.jpg"
+ },
+ "54": {
+  "ref": 54,
+  "slug": "fuel-your-legacy",
+  "show": "Fuel Your Legacy",
+  "host": "Samuel Knickerbocker",
+  "status": "Published",
+  "cover_url": null,
+  "cover_source": null,
+  "youtube_id": null,
+  "episode_link": "https://podcasts.apple.com/us/podcast/episode-249-how-to-identify-your-super-power/id1438551232?i=1000522403250",
+  "image_local": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/us/podcast/episode-249-how-to-identify-your-super-power/id1438551232?i=1000522403250"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Fuel Your Legacy",
+    "url": "https://samknickerbocker.com/fuel-your-legacy/"
+   }
+  ]
+ },
+ "55": {
+  "ref": 55,
+  "slug": "its-simple",
+  "show": "It's Simple",
+  "host": "Zohaib & Matthew",
+  "status": "Published",
+  "cover_url": null,
+  "cover_source": null,
+  "youtube_id": null,
+  "episode_link": "https://podcasts.apple.com/lv/podcast/how-to-transform-your-business-online-w-mike-moll-s2-ep10/id1505249131?i=1000534366343",
+  "image_local": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/lv/podcast/how-to-transform-your-business-online-w-mike-moll-s2-ep10/id1505249131?i=1000534366343"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "It's Simple Podcast",
+    "url": "https://linktr.ee/itssimplepodcast"
+   }
+  ]
+ },
+ "56": {
+  "ref": 56,
+  "slug": "leadsology",
+  "show": "Leadsology",
+  "host": "Tom Poland",
+  "status": "Published",
+  "cover_url": null,
+  "cover_source": null,
+  "youtube_id": null,
+  "episode_link": "https://www.leadsology.guru/podcast/how-to-generate-high-quality-leads-with-video-in-just-7-minutes-with-mike-moll/",
+  "image_local": null,
+  "listen": [
+   {
+    "label": "Leadsology",
+    "url": "https://www.leadsology.guru/podcast/how-to-generate-high-quality-leads-with-video-in-just-7-minutes-with-mike-moll/"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Leadsology",
+    "url": "https://www.leadsology.guru/"
+   }
+  ]
+ },
+ "57": {
+  "ref": 57,
+  "slug": "north-report",
+  "show": "North Report",
+  "host": "Eric Kim",
+  "status": "Published",
+  "cover_url": null,
+  "cover_source": null,
+  "youtube_id": null,
+  "episode_link": "https://podcasts.apple.com/ca/podcast/marketing-for-software-tech-eric-kim-mike-moll/id1463788975?i=1000446875181",
+  "image_local": null,
+  "listen": [
+   {
+    "label": "Apple Podcasts",
+    "url": "https://podcasts.apple.com/ca/podcast/marketing-for-software-tech-eric-kim-mike-moll/id1463788975?i=1000446875181"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "North Report (Quantum Mob)",
+    "url": "https://qmo.io/social/"
+   }
+  ]
+ },
+ "58": {
+  "ref": 58,
+  "slug": "the-future-of-influence",
+  "show": "The Future of Influence",
+  "host": "Sandy Fowler",
+  "status": "Published",
+  "cover_url": null,
+  "cover_source": null,
+  "youtube_id": null,
+  "episode_link": "https://player.fm/series/series-2924165/ep-38-growing-your-online-influence-with-market-me-consultings-mike-moll",
+  "image_local": null,
+  "listen": [
+   {
+    "label": "Player FM",
+    "url": "https://player.fm/series/series-2924165/ep-38-growing-your-online-influence-with-market-me-consultings-mike-moll"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "The Future of Influence",
+    "url": "https://kingrajsingh.com/podcast/"
+   }
+  ]
+ },
+ "59": {
+  "ref": 59,
+  "slug": "charles-alexander",
+  "show": "Charles Alexander",
+  "host": "Charles Alexander",
+  "status": "Published",
+  "cover_url": "https://img.youtube.com/vi/Qtt8zCvuHfk/hqdefault.jpg",
+  "image_local": "https://img.youtube.com/vi/Qtt8zCvuHfk/hqdefault.jpg",
+  "cover_source": "youtube",
+  "youtube_id": "Qtt8zCvuHfk",
+  "episode_link": "https://www.youtube.com/watch?v=Qtt8zCvuHfk",
+  "listen": [
+   {
+    "label": "Watch on YouTube",
+    "url": "https://www.youtube.com/watch?v=Qtt8zCvuHfk"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Charles Alexander",
+    "url": "https://www.youtube.com/watch?v=Qtt8zCvuHfk"
+   }
+  ]
+ },
+ "60": {
+  "ref": 60,
+  "slug": "grateful-ai-podcast",
+  "show": "Grateful AI Training Podcast",
+  "host": "Mark Latimer",
+  "status": "Published",
+  "cover_url": "https://img.youtube.com/vi/SSqVuHcT2lg/hqdefault.jpg",
+  "image_local": "https://img.youtube.com/vi/SSqVuHcT2lg/hqdefault.jpg",
+  "cover_source": "youtube",
+  "youtube_id": "SSqVuHcT2lg",
+  "episode_link": "https://www.youtube.com/watch?v=SSqVuHcT2lg",
+  "listen": [
+   {
+    "label": "Watch on YouTube",
+    "url": "https://www.youtube.com/watch?v=SSqVuHcT2lg"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Grateful AI Training Podcast",
+    "url": "https://www.youtube.com/watch?v=SSqVuHcT2lg"
+   }
+  ]
+ },
+ "61": {
+  "ref": 61,
+  "slug": "move-the-needle",
+  "show": "Move The Needle",
+  "host": "Marlana Semenza",
+  "status": "Published",
+  "cover_url": "https://img.youtube.com/vi/4Qv0Ebs_pFo/hqdefault.jpg",
+  "image_local": "https://img.youtube.com/vi/4Qv0Ebs_pFo/hqdefault.jpg",
+  "cover_source": "youtube",
+  "youtube_id": "4Qv0Ebs_pFo",
+  "episode_link": "https://www.youtube.com/watch?v=4Qv0Ebs_pFo",
+  "listen": [
+   {
+    "label": "Watch on YouTube",
+    "url": "https://www.youtube.com/watch?v=4Qv0Ebs_pFo"
+   }
+  ],
+  "about_links": [
+   {
+    "label": "Move The Needle",
+    "url": "https://www.youtube.com/watch?v=4Qv0Ebs_pFo"
+   }
+  ]
+ }
+}

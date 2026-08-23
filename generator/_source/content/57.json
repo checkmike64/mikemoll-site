@@ -1,0 +1,21 @@
+{
+ "ref": 57,
+ "post_title": "Marketing a Software Product Without Drowning in Features",
+ "meta_description": "Mike Moll on North Report with Eric Kim: why software and tech companies win by selling the outcome and picking a lane instead of listing features.",
+ "tldr": [
+  "Buyers do not want your feature list. They want the outcome the features produce.",
+  "Pick one type of customer and one clear message instead of appealing to everyone."
+ ],
+ "intro_html": "<p>I joined Eric Kim on North Report, Quantum Mob's show, to talk about marketing for software and tech companies. Technical teams tend to market the way they build, feature by feature. That is exactly where most of them lose the buyer.</p>",
+ "sections": [
+  {
+   "h2": "Sell the outcome, not the feature list",
+   "html": "<p>A feature list makes the buyer do the work of figuring out why it matters. Most will not bother. Lead with the outcome instead. What is different about their day, their numbers, their workload after they use this. Features can back up the claim, but the outcome is what gets attention and what people pay for.</p>"
+  },
+  {
+   "h2": "Pick a lane and own it",
+   "html": "<p>Trying to be for everyone is the fastest way to be memorable to no one. Choose the customer you serve best and the one problem you solve for them, and let the message get sharp. A narrow, clear message pulls in the right buyers and quietly filters out the wrong ones, which is what you want in a competitive category.</p>"
+  }
+ ],
+ "about_blurb_html": "<p>North Report is a podcast from Quantum Mob, hosted by Eric Kim, covering marketing, technology, and growth for software and tech companies.</p>"
+}
