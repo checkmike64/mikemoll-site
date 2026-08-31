@@ -16,10 +16,23 @@ const FORMS = {
   'podcast-workshop': {
     tags: ['podcast-workshop'],
   },
-  // Evergreen opt-in for the workshop recording. Distinct tag so the old
-  // pre-event sequence (triggered by 'podcast-workshop') never fires.
+  // Evergreen opt-in for the workshop recording. Same 'podcast-workshop'
+  // tag as the live-era registrants (Mike's call: same intent, same tag) --
+  // the scheduled recording campaigns target this tag, and the old
+  // Pre-Event Sequence workflow must stay paused. The delivery email is
+  // sent directly from this handler (workflows have no write API).
   'workshop-recording': {
-    tags: ['workshop-recording'],
+    tags: ['podcast-workshop'],
+    welcomeEmail: {
+      subject: 'Your workshop recording',
+      from: 'mike@mikemoll.co',
+      html: [
+        '<p>Here&#39;s your workshop: <a href="https://www.mikemoll.co/podcast-workshop-replay">https://www.mikemoll.co/podcast-workshop-replay</a></p>',
+        '<p>It&#39;s the full Get Booked on Podcasts session, about an hour. The course materials are on the same page.</p>',
+        '<p>One more thing. There&#39;s a free strategy call for people who grabbed the workshop. It&#39;s the same session I charge $150 for, and it&#39;s free until September 15. The details are under the video.</p>',
+        '<p>Mike</p>',
+      ].join('\n'),
+    },
   },
   'consulting-application': {
     tags: ['consulting-application'],
@@ -155,6 +168,42 @@ export function createHandler(defaultFormId) {
       if (!ghlRes.ok) {
         console.error('GHL upsert failed', formId, ghlRes.status, text);
         return res.status(502).json({ ok: false, error: 'Registration service error' });
+      }
+
+      // Delivery email for forms that define one (the workshop recording).
+      // Failure here never fails the registration -- the page redirects the
+      // visitor to the content either way.
+      if (cfg.welcomeEmail) {
+        try {
+          let contactId = null;
+          try { contactId = (JSON.parse(text).contact || {}).id || null; } catch {}
+          if (contactId) {
+            const w = cfg.welcomeEmail;
+            const sendRes = await fetch('https://services.leadconnectorhq.com/conversations/messages', {
+              method: 'POST',
+              headers: {
+                'Authorization': `Bearer ${token}`,
+                'Version': '2021-04-15',
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+              },
+              body: JSON.stringify({
+                type: 'Email',
+                contactId,
+                subject: w.subject,
+                emailFrom: w.from,
+                html: w.html,
+              }),
+            });
+            if (!sendRes.ok) {
+              console.error('welcome email failed', formId, sendRes.status, await sendRes.text());
+            }
+          } else {
+            console.error('welcome email skipped: no contact id in upsert response', formId);
+          }
+        } catch (e) {
+          console.error('welcome email error', formId, e);
+        }
       }
       return res.status(200).json({ ok: true });
     } catch (err) {
