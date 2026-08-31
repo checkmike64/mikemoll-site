@@ -17,22 +17,12 @@ const FORMS = {
     tags: ['podcast-workshop'],
   },
   // Evergreen opt-in for the workshop recording. Same 'podcast-workshop'
-  // tag as the live-era registrants (Mike's call: same intent, same tag) --
-  // the scheduled recording campaigns target this tag, and the old
-  // Pre-Event Sequence workflow must stay paused. The delivery email is
-  // sent directly from this handler (workflows have no write API).
+  // tag as the live-era registrants; the GHL workflow "Podcast Workshop -
+  // Pre-Event Sequence" (rebuilt 2026-08-31 with recording-delivery emails,
+  // triggered by this tag) owns the entire email sequence. Do not add a
+  // welcomeEmail here or contacts will get the delivery email twice.
   'workshop-recording': {
     tags: ['podcast-workshop'],
-    welcomeEmail: {
-      subject: 'Your workshop recording',
-      from: 'mike@mikemoll.co',
-      html: [
-        '<p>Here&#39;s your workshop: <a href="https://www.mikemoll.co/podcast-workshop-replay">https://www.mikemoll.co/podcast-workshop-replay</a></p>',
-        '<p>It&#39;s the full Get Booked on Podcasts session, about an hour. The course materials are on the same page.</p>',
-        '<p>One more thing. There&#39;s a free strategy call for people who grabbed the workshop. It&#39;s the same session I charge $150 for, and it&#39;s free until September 15. The details are under the video.</p>',
-        '<p>Mike</p>',
-      ].join('\n'),
-    },
   },
   'consulting-application': {
     tags: ['consulting-application'],
