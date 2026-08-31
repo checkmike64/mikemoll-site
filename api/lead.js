@@ -16,6 +16,11 @@ const FORMS = {
   'podcast-workshop': {
     tags: ['podcast-workshop'],
   },
+  // Evergreen opt-in for the workshop recording. Distinct tag so the old
+  // pre-event sequence (triggered by 'podcast-workshop') never fires.
+  'workshop-recording': {
+    tags: ['workshop-recording'],
+  },
   'consulting-application': {
     tags: ['consulting-application'],
     customByKey: {
