@@ -92,6 +92,17 @@ export function createHandler(defaultFormId) {
       return res.status(400).json({ ok: false, error: 'Unknown form' });
     }
 
+    // Anti-spam: honeypot field bots tend to auto-fill, plus a minimum
+    // render-to-submit time real users can't beat. Respond 200 without
+    // actually registering the lead, so bots don't learn to adapt.
+    if (String(body.website_url || '').trim() !== '') {
+      return res.status(200).json({ ok: true });
+    }
+    const renderedAt = Number(body.renderedAt);
+    if (!renderedAt || Date.now() - renderedAt < 1500) {
+      return res.status(200).json({ ok: true });
+    }
+
     const email = String(body.email || '').trim();
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     if (!emailOk) {

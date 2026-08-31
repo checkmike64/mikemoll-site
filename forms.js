@@ -16,7 +16,25 @@
     });
   }
 
+  // Honeypot: a field real users never see or fill in, since it's named to
+  // look plausible to bots but hidden from sighted users and screen readers.
+  // Bots that auto-fill every field trip it; server rejects if it's non-empty.
+  function addHoneypot(form) {
+    var wrap = document.createElement('div');
+    wrap.style.cssText = 'position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;';
+    wrap.setAttribute('aria-hidden', 'true');
+    var input = document.createElement('input');
+    input.type = 'text';
+    input.name = 'website_url';
+    input.tabIndex = -1;
+    input.autocomplete = 'off';
+    wrap.appendChild(input);
+    form.appendChild(wrap);
+    form.dataset.renderedAt = String(Date.now());
+  }
+
   function wire(form) {
+    addHoneypot(form);
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
       var btn = form.querySelector('button[type=submit]') || form.querySelector('button');
@@ -24,6 +42,7 @@
       if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
       var data = Object.fromEntries(new FormData(form).entries());
       data.formId = form.getAttribute('data-lead');
+      data.renderedAt = form.dataset.renderedAt;
       try {
         var res = await fetch('/api/lead', {
           method: 'POST',
