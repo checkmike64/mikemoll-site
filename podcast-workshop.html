@@ -275,6 +275,9 @@
           <label for="reg-email">Email</label>
           <input id="reg-email" type="email" name="email" autocomplete="email" required>
         </div>
+        <div style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+          <input type="text" name="website_url" id="reg-website" tabindex="-1" autocomplete="off">
+        </div>
         <button class="btn btn-primary btn-lg" type="submit">Send me the recording</button>
       </form>
       <p class="regnote">No spam. Just the recording and a few useful emails.</p>
@@ -293,15 +296,17 @@
 <script>
 (function(){
   var f=document.querySelector('.regform'); if(!f) return;
+  var renderedAt=Date.now();
   f.addEventListener('submit', async function(e){
     e.preventDefault();
     var btn=f.querySelector('button');
     var name=(f.querySelector('input[name=name]')||{}).value||'';
     var email=(f.querySelector('input[name=email]')||{}).value||'';
+    var website_url=(f.querySelector('input[name=website_url]')||{}).value||'';
     if(!email.trim()) return;
     btn.disabled=true; var orig=btn.textContent; btn.textContent='Opening the workshop...';
     try{
-      var res=await fetch('/api/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name.trim(),email:email.trim(),formId:'workshop-recording',source:'podcast-workshop-evergreen'})});
+      var res=await fetch('/api/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name.trim(),email:email.trim(),formId:'workshop-recording',source:'podcast-workshop-evergreen',website_url:website_url,renderedAt:renderedAt})});
       if(!res.ok) throw new Error('bad status '+res.status);
       window.location.href='/podcast-workshop-replay';
     }catch(err){ btn.disabled=false; btn.textContent=orig; alert('Something went wrong. Please try again.'); }

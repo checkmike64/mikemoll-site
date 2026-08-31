@@ -183,6 +183,7 @@
 
   var KEY='mm_training_unlocked', EMAIL_KEY='mm_training_email';
   var pendingSlug=(location.hash||'').replace('#','').trim();
+  var pageRenderedAt=Date.now();
 
   // ---- tracking: dataLayer (GTM) + GHL tag via /api/lead ----
   function track(kind,item){
@@ -190,7 +191,7 @@
     var em;try{em=localStorage.getItem(EMAIL_KEY);}catch(e){}
     if(!em)return;
     var ev = kind==='video_play' ? ('watched-'+item) : ('training-'+kind);
-    fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({formId:'training-engagement',email:em,event:ev})}).catch(function(){});
+    fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({formId:'training-engagement',email:em,event:ev,renderedAt:pageRenderedAt})}).catch(function(){});
   }
   function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
 
@@ -272,7 +273,7 @@
     var email=document.getElementById('gate-email').value.trim();
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){document.getElementById('gate-email').focus();return;}
     var btn=document.getElementById('gate-btn');btn.disabled=true;btn.textContent='Opening...';
-    fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({formId:'training-library',email:email})})
+    fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({formId:'training-library',email:email,renderedAt:pageRenderedAt})})
       .catch(function(){}).finally(function(){localStorage.setItem(KEY,'1');try{localStorage.setItem(EMAIL_KEY,email);}catch(e){}track('unlock','');reveal();});
   });
 })();
