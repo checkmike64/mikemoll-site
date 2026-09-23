@@ -5,7 +5,7 @@
   "redirects": [
     {
       "source": "/my-story",
-      "destination": "/about",
+      "destination": "/",
       "permanent": true
     },
     {
@@ -20,7 +20,7 @@
     },
     {
       "source": "/leads-from-linkedin",
-      "destination": "/free/linkedin-leads",
+      "destination": "/training",
       "permanent": true
     },
     {
@@ -35,7 +35,7 @@
     },
     {
       "source": "/linkedin-lead-thank-you",
-      "destination": "/free/linkedin-leads-thanks",
+      "destination": "/training",
       "permanent": true
     },
     {
@@ -56,6 +56,46 @@
     {
       "source": "/free/podcast-guesting-thanks",
       "destination": "/podcast-workshop",
+      "permanent": true
+    },
+    {
+      "source": "/home-page",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/webinar-registration",
+      "destination": "/podcast-workshop",
+      "permanent": true
+    },
+    {
+      "source": "/webinar-confirmation",
+      "destination": "/podcast-workshop-replay",
+      "permanent": true
+    },
+    {
+      "source": "/webinar-broadcast",
+      "destination": "/podcast-workshop-replay",
+      "permanent": true
+    },
+    {
+      "source": "/expired-webinar",
+      "destination": "/podcast-workshop",
+      "permanent": true
+    },
+    {
+      "source": "/thank-you-training-name-853643",
+      "destination": "/training",
+      "permanent": true
+    },
+    {
+      "source": "/post-1300",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/post",
+      "destination": "/blog",
       "permanent": true
     }
   ]

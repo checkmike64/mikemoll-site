@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Free Resources | Mike Moll</title>
-<meta name="description" content="Mike Moll's free resource library: video trainings, tools, and guides on offers, pricing, sales, LinkedIn leads, podcast guesting, and using Claude.">
+<meta name="description" content="Mike Moll's free resource library: video trainings, tools, and guides on offers, pricing, sales, and using Claude.">
 <meta name="robots" content="noindex, follow">
 <link rel="canonical" href="https://www.mikemoll.co/training">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,7 +74,7 @@
   .modal.open{display:flex}
   .sheet{max-width:920px;width:100%;background:var(--surface);border:1px solid var(--hairline-2);overflow:hidden;position:relative}
   .sheet .vid{aspect-ratio:16/9;background:#000}
-  .sheet video{width:100%;height:100%;display:block}
+  .sheet video,.sheet iframe{width:100%;height:100%;display:block;border:0}
   .sheet .m{padding:28px 32px 34px}
   .sheet .m .tp{font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px}
   .sheet h2{font-size:1.7rem;margin-bottom:12px}
@@ -131,7 +131,7 @@
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Resource">
   <div class="sheet">
     <button class="close" id="modal-close" aria-label="Close">&times;</button>
-    <div class="vid"><video id="player" controls playsinline preload="metadata"></video></div>
+    <div class="vid"><iframe id="player" title="Training video" allow="autoplay; fullscreen" allowfullscreen frameborder="0" scrolling="no"></iframe></div>
     <div class="m">
       <span class="tp" id="m-topic"></span>
       <h2 id="m-title"></h2>
@@ -155,13 +155,12 @@
   <div class="foot-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div>
 </div></footer>
 
-<script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js"></script>
 <script>
 (function(){
   // ============================================================
   //  RESOURCE HUB DATA
   //  To add a resource, append one object.
-  //   type: "video"  -> plays in the modal (needs hls)
+  //   type: "video"  -> plays in the modal (needs `embed`, a Spotlightr URL)
   //   type: "link"   -> opens url in a new tab (GPT, guide, tool, etc.)
   //   cat:  section heading it appears under (see CAT_ORDER)
   //   cover: optional image URL. If set, it's used as the card cover.
@@ -173,7 +172,7 @@
       topic:"Claude / AI", title:"Let Claude do your busywork",
       blurb:"Use the basics inside Claude to clear the tasks eating your week. Made for beginners.",
       cover:"",
-      hls:"https://content.apisystem.tech/hls/medias/Y6tiQHe96XbqVkTeRY8J/media/transcoded_videos/cts-00fc13d16ea6fcc9_,360,480,720,1080,p.mp4.urlset/master.m3u8" }
+      embed:"https://socialmediahouse.cdn.spotlightr.com/watch/MjAyODY1Mw==?fallback=true" }
   ];
 
   var byslug={}; RESOURCES.forEach(function(r){byslug[r.slug]=r;});
@@ -232,7 +231,6 @@
   }
 
   // ---- open a resource (video -> modal, link -> new tab) ----
-  var hls=null;
   function open(r){
     if(!r) return;
     if(r.type!=='video'){
@@ -245,16 +243,14 @@
     document.getElementById('m-topic').textContent=r.topic;
     document.getElementById('m-title').textContent=r.title;
     document.getElementById('m-desc').textContent=r.blurb;
-    if(hls){hls.destroy();hls=null;}
-    if(window.Hls&&window.Hls.isSupported()){hls=new window.Hls();hls.loadSource(r.hls);hls.attachMedia(p);}
-    else{p.src=r.hls;}
+    p.src=r.embed;
     try{ history.replaceState(null,'','#'+r.slug); }catch(e){}
     document.getElementById('modal').classList.add('open');
     document.body.style.overflow='hidden';
   }
   function closeVideo(){
-    var p=document.getElementById('player');p.pause();
-    if(hls){hls.destroy();hls=null;} p.removeAttribute('src');p.load();
+    // clearing src stops playback; the player keeps running otherwise
+    var p=document.getElementById('player');p.removeAttribute('src');
     document.getElementById('modal').classList.remove('open');
     document.body.style.overflow='';
     try{ history.replaceState(null,'',location.pathname); }catch(e){}
