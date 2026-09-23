@@ -15,6 +15,12 @@ Static site for Mike Moll. Plain HTML/CSS, no build step. Deploys on Vercel.
   also add its URL to `sitemap.xml` (unless it should stay `noindex`, like a
   thank-you page).
 - `scroll-top.js` — shared "back to top" button, included via `<script src="/scroll-top.js" defer></script>` before `</body>` on every page.
+- `favicon.ico`, `favicon.svg`, `apple-touch-icon.png` — the site icon (white M on a black circle). Every page links all three just before `</head>`; `_template.html` and both generator templates (`generator/_source/gen.py`, `build_pages.py`) already carry the block. Keep it when copying or generating pages:
+  ```html
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  ```
 - Every page includes the same Google Tag Manager container (`GTM-55MG6M63`) — script tag high in `<head>`, noscript iframe right after `<body>`. Keep both when copying/editing pages.
 
 ## Get it live (first time, ~10 minutes)
