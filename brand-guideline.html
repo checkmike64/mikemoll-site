@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WD3WQ8N');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Guideline | Mike Moll</title>
+<meta name="description" content="Brand and content guideline for Mike Moll Coaching: message, audience, visual identity, voice and content rules.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://www.mikemoll.co/brand-guideline">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mike Moll">
+<meta property="og:title" content="Brand Guideline">
+<meta property="og:description" content="Brand and content guideline for Mike Moll Coaching.">
+<meta property="og:url" content="https://www.mikemoll.co/brand-guideline">
+<!-- Internal page for the team: no site navigation, kept out of search (noindex) and out of sitemap.xml. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --head:'Libre Franklin','Helvetica Neue',Arial,sans-serif;
+  --body:'Poppins','Helvetica Neue',Arial,sans-serif;
+  --bg:#ffffff;
+  --ink:#111111;
+  --text:#3a3f45;
+  --muted:#6d737a;
+  --hair:rgba(17,17,17,.13);
+  --hair-strong:rgba(17,17,17,.26);
+  --accent:#38b6ff;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#000000; --ink:#ffffff; --text:#d7d7d7; --muted:#9a9a9a;
+    --hair:rgba(255,255,255,.20); --hair-strong:rgba(255,255,255,.34);
+    color-scheme:dark;
+  }
+}
+
+*{box-sizing:border-box;border-radius:0}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);
+  font-size:14.5px;line-height:1.62;-webkit-font-smoothing:antialiased;padding-inline:16px}
+.page{max-width:1180px;margin:0 auto;padding-block:36px 56px;padding-inline:clamp(0px,2.4vw,28px)}
+h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0;padding:0}
+h1,h2,h3{font-family:var(--head);color:var(--ink);text-wrap:balance}
+ul,ol{list-style:none}
+b,strong{color:var(--ink);font-weight:600}
+
+/* masthead */
+.mast{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;
+  padding-bottom:14px;border-bottom:1px solid var(--hair)}
+.wordmark{font-family:var(--head);font-weight:700;color:var(--ink);letter-spacing:-.02em;font-size:20px;line-height:1}
+.wordmark i{font-style:normal;color:var(--accent)}
+.mast .meta{font-size:12.5px;color:var(--muted)}
+h1{font-weight:600;font-size:clamp(26px,3vw,34px);letter-spacing:-.02em;line-height:1.1;margin-top:30px}
+.sub{color:var(--muted);font-size:13.5px;margin-top:6px}
+
+/* thesis */
+.thesis{margin-top:34px;display:grid;gap:14px}
+.thesis .line{font-family:var(--head);font-weight:700;color:var(--ink);
+  font-size:clamp(30px,4.6vw,54px);line-height:1.05;letter-spacing:-.03em;max-width:19ch;text-wrap:balance}
+.thesis .subline{font-weight:300;font-size:clamp(15px,1.5vw,18px);color:var(--text);max-width:64ch}
+.thesis .note{font-size:12.5px;color:var(--muted);max-width:70ch}
+
+/* architecture band */
+.arch{margin-top:30px;display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.arch > div{padding:16px 22px;border-left:1px solid var(--hair)}
+.arch > div:first-child{border-left:none;padding-left:0}
+.lbl{font-family:var(--head);font-weight:600;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.arch .val{font-family:var(--head);font-weight:600;color:var(--ink);font-size:17px;letter-spacing:-.01em;line-height:1.25;margin-top:4px}
+.arch .val i{font-style:normal;color:var(--accent)}
+.arch .nt{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.45}
+
+/* sections */
+.part{margin-top:46px}
+.part > h2{font-weight:600;font-size:24px;letter-spacing:-.02em;padding-top:16px;border-top:1px solid var(--hair-strong)}
+.cols{display:grid;margin-top:22px;column-gap:40px;row-gap:32px}
+.cols.two{grid-template-columns:1.05fr 1fr}
+.cols.three{grid-template-columns:repeat(3,1fr)}
+.cols > .col{display:flex;flex-direction:column;gap:30px;min-width:0}
+.cols > .col + .col{border-left:1px solid var(--hair);padding-left:40px}
+h3{font-weight:700;font-size:15.5px;letter-spacing:-.005em;margin-bottom:10px}
+.blk p + p{margin-top:9px}
+.small{font-size:12.5px;color:var(--muted);line-height:1.5}
+.blk .small{margin-top:10px}
+
+/* values grid */
+.values{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--hair)}
+.values > div{padding:12px 16px 12px 0;border-bottom:1px solid var(--hair)}
+.values > div:nth-child(even){padding-left:16px;border-left:1px solid var(--hair)}
+.values b{display:block;font-family:var(--head);font-size:14px}
+.values span{font-size:13px;color:var(--text)}
+
+/* identity */
+.ident{display:flex;align-items:center;gap:22px;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid var(--hair)}
+.ident .wm{font-family:var(--head);font-weight:700;color:var(--ink);font-size:clamp(34px,4vw,44px);letter-spacing:-.03em;line-height:1}
+.ident .wm i{font-style:normal;color:var(--accent)}
+.ident svg{width:58px;height:58px;flex:none}
+.ident .cap{font-size:12.5px;color:var(--muted);line-height:1.5;flex:1 1 200px}
+.swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:16px}
+.sw .chip{height:40px;border:1px solid var(--hair-strong)}
+.sw .hex{font-family:var(--head);font-weight:600;color:var(--ink);font-size:12.5px;margin-top:7px;font-variant-numeric:tabular-nums}
+.sw .role{font-size:11.5px;color:var(--muted);line-height:1.35}
+.type{display:grid;grid-template-columns:1fr 1fr;margin-top:18px;border-top:1px solid var(--hair)}
+.type > div{padding:12px 16px 12px 0}
+.type > div + div{padding-left:16px;border-left:1px solid var(--hair)}
+.type .spec{color:var(--ink);font-size:24px;line-height:1.1;letter-spacing:-.02em}
+.type .spec.f{font-family:var(--head);font-weight:700}
+.type .spec.p{font-family:var(--body);font-weight:400}
+.type .small{margin-top:4px}
+.plus li{position:relative;padding-left:18px;font-size:13.5px}
+.plus li + li{margin-top:6px}
+.plus li::before{content:"+";position:absolute;left:0;top:-1px;font-family:var(--head);font-weight:700;color:var(--accent)}
+.rules{margin-top:16px}
+
+/* voice */
+.dl > div{display:grid;grid-template-columns:118px 1fr;gap:12px;padding:8px 0;border-top:1px solid var(--hair)}
+.dl > div:last-child{border-bottom:1px solid var(--hair)}
+.dl dt{font-family:var(--head);font-weight:600;color:var(--ink);font-size:13.5px}
+.dl dd{font-size:13.5px}
+.ex{margin-top:12px;display:grid;gap:8px}
+.ex p{font-size:13.5px}
+.ex .lbl{display:block;margin-bottom:1px}
+.ex .yes{color:var(--ink)}
+.ex .no{color:var(--muted)}
+
+/* words */
+.words > div + div{margin-top:12px}
+.words p{font-size:13.5px;line-height:1.7;margin-top:3px}
+.words .off span{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--hair-strong);text-decoration-thickness:1px}
+.words .on span{color:var(--ink)}
+.dot{color:var(--muted);padding:0 5px}
+
+/* message order */
+.order li{display:grid;grid-template-columns:30px 1fr;gap:8px;padding:7px 0;border-top:1px solid var(--hair);font-size:13.5px}
+.order li:last-child{border-bottom:1px solid var(--hair)}
+.order .n{font-family:var(--head);font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+
+/* pillars */
+.pillars li{padding:7px 0;border-top:1px solid var(--hair);font-size:13.5px}
+.pillars li:last-child{border-bottom:1px solid var(--hair)}
+.pillars{margin-top:6px}
+.pct{font-family:var(--head);font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums;margin-right:8px;letter-spacing:0}
+
+/* week */
+.week li{display:grid;grid-template-columns:40px 1fr auto;gap:10px;align-items:baseline;padding:7px 0;border-top:1px solid var(--hair);font-size:13.5px}
+.week li:last-child{border-bottom:1px solid var(--hair)}
+.week .d{font-family:var(--head);font-weight:600;color:var(--ink)}
+.week .a{font-family:var(--head);font-weight:600;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.week .a.ask{color:var(--ink)}
+.week .a.ask::before{content:"";display:inline-block;width:7px;height:7px;background:var(--accent);margin-right:6px;vertical-align:1px}
+
+/* proof */
+.proof{width:100%;border-collapse:collapse;font-size:13.5px}
+.proof td{padding:7px 0;border-top:1px solid var(--hair);vertical-align:top;font-variant-numeric:tabular-nums}
+.proof tr:last-child td{border-bottom:1px solid var(--hair)}
+.proof td:first-child{font-family:var(--head);font-weight:600;color:var(--ink);width:78px}
+
+/* gate */
+.gate{margin-top:46px;padding-top:18px;border-top:1px solid var(--hair-strong);display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:start}
+.gate .q{font-family:var(--head);font-weight:600;color:var(--ink);font-size:clamp(18px,2vw,22px);line-height:1.3;letter-spacing:-.015em;max-width:40ch}
+.gate .q span{display:block;font-family:var(--body);font-weight:400;font-size:13.5px;color:var(--text);letter-spacing:0;margin-bottom:8px}
+
+@media (max-width:980px){
+  .cols.three{grid-template-columns:1fr 1fr}
+  .cols.three > .col:nth-child(3){grid-column:1 / -1;border-left:none;padding-left:0;border-top:1px solid var(--hair);padding-top:26px}
+}
+@media (max-width:760px){
+  .arch{grid-template-columns:1fr 1fr}
+  .arch > div:nth-child(3){border-left:none;padding-left:0}
+  .arch > div:nth-child(n+3){border-top:1px solid var(--hair)}
+  .cols.two,.cols.three{grid-template-columns:1fr}
+  .cols > .col + .col{border-left:none;padding-left:0;border-top:1px solid var(--hair);padding-top:26px}
+  .cols.three > .col:nth-child(3){grid-column:auto}
+  .gate{grid-template-columns:1fr;gap:18px}
+}
+@media (max-width:460px){
+  .arch{grid-template-columns:1fr}
+  .arch > div{border-left:none;padding-left:0}
+  .arch > div + div{border-top:1px solid var(--hair)}
+  .swatches{grid-template-columns:repeat(3,1fr)}
+  .values,.type{grid-template-columns:1fr}
+  .values > div:nth-child(even),.type > div + div{padding-left:0;border-left:none}
+  .type > div + div{border-top:1px solid var(--hair)}
+  .dl > div{grid-template-columns:1fr;gap:0}
+}
+
+@media print{
+  html:root:not([data-x]){
+    --bg:#ffffff; --ink:#111111; --text:#3a3f45; --muted:#6d737a;
+    --hair:rgba(17,17,17,.13); --hair-strong:rgba(17,17,17,.26); color-scheme:light;
+  }
+  @page{size:letter;margin:.35in}
+  body{font-size:8.6pt;padding-inline:0}
+  .page{max-width:none;padding:0}
+  .thesis .line{font-size:28pt}
+  .part{margin-top:20px}
+  .cols > .col,.blk,.gate{break-inside:avoid}
+}
+</style>
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD3WQ8N"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="page">
+
+  <header class="mast">
+    <span class="wordmark">Mike<i>.</i>Moll</span>
+    <span class="meta">Coaching brand · One-page guideline · September 2026</span>
+  </header>
+
+  <h1>Brand and content guide</h1>
+  <p class="sub">Built from the coaching and shared second brain: Core Message, Positioning, Voice and Story, ICP, Core Values, the content strategy docs and the voice guardrails.</p>
+
+  <section class="thesis" aria-label="Locked headline">
+    <p class="line">I help experts get paid for the value they create.</p>
+    <p class="subline">Service professionals who know they’re excellent at what they do — but feel like their business hasn’t caught up yet — work with Mike Moll to close that gap, without overcomplicating everything.</p>
+    <p class="note">Locked copy. Use the headline word for word on the site hero, the LinkedIn headline and the first slide of every workshop. The sub-header sits under it on the site.</p>
+  </section>
+
+  <div class="arch">
+    <div>
+      <div class="lbl">Master brand</div>
+      <div class="val">Mike Moll</div>
+      <div class="nt">mikemoll.co, the hub. Same name, photo, bio and link on every profile.</div>
+    </div>
+    <div>
+      <div class="lbl">Content brand</div>
+      <div class="val">The Undervalued Expert</div>
+      <div class="nt">The podcast. Short episodes on pricing, offers and sales.</div>
+    </div>
+    <div>
+      <div class="lbl">Method</div>
+      <div class="val">The Compression Method</div>
+      <div class="nt">Find the one constraint, fix it first, move to the next.</div>
+    </div>
+    <div>
+      <div class="lbl">Flagship offer</div>
+      <div class="val">30-30-30 in 90</div>
+      <div class="nt">Price up 30%, close rate up 30%, delivery hours down 30%, in 90 days.</div>
+    </div>
+  </div>
+
+  <section class="part" id="brand">
+    <h2>The brand</h2>
+    <div class="cols two">
+      <div class="col">
+        <div class="blk">
+          <h3>Who it’s for</h3>
+          <p>The Undervalued Expert: a consultant, fractional executive, service solopreneur or owner of a one-to-three person agency. Two to five years out of corporate, earning $7K to $20K a month. Their clients get great results. Their prices still follow the salary they left.</p>
+          <p>They come asking for more leads or better sales. The fix is almost always the offer and the price.</p>
+          <p class="small">Not for people with no paying clients yet, anyone in a cash crisis, e-commerce or SaaS owners, pure creatives, or anyone hunting for one silver bullet.</p>
+        </div>
+        <div class="blk">
+          <h3>What we promise</h3>
+          <p>The Compression Method finds the one constraint holding the business back the most, fixes it fast, then moves to the next one.</p>
+          <p>Lead with pricing and sales. Clients mention it almost twice as often as anything else. Show the move from fear to confidence, and end on the confidence.</p>
+          <p>Every piece points at one feeling: the rules they’ve been following were never fixed. They get to decide the offer, the price, the clients and the process.</p>
+        </div>
+        <div class="blk">
+          <h3>Four values, used as a filter</h3>
+          <div class="values">
+            <div><b>Simplicity drives results</b><span>Does this make the business simpler?</span></div>
+            <div><b>Self-driven confidence</b><span>Does the price match the value the work creates?</span></div>
+            <div><b>Scalable growth</b><span>Does this buy back time?</span></div>
+            <div><b>Lifestyle freedom</b><span>Does this serve the life the client wants?</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="blk">
+          <h3>How it looks</h3>
+          <div class="ident">
+            <span class="wm">Mike<i>.</i>Moll</span>
+            <svg viewBox="0 0 512 512" role="img" aria-label="Brand mark: a white M on a black circle">
+              <circle cx="256" cy="256" r="255" fill="#000" style="stroke:var(--hair-strong)" stroke-width="1" vector-effect="non-scaling-stroke"/>
+              <path fill="#fff" d="M99.8 401.6Q90.8 401.6 90.8 391.4V118.7Q90.8 110.4 98.3 110.4H194.4Q199.1 110.4 201.1 111.6Q203 112.8 204.6 117.1L254 260.7Q255.2 263.8 256.8 263.7Q258.4 263.5 259.5 260.7L305.4 120.6Q308.6 110.4 315.2 110.4H414.5Q421.2 110.4 421.2 117.9V391.4Q421.2 401.6 409.8 401.6H351.3Q345.8 401.6 343.9 399.4Q341.9 397.2 341.9 392.5V207.3Q341.9 204.6 340.4 204.6Q338.8 204.6 337.6 207.7L275.6 394.9Q272.9 401.6 266.6 401.6H229.7Q222.7 401.6 220.3 394.9L158.3 210.5Q157.1 206.6 155.8 207Q154.4 207.3 154.4 210.9V393.7Q154.4 398.4 152.8 400Q151.2 401.6 146.1 401.6H99.8Z"/>
+            </svg>
+            <p class="cap">Wordmark in Libre Franklin 700 with a sky-blue period. The mark is a white Libre Franklin 800 M on a black circle, and it’s the one rounded shape in the system.</p>
+          </div>
+
+          <div class="swatches">
+            <div class="sw"><div class="chip" style="background:#000000"></div><div class="hex">#000000</div><div class="role">Black canvas</div></div>
+            <div class="sw"><div class="chip" style="background:#ffffff"></div><div class="hex">#FFFFFF</div><div class="role">Headings on black, white pages</div></div>
+            <div class="sw"><div class="chip" style="background:#38b6ff"></div><div class="hex">#38B6FF</div><div class="role">Sky blue, the only accent</div></div>
+            <div class="sw"><div class="chip" style="background:#d7d7d7"></div><div class="hex">#D7D7D7</div><div class="role">Body text on black</div></div>
+            <div class="sw"><div class="chip" style="background:#9a9a9a"></div><div class="hex">#9A9A9A</div><div class="role">Labels and captions</div></div>
+          </div>
+
+          <div class="type">
+            <div><div class="spec f">Libre Franklin</div><p class="small">Headings, figures and the wordmark. Weights 600 to 800.</p></div>
+            <div><div class="spec p">Poppins</div><p class="small">Body copy. Weights 300 to 500. No third typeface.</p></div>
+          </div>
+
+          <ul class="plus rules">
+            <li>Square corners everywhere. The M circle is the only exception.</li>
+            <li>1px hairlines separate things. No boxes, filled cards or shadows.</li>
+            <li>One accent per piece, on buttons, links, numerals and the logo period. Keep it off body text.</li>
+            <li>No gradients, gold or cream. White pages use #111111 ink. Dark slides use #F2F2F2 on #141414.</li>
+            <li>Icons are literal, drawn on one grid, with nothing behind them.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="part" id="content">
+    <h2>The content</h2>
+    <div class="cols three">
+      <div class="col">
+        <div class="blk">
+          <h3>Voice</h3>
+          <dl class="dl">
+            <div><dt>Direct</dt><dd>The first sentence earns its place or it goes.</dd></div>
+            <div><dt>Peer-level</dt><dd>One business owner talking to another.</dd></div>
+            <div><dt>Specific</dt><dd>A named client and a figure. If a claim can’t be specific, cut it.</dd></div>
+            <div><dt>Calm</dt><dd>No hype, no urgency theater, no exclamation points.</dd></div>
+            <div><dt>Irreverent</dt><dd>When it fits. Name the absurd thing, lightly and accurately.</dd></div>
+          </dl>
+          <p class="small">Fifth-grade reading level. Contractions. Active voice. One idea per sentence, in full sentences of mixed length. No em dashes.</p>
+          <div class="ex">
+            <p class="yes"><span class="lbl">Write</span>“You’re charging $1,000 for something that puts $70,000 in your client’s pocket. The fix is a pricing skill, and you can learn it faster than you think.”</p>
+            <p class="no"><span class="lbl">Skip</span>“Many entrepreneurs struggle with pricing confidence and need to develop a stronger value mindset.”</p>
+          </div>
+        </div>
+        <div class="blk words">
+          <h3>Words</h3>
+          <div class="on">
+            <div class="lbl">Use</div>
+            <p><span>owner-to-owner</span><span class="dot">·</span><span>the value your work creates</span><span class="dot">·</span><span>get paid for the value you create</span><span class="dot">·</span><span>compress, distill, simplify</span><span class="dot">·</span><span>business case</span><span class="dot">·</span><span>the skill was never the problem</span><span class="dot">·</span><span>simpler and more valuable</span><span class="dot">·</span><span>their industry’s best-kept secret</span><span class="dot">·</span><span>free 20-minute assessment</span></p>
+          </div>
+          <div class="off">
+            <div class="lbl">Retired in the July 2026 refresh</div>
+            <p><span>zone of genius</span><span class="dot">·</span><span>borrowed beliefs</span><span class="dot">·</span><span>the cage was never locked</span><span class="dot">·</span><span>on your terms</span><span class="dot">·</span><span>take it or leave it</span><span class="dot">·</span><span>worst-case math</span><span class="dot">·</span><span>snap-called</span><span class="dot">·</span><span>expansive</span><span class="dot">·</span><span>great at the work</span><span class="dot">·</span><span>what your work is worth</span></p>
+          </div>
+          <div class="off">
+            <div class="lbl">Never</div>
+            <p><span>mindset shift</span><span class="dot">·</span><span>clarity</span><span class="dot">·</span><span>empower</span><span class="dot">·</span><span>unlock your potential</span><span class="dot">·</span><span>journey</span><span class="dot">·</span><span>hustle</span><span class="dot">·</span><span>proven system</span><span class="dot">·</span><span>6- or 7-figure with no figure</span><span class="dot">·</span><span>leverage</span><span class="dot">·</span><span>deep dive</span><span class="dot">·</span><span>unpack</span><span class="dot">·</span><span>real</span><span class="dot">·</span><span>actually</span><span class="dot">·</span><span>my own math</span><span class="dot">·</span><span>$X worth of work</span><span class="dot">·</span><span>results you can point to</span><span class="dot">·</span><span>DM me</span></p>
+          </div>
+          <p class="small">Also banned: “it’s not X, it’s Y” in any form, stacks of two-word sentences, and rhetorical-question openers. Where older docs disagree, the July 2026 refresh and the voice guardrails win.</p>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="blk">
+          <h3>Every piece, in this order</h3>
+          <ol class="order">
+            <li><span class="n">01</span><span><b>Recognition.</b> They see themselves in the description.</span></li>
+            <li><span class="n">02</span><span><b>Understanding.</b> They feel understood about the offer and the price.</span></li>
+            <li><span class="n">03</span><span><b>Credibility.</b> Mike’s story and client results show he’s been there.</span></li>
+            <li><span class="n">04</span><span><b>Method.</b> Name The Compression Method, and only now.</span></li>
+            <li><span class="n">05</span><span><b>Offer.</b> One next step.</span></li>
+          </ol>
+          <p class="small">No fear-based selling: name the situation without using burnout as a threat. No dependency messaging: the goal is the client’s independence.</p>
+        </div>
+        <div class="blk">
+          <h3>What to post</h3>
+          <div class="lbl"><span class="pct">80%</span>The method</div>
+          <ul class="pillars">
+            <li><b>Price and belief.</b> Owners keep prices low because of belief. The higher number still doesn’t come out of their mouth.</li>
+            <li><b>Sales and closing.</b> A simpler offer and a structured call close more at a higher price.</li>
+            <li><b>Delivery.</b> Scope the offer and give the owner their hours back.</li>
+          </ul>
+          <div class="lbl" style="margin-top:14px"><span class="pct">20%</span>Story and proof</div>
+          <ul class="pillars">
+            <li>The Corktown walk, the agency that nearly went under twice from adding too much, life on the road, podcast appearances. These show how Mike thinks. Keep them out of the headline topic.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="blk">
+          <h3>LinkedIn week</h3>
+          <ul class="week">
+            <li><span class="d">Mon</span><span>Teaching, a contrarian reframe</span><span class="a">No ask</span></li>
+            <li><span class="d">Tue</span><span>Case study, named client</span><span class="a ask">Ask</span></li>
+            <li><span class="d">Wed</span><span>Story that maps to a lesson</span><span class="a">No ask</span></li>
+            <li><span class="d">Thu</span><span>Teaching plus the training</span><span class="a ask">Ask</span></li>
+            <li><span class="d">Fri</span><span>Lifestyle, short and human</span><span class="a">No ask</span></li>
+          </ul>
+          <p class="small">Five posts a week at 8 to 9am ET. Run one theme for one to three weeks. Three of every five posts ask for nothing.</p>
+        </div>
+        <div class="blk">
+          <h3>The next step</h3>
+          <p>A piece that asks gets one ask. Case studies point to the free 20-minute assessment. Training posts use one keyword, <b>COMPRESS</b>, every time. Never write “DM me” and never stack two asks.</p>
+        </div>
+        <div class="blk">
+          <h3>Proof</h3>
+          <p>Name the client, give the figure, and quote them word for word. Never invent a composite client.</p>
+          <table class="proof" style="margin-top:10px">
+            <tr><td>Daniella</td><td>$30K to $40K a month recurring, team of four</td></tr>
+            <tr><td>Jenni</td><td>Quadrupled her rates, $16K month</td></tr>
+            <tr><td>Sean</td><td>$16K to $30K months at the same hours</td></tr>
+            <tr><td>Tyler</td><td>Retainer from $1,500 to $4,500</td></tr>
+            <tr><td>Mark</td><td>Sales up 30%</td></tr>
+          </table>
+          <p class="small">Mike: built an agency from $0 to $700K a year, Fractional CMO for a $20M brand, digital lead for Volvo and Patak’s, 1,000+ sales calls reviewed, 60+ podcast guest spots.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social media team sections go here. Add each one as:
+       <section class="part" id="short-id"><h2>Heading</h2> ... </section>
+       Reuse .cols.two / .cols.three and the .blk, .plus, .dl classes above. -->
+
+  <footer class="gate">
+    <p class="q"><span>Before anything ships, run the humanizer pass and sweep the banned words. Then ask one question.</span>Does this sound like Mike talking to a peer he respects, having done the thing himself?</p>
+    <p class="small">Sources in the brain: BRAND: Core Message, Positioning, Voice and Story, Ideal Client Profile, Core Values · Content Conversion Strategy &amp; Pillars · Mike Moll: LinkedIn Organic Strategy · Content Source Bank · Voice Guardrails (Aug 31, updated Sep 12) · Mike’s Voice · Icon System · mikemoll.co Favicon · Podcast Description. Visual tokens from mikemoll.co site.css.</p>
+  </footer>
+
+</div>
+
+<script src="/scroll-top.js" defer></script>
+</body>
+</html>
