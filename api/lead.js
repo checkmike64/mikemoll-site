@@ -57,9 +57,8 @@ const FORMS = {
   },
   // Lead magnets: each fires one tag. Wire the matching GHL workflow's
   // "Contact Tag Added" trigger to this tag so the email sequence still runs.
-  'linkedin-leads': {
-    tags: ['lm-linkedin-leads'],
-  },
+  // 'linkedin-leads' and 'podcast-guesting' were retired in September 2026:
+  // their pages are gone and both paths redirect, so the ids are not accepted.
   'claude-basics': {
     tags: ['lm-claude-basics'],
   },
@@ -195,7 +194,7 @@ export function createHandler(defaultFormId) {
     }
     if (formId === 'training-engagement' && body.event) {
       const ev = slug(body.event);
-      const allow = ['training-unlock','training-return','watched-linkedin-leads','watched-claude-basics'];
+      const allow = ['training-unlock','training-return','watched-claude-basics'];
       if (allow.includes(ev)) tags.push(ev);
     }
     payload.tags = tags;

@@ -49,6 +49,16 @@
       "permanent": true
     },
     {
+      "source": "/free/linkedin-leads",
+      "destination": "/training",
+      "permanent": true
+    },
+    {
+      "source": "/free/linkedin-leads-thanks",
+      "destination": "/training",
+      "permanent": true
+    },
+    {
       "source": "/free/podcast-guesting",
       "destination": "/podcast-workshop",
       "permanent": true
