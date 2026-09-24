@@ -17,7 +17,7 @@ NAV='''<nav><div class="wrap nav-in">
   </div></nav>'''
 FOOT='''<footer><div class="wrap foot-in">
     <a href="/" class="logo">Mike<span>.Moll</span></a>
-    <div class="fl"><a href="https://www.youtube.com/@mikemollco" target="_blank" rel="noopener">YouTube</a><a href="https://www.linkedin.com/in/solopreneurcoach/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/themikemoll/" target="_blank" rel="noopener">Instagram</a></div>
+    <div class="fl"><a href="https://www.youtube.com/@mikemollco" target="_blank" rel="noopener">YouTube</a><a href="https://www.linkedin.com/in/themikemoll/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/themikemoll/" target="_blank" rel="noopener">Instagram</a></div>
     <p>&copy; 2026 Impact Leads LLC</p>
   </div></footer>'''
 CTA='''  <div class="cta">
