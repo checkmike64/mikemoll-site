@@ -8,6 +8,12 @@
 const GHL_LOCATION_ID = 'Y6tiQHe96XbqVkTeRY8J';
 const GHL_UPSERT_URL = 'https://services.leadconnectorhq.com/contacts/upsert';
 
+// Second destination. Every form id above is also a form slug in the CRM, so
+// no mapping table is needed -- the id IS the route. While GoHighLevel still
+// runs the lead-magnet sequences both systems get the lead; when the
+// sequences move, GHL comes out and this stays.
+const CRM_URL = (process.env.CRM_URL || 'https://coaching-crm-tau.vercel.app').replace(/\/+$/, '');
+
 // Per-form configuration.
 //  tags       : tags always applied for this form.
 //  customByKey: maps an incoming field name -> an existing GHL custom-field key.
@@ -66,6 +72,59 @@ const FORMS = {
 
 function slug(s) {
   return String(s).toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+// Only keys shaped like a CRM answer key can be answers at all; the CRM drops
+// any key the form does not define, so sending a few extra is harmless.
+const ANSWER_KEY = /^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$/;
+const NOT_AN_ANSWER = new Set([
+  'formid', 'email', 'name', 'first_name', 'phone', 'website_url', 'renderedat',
+]);
+
+function answersFrom(body) {
+  const answers = {};
+  for (const [key, value] of Object.entries(body)) {
+    if (NOT_AN_ANSWER.has(key.toLowerCase()) || !ANSWER_KEY.test(key)) continue;
+    if (value == null || String(value).trim() === '') continue;
+    answers[key] = String(value).trim().slice(0, 5000);
+  }
+  return answers;
+}
+
+// The CRM only accepts E.164. A number it would reject is dropped rather than
+// guessed at -- a wrong country code is worse than no number.
+function e164(phone) {
+  const digits = String(phone || '').replace(/[\s().-]/g, '');
+  return /^\+[0-9]{8,15}$/.test(digits) ? digits : null;
+}
+
+// Never fails the visitor: a CRM outage must not turn a registration into an
+// error page while GoHighLevel already has the lead.
+async function sendToCrm(formId, body, { email, firstName, phone, clientIp }) {
+  try {
+    const response = await fetch(`${CRM_URL}/api/forms/${encodeURIComponent(formId)}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        // So the CRM rate-limits the visitor, not this function.
+        ...(clientIp ? { 'X-Forwarded-For': clientIp } : {}),
+      },
+      body: JSON.stringify({
+        name: firstName || email.split('@')[0],
+        email,
+        phone: e164(phone),
+        answers: answersFrom(body),
+        sourceUrl: String(body.sourceUrl || body.source_url || '').trim() || null,
+        utm: {},
+      }),
+      signal: AbortSignal.timeout(5000),
+    });
+    if (!response.ok) {
+      console.error('crm forward failed', formId, response.status, await response.text());
+    }
+  } catch (err) {
+    console.error('crm forward error', formId, err);
+  }
 }
 
 export function createHandler(defaultFormId) {
@@ -170,6 +229,14 @@ export function createHandler(defaultFormId) {
         console.error('GHL upsert failed', formId, ghlRes.status, text);
         return res.status(502).json({ ok: false, error: 'Registration service error' });
       }
+
+      const forwarded = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim();
+      await sendToCrm(formId, body, {
+        email,
+        firstName,
+        phone,
+        clientIp: forwarded || String(req.headers['x-real-ip'] || '').trim(),
+      });
 
       // Delivery email for forms that define one (the workshop recording).
       // Failure here never fails the registration -- the page redirects the
