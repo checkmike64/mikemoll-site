@@ -10,20 +10,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brand Guideline | Mike Moll</title>
-<meta name="description" content="Brand and content guideline for Mike Moll Coaching: message, audience, visual identity, voice and content rules.">
+<title>Brand and Social Media Hub | Mike Moll</title>
+<meta name="description" content="Links, brand rules, voice and the content playbook for the Mike Moll social media team.">
 <meta name="robots" content="noindex,nofollow">
 <link rel="canonical" href="https://www.mikemoll.co/brand-guideline">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mike Moll">
-<meta property="og:title" content="Brand Guideline">
-<meta property="og:description" content="Brand and content guideline for Mike Moll Coaching.">
+<meta property="og:title" content="Brand and Social Media Hub">
+<meta property="og:description" content="Links, brand rules, voice and the content playbook for the Mike Moll social media team.">
 <meta property="og:url" content="https://www.mikemoll.co/brand-guideline">
 <!-- Internal page for the team: no site navigation, kept out of search (noindex) and out of sitemap.xml. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+/* White page with black chapter bands. Single theme on purpose. */
 :root{
   --head:'Libre Franklin','Helvetica Neue',Arial,sans-serif;
   --body:'Poppins','Helvetica Neue',Arial,sans-serif;
@@ -34,184 +35,198 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   --hair:rgba(17,17,17,.13);
   --hair-strong:rgba(17,17,17,.26);
   --accent:#38b6ff;
+  --band:#000000;
+  --band-ink:#ffffff;
+  --band-text:#d7d7d7;
+  --band-muted:#9a9a9a;
+  --band-hair:rgba(255,255,255,.2);
   color-scheme:light;
-}
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg:#000000; --ink:#ffffff; --text:#d7d7d7; --muted:#9a9a9a;
-    --hair:rgba(255,255,255,.20); --hair-strong:rgba(255,255,255,.34);
-    color-scheme:dark;
-  }
 }
 
 *{box-sizing:border-box;border-radius:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);
-  font-size:14.5px;line-height:1.62;-webkit-font-smoothing:antialiased;padding-inline:16px}
-.page{max-width:1180px;margin:0 auto;padding-block:36px 56px;padding-inline:clamp(0px,2.4vw,28px)}
+  font-size:14.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
 h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0;padding:0}
 h1,h2,h3{font-family:var(--head);color:var(--ink);text-wrap:balance}
 ul,ol{list-style:none}
 b,strong{color:var(--ink);font-weight:600}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
 
-/* masthead */
+/* top of page */
+.top{padding-block:28px 0}
 .mast{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;
   padding-bottom:14px;border-bottom:1px solid var(--hair)}
 .wordmark{font-family:var(--head);font-weight:700;color:var(--ink);letter-spacing:-.02em;font-size:20px;line-height:1}
-.wordmark i{font-style:normal;color:var(--accent)}
+.wordmark i,.wm i{font-style:normal;color:var(--accent)}
 .mast .meta{font-size:12.5px;color:var(--muted)}
-h1{font-weight:600;font-size:clamp(26px,3vw,34px);letter-spacing:-.02em;line-height:1.1;margin-top:30px}
-.sub{color:var(--muted);font-size:13.5px;margin-top:6px}
+h1{font-weight:700;font-size:clamp(32px,4.6vw,54px);letter-spacing:-.03em;line-height:1.04;margin-top:40px;max-width:16ch}
+.lede{font-size:clamp(15px,1.4vw,17px);color:var(--text);margin-top:14px;max-width:60ch}
 
-/* thesis */
-.thesis{margin-top:34px;display:grid;gap:14px}
-.thesis .line{font-family:var(--head);font-weight:700;color:var(--ink);
-  font-size:clamp(30px,4.6vw,54px);line-height:1.05;letter-spacing:-.03em;max-width:19ch;text-wrap:balance}
-.thesis .subline{font-weight:300;font-size:clamp(15px,1.5vw,18px);color:var(--text);max-width:64ch}
-.thesis .note{font-size:12.5px;color:var(--muted);max-width:70ch}
+/* contents */
+.toc{margin-top:40px;display:grid;grid-template-columns:repeat(5,1fr);gap:0 24px}
+.toc a{display:block;height:100%;padding:14px 0 16px;border-top:2px solid var(--ink);color:inherit;text-decoration:none}
+.toc .n{font-family:var(--head);font-weight:800;font-size:28px;line-height:1;color:var(--accent);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.toc .t{display:block;font-family:var(--head);font-weight:600;font-size:16px;color:var(--ink);margin-top:10px;line-height:1.25}
+.toc .d{display:block;font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.45}
+.toc a:hover .t{text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:4px}
+.toc a:focus-visible,a.ext:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
-/* architecture band */
-.arch{margin-top:30px;display:grid;grid-template-columns:repeat(4,1fr);
-  border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
-.arch > div{padding:16px 22px;border-left:1px solid var(--hair)}
-.arch > div:first-child{border-left:none;padding-left:0}
-.lbl{font-family:var(--head);font-weight:600;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.arch .val{font-family:var(--head);font-weight:600;color:var(--ink);font-size:17px;letter-spacing:-.01em;line-height:1.25;margin-top:4px}
-.arch .val i{font-style:normal;color:var(--accent)}
-.arch .nt{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.45}
+/* chapter bands */
+.chapter{margin-top:72px}
+.band{background:var(--band);color:var(--band-text)}
+.band .wrap{display:grid;grid-template-columns:auto 1fr minmax(180px,250px);column-gap:40px;row-gap:18px;align-items:end;padding-block:44px 40px}
+.band .n{font-family:var(--head);font-weight:800;font-size:clamp(64px,9vw,120px);line-height:.8;color:var(--accent);letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+.band h2{font-weight:700;font-size:clamp(30px,4vw,48px);line-height:1.02;letter-spacing:-.03em;color:var(--band-ink)}
+.band p{font-size:15px;color:var(--band-text);margin-top:10px;max-width:46ch}
+.band .inside{border-left:1px solid var(--band-hair);padding-left:18px;font-size:12.5px;color:var(--band-muted);line-height:1.5}
+.band .inside li{position:relative;padding-left:14px}
+.band .inside li::before{content:"+";position:absolute;left:0;font-family:var(--head);font-weight:700;color:var(--accent)}
 
-/* sections */
-.part{margin-top:46px}
-.part > h2{font-weight:600;font-size:24px;letter-spacing:-.02em;padding-top:16px;border-top:1px solid var(--hair-strong)}
-.cols{display:grid;margin-top:22px;column-gap:40px;row-gap:32px}
-.cols.two{grid-template-columns:1.05fr 1fr}
-.cols.three{grid-template-columns:repeat(3,1fr)}
-.cols > .col{display:flex;flex-direction:column;gap:30px;min-width:0}
-.cols > .col + .col{border-left:1px solid var(--hair);padding-left:40px}
-h3{font-weight:700;font-size:15.5px;letter-spacing:-.005em;margin-bottom:10px}
+/* chapter body */
+.body{padding-top:44px}
+.row{display:grid;column-gap:52px;row-gap:36px}
+.row + .row{margin-top:44px;padding-top:36px;border-top:1px solid var(--hair)}
+.row.two{grid-template-columns:1fr 1fr}
+.row.three{grid-template-columns:repeat(3,1fr)}
+.row > *{min-width:0}
+.stack{display:flex;flex-direction:column;gap:32px}
+h3{font-weight:700;font-size:16px;letter-spacing:-.005em;margin-bottom:12px}
 .blk p + p{margin-top:9px}
 .small{font-size:12.5px;color:var(--muted);line-height:1.5}
 .blk .small{margin-top:10px}
+.lbl{font-family:var(--head);font-weight:600;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 
-/* values grid */
-.values{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--hair)}
-.values > div{padding:12px 16px 12px 0;border-bottom:1px solid var(--hair)}
-.values > div:nth-child(even){padding-left:16px;border-left:1px solid var(--hair)}
-.values b{display:block;font-family:var(--head);font-size:14px}
-.values span{font-size:13px;color:var(--text)}
+/* 01 channels */
+.links li{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:baseline;padding:11px 0;border-top:1px solid var(--hair);font-size:15px}
+.links li:last-child{border-bottom:1px solid var(--hair)}
+.links .p{font-family:var(--head);font-weight:600;color:var(--ink)}
+a.ext{color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:4px;overflow-wrap:anywhere}
+a.ext::after{content:" \2197";color:var(--muted);text-decoration:none;display:inline-block;margin-left:4px;font-size:.85em}
+a.ext:hover{color:var(--accent)}
 
-/* identity */
-.ident{display:flex;align-items:center;gap:22px;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid var(--hair)}
-.ident .wm{font-family:var(--head);font-weight:700;color:var(--ink);font-size:clamp(34px,4vw,44px);letter-spacing:-.03em;line-height:1}
-.ident .wm i{font-style:normal;color:var(--accent)}
-.ident svg{width:58px;height:58px;flex:none}
-.ident .cap{font-size:12.5px;color:var(--muted);line-height:1.5;flex:1 1 200px}
-.swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:16px}
-.sw .chip{height:40px;border:1px solid var(--hair-strong)}
-.sw .hex{font-family:var(--head);font-weight:600;color:var(--ink);font-size:12.5px;margin-top:7px;font-variant-numeric:tabular-nums}
-.sw .role{font-size:11.5px;color:var(--muted);line-height:1.35}
-.type{display:grid;grid-template-columns:1fr 1fr;margin-top:18px;border-top:1px solid var(--hair)}
-.type > div{padding:12px 16px 12px 0}
-.type > div + div{padding-left:16px;border-left:1px solid var(--hair)}
-.type .spec{color:var(--ink);font-size:24px;line-height:1.1;letter-spacing:-.02em}
+/* 02 brand */
+.thesis{display:grid;gap:14px}
+.thesis .line{font-family:var(--head);font-weight:700;color:var(--ink);
+  font-size:clamp(30px,4.4vw,52px);line-height:1.05;letter-spacing:-.03em;max-width:19ch;text-wrap:balance}
+.thesis .subline{font-weight:300;font-size:clamp(15px,1.5vw,18px);color:var(--text);max-width:64ch}
+.thesis .note{font-size:12.5px;color:var(--muted);max-width:70ch}
+.arch{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.arch > div{padding:16px 22px;border-left:1px solid var(--hair)}
+.arch > div:first-child{border-left:none;padding-left:0}
+.arch .val{font-family:var(--head);font-weight:600;color:var(--ink);font-size:17px;letter-spacing:-.01em;line-height:1.25;margin-top:4px}
+.arch .nt{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.45}
+.values{display:grid;grid-template-columns:repeat(4,1fr);column-gap:24px}
+.values > div{padding-top:12px;border-top:2px solid var(--ink)}
+.values b{display:block;font-family:var(--head);font-size:15px;line-height:1.3}
+.values span{display:block;font-size:13.5px;color:var(--text);margin-top:4px}
+
+/* 03 look */
+.ident{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.ident .wm{font-family:var(--head);font-weight:700;color:var(--ink);font-size:clamp(38px,5vw,56px);letter-spacing:-.03em;line-height:1}
+.ident svg{width:72px;height:72px;flex:none}
+.ident + .small{margin-top:16px;max-width:52ch}
+.type > div{padding:14px 0;border-top:1px solid var(--hair)}
+.type > div:last-child{border-bottom:1px solid var(--hair)}
+.type .spec{color:var(--ink);font-size:30px;line-height:1.1;letter-spacing:-.02em}
 .type .spec.f{font-family:var(--head);font-weight:700}
 .type .spec.p{font-family:var(--body);font-weight:400}
 .type .small{margin-top:4px}
-.plus li{position:relative;padding-left:18px;font-size:13.5px}
-.plus li + li{margin-top:6px}
+.swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.sw .chip{height:84px;border:1px solid var(--hair-strong)}
+.sw .hex{font-family:var(--head);font-weight:600;color:var(--ink);font-size:13.5px;margin-top:9px;font-variant-numeric:tabular-nums}
+.sw .role{font-size:12px;color:var(--muted);line-height:1.4}
+.swatches + .small{margin-top:14px}
+.plus li{position:relative;padding-left:18px;font-size:14px}
+.plus li + li{margin-top:7px}
 .plus li::before{content:"+";position:absolute;left:0;top:-1px;font-family:var(--head);font-weight:700;color:var(--accent)}
-.rules{margin-top:16px}
+.plus.cols2{columns:2;column-gap:52px}
+.plus.cols2 li{break-inside:avoid;margin-bottom:7px}
+.plus.cols2 li + li{margin-top:0}
 
-/* voice */
-.dl > div{display:grid;grid-template-columns:118px 1fr;gap:12px;padding:8px 0;border-top:1px solid var(--hair)}
+/* 04 voice */
+.dl > div{display:grid;grid-template-columns:118px 1fr;gap:12px;padding:9px 0;border-top:1px solid var(--hair)}
 .dl > div:last-child{border-bottom:1px solid var(--hair)}
-.dl dt{font-family:var(--head);font-weight:600;color:var(--ink);font-size:13.5px}
-.dl dd{font-size:13.5px}
-.ex{margin-top:12px;display:grid;gap:8px}
-.ex p{font-size:13.5px}
-.ex .lbl{display:block;margin-bottom:1px}
+.dl dt{font-family:var(--head);font-weight:600;color:var(--ink);font-size:14px}
+.dl dd{font-size:14px}
+.ex{margin-top:18px;display:grid;gap:12px}
+.ex p{font-size:14px}
+.ex .lbl{display:block;margin-bottom:2px}
 .ex .yes{color:var(--ink)}
 .ex .no{color:var(--muted)}
-
-/* words */
-.words > div + div{margin-top:12px}
-.words p{font-size:13.5px;line-height:1.7;margin-top:3px}
+.words > div + div{margin-top:14px}
+.words p{font-size:14px;line-height:1.75;margin-top:3px}
 .words .off span{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--hair-strong);text-decoration-thickness:1px}
 .words .on span{color:var(--ink)}
 .dot{color:var(--muted);padding:0 5px}
 
-/* message order */
-.order li{display:grid;grid-template-columns:30px 1fr;gap:8px;padding:7px 0;border-top:1px solid var(--hair);font-size:13.5px}
+/* 05 playbook */
+.order li{display:grid;grid-template-columns:30px 1fr;gap:8px;padding:8px 0;border-top:1px solid var(--hair);font-size:14px}
 .order li:last-child{border-bottom:1px solid var(--hair)}
 .order .n{font-family:var(--head);font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
-
-/* pillars */
-.pillars li{padding:7px 0;border-top:1px solid var(--hair);font-size:13.5px}
-.pillars li:last-child{border-bottom:1px solid var(--hair)}
-.pillars{margin-top:6px}
 .pct{font-family:var(--head);font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums;margin-right:8px;letter-spacing:0}
-
-/* week */
-.week li{display:grid;grid-template-columns:40px 1fr auto;gap:10px;align-items:baseline;padding:7px 0;border-top:1px solid var(--hair);font-size:13.5px}
+.pillars{margin-top:6px}
+.pillars li{padding:8px 0;border-top:1px solid var(--hair);font-size:14px}
+.pillars li:last-child{border-bottom:1px solid var(--hair)}
+.week li{display:grid;grid-template-columns:40px 1fr auto;gap:10px;align-items:baseline;padding:8px 0;border-top:1px solid var(--hair);font-size:14px}
 .week li:last-child{border-bottom:1px solid var(--hair)}
 .week .d{font-family:var(--head);font-weight:600;color:var(--ink)}
 .week .a{font-family:var(--head);font-weight:600;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
 .week .a.ask{color:var(--ink)}
 .week .a.ask::before{content:"";display:inline-block;width:7px;height:7px;background:var(--accent);margin-right:6px;vertical-align:1px}
-
-/* proof */
-.proof{width:100%;border-collapse:collapse;font-size:13.5px}
-.proof td{padding:7px 0;border-top:1px solid var(--hair);vertical-align:top;font-variant-numeric:tabular-nums}
+.proof{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px}
+.proof td{padding:8px 0;border-top:1px solid var(--hair);vertical-align:top;font-variant-numeric:tabular-nums}
 .proof tr:last-child td{border-bottom:1px solid var(--hair)}
-.proof td:first-child{font-family:var(--head);font-weight:600;color:var(--ink);width:78px}
+.proof td:first-child{font-family:var(--head);font-weight:600;color:var(--ink);width:96px}
+.final{margin-top:48px;padding-top:24px;border-top:2px solid var(--ink);display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start}
+.final .q{font-family:var(--head);font-weight:600;color:var(--ink);font-size:clamp(20px,2.4vw,28px);line-height:1.25;letter-spacing:-.02em;max-width:34ch}
 
-/* channels */
-.links li{display:grid;grid-template-columns:116px 1fr;gap:12px;align-items:baseline;padding:8px 0;border-top:1px solid var(--hair);font-size:13.5px}
-.links li:last-child{border-bottom:1px solid var(--hair)}
-.links .p{font-family:var(--head);font-weight:600;color:var(--ink)}
-a.ext{color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:4px;overflow-wrap:anywhere}
-a.ext:hover{color:var(--accent)}
-a.ext:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-
-/* gate */
-.gate{margin-top:46px;padding-top:18px;border-top:1px solid var(--hair-strong);display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:start}
-.gate .q{font-family:var(--head);font-weight:600;color:var(--ink);font-size:clamp(18px,2vw,22px);line-height:1.3;letter-spacing:-.015em;max-width:40ch}
-.gate .q span{display:block;font-family:var(--body);font-weight:400;font-size:13.5px;color:var(--text);letter-spacing:0;margin-bottom:8px}
+/* footer */
+.foot{margin-top:80px;border-top:1px solid var(--hair);padding-block:20px 56px}
+.foot .small{max-width:90ch}
 
 @media (max-width:980px){
-  .cols.three{grid-template-columns:1fr 1fr}
-  .cols.three > .col:nth-child(3){grid-column:1 / -1;border-left:none;padding-left:0;border-top:1px solid var(--hair);padding-top:26px}
+  .toc{grid-template-columns:repeat(3,1fr)}
+  .row.three{grid-template-columns:1fr 1fr}
+  .row.three > :nth-child(3){grid-column:1 / -1}
+  .band .wrap{grid-template-columns:auto 1fr}
+  .band .inside{grid-column:1 / -1;border-left:none;padding-left:0;display:flex;flex-wrap:wrap;gap:4px 20px}
 }
 @media (max-width:760px){
+  .toc{grid-template-columns:1fr 1fr}
+  .row.two,.row.three{grid-template-columns:1fr}
+  .row.three > :nth-child(3){grid-column:auto}
+  .band .wrap{grid-template-columns:1fr;padding-block:32px 30px}
   .arch{grid-template-columns:1fr 1fr}
   .arch > div:nth-child(3){border-left:none;padding-left:0}
   .arch > div:nth-child(n+3){border-top:1px solid var(--hair)}
-  .cols.two,.cols.three{grid-template-columns:1fr}
-  .cols > .col + .col{border-left:none;padding-left:0;border-top:1px solid var(--hair);padding-top:26px}
-  .cols.three > .col:nth-child(3){grid-column:auto}
-  .gate{grid-template-columns:1fr;gap:18px}
+  .values{grid-template-columns:1fr 1fr;row-gap:20px}
+  .plus.cols2{columns:1}
+  .final{grid-template-columns:1fr;gap:14px}
+  .chapter{margin-top:56px}
 }
 @media (max-width:460px){
+  .toc{grid-template-columns:1fr}
   .arch{grid-template-columns:1fr}
   .arch > div{border-left:none;padding-left:0}
   .arch > div + div{border-top:1px solid var(--hair)}
   .swatches{grid-template-columns:repeat(3,1fr)}
-  .values,.type{grid-template-columns:1fr}
-  .values > div:nth-child(even),.type > div + div{padding-left:0;border-left:none}
-  .type > div + div{border-top:1px solid var(--hair)}
+  .values{grid-template-columns:1fr}
   .dl > div{grid-template-columns:1fr;gap:0}
+  .links li{grid-template-columns:1fr;gap:0}
 }
 
 @media print{
-  html:root:not([data-x]){
-    --bg:#ffffff; --ink:#111111; --text:#3a3f45; --muted:#6d737a;
-    --hair:rgba(17,17,17,.13); --hair-strong:rgba(17,17,17,.26); color-scheme:light;
-  }
-  @page{size:letter;margin:.35in}
-  body{font-size:8.6pt;padding-inline:0}
-  .page{max-width:none;padding:0}
-  .thesis .line{font-size:28pt}
-  .part{margin-top:20px}
-  .cols > .col,.blk,.gate{break-inside:avoid}
+  @page{size:letter;margin:.4in}
+  body{font-size:8.6pt}
+  .band{background:none;color:#000;border-top:3px solid #000}
+  .band h2{color:#000}
+  .band p,.band .inside{color:#333}
+  .band .wrap{padding-block:14px 10px}
+  .chapter{margin-top:24px;break-before:page}
+  .row,.final{break-inside:avoid}
+  #scroll-top-btn{display:none!important}
 }
 </style>
 <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -224,250 +239,394 @@ a.ext:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<div class="page">
-
-  <header class="mast">
-    <span class="wordmark">Mike<i>.</i>Moll</span>
-    <span class="meta">Coaching brand · One-page guideline · September 2026</span>
-  </header>
-
-  <h1>Brand and content guide</h1>
-  <p class="sub">Built from the coaching and shared second brain: Core Message, Positioning, Voice and Story, ICP, Core Values, the content strategy docs and the voice guardrails.</p>
-
-  <section class="thesis" aria-label="Locked headline">
-    <p class="line">I help experts get paid for the value they create.</p>
-    <p class="subline">Service professionals who know they’re excellent at what they do — but feel like their business hasn’t caught up yet — work with Mike Moll to close that gap, without overcomplicating everything.</p>
-    <p class="note">Locked copy. Use the headline word for word on the site hero, the LinkedIn headline and the first slide of every workshop. The sub-header sits under it on the site.</p>
-  </section>
-
-  <div class="arch">
-    <div>
-      <div class="lbl">Master brand</div>
-      <div class="val">Mike Moll</div>
-      <div class="nt">mikemoll.co, the hub. Same name, photo, bio and link on every profile.</div>
+<header class="top">
+  <div class="wrap">
+    <div class="mast">
+      <span class="wordmark">Mike<i>.</i>Moll</span>
+      <span class="meta">Social media hub · Updated September 2026</span>
     </div>
-    <div>
-      <div class="lbl">Content brand</div>
-      <div class="val">The Undervalued Expert</div>
-      <div class="nt">The podcast. Short episodes on pricing, offers and sales.</div>
-    </div>
-    <div>
-      <div class="lbl">Method</div>
-      <div class="val">The Compression Method</div>
-      <div class="nt">Find the one constraint, fix it first, move to the next.</div>
-    </div>
-    <div>
-      <div class="lbl">Flagship offer</div>
-      <div class="val">30-30-30 in 90</div>
-      <div class="nt">Price up 30%, close rate up 30%, delivery hours down 30%, in 90 days.</div>
-    </div>
+    <h1>Brand and social media hub</h1>
+    <p class="lede">Everything the social media team needs to post as Mike Moll, in one place. Start with the links, then the brand, the look, the voice and the content playbook.</p>
+
+    <!-- CONTENTS: add one <li> here for every chapter below, with the same number and id. -->
+    <nav aria-label="Contents">
+      <ol class="toc">
+        <li><a href="#channels"><span class="n">01</span><span class="t">Channels and tools</span><span class="d">Profiles, tools, logins and how-to videos.</span></a></li>
+        <li><a href="#brand"><span class="n">02</span><span class="t">The brand</span><span class="d">Headline, audience, promise and values.</span></a></li>
+        <li><a href="#look"><span class="n">03</span><span class="t">The look</span><span class="d">Logo, colours, type and layout rules.</span></a></li>
+        <li><a href="#voice"><span class="n">04</span><span class="t">Voice and words</span><span class="d">How Mike sounds and the words we use.</span></a></li>
+        <li><a href="#playbook"><span class="n">05</span><span class="t">Content playbook</span><span class="d">What to post, when, and how it’s built.</span></a></li>
+      </ol>
+    </nav>
   </div>
+</header>
 
-  <section class="part" id="brand">
-    <h2>The brand</h2>
-    <div class="cols two">
-      <div class="col">
-        <div class="blk">
-          <h3>Who it’s for</h3>
-          <p>The Undervalued Expert: a consultant, fractional executive, service solopreneur or owner of a one-to-three person agency. Two to five years out of corporate, earning $7K to $20K a month. Their clients get great results. Their prices still follow the salary they left.</p>
-          <p>They come asking for more leads or better sales. The fix is almost always the offer and the price.</p>
-          <p class="small">Not for people with no paying clients yet, anyone in a cash crisis, e-commerce or SaaS owners, pure creatives, or anyone hunting for one silver bullet.</p>
+<main>
+
+  <!-- ============ 01 CHANNELS AND TOOLS ============ -->
+  <section class="chapter" id="channels">
+    <div class="band">
+      <div class="wrap">
+        <span class="n">01</span>
+        <div>
+          <h2>Channels and tools</h2>
+          <p>Every profile, tool and login the team uses day to day.</p>
         </div>
-        <div class="blk">
-          <h3>What we promise</h3>
-          <p>The Compression Method finds the one constraint holding the business back the most, fixes it fast, then moves to the next one.</p>
-          <p>Lead with pricing and sales. Clients mention it almost twice as often as anything else. Show the move from fear to confidence, and end on the confidence.</p>
-          <p>Every piece points at one feeling: the rules they’ve been following were never fixed. They get to decide the offer, the price, the clients and the process.</p>
-        </div>
-        <div class="blk">
-          <h3>Four values, used as a filter</h3>
-          <div class="values">
-            <div><b>Simplicity drives results</b><span>Does this make the business simpler?</span></div>
-            <div><b>Self-driven confidence</b><span>Does the price match the value the work creates?</span></div>
-            <div><b>Scalable growth</b><span>Does this buy back time?</span></div>
-            <div><b>Lifestyle freedom</b><span>Does this serve the life the client wants?</span></div>
-          </div>
-        </div>
+        <ul class="inside"><li>Profiles</li><li>Scheduling</li><li>Podcast</li><li>Content database</li><li>Editing</li></ul>
       </div>
-
-      <div class="col">
-        <div class="blk">
-          <h3>How it looks</h3>
-          <div class="ident">
-            <span class="wm">Mike<i>.</i>Moll</span>
-            <svg viewBox="0 0 512 512" role="img" aria-label="Brand mark: a white M on a black circle">
-              <circle cx="256" cy="256" r="255" fill="#000" style="stroke:var(--hair-strong)" stroke-width="1" vector-effect="non-scaling-stroke"/>
-              <path fill="#fff" d="M99.8 401.6Q90.8 401.6 90.8 391.4V118.7Q90.8 110.4 98.3 110.4H194.4Q199.1 110.4 201.1 111.6Q203 112.8 204.6 117.1L254 260.7Q255.2 263.8 256.8 263.7Q258.4 263.5 259.5 260.7L305.4 120.6Q308.6 110.4 315.2 110.4H414.5Q421.2 110.4 421.2 117.9V391.4Q421.2 401.6 409.8 401.6H351.3Q345.8 401.6 343.9 399.4Q341.9 397.2 341.9 392.5V207.3Q341.9 204.6 340.4 204.6Q338.8 204.6 337.6 207.7L275.6 394.9Q272.9 401.6 266.6 401.6H229.7Q222.7 401.6 220.3 394.9L158.3 210.5Q157.1 206.6 155.8 207Q154.4 207.3 154.4 210.9V393.7Q154.4 398.4 152.8 400Q151.2 401.6 146.1 401.6H99.8Z"/>
-            </svg>
-            <p class="cap">Wordmark in Libre Franklin 700 with a sky-blue period. The mark is a white Libre Franklin 800 M on a black circle, and it’s the one rounded shape in the system.</p>
+    </div>
+    <div class="body">
+      <div class="wrap">
+        <div class="row two">
+          <div class="blk">
+            <h3>Profiles</h3>
+            <ul class="links">
+              <li><span class="p">LinkedIn</span><a class="ext" href="https://www.linkedin.com/in/themikemoll/" target="_blank" rel="noopener">linkedin.com/in/themikemoll</a></li>
+              <li><span class="p">Instagram</span><a class="ext" href="https://www.instagram.com/themikemoll/" target="_blank" rel="noopener">instagram.com/themikemoll</a></li>
+              <li><span class="p">Facebook</span><a class="ext" href="https://www.facebook.com/mikemoll6" target="_blank" rel="noopener">facebook.com/mikemoll6</a></li>
+              <li><span class="p">YouTube</span><a class="ext" href="https://www.youtube.com/@mikemollco" target="_blank" rel="noopener">youtube.com/@mikemollco</a></li>
+              <li><span class="p">Threads</span><a class="ext" href="https://www.threads.com/@themikemoll?hl=en" target="_blank" rel="noopener">threads.com/@themikemoll</a></li>
+            </ul>
+            <p class="small">Every profile uses the name Mike Moll, the same headshot, the same one-line bio and mikemoll.co as the link.</p>
           </div>
-
-          <div class="swatches">
-            <div class="sw"><div class="chip" style="background:#000000"></div><div class="hex">#000000</div><div class="role">Black canvas</div></div>
-            <div class="sw"><div class="chip" style="background:#ffffff"></div><div class="hex">#FFFFFF</div><div class="role">Headings on black, white pages</div></div>
-            <div class="sw"><div class="chip" style="background:#38b6ff"></div><div class="hex">#38B6FF</div><div class="role">Sky blue, the only accent</div></div>
-            <div class="sw"><div class="chip" style="background:#d7d7d7"></div><div class="hex">#D7D7D7</div><div class="role">Body text on black</div></div>
-            <div class="sw"><div class="chip" style="background:#9a9a9a"></div><div class="hex">#9A9A9A</div><div class="role">Labels and captions</div></div>
+          <div class="stack">
+            <div class="blk">
+              <h3>Scheduling</h3>
+              <ul class="links">
+                <li><span class="p">ContentStudio</span><a class="ext" href="https://app.contentstudio.io/smh-/dashboard" target="_blank" rel="noopener">app.contentstudio.io</a></li>
+              </ul>
+              <p class="small">Posts for every profile are scheduled here. Team login required.</p>
+            </div>
+            <div class="blk">
+              <h3>Podcast</h3>
+              <ul class="links">
+                <li><span class="p">MyPodOps</span><a class="ext" href="https://www.mypodops.com/hosting/dashboard.html" target="_blank" rel="noopener">mypodops.com</a></li>
+              </ul>
+              <p class="small">Upload each episode here. MyPodOps sends it out to the podcast platforms. Team login required.</p>
+            </div>
           </div>
+        </div>
 
-          <div class="type">
-            <div><div class="spec f">Libre Franklin</div><p class="small">Headings, figures and the wordmark. Weights 600 to 800.</p></div>
-            <div><div class="spec p">Poppins</div><p class="small">Body copy. Weights 300 to 500. No third typeface.</p></div>
+        <div class="row two">
+          <div class="blk">
+            <h3>Content database</h3>
+            <ul class="links">
+              <li><span class="p">Notion</span><a class="ext" href="https://app.notion.com/p/solopreneur-coach/Mike-Moll-Content-ed413be150974b06aebabbbf203a198d?source=copy_link" target="_blank" rel="noopener">Mike Moll Content</a></li>
+              <li><span class="p">SOP video</span><a class="ext" href="https://share.zight.com/01a0cbc4-ab96-7e6a-bf26-cb24ad0c5d5f" target="_blank" rel="noopener">How to use the content database</a></li>
+            </ul>
+            <p class="small">Watch the SOP video before you use the database for the first time.</p>
           </div>
-
-          <ul class="plus rules">
-            <li>Square corners everywhere. The M circle is the only exception.</li>
-            <li>1px hairlines separate things. No boxes, filled cards or shadows.</li>
-            <li>One accent per piece, on buttons, links, numerals and the logo period. Keep it off body text.</li>
-            <li>No gradients, gold or cream. White pages use #111111 ink. Dark slides use #F2F2F2 on #141414.</li>
-            <li>Icons are literal, drawn on one grid, with nothing behind them.</li>
-          </ul>
+          <div class="blk">
+            <h3>Editing</h3>
+            <ul class="links">
+              <li><span class="p">Descript</span><a class="ext" href="https://web.descript.com/" target="_blank" rel="noopener">web.descript.com</a></li>
+              <li><span class="p">SOP video</span><a class="ext" href="https://share.zight.com/01a0d4d1-dcd4-7fff-a49c-c9259bd7ce9c" target="_blank" rel="noopener">How to use Descript</a></li>
+            </ul>
+            <p class="small">Sign in with <b>mike@mikemoll.co</b>. Descript then emails a sign-in code to Mike, so ask Mike for the code.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="part" id="content">
-    <h2>The content</h2>
-    <div class="cols three">
-      <div class="col">
-        <div class="blk">
-          <h3>Voice</h3>
-          <dl class="dl">
-            <div><dt>Direct</dt><dd>The first sentence earns its place or it goes.</dd></div>
-            <div><dt>Peer-level</dt><dd>One business owner talking to another.</dd></div>
-            <div><dt>Specific</dt><dd>A named client and a figure. If a claim can’t be specific, cut it.</dd></div>
-            <div><dt>Calm</dt><dd>No hype, no urgency theater, no exclamation points.</dd></div>
-            <div><dt>Irreverent</dt><dd>When it fits. Name the absurd thing, lightly and accurately.</dd></div>
-          </dl>
-          <p class="small">Fifth-grade reading level. Contractions. Active voice. One idea per sentence, in full sentences of mixed length. No em dashes.</p>
-          <div class="ex">
-            <p class="yes"><span class="lbl">Write</span>“You’re charging $1,000 for something that puts $70,000 in your client’s pocket. The fix is a pricing skill, and you can learn it faster than you think.”</p>
-            <p class="no"><span class="lbl">Skip</span>“Many entrepreneurs struggle with pricing confidence and need to develop a stronger value mindset.”</p>
-          </div>
+  <!-- ============ 02 THE BRAND ============ -->
+  <section class="chapter" id="brand">
+    <div class="band">
+      <div class="wrap">
+        <span class="n">02</span>
+        <div>
+          <h2>The brand</h2>
+          <p>What we say, who we say it to, and what we promise.</p>
         </div>
-        <div class="blk words">
-          <h3>Words</h3>
-          <div class="on">
-            <div class="lbl">Use</div>
-            <p><span>owner-to-owner</span><span class="dot">·</span><span>the value your work creates</span><span class="dot">·</span><span>get paid for the value you create</span><span class="dot">·</span><span>compress, distill, simplify</span><span class="dot">·</span><span>business case</span><span class="dot">·</span><span>the skill was never the problem</span><span class="dot">·</span><span>simpler and more valuable</span><span class="dot">·</span><span>their industry’s best-kept secret</span><span class="dot">·</span><span>free 20-minute assessment</span></p>
-          </div>
-          <div class="off">
-            <div class="lbl">Retired in the July 2026 refresh</div>
-            <p><span>zone of genius</span><span class="dot">·</span><span>borrowed beliefs</span><span class="dot">·</span><span>the cage was never locked</span><span class="dot">·</span><span>on your terms</span><span class="dot">·</span><span>take it or leave it</span><span class="dot">·</span><span>worst-case math</span><span class="dot">·</span><span>snap-called</span><span class="dot">·</span><span>expansive</span><span class="dot">·</span><span>great at the work</span><span class="dot">·</span><span>what your work is worth</span></p>
-          </div>
-          <div class="off">
-            <div class="lbl">Never</div>
-            <p><span>mindset shift</span><span class="dot">·</span><span>clarity</span><span class="dot">·</span><span>empower</span><span class="dot">·</span><span>unlock your potential</span><span class="dot">·</span><span>journey</span><span class="dot">·</span><span>hustle</span><span class="dot">·</span><span>proven system</span><span class="dot">·</span><span>6- or 7-figure with no figure</span><span class="dot">·</span><span>leverage</span><span class="dot">·</span><span>deep dive</span><span class="dot">·</span><span>unpack</span><span class="dot">·</span><span>real</span><span class="dot">·</span><span>actually</span><span class="dot">·</span><span>my own math</span><span class="dot">·</span><span>$X worth of work</span><span class="dot">·</span><span>results you can point to</span><span class="dot">·</span><span>DM me</span></p>
-          </div>
-          <p class="small">Also banned: “it’s not X, it’s Y” in any form, stacks of two-word sentences, and rhetorical-question openers. Where older docs disagree, the July 2026 refresh and the voice guardrails win.</p>
-        </div>
+        <ul class="inside"><li>Headline</li><li>Brand structure</li><li>Who it’s for</li><li>What we promise</li><li>Values</li></ul>
       </div>
+    </div>
+    <div class="body">
+      <div class="wrap">
+        <div class="row">
+          <div class="thesis">
+            <p class="line">I help experts get paid for the value they create.</p>
+            <p class="subline">Service professionals who know they’re excellent at what they do — but feel like their business hasn’t caught up yet — work with Mike Moll to close that gap, without overcomplicating everything.</p>
+            <p class="note">Locked copy. Use the headline word for word on the site hero, the LinkedIn headline and the first slide of every workshop. The sub-header sits under it on the site.</p>
+          </div>
+        </div>
 
-      <div class="col">
-        <div class="blk">
-          <h3>Every piece, in this order</h3>
-          <ol class="order">
-            <li><span class="n">01</span><span><b>Recognition.</b> They see themselves in the description.</span></li>
-            <li><span class="n">02</span><span><b>Understanding.</b> They feel understood about the offer and the price.</span></li>
-            <li><span class="n">03</span><span><b>Credibility.</b> Mike’s story and client results show he’s been there.</span></li>
-            <li><span class="n">04</span><span><b>Method.</b> Name The Compression Method, and only now.</span></li>
-            <li><span class="n">05</span><span><b>Offer.</b> One next step.</span></li>
-          </ol>
-          <p class="small">No fear-based selling: name the situation without using burnout as a threat. No dependency messaging: the goal is the client’s independence.</p>
+        <div class="row">
+          <div class="blk">
+            <h3>Brand structure</h3>
+            <div class="arch">
+              <div>
+                <div class="lbl">Master brand</div>
+                <div class="val">Mike Moll</div>
+                <div class="nt">mikemoll.co, the hub. Same name, photo, bio and link on every profile.</div>
+              </div>
+              <div>
+                <div class="lbl">Content brand</div>
+                <div class="val">The Undervalued Expert</div>
+                <div class="nt">The podcast. Short episodes on pricing, offers and sales.</div>
+              </div>
+              <div>
+                <div class="lbl">Method</div>
+                <div class="val">The Compression Method</div>
+                <div class="nt">Find the one constraint, fix it first, move to the next.</div>
+              </div>
+              <div>
+                <div class="lbl">Flagship offer</div>
+                <div class="val">30-30-30 in 90</div>
+                <div class="nt">Price up 30%, close rate up 30%, delivery hours down 30%, in 90 days.</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="blk">
-          <h3>What to post</h3>
-          <div class="lbl"><span class="pct">80%</span>The method</div>
-          <ul class="pillars">
-            <li><b>Price and belief.</b> Owners keep prices low because of belief. The higher number still doesn’t come out of their mouth.</li>
-            <li><b>Sales and closing.</b> A simpler offer and a structured call close more at a higher price.</li>
-            <li><b>Delivery.</b> Scope the offer and give the owner their hours back.</li>
-          </ul>
-          <div class="lbl" style="margin-top:14px"><span class="pct">20%</span>Story and proof</div>
-          <ul class="pillars">
-            <li>The Corktown walk, the agency that nearly went under twice from adding too much, life on the road, podcast appearances. These show how Mike thinks. Keep them out of the headline topic.</li>
-          </ul>
-        </div>
-      </div>
 
-      <div class="col">
-        <div class="blk">
-          <h3>LinkedIn week</h3>
-          <ul class="week">
-            <li><span class="d">Mon</span><span>Teaching, a contrarian reframe</span><span class="a">No ask</span></li>
-            <li><span class="d">Tue</span><span>Case study, named client</span><span class="a ask">Ask</span></li>
-            <li><span class="d">Wed</span><span>Story that maps to a lesson</span><span class="a">No ask</span></li>
-            <li><span class="d">Thu</span><span>Teaching plus the training</span><span class="a ask">Ask</span></li>
-            <li><span class="d">Fri</span><span>Lifestyle, short and human</span><span class="a">No ask</span></li>
-          </ul>
-          <p class="small">Five posts a week at 8 to 9am ET. Run one theme for one to three weeks. Three of every five posts ask for nothing.</p>
+        <div class="row two">
+          <div class="blk">
+            <h3>Who it’s for</h3>
+            <p>The Undervalued Expert: a consultant, fractional executive, service solopreneur or owner of a one-to-three person agency. Two to five years out of corporate, earning $7K to $20K a month. Their clients get great results. Their prices still follow the salary they left.</p>
+            <p>They come asking for more leads or better sales. The fix is almost always the offer and the price.</p>
+            <p class="small">Not for people with no paying clients yet, anyone in a cash crisis, e-commerce or SaaS owners, pure creatives, or anyone hunting for one silver bullet.</p>
+          </div>
+          <div class="blk">
+            <h3>What we promise</h3>
+            <p>The Compression Method finds the one constraint holding the business back the most, fixes it fast, then moves to the next one.</p>
+            <p>Lead with pricing and sales. Clients mention it almost twice as often as anything else. Show the move from fear to confidence, and end on the confidence.</p>
+            <p>Every piece points at one feeling: the rules they’ve been following were never fixed. They get to decide the offer, the price, the clients and the process.</p>
+          </div>
         </div>
-        <div class="blk">
-          <h3>The next step</h3>
-          <p>A piece that asks gets one ask. Case studies point to the free 20-minute assessment. Training posts use one keyword, <b>COMPRESS</b>, every time. Never write “DM me” and never stack two asks.</p>
-        </div>
-        <div class="blk">
-          <h3>Proof</h3>
-          <p>Name the client, give the figure, and quote them word for word. Never invent a composite client.</p>
-          <table class="proof" style="margin-top:10px">
-            <tr><td>Daniella</td><td>$30K to $40K a month recurring, team of four</td></tr>
-            <tr><td>Jenni</td><td>Quadrupled her rates, $16K month</td></tr>
-            <tr><td>Sean</td><td>$16K to $30K months at the same hours</td></tr>
-            <tr><td>Tyler</td><td>Retainer from $1,500 to $4,500</td></tr>
-            <tr><td>Mark</td><td>Sales up 30%</td></tr>
-          </table>
-          <p class="small">Mike: built an agency from $0 to $700K a year, Fractional CMO for a $20M brand, digital lead for Volvo and Patak’s, 1,000+ sales calls reviewed, 60+ podcast guest spots.</p>
+
+        <div class="row">
+          <div class="blk">
+            <h3>Four values, used as a filter</h3>
+            <div class="values">
+              <div><b>Simplicity drives results</b><span>Does this make the business simpler?</span></div>
+              <div><b>Self-driven confidence</b><span>Does the price match the value the work creates?</span></div>
+              <div><b>Scalable growth</b><span>Does this buy back time?</span></div>
+              <div><b>Lifestyle freedom</b><span>Does this serve the life the client wants?</span></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="part" id="channels">
-    <h2>Channels and tools</h2>
-    <div class="cols two">
-      <div class="col">
-        <div class="blk">
-          <h3>Profiles</h3>
-          <ul class="links">
-            <li><span class="p">LinkedIn</span><a class="ext" href="https://www.linkedin.com/in/themikemoll/" target="_blank" rel="noopener">linkedin.com/in/themikemoll</a></li>
-            <li><span class="p">Instagram</span><a class="ext" href="https://www.instagram.com/themikemoll/" target="_blank" rel="noopener">instagram.com/themikemoll</a></li>
-            <li><span class="p">Facebook</span><a class="ext" href="https://www.facebook.com/mikemoll6" target="_blank" rel="noopener">facebook.com/mikemoll6</a></li>
-            <li><span class="p">YouTube</span><a class="ext" href="https://www.youtube.com/@mikemollco" target="_blank" rel="noopener">youtube.com/@mikemollco</a></li>
-            <li><span class="p">Threads</span><a class="ext" href="https://www.threads.com/@themikemoll?hl=en" target="_blank" rel="noopener">threads.com/@themikemoll</a></li>
-          </ul>
-          <p class="small">Every profile uses the name Mike Moll, the same headshot, the same one-line bio and mikemoll.co as the link.</p>
+  <!-- ============ 03 THE LOOK ============ -->
+  <section class="chapter" id="look">
+    <div class="band">
+      <div class="wrap">
+        <span class="n">03</span>
+        <div>
+          <h2>The look</h2>
+          <p>Logo, colours, type and layout rules for anything visual.</p>
         </div>
+        <ul class="inside"><li>Logo and mark</li><li>Type</li><li>Colours</li><li>Layout rules</li></ul>
       </div>
-      <div class="col">
-        <div class="blk">
-          <h3>Scheduling</h3>
-          <ul class="links">
-            <li><span class="p">ContentStudio</span><a class="ext" href="https://app.contentstudio.io/smh-/dashboard" target="_blank" rel="noopener">app.contentstudio.io</a></li>
-          </ul>
-          <p class="small">Posts for every profile are scheduled here. Team login required.</p>
+    </div>
+    <div class="body">
+      <div class="wrap">
+        <div class="row two">
+          <div class="blk">
+            <h3>Logo and mark</h3>
+            <div class="ident">
+              <span class="wm">Mike<i>.</i>Moll</span>
+              <svg viewBox="0 0 512 512" role="img" aria-label="Brand mark: a white M on a black circle">
+                <circle cx="256" cy="256" r="256" fill="#000"/>
+                <path fill="#fff" d="M99.8 401.6Q90.8 401.6 90.8 391.4V118.7Q90.8 110.4 98.3 110.4H194.4Q199.1 110.4 201.1 111.6Q203 112.8 204.6 117.1L254 260.7Q255.2 263.8 256.8 263.7Q258.4 263.5 259.5 260.7L305.4 120.6Q308.6 110.4 315.2 110.4H414.5Q421.2 110.4 421.2 117.9V391.4Q421.2 401.6 409.8 401.6H351.3Q345.8 401.6 343.9 399.4Q341.9 397.2 341.9 392.5V207.3Q341.9 204.6 340.4 204.6Q338.8 204.6 337.6 207.7L275.6 394.9Q272.9 401.6 266.6 401.6H229.7Q222.7 401.6 220.3 394.9L158.3 210.5Q157.1 206.6 155.8 207Q154.4 207.3 154.4 210.9V393.7Q154.4 398.4 152.8 400Q151.2 401.6 146.1 401.6H99.8Z"/>
+              </svg>
+            </div>
+            <p class="small">Wordmark in Libre Franklin 700 with a sky-blue period. The mark is a white Libre Franklin 800 M on a black circle, and it’s the one rounded shape in the system.</p>
+          </div>
+          <div class="blk">
+            <h3>Type</h3>
+            <div class="type">
+              <div><div class="spec f">Libre Franklin</div><p class="small">Headings, figures and the wordmark. Weights 600 to 800.</p></div>
+              <div><div class="spec p">Poppins</div><p class="small">Body copy. Weights 300 to 500. No third typeface.</p></div>
+            </div>
+          </div>
         </div>
-        <div class="blk">
-          <h3>Podcast</h3>
-          <ul class="links">
-            <li><span class="p">MyPodOps</span><a class="ext" href="https://www.mypodops.com/hosting/dashboard.html" target="_blank" rel="noopener">mypodops.com</a></li>
-          </ul>
-          <p class="small">Upload each episode here. MyPodOps sends it out to the podcast platforms. Team login required.</p>
+
+        <div class="row">
+          <div class="blk">
+            <h3>Colours</h3>
+            <div class="swatches">
+              <div class="sw"><div class="chip" style="background:#000000"></div><div class="hex">#000000</div><div class="role">Black canvas</div></div>
+              <div class="sw"><div class="chip" style="background:#ffffff"></div><div class="hex">#FFFFFF</div><div class="role">Headings on black, white pages</div></div>
+              <div class="sw"><div class="chip" style="background:#38b6ff"></div><div class="hex">#38B6FF</div><div class="role">Sky blue, the only accent</div></div>
+              <div class="sw"><div class="chip" style="background:#d7d7d7"></div><div class="hex">#D7D7D7</div><div class="role">Body text on black</div></div>
+              <div class="sw"><div class="chip" style="background:#9a9a9a"></div><div class="hex">#9A9A9A</div><div class="role">Labels and captions</div></div>
+            </div>
+            <p class="small">White pages use #111111 ink. Dark slides use #F2F2F2 on #141414.</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="blk">
+            <h3>Layout rules</h3>
+            <ul class="plus cols2">
+              <li>Square corners everywhere. The M circle is the only exception.</li>
+              <li>1px hairlines separate things. No boxes, filled cards or shadows.</li>
+              <li>One accent per piece, on buttons, links, numerals and the logo period. Keep it off body text.</li>
+              <li>No gradients, gold or cream.</li>
+              <li>Icons are literal, drawn on one grid, with nothing behind them.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Social media team sections go here. Add each one as:
-       <section class="part" id="short-id"><h2>Heading</h2> ... </section>
-       Reuse .cols.two / .cols.three and the .blk, .plus, .dl classes above. -->
+  <!-- ============ 04 VOICE AND WORDS ============ -->
+  <section class="chapter" id="voice">
+    <div class="band">
+      <div class="wrap">
+        <span class="n">04</span>
+        <div>
+          <h2>Voice and words</h2>
+          <p>How Mike sounds, and the words we use and avoid.</p>
+        </div>
+        <ul class="inside"><li>Voice</li><li>Write and skip</li><li>Words to use</li><li>Retired and banned words</li></ul>
+      </div>
+    </div>
+    <div class="body">
+      <div class="wrap">
+        <div class="row two">
+          <div class="blk">
+            <h3>Voice</h3>
+            <dl class="dl">
+              <div><dt>Direct</dt><dd>The first sentence earns its place or it goes.</dd></div>
+              <div><dt>Peer-level</dt><dd>One business owner talking to another.</dd></div>
+              <div><dt>Specific</dt><dd>A named client and a figure. If a claim can’t be specific, cut it.</dd></div>
+              <div><dt>Calm</dt><dd>No hype, no urgency theater, no exclamation points.</dd></div>
+              <div><dt>Irreverent</dt><dd>When it fits. Name the absurd thing, lightly and accurately.</dd></div>
+            </dl>
+            <p class="small">Fifth-grade reading level. Contractions. Active voice. One idea per sentence, in full sentences of mixed length. No em dashes.</p>
+            <div class="ex">
+              <p class="yes"><span class="lbl">Write</span>“You’re charging $1,000 for something that puts $70,000 in your client’s pocket. The fix is a pricing skill, and you can learn it faster than you think.”</p>
+              <p class="no"><span class="lbl">Skip</span>“Many entrepreneurs struggle with pricing confidence and need to develop a stronger value mindset.”</p>
+            </div>
+          </div>
+          <div class="blk words">
+            <h3>Words</h3>
+            <div class="on">
+              <div class="lbl">Use</div>
+              <p><span>owner-to-owner</span><span class="dot">·</span><span>the value your work creates</span><span class="dot">·</span><span>get paid for the value you create</span><span class="dot">·</span><span>compress, distill, simplify</span><span class="dot">·</span><span>business case</span><span class="dot">·</span><span>the skill was never the problem</span><span class="dot">·</span><span>simpler and more valuable</span><span class="dot">·</span><span>their industry’s best-kept secret</span><span class="dot">·</span><span>free 20-minute assessment</span></p>
+            </div>
+            <div class="off">
+              <div class="lbl">Retired in the July 2026 refresh</div>
+              <p><span>zone of genius</span><span class="dot">·</span><span>borrowed beliefs</span><span class="dot">·</span><span>the cage was never locked</span><span class="dot">·</span><span>on your terms</span><span class="dot">·</span><span>take it or leave it</span><span class="dot">·</span><span>worst-case math</span><span class="dot">·</span><span>snap-called</span><span class="dot">·</span><span>expansive</span><span class="dot">·</span><span>great at the work</span><span class="dot">·</span><span>what your work is worth</span></p>
+            </div>
+            <div class="off">
+              <div class="lbl">Never</div>
+              <p><span>mindset shift</span><span class="dot">·</span><span>clarity</span><span class="dot">·</span><span>empower</span><span class="dot">·</span><span>unlock your potential</span><span class="dot">·</span><span>journey</span><span class="dot">·</span><span>hustle</span><span class="dot">·</span><span>proven system</span><span class="dot">·</span><span>6- or 7-figure with no figure</span><span class="dot">·</span><span>leverage</span><span class="dot">·</span><span>deep dive</span><span class="dot">·</span><span>unpack</span><span class="dot">·</span><span>real</span><span class="dot">·</span><span>actually</span><span class="dot">·</span><span>my own math</span><span class="dot">·</span><span>$X worth of work</span><span class="dot">·</span><span>results you can point to</span><span class="dot">·</span><span>DM me</span></p>
+            </div>
+            <p class="small">Also banned: “it’s not X, it’s Y” in any form, stacks of two-word sentences, and rhetorical-question openers. Where older docs disagree, the July 2026 refresh and the voice guardrails win.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <footer class="gate">
-    <p class="q"><span>Before anything ships, run the humanizer pass and sweep the banned words. Then ask one question.</span>Does this sound like Mike talking to a peer he respects, having done the thing himself?</p>
-    <p class="small">Sources in the brain: BRAND: Core Message, Positioning, Voice and Story, Ideal Client Profile, Core Values · Content Conversion Strategy &amp; Pillars · Mike Moll: LinkedIn Organic Strategy · Content Source Bank · Voice Guardrails (Aug 31, updated Sep 12) · Mike’s Voice · Icon System · mikemoll.co Favicon · Podcast Description. Visual tokens from mikemoll.co site.css.</p>
-  </footer>
+  <!-- ============ 05 CONTENT PLAYBOOK ============ -->
+  <section class="chapter" id="playbook">
+    <div class="band">
+      <div class="wrap">
+        <span class="n">05</span>
+        <div>
+          <h2>Content playbook</h2>
+          <p>What to post, when to post it, and how each piece is built.</p>
+        </div>
+        <ul class="inside"><li>Message order</li><li>What to post</li><li>LinkedIn week</li><li>The next step</li><li>Proof</li><li>Final check</li></ul>
+      </div>
+    </div>
+    <div class="body">
+      <div class="wrap">
+        <div class="row three">
+          <div class="blk">
+            <h3>Every piece, in this order</h3>
+            <ol class="order">
+              <li><span class="n">01</span><span><b>Recognition.</b> They see themselves in the description.</span></li>
+              <li><span class="n">02</span><span><b>Understanding.</b> They feel understood about the offer and the price.</span></li>
+              <li><span class="n">03</span><span><b>Credibility.</b> Mike’s story and client results show he’s been there.</span></li>
+              <li><span class="n">04</span><span><b>Method.</b> Name The Compression Method, and only now.</span></li>
+              <li><span class="n">05</span><span><b>Offer.</b> One next step.</span></li>
+            </ol>
+            <p class="small">No fear-based selling: name the situation without using burnout as a threat. No dependency messaging: the goal is the client’s independence.</p>
+          </div>
+          <div class="blk">
+            <h3>What to post</h3>
+            <div class="lbl"><span class="pct">80%</span>The method</div>
+            <ul class="pillars">
+              <li><b>Price and belief.</b> Owners keep prices low because of belief. The higher number still doesn’t come out of their mouth.</li>
+              <li><b>Sales and closing.</b> A simpler offer and a structured call close more at a higher price.</li>
+              <li><b>Delivery.</b> Scope the offer and give the owner their hours back.</li>
+            </ul>
+            <div class="lbl" style="margin-top:16px"><span class="pct">20%</span>Story and proof</div>
+            <ul class="pillars">
+              <li>The Corktown walk, the agency that nearly went under twice from adding too much, life on the road, podcast appearances. These show how Mike thinks. Keep them out of the headline topic.</li>
+            </ul>
+          </div>
+          <div class="stack">
+            <div class="blk">
+              <h3>LinkedIn week</h3>
+              <ul class="week">
+                <li><span class="d">Mon</span><span>Teaching, a contrarian reframe</span><span class="a">No ask</span></li>
+                <li><span class="d">Tue</span><span>Case study, named client</span><span class="a ask">Ask</span></li>
+                <li><span class="d">Wed</span><span>Story that maps to a lesson</span><span class="a">No ask</span></li>
+                <li><span class="d">Thu</span><span>Teaching plus the training</span><span class="a ask">Ask</span></li>
+                <li><span class="d">Fri</span><span>Lifestyle, short and human</span><span class="a">No ask</span></li>
+              </ul>
+              <p class="small">Five posts a week at 8 to 9am ET. Run one theme for one to three weeks. Three of every five posts ask for nothing.</p>
+            </div>
+            <div class="blk">
+              <h3>The next step</h3>
+              <p>A piece that asks gets one ask. Case studies point to the free 20-minute assessment. Training posts use one keyword, <b>COMPRESS</b>, every time. Never write “DM me” and never stack two asks.</p>
+            </div>
+          </div>
+        </div>
 
-</div>
+        <div class="row two">
+          <div class="blk">
+            <h3>Proof</h3>
+            <p>Name the client, give the figure, and quote them word for word. Never invent a composite client.</p>
+            <table class="proof">
+              <tr><td>Daniella</td><td>$30K to $40K a month recurring, team of four</td></tr>
+              <tr><td>Jenni</td><td>Quadrupled her rates, $16K month</td></tr>
+              <tr><td>Sean</td><td>$16K to $30K months at the same hours</td></tr>
+              <tr><td>Tyler</td><td>Retainer from $1,500 to $4,500</td></tr>
+              <tr><td>Mark</td><td>Sales up 30%</td></tr>
+            </table>
+          </div>
+          <div class="blk">
+            <h3>Mike’s credentials</h3>
+            <ul class="plus">
+              <li>Built an agency from $0 to $700K a year.</li>
+              <li>Fractional CMO for a $20M brand.</li>
+              <li>Digital lead for Volvo and Patak’s.</li>
+              <li>1,000+ sales calls reviewed.</li>
+              <li>60+ podcast guest spots.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="final">
+          <p class="small">Before anything ships, run the humanizer pass and sweep the banned words in chapter 04. Then ask one question.</p>
+          <p class="q">Does this sound like Mike talking to a peer he respects, having done the thing himself?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADD A CHAPTER: copy one <section class="chapter"> block above, give it the next
+       number (06, 07...) and a new id, update its band text and "inside" list, and add a
+       matching <li> to the contents list at the top. Inside .body use .row, .row.two or
+       .row.three with .blk blocks, and reuse the .links, .plus, .dl and .order lists. -->
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="small">Built from the coaching second brain: BRAND: Core Message, Positioning, Voice and Story, Ideal Client Profile, Core Values · Content Conversion Strategy &amp; Pillars · Mike Moll: LinkedIn Organic Strategy · Content Source Bank · Voice Guardrails (Aug 31, updated Sep 12) · Mike’s Voice · Icon System · mikemoll.co Favicon · Podcast Description. Visual tokens from mikemoll.co site.css.</p>
+  </div>
+</footer>
 
 <script src="/scroll-top.js" defer></script>
 </body>
