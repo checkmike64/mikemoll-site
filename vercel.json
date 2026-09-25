@@ -107,6 +107,11 @@
       "source": "/post",
       "destination": "/blog",
       "permanent": true
+    },
+    {
+      "source": "/book/:slug",
+      "destination": "https://coaching-crm-tau.vercel.app/book/:slug",
+      "permanent": false
     }
   ]
 }
