@@ -13,7 +13,7 @@
 - Subhead (one line): *The one marketing channel that still compounds, no big following required.*
 - Date chip: `Live on [Date] at [Time]`
 - CTA: **Save My Seat** → `#register` · under it: *Free to join. Seats are limited.*
-- Host line: *Hosted by Mike Moll · 65+ shows guested, 120 episodes hosted.*
+- Host line: *Hosted by Mike Moll · 70+ shows guested, 120 episodes hosted.*
 **Layout:** centered, single column. No nav. (Done.)
 
 ## 2. Why now (the shift)
@@ -60,7 +60,7 @@
 ## 7. Meet your host (why trust Mike)
 **Purpose:** credibility + empathy.
 - Empathy line: *In 2018 I had none of the credentials the internet said I needed. No exit, no following, no name. None of it mattered.*
-- Cred chips: 65+ shows guested · 120 episodes hosted · 14 years running his company · 3 years as a CMO · $386K traced to appearances.
+- Cred chips: 70+ shows guested · 120 episodes hosted · 14 years running his company · 3 years as a CMO · $386K traced to appearances.
 **Layout:** host card (photo + short bio + cred chips), like the podcast page's Meet Your Host.
 
 ## 8. The version of you 18 months from now (aspirational close)
@@ -84,4 +84,4 @@ Sections 2, 4, 5, and 8 stay to 1–2 short lines each; the "meat" is sections 3
 
 ### Open items
 - Date + time for the live session.
-- Host stat locked at 65+ guested (book updated to match). Date/time: Wednesday, August 12 at 4:00 PM ET.
+- Host stat locked at 70+ guested (book updated to match). Date/time: Wednesday, August 12 at 4:00 PM ET.

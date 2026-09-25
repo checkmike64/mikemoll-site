@@ -103,6 +103,23 @@ h3{font-weight:700;font-size:16px;letter-spacing:-.005em;margin-bottom:12px}
 .links li:last-child{border-bottom:1px solid var(--hair)}
 .links .p{font-family:var(--head);font-weight:600;color:var(--ink)}
 .links .tbd{color:var(--muted)}
+/* outreach templates (chapter 06) */
+.tpls{display:grid;grid-template-columns:1fr 1fr;gap:34px 52px;margin-top:6px}
+.tpl{border-top:1px solid var(--hair-strong);padding-top:14px;min-width:0}
+.tpl .head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px}
+.tpl .name{font-family:var(--head);font-weight:700;color:var(--ink);font-size:15px}
+.tpl .when{display:block;font-size:12.5px;color:var(--muted);font-weight:400;font-family:var(--body)}
+.tpl .tbody p{font-size:14px;line-height:1.6}
+.tpl .tbody p + p,.tpl .tbody ul + p{margin-top:10px}
+.tpl .tbody ul{margin:8px 0 0 18px;list-style:disc;font-size:14px}
+.ph{color:var(--ink);background:rgba(56,182,255,.16);padding:0 1px}
+.copy{font:600 12px/1 var(--head);color:var(--ink);background:none;border:0;border-bottom:2px solid var(--accent);padding:0 0 2px;cursor:pointer;flex:none}
+.copy:hover{color:var(--accent)}
+.copy:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.tpl-group{margin-top:44px}
+.tpl-group > h3{margin-bottom:4px}
+.tpl-group > .small{margin-bottom:6px;max-width:80ch}
+.tpls + .small{margin-top:28px}
 a.ext{color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:4px;overflow-wrap:anywhere}
 a.ext::after{content:" \2197";color:var(--muted);text-decoration:none;display:inline-block;margin-left:4px;font-size:.85em}
 a.ext:hover{color:var(--accent)}
@@ -206,6 +223,7 @@ a.ext:hover{color:var(--accent)}
   .plus.cols2{columns:1}
   .final{grid-template-columns:1fr;gap:14px}
   .chapter{margin-top:56px}
+  .tpls{grid-template-columns:1fr}
 }
 @media (max-width:460px){
   .toc{grid-template-columns:1fr}
@@ -257,7 +275,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="#look"><span class="n">03</span><span class="t">The look</span><span class="d">Logo, colours, type and layout rules.</span></a></li>
         <li><a href="#voice"><span class="n">04</span><span class="t">Voice and words</span><span class="d">How Mike sounds and the words we use.</span></a></li>
         <li><a href="#playbook"><span class="n">05</span><span class="t">Content playbook</span><span class="d">What to post, when, and how it’s built.</span></a></li>
-        <li><a href="#podcasting"><span class="n">06</span><span class="t">Guest podcasting</span><span class="d">Speaker sheet, outreach database, email templates and the SOP.</span></a></li>
+        <li><a href="#podcasting"><span class="n">06</span><span class="t">Guest podcasting</span><span class="d">Speaker sheet, outreach database, the process and email templates.</span></a></li>
       </ol>
     </nav>
   </div>
@@ -398,7 +416,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <div>
                 <div class="lbl">Flagship offer</div>
                 <div class="val">30-30-30 in 90</div>
-                <div class="nt">Price up 30%, close rate up 30%, delivery hours down 30%, in 90 days.</div>
+                <div class="nt">Price up 30%, close rate up 30%, delivery hours down 30%, in 90 days. Mike is reworking the offer (September 2026). Check with him before using it in new content.</div>
               </div>
             </div>
           </div>
@@ -407,9 +425,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="row two">
           <div class="blk">
             <h3>Who it’s for</h3>
-            <p>The Undervalued Expert: a consultant, fractional executive, service solopreneur or owner of a one-to-three person agency. Two to five years out of corporate, earning $7K to $20K a month. Their clients get great results. Their prices still follow the salary they left.</p>
+            <p>Service-based founders who are struggling with their offer: consultants, coaches, agency owners and fractional experts. They’re great at their work and their clients get results, but the offer is holding the business back.</p>
+            <p><b>No income bracket.</b> Mike gets opportunities at every revenue level, so we never target a revenue range. Never write anything that turns away someone making over $20K a month.</p>
             <p>They come asking for more leads or better sales. The fix is almost always the offer.</p>
             <p class="small">Not for people with no paying clients yet, anyone in a cash crisis, e-commerce or SaaS owners, pure creatives, or anyone hunting for one silver bullet.</p>
+            <p class="small">Working language, September 24, 2026. Mike is finishing the offer and its unique pieces, so this section will sharpen.</p>
           </div>
           <div class="blk">
             <h3>What we promise</h3>
@@ -540,6 +560,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <p><span>zone of genius</span><span class="dot">·</span><span>borrowed beliefs</span><span class="dot">·</span><span>the cage was never locked</span><span class="dot">·</span><span>on your terms</span><span class="dot">·</span><span>take it or leave it</span><span class="dot">·</span><span>worst-case math</span><span class="dot">·</span><span>snap-called</span><span class="dot">·</span><span>expansive</span><span class="dot">·</span><span>great at the work</span><span class="dot">·</span><span>what your work is worth</span></p>
             </div>
             <div class="off">
+              <div class="lbl">Retired in September 2026</div>
+              <p><span>solopreneur</span><span class="dot">·</span><span>income brackets as targeting (“stuck between $10K and $20K a month”)</span><span class="dot">·</span><span>“start with the offer” (say “are due to the offer”)</span><span class="dot">·</span><span>Pricing + Offer Coach</span></p>
+            </div>
+            <div class="off">
               <div class="lbl">Never</div>
               <p><span>mindset shift</span><span class="dot">·</span><span>clarity</span><span class="dot">·</span><span>empower</span><span class="dot">·</span><span>unlock your potential</span><span class="dot">·</span><span>journey</span><span class="dot">·</span><span>hustle</span><span class="dot">·</span><span>proven system</span><span class="dot">·</span><span>6- or 7-figure with no figure</span><span class="dot">·</span><span>leverage</span><span class="dot">·</span><span>deep dive</span><span class="dot">·</span><span>unpack</span><span class="dot">·</span><span>real</span><span class="dot">·</span><span>actually</span><span class="dot">·</span><span>my own math</span><span class="dot">·</span><span>$X worth of work</span><span class="dot">·</span><span>results you can point to</span><span class="dot">·</span><span>DM me</span></p>
             </div>
@@ -628,8 +652,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <li>Clients have added $2.5M+ in revenue and raised their rates 2 to 4 times.</li>
               <li>Grew his own agency from $0 to $700K a year, working with Volvo, Patak’s and the Canadian government.</li>
               <li>Fractional CMO for a $20M probiotics company.</li>
-              <li>Guest on 60+ podcasts, host of 120+ episodes.</li>
-              <li>Has lived in 10+ countries and hosted founder dinners in eight.</li>
+              <li>Guest on 70+ podcasts, host of 120+ episodes.</li>
+              <li>Has lived and worked in 11 countries and hosted founder dinners in eight.</li>
             </ul>
             <p class="small">Use these exact figures. 150+ offers replaces older counts like 250+. Updated September 24, 2026.</p>
           </div>
@@ -652,7 +676,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h2>Guest podcasting</h2>
           <p>Everything the team needs to get Mike booked on other people’s shows.</p>
         </div>
-        <ul class="inside"><li>Speaker sheet</li><li>Outreach database</li><li>Email templates</li><li>SOP video</li></ul>
+        <ul class="inside"><li>Links</li><li>Before the first email</li><li>The sequence</li><li>Email templates</li><li>Replies</li></ul>
       </div>
     </div>
     <div class="body">
@@ -662,12 +686,122 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <h3>Links</h3>
             <ul class="links">
               <li><span class="p">Speaker sheet</span><a class="ext" href="https://www.mikemoll.co/speaker-sheet" target="_blank" rel="noopener">mikemoll.co/speaker-sheet</a></li>
-              <li><span class="p">Outreach database</span><span class="tbd">Placeholder: Notion link coming</span></li>
-              <li><span class="p">Email templates</span><span class="tbd">Placeholder: link coming</span></li>
+              <li><span class="p">Outreach database</span><a class="ext" href="https://app.notion.com/p/397bd6e8d0fa4c6aa97fe9edf1ef6fbe" target="_blank" rel="noopener">Podcast Outreach for Mike (Notion)</a></li>
+              <li><span class="p">Email templates</span><a href="#outreach-templates" class="ext">Below on this page</a></li>
               <li><span class="p">SOP video</span><span class="tbd">Placeholder: Mike is recording this</span></li>
             </ul>
-            <p class="small">Send hosts the speaker sheet link in the first email. Don’t attach a file.</p>
+            <p class="small">Send hosts the speaker sheet link in the first email. Don’t attach a file. Ask Mike for access to the Notion database if it doesn’t open.</p>
           </div>
+        </div>
+
+        <div class="row two">
+          <div class="blk">
+            <h3>Before the first email</h3>
+            <ol class="order">
+              <li><span class="n">1</span><span><b>Check the show fits.</b> Published in the last 60 days, 20+ episodes, takes guests, has a website and social accounts, posts each episode with notes and links, and its listeners include service founders. Skip long pay-to-play application forms.</span></li>
+              <li><span class="n">2</span><span><b>Follow the host from Mike’s Instagram and LinkedIn.</b> Paste both profiles into <b>Host Instagram</b> and <b>Host LinkedIn</b> in Notion, then tick <b>Followed on Instagram</b> and <b>Followed on LinkedIn</b>. On LinkedIn, press Follow. If there’s only Connect, connect with no note.</span></li>
+              <li><span class="n">3</span><span><b>For top-priority shows, show up first.</b> Over the two weeks before the pitch, leave 2–3 specific comments on the host’s posts from Mike’s accounts. React to something they said. Never “Great post!”</span></li>
+              <li><span class="n">4</span><span><b>Find two recent episode titles</b> close to Mike’s topics: offers, sales, pricing, positioning, delivery.</span></li>
+              <li><span class="n">5</span><span><b>Pick 2–3 episode ideas</b> from the speaker sheet that fit this show’s listeners, and write one sentence on why they need the episode.</span></li>
+            </ol>
+          </div>
+          <div class="blk">
+            <h3>The sequence</h3>
+            <dl class="dl">
+              <div><dt>Day 1</dt><dd>Email 1. Pick version A, B, C or D and set <b>Email 1 Version</b> in Notion.</dd></div>
+              <div><dt>Day 5</dt><dd>One DM from Mike’s Instagram or LinkedIn, wherever the host is most active.</dd></div>
+              <div><dt>Day 8</dt><dd>The bump (Email 2), same thread.</dd></div>
+              <div><dt>Day 20</dt><dd>The monthly note (Email 3), Mike’s words, sent as written.</dd></div>
+              <div><dt>Every 30 days</dt><dd>Email 4+, rotating the three versions, until the host answers.</dd></div>
+            </dl>
+            <p class="small">Update <b>Status</b>, <b>Followup Status</b> and <b>Next Contact</b> in Notion after every send. Most bookings come from the follow-ups, so never skip them.</p>
+          </div>
+        </div>
+
+        <div class="tpl-group" id="outreach-templates">
+          <h3>Email 1: pick one version</h3>
+          <p class="small">Rotate between them so we learn which one gets replies. Every version has one specific reference to the show, a short intro, 2–3 episode ideas, the speaker sheet link and one ask. Never claim to be a fan. Never attach a file. Blue text is what you fill in.</p>
+          <p class="small"><b>Subject lines:</b> <span class="ph">Guest idea for [Podcast Name]</span> &nbsp;·&nbsp; <span class="ph">Guest idea for [Podcast Name]: [one episode title]</span> &nbsp;·&nbsp; <span class="ph">Episode idea for [Podcast Name] listeners</span></p>
+          <div class="tpls">
+            <div class="tpl">
+              <div class="head"><div class="name">A: Classic<span class="when">Mike’s original structure</span></div><button class="copy" type="button" data-copy="tpl1">Copy</button></div>
+              <div class="tbody" id="tpl1"><p>Hey <span class="ph">[Name]</span>,</p><p>I saw your episodes <span class="ph">[title 1]</span> and <span class="ph">[title 2]</span> and thought that I could add something to the conversation. I think your audience would appreciate my perspective based on <span class="ph">[value point]</span>.</p><p>My name is Mike Moll. I'm a sales and offer coach. After building 150+ offers, I've found that 90% of the problems service founders face are due to the offer. I've reviewed 1,000+ sales calls and been a guest on 70+ podcasts.</p><p>A few directions we could take an episode:</p><ul><li><span class="ph">[episode idea]</span></li><li><span class="ph">[episode idea]</span></li><li><span class="ph">[episode idea]</span></li></ul><p>Speaker sheet: mikemoll.co/speaker-sheet<br>Past episodes: mikemoll.co/media</p><p>I think we could create some awesome content together, reply if interested.</p><p>Mike</p></div>
+            </div>
+            <div class="tpl">
+              <div class="head"><div class="name">B: One idea<span class="when">Leads with a single episode</span></div><button class="copy" type="button" data-copy="tpl2">Copy</button></div>
+              <div class="tbody" id="tpl2"><p>Hey <span class="ph">[Name]</span>,</p><p>Your episode <span class="ph">[title 1]</span> got me thinking about one for your listeners: "<span class="ph">[episode idea]</span>".</p><p><span class="ph">[Value point.]</span> I'd walk through the four offer problems I see in almost every service business and how to tell which one is holding a business back.</p><p>I'm Mike Moll, a sales and offer coach. I've built 150+ offers and been a guest on 70+ podcasts. More episode ideas are on my speaker sheet: mikemoll.co/speaker-sheet</p><p>Would you like to set up a time to record?</p><p>Mike</p></div>
+            </div>
+            <div class="tpl">
+              <div class="head"><div class="name">C: Short<span class="when">For busy hosts</span></div><button class="copy" type="button" data-copy="tpl3">Copy</button></div>
+              <div class="tbody" id="tpl3"><p>Hey <span class="ph">[Name]</span>,</p><p>I'd like to come on <span class="ph">[Podcast Name]</span> as a guest. I saw <span class="ph">[title 1]</span> and <span class="ph">[title 2]</span>, and I think your listeners would get a lot from an episode on <span class="ph">[episode idea]</span>.</p><p>I'm a sales and offer coach. I've built 150+ offers and been a guest on 70+ podcasts.</p><p>Speaker sheet with more ideas: mikemoll.co/speaker-sheet</p><p>Reply if it's a fit.</p><p>Mike</p></div>
+            </div>
+            <div class="tpl">
+              <div class="head"><div class="name">D: Listener note<span class="when">Only if you listened to the episode</span></div><button class="copy" type="button" data-copy="tpl4">Copy</button></div>
+              <div class="tbody" id="tpl4"><p>Hey <span class="ph">[Name]</span>,</p><p>In <span class="ph">[episode title]</span>, you <span class="ph">[said / asked]</span> <span class="ph">[specific point]</span>. It lines up with something I see in almost every service business: <span class="ph">[the offer problem that fits, in one sentence]</span>.</p><p>I'd like to go deeper on it with your audience. A couple of directions:</p><ul><li><span class="ph">[episode idea]</span></li><li><span class="ph">[episode idea]</span></li></ul><p>I'm Mike Moll, a sales and offer coach. I've built 150+ offers and been a guest on 70+ podcasts. Speaker sheet: mikemoll.co/speaker-sheet</p><p>Reply if you're interested.</p><p>Mike</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tpl-group">
+          <h3>Follow-ups</h3>
+          <p class="small">Follow-up emails reply in the same thread as Email 1. Rotate versions where there’s more than one.</p>
+          <div class="tpls">
+            <div class="tpl">
+              <div class="head"><div class="name">Day 5 DM, version 1<span class="when">Instagram or LinkedIn</span></div><button class="copy" type="button" data-copy="tpl5">Copy</button></div>
+              <div class="tbody" id="tpl5"><p>Hey <span class="ph">[Name]</span>, I sent you an email about a guest episode for <span class="ph">[Podcast Name]</span>. Saying hi here so it doesn't get lost.</p></div>
+            </div>
+            <div class="tpl">
+              <div class="head"><div class="name">Day 5 DM, version 2<span class="when">Instagram or LinkedIn</span></div><button class="copy" type="button" data-copy="tpl6">Copy</button></div>
+              <div class="tbody" id="tpl6"><p>Hey <span class="ph">[Name]</span>, I emailed you an episode idea for <span class="ph">[Podcast Name]</span>: <span class="ph">[episode idea]</span>. The speaker sheet is here if that's easier: mikemoll.co/speaker-sheet</p></div>
+            </div>
+            <div class="tpl">
+              <div class="head"><div class="name">Day 8 bump, version 1<span class="when">Email 2</span></div><button class="copy" type="button" data-copy="tpl7">Copy</button></div>
+              <div class="tbody" id="tpl7"><p>Hey <span class="ph">[Name]</span>, bumping this up in case it got buried. Still think there's a good episode here for your audience. Let me know either way.</p><p>Mike</p></div>
+            </div>
+            <div class="tpl">
+              <div class="head"><div class="name">Day 8 bump, version 2<span class="when">Email 2</span></div><button class="copy" type="button" data-copy="tpl8">Copy</button></div>
+              <div class="tbody" id="tpl8"><p>Hey <span class="ph">[Name]</span>, moving this back to the top of your inbox. The episode I'd start with is <span class="ph">[episode idea]</span>. Let me know either way.</p><p>Mike</p></div>
+            </div>
+            <div class="tpl">
+              <div class="head"><div class="name">Day 20 monthly note<span class="when">Email 3, Mike’s words, send as written</span></div><button class="copy" type="button" data-copy="tpl9">Copy</button></div>
+              <div class="tbody" id="tpl9"><p>Hey <span class="ph">[Name]</span>, I know you are busy but I don't want to let this potential collaboration get lost. So, I will send you a quick check in once per month unless I hear that you're not interested. No rush to reply. Looking forward to filming a great podcast episode in the future.</p><p>Mike</p></div>
+            </div>
+            <div class="tpl">
+              <div class="head"><div class="name">Every 30 days, version 1<span class="when">Email 4+, Mike’s words</span></div><button class="copy" type="button" data-copy="tpl10">Copy</button></div>
+              <div class="tbody" id="tpl10"><p>Ready if you are! If you've got space, I would love to create a great episode with you.</p><p>If you're too busy and don't want to respond, don't. I'll send this email again in 30 days. If you don't want to have me on, just let me know and I'll stop inquiring.</p><p>Mike</p></div>
+            </div>
+            <div class="tpl">
+              <div class="head"><div class="name">Every 30 days, version 2<span class="when">Email 4+, a new idea</span></div><button class="copy" type="button" data-copy="tpl11">Copy</button></div>
+              <div class="tbody" id="tpl11"><p>Hey <span class="ph">[Name]</span>, a new episode idea for <span class="ph">[Podcast Name]</span>: <span class="ph">[bench title]</span>. Still happy to record whenever you have a spot. If it's not a fit, tell me and I'll stop checking in.</p><p>Mike</p></div>
+            </div>
+            <div class="tpl">
+              <div class="head"><div class="name">Every 30 days, version 3<span class="when">Email 4+, their latest episode</span></div><button class="copy" type="button" data-copy="tpl12">Copy</button></div>
+              <div class="tbody" id="tpl12"><p>Hey <span class="ph">[Name]</span>, I saw you just put out <span class="ph">[recent episode title]</span>. An episode on <span class="ph">[episode idea]</span> would pair well with it. I'll check back next month unless you tell me to stop.</p><p>Mike</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tpl-group">
+          <h3>Replies</h3>
+          <div class="tpls">
+            <div class="tpl">
+              <div class="head"><div class="name">They say yes<span class="when">Set Status to Interested, then Booked once a date is set</span></div><button class="copy" type="button" data-copy="tpl13">Copy</button></div>
+              <div class="tbody" id="tpl13"><p>Great, thank you. Here's a link to pick a time that works for you: <span class="ph">[Mike's booking link]</span>. If you read a guest intro, the About on my speaker sheet works: mikemoll.co/speaker-sheet. Let me know what else you need from me.</p><p>Mike</p></div>
+            </div>
+            <div class="tpl">
+              <div class="head"><div class="name">They’re full, or say later<span class="when">Set Status to Full and Next Contact to that month</span></div><button class="copy" type="button" data-copy="tpl14">Copy</button></div>
+              <div class="tbody" id="tpl14"><p>No problem. I'll check back in <span class="ph">[month]</span>.</p><p>Mike</p></div>
+            </div>
+            <div class="tpl">
+              <div class="head"><div class="name">No thanks<span class="when">Set Status and Followup Status to Not Interested. No more emails.</span></div><button class="copy" type="button" data-copy="tpl15">Copy</button></div>
+              <div class="tbody" id="tpl15"><p>Thanks for letting me know.</p><p>Mike</p></div>
+            </div>
+            <div class="tpl">
+              <div class="head"><div class="name">They ask for payment<span class="when">Or a sponsorship fee</span></div></div>
+              <div class="tbody"><p>Don’t reply. Note it in Notion and flag it to Mike.</p></div>
+            </div>
+          </div>
+          <p class="small">Episode ideas come from the speaker sheet. Extra ideas (the bench) are in the brain doc “Mike Moll — Podcast Guest Profile”; ask Mike or Claude for them. Mike’s booking link isn’t set yet, so ask Mike before sending a yes reply. Source of truth: ai-skills <code>coaching/podcast-outreach/templates.md</code>. When a template changes, change both.</p>
         </div>
       </div>
     </div>
@@ -686,6 +820,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
+<script>
+/* Copy buttons on the outreach templates: copies the template text with line breaks. */
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.copy'); if(!b) return;
+  var el=document.getElementById(b.getAttribute('data-copy')); if(!el) return;
+  var parts=[];
+  Array.prototype.forEach.call(el.children,function(c){
+    if(c.tagName==='UL'){parts.push(Array.prototype.map.call(c.children,function(li){return '- '+li.innerText.trim()}).join('\n'))}
+    else{parts.push(c.innerText.trim())}
+  });
+  var text=parts.join('\n\n');
+  var done=function(){var t=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=t},1400)};
+  if(navigator.clipboard){navigator.clipboard.writeText(text).then(done,function(){})}
+});
+</script>
 <script src="/scroll-top.js" defer></script>
 </body>
 </html>

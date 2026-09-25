@@ -62,13 +62,13 @@ dir_body=f'''<div class="page">
   <div class="page-head">
     <div class="eyebrow">Guest Appearances &middot; The Undervalued Expert</div>
     <h1>Conversations I've been a guest on.</h1>
-    <p class="lead">I've been invited onto 60+ podcasts to talk offers, pricing, sales, and building a business that serves your life. Here are the episodes, each with a short write-up and a link to listen.</p>
+    <p class="lead">I've been invited onto 70+ podcasts to talk offers, pricing, sales, and building a business that serves your life. Here are the episodes, each with a short write-up and a link to listen.</p>
   </div>
   <div class="post-grid">
 {chr(10).join(cards)}
   </div>
 </div>'''
-(ROOT/'guest-appearances.html').write_text(page("Guest Appearances | Mike Moll on 60+ Podcasts","Every podcast Mike Moll has guested on, each with a write-up and where to listen.",dir_body))
+(ROOT/'guest-appearances.html').write_text(page("Guest Appearances | Mike Moll on 70+ Podcasts","Every podcast Mike Moll has guested on, each with a write-up and where to listen.",dir_body))
 
 # ---- MEDIA PAGE ----
 # featured = the 3 approved
@@ -98,9 +98,9 @@ marquee=f'''<div class="marquee-wrap">
 
 media_body=f'''<div class="page">
   <div class="page-head"><div class="eyebrow">Media &amp; Speaking</div>
-    <h1>Featured on 60+ podcasts and stages.</h1>
+    <h1>Featured on 70+ podcasts and stages.</h1>
     <p class="lead">Hosts and event organizers bring me on to teach one thing: how experts make themselves and their offers more sellable. Here is where I have shared it, from the shows your buyers already listen to, to conferences and the classroom.</p></div>
-  <div class="stats"><div class="stat"><div class="n">60+</div><div class="l">Podcast appearances</div></div>
+  <div class="stats"><div class="stat"><div class="n">70+</div><div class="l">Podcast appearances</div></div>
     <div class="stat"><div class="n">$386K</div><div class="l">Revenue from podcast guesting</div></div>
     <div class="stat"><div class="n">120+</div><div class="l">Podcasts hosted</div></div></div>
 
@@ -112,7 +112,7 @@ media_body=f'''<div class="page">
   <div class="section-link"><a href="/guest-appearances" class="text-link">See all episodes &rarr;</a></div>
 
   <div class="sec"><div class="k">Podcasts</div><h2>The shows that have had me on.</h2>
-    <p class="sub">A sample of the 60+ podcasts where I have been a guest.</p></div>
+    <p class="sub">A sample of the 70+ podcasts where I have been a guest.</p></div>
   {marquee}
 
   <div class="sec"><div class="k">Speaking Engagements</div><h2>Conferences and the classroom.</h2>
@@ -125,5 +125,5 @@ media_body=f'''<div class="page">
   </div>
 {CTA}
 </div>'''
-(ROOT/'media.html').write_text(page("Media &amp; Speaking | Mike Moll","Mike Moll has been featured on 60+ podcasts and invited to speak at conferences and an MBA program.",media_body))
+(ROOT/'media.html').write_text(page("Media &amp; Speaking | Mike Moll","Mike Moll has been featured on 70+ podcasts and invited to speak at conferences and an MBA program.",media_body))
 print("directory cards:",len(cards)," | featured:",len(feat_cards)," | marquee shows:",len(shows))
