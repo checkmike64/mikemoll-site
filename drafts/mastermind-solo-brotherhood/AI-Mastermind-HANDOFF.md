@@ -69,7 +69,7 @@ Six real posts from a free Claude/AI Facebook community (lazy, beginner-level: "
 
 Audited with cro-laja, design-gardner, copy-wiebe, emotion-wolf, copy-kennedy. Key moves baked in: credibility moved up (hero + proof band + About), word count roughly halved from the first draft, "why now" cut to three beats, the strongest emotional line pulled up ("You're the most advanced operator in every room you're in, and it's gotten quiet"), the redundant text comparison replaced by the screenshot wall, and the apply CTA made a clean single path (WhatsApp demoted to a text link).
 
-Credibility facts to keep accurate: running founder rooms since 2018, dinners in 7 countries, agency built to $700K/yr, Fractional CMO. Every member interviewed personally.
+Credibility facts to keep accurate: running founder rooms since 2018, dinners in eight countries, agency built to $700K/yr, Fractional CMO. Every member interviewed personally.
 
 ---
 

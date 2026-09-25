@@ -2,7 +2,7 @@
 
 > INTERNAL NOTES (not page copy):
 > - **[PLACEHOLDER: NAME TBD]** "The Solo Brotherhood" is a working title. Open given the AI shift. Decide before publish.
-> - v4 changes: rewritten in Mike's own voice (contractions, first person, matches the invite email). Removed the wrong "$0 pay-to-join" claim. Reframed "no cap / every seat earned" into a small, vetted room of established founders who give more than they take. Simplified "who this is for." Cut the rigid AI checklist. Corrected the AI wording (use AI to run the business better, not build AI products). Vault is now a cumulative, member-built collection. Added credibility (dinners in 7 countries, running founder rooms since 2018).
+> - v4 changes: rewritten in Mike's own voice (contractions, first person, matches the invite email). Removed the wrong "$0 pay-to-join" claim. Reframed "no cap / every seat earned" into a small, vetted room of established founders who give more than they take. Simplified "who this is for." Cut the rigid AI checklist. Corrected the AI wording (use AI to run the business better, not build AI products). Vault is now a cumulative, member-built collection. Added credibility (dinners in eight countries, running founder rooms since 2018).
 > - Voice: no em dashes, no filler, plain, human, peer-to-peer.
 > - Open placeholders kept: name, men-only "why" line, testimonials, application form.
 
@@ -26,7 +26,7 @@ Men only. People with real businesses and real clients, using AI to streamline t
 *(stat band, directly under hero)*
 
 - **Since 2018** bringing founders together
-- **7 countries** where I've hosted dinners
+- **8 countries** where I've hosted dinners
 - **Every member** interviewed by me
 - **Give > take** the room's only real rule
 
