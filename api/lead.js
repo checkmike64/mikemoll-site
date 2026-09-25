@@ -1,77 +1,36 @@
-// Generic Vercel serverless function: registers a lead from ANY site form
-// into GoHighLevel via the Contacts upsert API (create-or-update, no duplicates).
-// One endpoint serves every form. Each form passes a `formId`; the server-side
-// config below decides the tag(s), standard-field mapping, and custom-field
-// mapping. The GHL Private Integration token lives ONLY in the GHL_TOKEN env
-// var (also accepts lowercase ghl_token) — never in client-side code.
+// Generic Vercel serverless function: registers a lead from ANY site form into
+// the CRM. One endpoint serves every form. Each form passes a `formId`, which
+// is also its form slug in the CRM, so the id IS the route and no mapping
+// table is needed.
+//
+// GoHighLevel was the original destination and ran the lead-magnet sequences.
+// Those sequences now live in the CRM, so GHL has been removed rather than
+// left running alongside: two systems holding the same people is how they
+// drift apart, and a contact record nobody reads is worse than none.
+//
+// What the CRM owns that this file used to: tags (per form, in the CRM's own
+// form configuration) and custom fields (mapped from answers). This file no
+// longer decides either. It validates the visitor, shapes the answers, and
+// hands them over.
 
-const GHL_LOCATION_ID = 'Y6tiQHe96XbqVkTeRY8J';
-const GHL_UPSERT_URL = 'https://services.leadconnectorhq.com/contacts/upsert';
-
-// Second destination. Every form id above is also a form slug in the CRM, so
-// no mapping table is needed -- the id IS the route. While GoHighLevel still
-// runs the lead-magnet sequences both systems get the lead; when the
-// sequences move, GHL comes out and this stays.
 const CRM_URL = (process.env.CRM_URL || 'https://coaching-crm-tau.vercel.app').replace(/\/+$/, '');
 
-// Per-form configuration.
-//  tags       : tags always applied for this form.
-//  customByKey: maps an incoming field name -> an existing GHL custom-field key.
-// (These GHL field keys already exist in the account.)
-const FORMS = {
-  'podcast-workshop': {
-    tags: ['podcast-workshop'],
-  },
-  // Evergreen opt-in for the workshop recording. Same 'podcast-workshop'
-  // tag as the live-era registrants; the GHL workflow "Podcast Workshop -
-  // Pre-Event Sequence" (rebuilt 2026-08-31 with recording-delivery emails,
-  // triggered by this tag) owns the entire email sequence. Do not add a
-  // welcomeEmail here or contacts will get the delivery email twice.
-  'workshop-recording': {
-    tags: ['podcast-workshop'],
-  },
-  'consulting-application': {
-    tags: ['consulting-application'],
-    customByKey: {
-      years_in_business: 'years_in_business',
-      deal_size: 'average_deal_size',
-      annual_revenue: 'annual_revenue',
-      close_rate: 'sales_close_rate',
-      timeline: 'when_are_you_looking_for_help_with_your_offer',
-    },
-  },
-  'podcast-guest': {
-    tags: ['podcast-guest'],
-  },
-  'newsletter': {
-    tags: ['newsletter'],
-  },
-  // Training library: light email unlock on /training. Re-captures the email
-  // and tags them so you can see who is browsing your trainings.
-  'training-library': {
-    tags: ['training-library'],
-  },
-  // Engagement pings from the /training library (return visits, video plays).
-  'training-engagement': {
-    tags: ['training-engaged'],
-  },
-  // Lead magnets: each fires one tag. Wire the matching GHL workflow's
-  // "Contact Tag Added" trigger to this tag so the email sequence still runs.
-  // 'linkedin-leads' and 'podcast-guesting' were retired in September 2026:
-  // their pages are gone and both paths redirect, so the ids are not accepted.
-  'claude-basics': {
-    tags: ['lm-claude-basics'],
-  },
-  // AI Mastermind application. Tags the lead so the follow-up/interview
-  // workflow can trigger. Mike reviews and reaches out personally.
-  'mastermind-application': {
-    tags: ['mastermind-application'],
-  },
-};
-
-function slug(s) {
-  return String(s).toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-}
+// The forms this endpoint will accept. The CRM holds the same slugs and owns
+// what each one tags; this list exists so an unknown id is refused here rather
+// than travelling. 'linkedin-leads' and 'podcast-guesting' were retired in
+// September 2026 -- their pages are gone and both paths redirect, so the ids
+// are deliberately absent.
+const FORM_IDS = new Set([
+  'podcast-workshop',
+  'workshop-recording',
+  'consulting-application',
+  'podcast-guest',
+  'newsletter',
+  'training-library',
+  'training-engagement',
+  'claude-basics',
+  'mastermind-application',
+]);
 
 // Only keys shaped like a CRM answer key can be answers at all; the CRM drops
 // any key the form does not define, so sending a few extra is harmless.
@@ -97,32 +56,30 @@ function e164(phone) {
   return /^\+[0-9]{8,15}$/.test(digits) ? digits : null;
 }
 
-// Never fails the visitor: a CRM outage must not turn a registration into an
-// error page while GoHighLevel already has the lead.
+// The CRM is now the only destination, so unlike before, a failure here is the
+// lead being lost. It is reported rather than swallowed: the visitor sees the
+// form fail and can try again, which is recoverable. A cheerful success page
+// over a dropped registration is not.
 async function sendToCrm(formId, body, { email, firstName, phone, clientIp }) {
-  try {
-    const response = await fetch(`${CRM_URL}/api/forms/${encodeURIComponent(formId)}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        // So the CRM rate-limits the visitor, not this function.
-        ...(clientIp ? { 'X-Forwarded-For': clientIp } : {}),
-      },
-      body: JSON.stringify({
-        name: firstName || email.split('@')[0],
-        email,
-        phone: e164(phone),
-        answers: answersFrom(body),
-        sourceUrl: String(body.sourceUrl || body.source_url || '').trim() || null,
-        utm: {},
-      }),
-      signal: AbortSignal.timeout(5000),
-    });
-    if (!response.ok) {
-      console.error('crm forward failed', formId, response.status, await response.text());
-    }
-  } catch (err) {
-    console.error('crm forward error', formId, err);
+  const response = await fetch(`${CRM_URL}/api/forms/${encodeURIComponent(formId)}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      // So the CRM rate-limits the visitor, not this function.
+      ...(clientIp ? { 'X-Forwarded-For': clientIp } : {}),
+    },
+    body: JSON.stringify({
+      name: firstName || email.split('@')[0],
+      email,
+      phone: e164(phone),
+      answers: answersFrom(body),
+      sourceUrl: String(body.sourceUrl || body.source_url || '').trim() || null,
+      utm: {},
+    }),
+    signal: AbortSignal.timeout(8000),
+  });
+  if (!response.ok) {
+    throw new Error(`crm ${response.status}: ${(await response.text()).slice(0, 300)}`);
   }
 }
 
@@ -133,11 +90,6 @@ export function createHandler(defaultFormId) {
       return res.status(405).json({ ok: false, error: 'Method not allowed' });
     }
 
-    const token = process.env.GHL_TOKEN || process.env.ghl_token;
-    if (!token) {
-      return res.status(500).json({ ok: false, error: 'Server not configured' });
-    }
-
     let body = req.body;
     if (typeof body === 'string') {
       try { body = JSON.parse(body); } catch { body = {}; }
@@ -145,8 +97,7 @@ export function createHandler(defaultFormId) {
     body = body || {};
 
     const formId = String(body.formId || defaultFormId || '').trim();
-    const cfg = FORMS[formId];
-    if (!cfg) {
+    if (!FORM_IDS.has(formId)) {
       return res.status(400).json({ ok: false, error: 'Unknown form' });
     }
 
@@ -171,111 +122,19 @@ export function createHandler(defaultFormId) {
     // it as firstName only (no last name, no combined name field) so the CRM
     // stays clean for first-name personalization.
     const firstName = String(body.first_name || body.name || '').trim().split(/\s+/)[0] || '';
-
-    const payload = {
-      locationId: GHL_LOCATION_ID,
-      email,
-      source: formId,
-    };
-    if (firstName) payload.firstName = firstName;
-    const company = String(body.company || body.business_name || '').trim();
-    if (company) payload.companyName = company;
-    const website = String(body.website || '').trim();
-    if (website) payload.website = website;
-    const phone = String(body.phone || '').trim();
-    if (phone) payload.phone = phone;
-
-    // Tags: base tags + dynamic tags from categorical fields.
-    const tags = [...(cfg.tags || [])];
-    if (body.business_type) tags.push('industry-' + slug(body.business_type));
-    if (body.guest_type) {
-      const g = slug(body.guest_type);
-      tags.push(g.includes('coach') ? 'guest-coaching' : 'guest-expert');
-    }
-    if (formId === 'training-engagement' && body.event) {
-      const ev = slug(body.event);
-      const allow = ['training-unlock','training-return','watched-claude-basics'];
-      if (allow.includes(ev)) tags.push(ev);
-    }
-    payload.tags = tags;
-
-    // Custom fields mapped by GHL field key.
-    if (cfg.customByKey) {
-      const cf = [];
-      for (const [inKey, ghlKey] of Object.entries(cfg.customByKey)) {
-        const v = body[inKey];
-        if (v != null && String(v).trim() !== '') {
-          cf.push({ key: ghlKey, field_value: String(v).trim() });
-        }
-      }
-      if (cf.length) payload.customFields = cf;
-    }
+    const forwarded = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim();
 
     try {
-      const ghlRes = await fetch(GHL_UPSERT_URL, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Version': '2021-07-28',
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      });
-
-      const text = await ghlRes.text();
-      if (!ghlRes.ok) {
-        console.error('GHL upsert failed', formId, ghlRes.status, text);
-        return res.status(502).json({ ok: false, error: 'Registration service error' });
-      }
-
-      const forwarded = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim();
       await sendToCrm(formId, body, {
         email,
         firstName,
-        phone,
+        phone: String(body.phone || '').trim(),
         clientIp: forwarded || String(req.headers['x-real-ip'] || '').trim(),
       });
-
-      // Delivery email for forms that define one (the workshop recording).
-      // Failure here never fails the registration -- the page redirects the
-      // visitor to the content either way.
-      if (cfg.welcomeEmail) {
-        try {
-          let contactId = null;
-          try { contactId = (JSON.parse(text).contact || {}).id || null; } catch {}
-          if (contactId) {
-            const w = cfg.welcomeEmail;
-            const sendRes = await fetch('https://services.leadconnectorhq.com/conversations/messages', {
-              method: 'POST',
-              headers: {
-                'Authorization': `Bearer ${token}`,
-                'Version': '2021-04-15',
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-              },
-              body: JSON.stringify({
-                type: 'Email',
-                contactId,
-                subject: w.subject,
-                emailFrom: w.from,
-                html: w.html,
-              }),
-            });
-            if (!sendRes.ok) {
-              console.error('welcome email failed', formId, sendRes.status, await sendRes.text());
-            }
-          } else {
-            console.error('welcome email skipped: no contact id in upsert response', formId);
-          }
-        } catch (e) {
-          console.error('welcome email error', formId, e);
-        }
-      }
       return res.status(200).json({ ok: true });
     } catch (err) {
-      console.error('lead handler error', err);
-      return res.status(500).json({ ok: false, error: 'Unexpected error' });
+      console.error('lead handler error', formId, err);
+      return res.status(502).json({ ok: false, error: 'Registration service error' });
     }
   };
 }

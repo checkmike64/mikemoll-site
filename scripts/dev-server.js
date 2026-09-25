@@ -11,7 +11,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const PORT = process.env.PORT || 3000;
 
-// Minimal .env loader (no dependency) so GHL_TOKEN etc. can live in a
+// Minimal .env loader (no dependency) so CRM_URL etc. can live in a
 // gitignored .env file instead of being exported in every shell session.
 const envFile = await statOrNull(path.join(ROOT, '.env'));
 if (envFile) {
