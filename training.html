@@ -182,9 +182,15 @@
   var pendingSlug=(location.hash||'').replace('#','').trim();
   var pageRenderedAt=Date.now();
 
-  // ---- tracking: dataLayer (GTM) + GHL tag via /api/lead ----
-  function track(kind,item){
+  // ---- tracking: dataLayer (GTM) + CRM engagement ping via /api/lead ----
+  function push(kind,item){
     try{window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'training_'+kind,training_item:item||undefined});}catch(e){}
+  }
+  function track(kind,item){
+    push(kind,item);
+    ping(kind,item);
+  }
+  function ping(kind,item){
     var em;try{em=localStorage.getItem(EMAIL_KEY);}catch(e){}
     if(!em)return;
     var ev = kind==='video_play' ? ('watched-'+item) : ('training-'+kind);
@@ -244,6 +250,8 @@
     document.getElementById('m-topic').textContent=r.topic;
     document.getElementById('m-title').textContent=r.title;
     document.getElementById('m-desc').textContent=r.blurb;
+    // /visits.js names the video by this in its video_start/progress events.
+    p.dataset.videoTitle=r.title;
     p.src=r.embed;
     try{ history.replaceState(null,'','#'+r.slug); }catch(e){}
     document.getElementById('modal').classList.add('open');
@@ -277,14 +285,34 @@
   var unlocked=false;
   try{ unlocked=localStorage.getItem(KEY)==='1'; }catch(e){}
   if(invited&&!unlocked){ try{ localStorage.setItem(KEY,'1'); }catch(e){} unlocked=true; }
-  if(unlocked){ reveal(); track('return',''); }
+  // No engagement ping for a returning visit: it went out the moment the page
+  // loaded, which the server's too-fast bot check always threw away.
+  if(unlocked){ reveal(); push('return',''); }
   document.getElementById('gate-form').addEventListener('submit',function(e){
     e.preventDefault();
     var email=document.getElementById('gate-email').value.trim();
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){document.getElementById('gate-email').focus();return;}
     var btn=document.getElementById('gate-btn');btn.disabled=true;btn.textContent='Opening...';
-    fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({formId:'training-library',email:email,renderedAt:pageRenderedAt})})
-      .catch(function(){}).finally(function(){localStorage.setItem(KEY,'1');try{localStorage.setItem(EMAIL_KEY,email);}catch(e){}track('unlock','');reveal();});
+    var lead={formId:'training-library',email:email,renderedAt:pageRenderedAt,sourceUrl:location.origin+location.pathname};
+    // Set by /visits.js, as on every other form: the pages this browser read,
+    // and the campaign it landed with, go onto the contact.
+    if(window.crmVisitor){lead.visitorId=window.crmVisitor.id;lead.utm=window.crmVisitor.utm;}
+    // The library opens whatever happens. The unlock only counts as a lead
+    // when the CRM actually got one: not on a failed request, and not when the
+    // server caught a bot (stored: false).
+    fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(lead)})
+      .then(function(res){ if(!res.ok) return false; return res.json().then(function(j){return !(j&&j.stored===false);},function(){return true;}); })
+      .catch(function(){return false;})
+      .then(function(stored){
+        try{localStorage.setItem(KEY,'1');}catch(e){}
+        try{localStorage.setItem(EMAIL_KEY,email);}catch(e){}
+        if(stored){
+          push('unlock','');
+          try{window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'generate_lead',form_id:'training-library',page_path:location.pathname});}catch(e){}
+        }
+        ping('unlock','');
+        reveal();
+      });
   });
 })();
 </script>

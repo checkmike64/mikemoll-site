@@ -4,6 +4,12 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "mikemoll.co" }],
+      "destination": "https://www.mikemoll.co/:path*",
+      "permanent": true
+    },
+    {
       "source": "/my-story",
       "destination": "/",
       "permanent": true

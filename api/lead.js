@@ -128,12 +128,15 @@ export function createHandler(defaultFormId) {
     // Anti-spam: honeypot field bots tend to auto-fill, plus a minimum
     // render-to-submit time real users can't beat. Respond 200 without
     // actually registering the lead, so bots don't learn to adapt.
+    // `stored: false` is for the site's own scripts: they show the same
+    // success either way but only count a lead in analytics when one was
+    // actually sent on. Before this, every trapped bot was a conversion.
     if (String(body.website_url || '').trim() !== '') {
-      return res.status(200).json({ ok: true });
+      return res.status(200).json({ ok: true, stored: false });
     }
     const renderedAt = Number(body.renderedAt);
     if (!renderedAt || Date.now() - renderedAt < 1500) {
-      return res.status(200).json({ ok: true });
+      return res.status(200).json({ ok: true, stored: false });
     }
 
     const email = String(body.email || '').trim();
@@ -155,7 +158,7 @@ export function createHandler(defaultFormId) {
         phone: String(body.phone || '').trim(),
         clientIp: forwarded || String(req.headers['x-real-ip'] || '').trim(),
       });
-      return res.status(200).json({ ok: true });
+      return res.status(200).json({ ok: true, stored: true });
     } catch (err) {
       console.error('lead handler error', formId, err);
       return res.status(502).json({ ok: false, error: 'Registration service error' });
