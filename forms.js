@@ -43,6 +43,12 @@
       var data = Object.fromEntries(new FormData(form).entries());
       data.formId = form.getAttribute('data-lead');
       data.renderedAt = form.dataset.renderedAt;
+      // Set by /visits.js: the CRM attaches this browser's page visits, and the
+      // campaign it landed with, to the contact the form creates.
+      if (window.crmVisitor) {
+        data.visitorId = window.crmVisitor.id;
+        data.utm = window.crmVisitor.utm;
+      }
       try {
         var res = await fetch('/api/lead', {
           method: 'POST',
