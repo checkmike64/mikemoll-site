@@ -37,6 +37,7 @@ const FORM_IDS = new Set([
 const ANSWER_KEY = /^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$/;
 const NOT_AN_ANSWER = new Set([
   'formid', 'email', 'name', 'first_name', 'phone', 'website_url', 'renderedat',
+  'visitorid', 'utm',
 ]);
 
 function answersFrom(body) {
@@ -47,6 +48,28 @@ function answersFrom(body) {
     answers[key] = String(value).trim().slice(0, 5000);
   }
   return answers;
+}
+
+// The browser's site-visit key from /visits.js, so the CRM can attach the
+// pages this visitor read to the contact the form creates. Anything that is
+// not a UUID is dropped rather than sent: the CRM refuses the whole request
+// over a malformed key, and a lost lead is worse than a lost history.
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+function visitorFrom(value) {
+  return typeof value === 'string' && UUID.test(value) ? value : null;
+}
+
+// The campaign the visitor landed with, as the CRM stores it: the five utm_*
+// keys and nothing else.
+const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+function campaignFrom(utm) {
+  const campaign = {};
+  if (!utm || typeof utm !== 'object') return campaign;
+  for (const key of UTM_KEYS) {
+    const value = utm[key];
+    if (typeof value === 'string' && value.trim() !== '') campaign[key] = value.trim().slice(0, 200);
+  }
+  return campaign;
 }
 
 // The CRM only accepts E.164. A number it would reject is dropped rather than
@@ -74,7 +97,8 @@ async function sendToCrm(formId, body, { email, firstName, phone, clientIp }) {
       phone: e164(phone),
       answers: answersFrom(body),
       sourceUrl: String(body.sourceUrl || body.source_url || '').trim() || null,
-      utm: {},
+      utm: campaignFrom(body.utm),
+      visitorId: visitorFrom(body.visitorId),
     }),
     signal: AbortSignal.timeout(8000),
   });
