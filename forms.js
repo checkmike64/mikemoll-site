@@ -1,11 +1,15 @@
 // Shared form handler. Any <form data-lead="FORM_ID"> posts its named fields
 // to /api/lead as JSON, then swaps in a success message on success.
-// Optional attributes: data-success (message), data-success-note (second line).
+// Optional attributes: data-success (message), data-success-note (second line),
+// data-redirect (go there instead of showing a message), data-sending (button
+// label while the request is in flight).
 //
 // Also pushes GA4 events to dataLayer (picked up by a GTM GA4 Event tag) —
 // generate_lead on success, lead_form_error on failure. GA4's own Enhanced
 // Measurement already sees clicks/scroll/generic form_submit, but it can't
-// know whether OUR fetch to /api/lead actually succeeded.
+// know whether OUR fetch to /api/lead actually succeeded. A submission the
+// server caught as a bot comes back as a success with stored: false; the
+// visitor sees the same page either way, but it is not counted as a lead.
 (function () {
   function pushEvent(name, formId) {
     window.dataLayer = window.dataLayer || [];
@@ -39,10 +43,12 @@
       e.preventDefault();
       var btn = form.querySelector('button[type=submit]') || form.querySelector('button');
       var orig = btn ? btn.textContent : '';
-      if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+      if (btn) { btn.disabled = true; btn.textContent = form.getAttribute('data-sending') || 'Sending...'; }
       var data = Object.fromEntries(new FormData(form).entries());
       data.formId = form.getAttribute('data-lead');
       data.renderedAt = form.dataset.renderedAt;
+      // The page the form was filled in on, without its query string or hash.
+      data.sourceUrl = location.origin + location.pathname;
       // Set by /visits.js: the CRM attaches this browser's page visits, and the
       // campaign it landed with, to the contact the form creates.
       if (window.crmVisitor) {
@@ -56,7 +62,9 @@
           body: JSON.stringify(data)
         });
         if (!res.ok) throw new Error('bad status ' + res.status);
-        pushEvent('generate_lead', data.formId);
+        var result = null;
+        try { result = await res.json(); } catch (e) {}
+        if (!(result && result.stored === false)) pushEvent('generate_lead', data.formId);
         var redirect = form.getAttribute('data-redirect');
         if (redirect) { window.location.href = redirect; return; }
         var msg = form.getAttribute('data-success') || "You're in.";
