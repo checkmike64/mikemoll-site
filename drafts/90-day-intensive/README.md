@@ -35,7 +35,7 @@ Each file below is one self-contained block. Paste each into its own **Custom HT
 
 ## Design system (for any future block)
 
-- Fonts (matches homepage): **League Spartan 700** for headlines + big display numbers; **Poppins** for all body copy, labels, and buttons. Both imported in each block.
+- Fonts (brand guideline): **Libre Franklin 700** for headlines + big display numbers; **Poppins** for all body copy, labels, and buttons. Both imported in each block. League Spartan was removed from the brand kit on 2026-09-30.
 - Headline highlight: wrap a key phrase in `<span class="hl">…</span>` for the cream marker accent (`#FAE3CC`, skewed bar behind the lower half of the text). The `.hl` rule is already in each light-background block.
 - Colors: ink `#27323D`, slate `#4E6F8A`, sky `#38B6FF` (deep `#1E9BE6`, bg `#EAF6FF`), navy `#3D5A72` (bg `#EDF2F6`), terracotta `#C9773A` (bg `#FBF0E6`), highlight cream `#FAE3CC`, line `#E7EBEF`.
 - Buttons: sky pill primary (Poppins 600), sky-outline secondary.
