@@ -83,6 +83,12 @@ function e164(phone) {
 // lead being lost. It is reported rather than swallowed: the visitor sees the
 // form fail and can try again, which is recoverable. A cheerful success page
 // over a dropped registration is not.
+//
+// Returns the CRM's id for the event it recorded, or null. The browser hands
+// that id to Tag Manager with the lead, so the conversion the page reports and
+// anything the CRM reports about the same lead can be matched up. It is a
+// nice-to-have: a missing or malformed id, or an unreadable answer, never
+// costs the lead.
 async function sendToCrm(formId, body, { email, firstName, phone, clientIp }) {
   const response = await fetch(`${CRM_URL}/api/forms/${encodeURIComponent(formId)}`, {
     method: 'POST',
@@ -104,6 +110,13 @@ async function sendToCrm(formId, body, { email, firstName, phone, clientIp }) {
   });
   if (!response.ok) {
     throw new Error(`crm ${response.status}: ${(await response.text()).slice(0, 300)}`);
+  }
+  try {
+    const data = await response.json();
+    const eventId = data && data.result && data.result.eventId;
+    return typeof eventId === 'string' && UUID.test(eventId) ? eventId : null;
+  } catch {
+    return null;
   }
 }
 
@@ -152,13 +165,13 @@ export function createHandler(defaultFormId) {
     const forwarded = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim();
 
     try {
-      await sendToCrm(formId, body, {
+      const eventId = await sendToCrm(formId, body, {
         email,
         firstName,
         phone: String(body.phone || '').trim(),
         clientIp: forwarded || String(req.headers['x-real-ip'] || '').trim(),
       });
-      return res.status(200).json({ ok: true, stored: true });
+      return res.status(200).json({ ok: true, stored: true, ...(eventId ? { eventId } : {}) });
     } catch (err) {
       console.error('lead handler error', formId, err);
       return res.status(502).json({ ok: false, error: 'Registration service error' });

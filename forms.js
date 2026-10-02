@@ -10,14 +10,21 @@
 // know whether OUR fetch to /api/lead actually succeeded. A submission the
 // server caught as a bot comes back as a success with stored: false; the
 // visitor sees the same page either way, but it is not counted as a lead.
+// generate_lead also carries the CRM's id for the lead (event_id) when
+// /api/lead passes one back, so the same lead reported from the CRM's side
+// can be matched to this one.
 (function () {
-  function pushEvent(name, formId) {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
+  var UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+
+  function pushEvent(name, formId, eventId) {
+    var event = {
       event: name,
       form_id: formId || '',
       page_path: window.location.pathname,
-    });
+    };
+    if (eventId) event.event_id = eventId;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(event);
   }
 
   // Honeypot: a field real users never see or fill in, since it's named to
@@ -64,7 +71,10 @@
         if (!res.ok) throw new Error('bad status ' + res.status);
         var result = null;
         try { result = await res.json(); } catch (e) {}
-        if (!(result && result.stored === false)) pushEvent('generate_lead', data.formId);
+        if (!(result && result.stored === false)) {
+          var eventId = result && typeof result.eventId === 'string' && UUID.test(result.eventId) ? result.eventId : '';
+          pushEvent('generate_lead', data.formId, eventId);
+        }
         var redirect = form.getAttribute('data-redirect');
         if (redirect) { window.location.href = redirect; return; }
         var msg = form.getAttribute('data-success') || "You're in.";
