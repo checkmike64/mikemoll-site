@@ -89,7 +89,12 @@ function e164(phone) {
 // anything the CRM reports about the same lead can be matched up. It is a
 // nice-to-have: a missing or malformed id, or an unreadable answer, never
 // costs the lead.
-async function sendToCrm(formId, body, { email, firstName, phone, clientIp }) {
+//
+// The visitor's address and browser (user agent) also travel in the body: the
+// CRM sends the lead on to Meta's Conversions API, which needs both for a
+// website event. The address is in the header too, but Vercel can rewrite
+// forwarded headers between two functions, so the CRM reads the body's copy.
+async function sendToCrm(formId, body, { email, firstName, phone, clientIp, userAgent }) {
   const response = await fetch(`${CRM_URL}/api/forms/${encodeURIComponent(formId)}`, {
     method: 'POST',
     headers: {
@@ -105,6 +110,8 @@ async function sendToCrm(formId, body, { email, firstName, phone, clientIp }) {
       sourceUrl: String(body.sourceUrl || body.source_url || '').trim() || null,
       utm: campaignFrom(body.utm),
       visitorId: visitorFrom(body.visitorId),
+      clientIp: clientIp || null,
+      userAgent: userAgent || null,
     }),
     signal: AbortSignal.timeout(8000),
   });
@@ -170,6 +177,7 @@ export function createHandler(defaultFormId) {
         firstName,
         phone: String(body.phone || '').trim(),
         clientIp: forwarded || String(req.headers['x-real-ip'] || '').trim(),
+        userAgent: String(req.headers['user-agent'] || '').trim().slice(0, 512),
       });
       return res.status(200).json({ ok: true, stored: true, ...(eventId ? { eventId } : {}) });
     } catch (err) {

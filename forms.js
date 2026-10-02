@@ -13,18 +13,68 @@
 // generate_lead also carries the CRM's id for the lead (event_id) when
 // /api/lead passes one back, so the same lead reported from the CRM's side
 // can be matched to this one.
+//
+// generate_lead also carries user_data for Google Ads enhanced conversions:
+// the form's email address and phone number, each hashed in this browser
+// (SHA-256, lowercase hex) the way Google expects. Only the hashes go to
+// dataLayer, never the details themselves. If hashing is unavailable or
+// fails, user_data is left out; it never costs or holds up the lead.
 (function () {
   var UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+  var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var PHONE = /^\+[0-9]{8,15}$/;
 
-  function pushEvent(name, formId, eventId) {
+  function pushEvent(name, formId, eventId, userData) {
     var event = {
       event: name,
       form_id: formId || '',
       page_path: window.location.pathname,
     };
     if (eventId) event.event_id = eventId;
+    if (userData) event.user_data = userData;
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push(event);
+  }
+
+  function sha256(value) {
+    return crypto.subtle.digest('SHA-256', new TextEncoder().encode(value)).then(function (buffer) {
+      return Array.prototype.map.call(new Uint8Array(buffer), function (byte) {
+        return ('0' + byte.toString(16)).slice(-2);
+      }).join('');
+    });
+  }
+
+  // Google's normalisation: trimmed and lower-cased, and for Gmail addresses
+  // without the dots before the @. Anything that is not an address gives ''.
+  function normalEmail(value) {
+    var email = String(value || '').trim().toLowerCase();
+    if (!EMAIL.test(email)) return '';
+    var parts = email.split('@');
+    if (parts[1] === 'gmail.com' || parts[1] === 'googlemail.com') parts[0] = parts[0].replace(/\./g, '');
+    return parts[0] + '@' + parts[1];
+  }
+
+  // E.164 with its leading +, by the same rule /api/lead uses. A number of any
+  // other shape is left out rather than guessed at.
+  function normalPhone(value) {
+    var phone = String(value || '').replace(/[\s().-]/g, '');
+    return PHONE.test(phone) ? phone : '';
+  }
+
+  // Resolves to user_data holding whichever hashes it could make, or to null
+  // when there are none. It never rejects.
+  async function hashedUserData(data) {
+    try {
+      if (!window.crypto || !crypto.subtle || !window.TextEncoder) return null;
+      var email = normalEmail(data.email);
+      var phone = normalPhone(data.phone);
+      var userData = {};
+      if (email) userData.sha256_email_address = await sha256(email);
+      if (phone) userData.sha256_phone_number = await sha256(phone);
+      return Object.keys(userData).length > 0 ? userData : null;
+    } catch (e) {
+      return null;
+    }
   }
 
   // Honeypot: a field real users never see or fill in, since it's named to
@@ -62,6 +112,9 @@
         data.visitorId = window.crmVisitor.id;
         data.utm = window.crmVisitor.utm;
       }
+      // Hashed while the request is in flight, so it is ready by the time the
+      // answer comes back.
+      var hashing = hashedUserData(data);
       try {
         var res = await fetch('/api/lead', {
           method: 'POST',
@@ -73,7 +126,7 @@
         try { result = await res.json(); } catch (e) {}
         if (!(result && result.stored === false)) {
           var eventId = result && typeof result.eventId === 'string' && UUID.test(result.eventId) ? result.eventId : '';
-          pushEvent('generate_lead', data.formId, eventId);
+          pushEvent('generate_lead', data.formId, eventId, await hashing);
         }
         var redirect = form.getAttribute('data-redirect');
         if (redirect) { window.location.href = redirect; return; }
