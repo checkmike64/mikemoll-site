@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WD3WQ8N');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're booked | Mike Moll</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://www.mikemoll.co/booked">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  body{min-height:100vh;display:flex;flex-direction:column}
+  main{flex:1;display:flex;align-items:center}
+  .booked{width:100%;padding:96px 0;text-align:center}
+  .booked h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:700;letter-spacing:-.03em;line-height:1.05;margin-bottom:22px}
+  .booked p{font-size:1.1rem;max-width:46ch;margin:0 auto 10px}
+  .booked .when{color:var(--ink)}
+  .booked .text-link{display:inline-block;margin-top:30px}
+
+  .foot-in{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
+  .socials{display:flex;gap:20px}
+  .socials a{color:var(--muted);font-size:14px;font-weight:500}
+  .socials a:hover{color:var(--accent)}
+  .foot-legal{display:flex;justify-content:center;gap:18px;width:100%;border-top:1px solid var(--hairline);padding-top:16px}
+  .foot-legal a{color:var(--muted);font-size:13px}
+  .foot-legal a:hover{color:var(--accent)}
+
+  @media(max-width:760px){.booked{padding:66px 0}}
+</style>
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script src="/visits.js" defer></script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD3WQ8N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="/" class="logo">Mike<i>.</i>Moll</a>
+  </div>
+</nav>
+
+<main>
+  <div class="booked">
+    <div class="wrap">
+      <h1>You're booked.</h1>
+      <p class="when" id="booked-when" hidden></p>
+      <p>The calendar invite and the call link are on their way to your inbox.</p>
+      <a href="/" class="text-link">Back to mikemoll.co</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <a href="/" class="logo">Mike<i>.</i>Moll</a>
+    <div class="socials"><a href="https://www.instagram.com/themikemoll/">Instagram</a><a href="https://www.youtube.com/@mikemollco">YouTube</a><a href="https://www.linkedin.com/in/themikemoll/">LinkedIn</a></div>
+    <p>&copy; 2026 Impact Leads LLC</p>
+    <div class="foot-legal">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms &amp; Conditions</a>
+    </div>
+  </div>
+</footer>
+<script>
+// The CRM sends people here after they book a call. The address says what
+// they booked: the meeting type (type), its name, when it starts (at), the
+// meeting's id, and the visitor key, which /visits.js deals with. Every value
+// is checked before it is used and only ever written into the page as text.
+// Without a usable time and name, the page shows the general confirmation.
+//
+// book_appointment goes to Tag Manager once per booking: the meeting id is
+// the CRM's own id for it, and this browser remembers the last 20 it has
+// counted. The id then comes out of the address bar, so a reload still shows
+// the time but is not a second booking. A visit with no id is not a booking
+// and pushes nothing.
+(function () {
+  var UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+  var TYPE = /^[a-z0-9-]{1,80}$/;
+  var SEEN = 'crm_booked';
+  var params = new URLSearchParams(location.search);
+
+  var type = params.get('type') || '';
+  if (!TYPE.test(type)) type = '';
+  var name = (params.get('name') || '').trim();
+  if (name.length > 120) name = '';
+  var at = params.get('at') ? new Date(params.get('at')) : null;
+  if (at && isNaN(at.getTime())) at = null;
+  var id = params.get('id') || '';
+
+  // "Saturday, October 3 at 3:00 pm (America/New York)", in the visitor's own
+  // time zone.
+  function describe(date) {
+    var zone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    if (!zone) return '';
+    var parts = {};
+    new Intl.DateTimeFormat('en-US', {
+      timeZone: zone,
+      weekday: 'long',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true
+    }).formatToParts(date).forEach(function (part) { parts[part.type] = part.value; });
+    if (!parts.weekday || !parts.month || !parts.day || !parts.hour || !parts.minute || !parts.dayPeriod) return '';
+    return parts.weekday + ', ' + parts.month + ' ' + parts.day + ' at ' + parts.hour + ':' +
+      parts.minute + ' ' + parts.dayPeriod.toLowerCase() + ' (' + zone.replace(/_/g, ' ') + ')';
+  }
+
+  if (name && at) {
+    try {
+      var when = describe(at);
+      if (when) {
+        var line = document.getElementById('booked-when');
+        line.textContent = name + ' on ' + when + '.';
+        line.hidden = false;
+      }
+    } catch (e) {}
+  }
+
+  if (UUID.test(id)) {
+    id = id.toLowerCase();
+    // Storage that cannot be read counts as empty, and storage that cannot be
+    // written is skipped: the booking is still pushed once.
+    var seen = [];
+    try {
+      var stored = JSON.parse(localStorage.getItem(SEEN) || '[]');
+      if (Array.isArray(stored)) seen = stored.filter(function (x) { return typeof x === 'string'; });
+    } catch (e) {}
+    if (seen.indexOf(id) === -1) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'book_appointment',
+        booking_type: type,
+        booking_name: name,
+        event_id: id,
+        page_path: '/booked'
+      });
+      seen.push(id);
+      try { localStorage.setItem(SEEN, JSON.stringify(seen.slice(-20))); } catch (e) {}
+    }
+  }
+
+  if (params.has('id')) {
+    try {
+      var url = new URL(location.href);
+      url.searchParams.delete('id');
+      history.replaceState(history.state, '', url.pathname + url.search + url.hash);
+    } catch (e) {}
+  }
+})();
+</script>
+</body>
+</html>

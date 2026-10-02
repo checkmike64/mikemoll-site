@@ -5,7 +5,11 @@
 // person. The CRM attaches it to a contact only when this browser fills in a
 // form, books a call, or arrives from a link in an email the CRM sent. That
 // link carries a signed reference (crm_ref), which is read here and then taken
-// out of the address bar so it is never copied or shared.
+// out of the address bar so it is never copied or shared. A link back from the
+// CRM's booking pages can carry a visitor key (crm_vid) the same way.
+//
+// The beacon also carries the Google Analytics and Meta browser IDs when this
+// site has set them, so the CRM can tell which ads and campaigns lead to calls.
 //
 // Browsers that send Global Privacy Control or Do Not Track are not tracked by
 // the CRM at all. The privacy page says what is collected and why.
@@ -20,6 +24,8 @@
   var CAMPAIGN = 'crm_utm';
   var UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
   var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+  var GA_CLIENT = /^\d{1,12}\.\d{1,12}$/;
+  var FBP = /^fb\.\d\.\d{10,16}\.\d{1,20}$/;
   var crmOrigin = new URL(COLLECTOR).origin;
 
   var crmAllowed = !(
@@ -43,11 +49,32 @@
     window.dataLayer.push(event);
   }
 
+  function cookie(name) {
+    var match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+    return match ? match[1] : null;
+  }
+
+  // The ad platforms' IDs for this browser, as the CRM stores them. Google
+  // Analytics' cookie is GA1.1.<client id>, and only the client id is sent.
+  // A value of any other shape is left out rather than guessed at.
+  function adIds() {
+    var ids = {};
+    var ga = cookie('_ga');
+    if (ga) {
+      var clientId = ga.split('.').slice(-2).join('.');
+      if (GA_CLIENT.test(clientId)) ids.ga = clientId;
+    }
+    var fbp = cookie('_fbp');
+    if (fbp && FBP.test(fbp)) ids.fbp = fbp;
+    return ids;
+  }
+
   // The page address as the CRM should see it: never with the signed email
-  // reference in it.
+  // reference or a handed-over visitor key in it.
   function currentUrl() {
     var url = new URL(location.href);
     url.searchParams.delete('crm_ref');
+    url.searchParams.delete(KEY);
     return url.href;
   }
 
@@ -61,17 +88,23 @@
   // ---- Page visit, for the CRM ----------------------------------------------
   if (crmAllowed) {
     try {
+      var url = new URL(location.href);
+
+      // A key handed over in the address, by a link back from the CRM's booking
+      // pages, becomes this browser's key only when it has none of its own. A
+      // browser that already has a history keeps it.
+      var handed = url.searchParams.get(KEY);
       var id = null;
       try { id = localStorage.getItem(KEY); } catch (e) {}
       if (!id || !UUID.test(id)) {
-        id = crypto.randomUUID();
+        id = handed && UUID.test(handed) ? handed : crypto.randomUUID();
         try { localStorage.setItem(KEY, id); } catch (e) {}
       }
 
-      var url = new URL(location.href);
       var ref = url.searchParams.get('crm_ref');
-      if (ref !== null) {
+      if (ref !== null || handed !== null) {
         url.searchParams.delete('crm_ref');
+        url.searchParams.delete(KEY);
         history.replaceState(history.state, '', url.pathname + url.search + url.hash);
       }
 
@@ -87,13 +120,16 @@
         else utm = JSON.parse(sessionStorage.getItem(CAMPAIGN) || '{}');
       } catch (e) {}
 
-      send(JSON.stringify({
+      var visit = {
         v: id,
         u: url.href,
         t: document.title || null,
         r: document.referrer || null,
         ref: ref
-      }));
+      };
+      var ids = adIds();
+      if (Object.keys(ids).length > 0) visit.ids = ids;
+      send(JSON.stringify(visit));
 
       // Booking pages are served by the CRM on its own host, where this
       // browser's key does not exist. Links to them carry it across, so a booking
