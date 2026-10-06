@@ -301,6 +301,25 @@ def update_index(p, url, h1_full):
         if f"/blog/{slug}" not in (REPO / "guest-appearances.html").read_text():
             warn("guest-appearances.html has no card for this post; add it by hand")
 
+    # videos.html: the Videos hub mirrors every video post's blog.html card
+    if cat == "video":
+        vh = REPO / "videos.html"
+        card_m = re.search(r'      <a class="pcard" href="/blog/' + re.escape(slug) + r'"[^>]*>.*?</a>\n', blog.read_text(), re.S)
+        if not vh.exists() or not card_m:
+            warn("videos.html or the blog.html card is missing; the Videos hub was not updated")
+        else:
+            v = vh.read_text()
+            old = re.search(r'      <a class="pcard" href="/blog/' + re.escape(slug) + r'"[^>]*>.*?</a>\n', v, re.S)
+            if old:
+                v = v[:old.start()] + card_m.group(0) + v[old.end():]
+            else:
+                marker = "    <!-- vb-hub: build_post.py adds each video post's card at the top of this grid -->\n"
+                v = v.replace(marker, marker + card_m.group(0), 1)
+            v = re.sub(r'<meta name="robots" content="noindex, follow"><!-- vb-hub:[^>]*-->',
+                       '<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">', v)
+            vh.write_text(v)
+            print("videos.html: card added/updated, page indexable")
+
     # sitemap.xml
     sm = REPO / "sitemap.xml"
     s = sm.read_text()
@@ -309,6 +328,8 @@ def update_index(p, url, h1_full):
         s = re.sub(re.escape(entry) + r"<lastmod>[^<]*</lastmod>", f"{entry}<lastmod>{p['date_modified']}</lastmod>", s)
     else:
         s = s.replace("</urlset>", f"  <url>{entry}<lastmod>{p['date_modified']}</lastmod></url>\n</urlset>")
+    if cat == "video" and f"<loc>{SITE}/videos</loc>" not in s:
+        s = s.replace("</urlset>", f"  <url><loc>{SITE}/videos</loc><lastmod>{p['date_modified']}</lastmod></url>\n</urlset>")
     sm.write_text(s)
     print("sitemap.xml: lastmod set")
 
