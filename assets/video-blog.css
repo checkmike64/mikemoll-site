@@ -8,6 +8,7 @@
 
 .vb-page{--vb-max:1240px;--vb-panel:#0b0b0b;--vb-hair-soft:rgba(255,255,255,.10);background:var(--bg);color:var(--text)}
 .vb-wrap{max-width:var(--vb-max);margin:0 auto;padding-inline:32px}
+.vb-page .site-nav .wrap,.vb-page .site-foot .wrap{max-width:var(--vb-max)}
 .vb-kl{display:block;font-family:var(--font-head);font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
 .vb-ac{color:var(--accent)}
 #vb-pgbar{position:fixed;left:0;right:0;top:0;height:2px;background:var(--accent);transform-origin:0 50%;transform:scaleX(0);z-index:90;pointer-events:none}
