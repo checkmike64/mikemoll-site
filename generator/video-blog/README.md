@@ -60,7 +60,7 @@ a second video player.
 | `author` | `name`, `image`, `byline_role`, `role`, `job_title`, `knows_about[]`, `bio`, `links[{label,url}]`. Bio lines come from the brain. |
 | `guest` | Podcast episodes with a guest: `name`, `initials`, `role`, `org`, `org_url`, `bio`, `links[]`. |
 | `show` | Guest appearances only: `name`, `url`, `host`, `episode_url`, `about`, optional `initials`. |
-| `tags` | 2–4 from the fixed tag list in the brain. |
+| `tags` | As many as fit the post (typically 4–8). Reuse existing tags before making a new one; Title Case, singular unless the plural is the usual phrase. |
 | `short_answer` | `q` (one question) and `a` (3–4 sentences, plain text). |
 | `takeaways` | 6 plain-text sentences. The last one carries the strongest point. |
 | `sections` | 6–9 of `{id, h2, html}`. `id` = the slugged question. `html` may use `p`, `b`, `a`, `figure.vb-pull`, `aside.vb-callout`, `ol.vb-steps`. Timestamp links get `data-t="<seconds>"`. |
