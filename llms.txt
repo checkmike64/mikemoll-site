@@ -73,3 +73,6 @@
 - [Charles Alexander](https://www.mikemoll.co/blog/charles-alexander)
 - [Grateful AI Training Podcast](https://www.mikemoll.co/blog/grateful-ai-podcast)
 - [Move The Needle](https://www.mikemoll.co/blog/move-the-needle)
+
+## Podcast episodes and videos
+- [How to market an online course as a solopreneur](https://www.mikemoll.co/blog/marketing-a-live-learning-cohort-mark-latimer): Mark Latimer set out to reach 3,000 solopreneurs with his ChatGPT courses. How to market a course with partners, free copies, referrals and video answers.
