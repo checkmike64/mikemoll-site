@@ -22,7 +22,7 @@ python3 generator/video-blog/build_post.py generator/video-blog/posts/<slug>.jso
 
 `--index` also updates the post's card on `blog.html` (adds one for a new podcast episode
 or video), its `sitemap.xml` lastmod, and `llms.txt`. Guest-appearance cards live on
-`guest-appearances.html` and are added by hand.
+`guest-appearances.html` and are added by hand. Video posts also get their card on `videos.html` (the Videos hub); the first one switches that page from `noindex` to indexable and adds `/videos` to the sitemap.
 
 **Don't hand-edit a built page.** Edit its JSON and rebuild. A design change goes into
 `template.html` or `video-blog.css`, then every post is rebuilt:
@@ -47,7 +47,7 @@ a second video player.
 | Field | Notes |
 |---|---|
 | `slug` | Lowercase, hyphens. Existing posts keep their slug (rebuild in place). New posts: short, 3–5 words. |
-| `category` | `podcast-episode` (hub `/podcast`), `guest-appearance` (hub `/guest-appearances`), `video` (hub `/videos`, page not built yet). |
+| `category` | `podcast-episode` (hub `/podcast`), `guest-appearance` (hub `/guest-appearances`), `video` (hub `/videos`). |
 | `format` | Second half of the eyebrow, e.g. `Live coaching`, `Interview`, `Solo`. |
 | `crumb_name` | Short last breadcrumb item, e.g. the guest's name. |
 | `title_tag` | 50–60 characters, keyword first, ends `\| Mike Moll`. |
