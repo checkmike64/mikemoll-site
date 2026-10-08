@@ -15,339 +15,338 @@
 <meta property="og:url" content="https://www.mikemoll.co/mastermind">
 <meta property="og:image" content="https://www.mikemoll.co/media/mastermind-group.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<!-- chrome:head -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700;800&family=Poppins:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/site-v2.css">
+<!-- /chrome:head -->
+<link rel="preload" as="image" href="/media/mm-event-01.jpg">
 <style>
-  :root{--font-head:'Libre Franklin',system-ui,sans-serif;--font-body:'Poppins',system-ui,sans-serif;--bg:#000;--ink:#fff;--text:#d7d7d7;--muted:#9a9a9a;--hair:rgba(255,255,255,.2);--hair2:rgba(255,255,255,.3);--accent:#38b6ff;--accent-ink:#000;--max:1120px;color-scheme:dark}
-  *{box-sizing:border-box;margin:0;padding:0;border-radius:0}
-  html{scroll-behavior:smooth;scroll-padding-top:90px}
-  body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
-  img{max-width:100%;display:block}
-  a{color:inherit;text-decoration:none}
-  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
-  .eyebrow{font-family:var(--font-head);font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:block}
-  h1,h2,h3{font-family:var(--font-head);font-weight:600;letter-spacing:-.03em;line-height:1.05;color:var(--ink);text-wrap:balance}
-  p{color:var(--text)}
-  .site-nav{position:sticky;top:0;z-index:10;background:rgba(0,0,0,.75);backdrop-filter:blur(12px);border-bottom:1px solid var(--hair)}
-  .site-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
-  .logo{font-family:var(--font-head);font-weight:700;font-size:20px;letter-spacing:-.02em;color:var(--ink)}
-  .logo i{color:var(--accent);font-style:normal}
-  .links{display:flex;gap:28px;align-items:center;font-family:var(--font-head);font-weight:500;font-size:14px;color:var(--muted)}
-  .links a:hover{color:var(--ink)}
-  .btn{display:inline-block;font-family:var(--font-head);font-weight:600;font-size:13px;letter-spacing:.05em;text-transform:uppercase;padding:13px 22px;border:1px solid transparent;transition:.14s;cursor:pointer}
-  .btn-primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-  .btn-primary:hover{background:transparent;color:var(--accent)}
-  .btn-ghost{border-color:var(--hair);color:var(--ink);background:transparent}
-  .btn-ghost:hover{border-color:var(--ink)}
-  .btn-lg{padding:16px 26px;font-size:14px}
+/* /mastermind: page-only rules. Everything shared lives in /assets/site-v2.css. */
 
-  header{padding:104px 0 0;border-bottom:1px solid var(--hair)}
-  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:center}
-  .hero h1{font-size:clamp(2.4rem,4.6vw,3.9rem);font-weight:700;max-width:18ch;margin-bottom:24px}
-  .hero h1 .accent{color:var(--accent)}
-  .hero .sub{font-size:clamp(1.05rem,2vw,1.22rem);color:var(--muted);max-width:52ch;margin-bottom:30px}
-  .hero-cta{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-  .price{font-family:var(--font-head);font-size:14px;color:var(--muted)}
-  .hero-media{overflow:hidden;border:1px solid var(--hair2)}
-  .mark{display:flex;align-items:baseline;gap:14px;margin-bottom:22px}
-  .mark b{font-family:var(--font-head);font-weight:700;font-size:13px;letter-spacing:.34em;color:var(--ink)}
-  .mark span{font-family:var(--font-head);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-  .mark span em{color:var(--accent);font-style:normal}
-  .proofband{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--hair);margin-top:56px}
-  .proofband .cell{padding:24px 18px;border-right:1px solid var(--hair);text-align:center}
-  .proofband .cell:last-child{border-right:none}
-  .proofband b{font-family:var(--font-head);font-weight:700;font-size:1.35rem;color:var(--ink);letter-spacing:-.02em;display:block;font-variant-numeric:tabular-nums}
-  .proofband span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:8px;display:block}
+/* promote to site-v2: breathing room between the stamped header and an offer hero (same rule on / and /podcast-guesting) */
+.hero-wrap{padding-top:var(--s5)}
 
-  section{padding:88px 0;border-bottom:1px solid var(--hair)}
-  .sec-head{max-width:60ch;margin-bottom:14px}
-  .sec-head h2{font-size:clamp(1.9rem,4vw,2.9rem);margin-bottom:14px}
-  .narrow{max-width:760px}
-  .lede-p{font-size:1.22rem;color:var(--ink)}
-  .quote{border-left:2px solid var(--accent);padding:6px 0 6px 20px;margin-top:34px;max-width:58ch}
-  .quote p{font-size:1.08rem;font-style:italic}
-  .quote cite{display:block;margin-top:10px;font-family:var(--font-head);font-size:13px;color:var(--muted);font-style:normal}
+/* promote to site-v2: hero A, mirrored. For a photo whose people sit on the left (the dinner selfie):
+   the copy sits right and the gradient runs right to left, so nobody's face is under it.
+   Phones: photo first, then the copy, as hero A. */
+@media (min-width:961px){
+  .hero-photo.flip{justify-content:flex-end;background-position:left center}
+  .hero-photo.flip{min-height:580px}
+  /* stops in px from the right edge, so the 500px copy column always sits on the solid part */
+  .hero-photo.flip::before{background:linear-gradient(270deg,rgba(5,14,21,.95) 0,rgba(5,14,21,.9) 530px,rgba(5,14,21,.35) 660px,rgba(5,14,21,0) 780px)}
+  .hero-photo.flip .in{max-width:500px;gap:20px;padding:56px 56px 136px 0}
+}
+.hero-photo.flip h1{font-size:clamp(40px,3.9vw,54px);line-height:1}
+.hero-photo .note{font-size:var(--fs-s);color:var(--text)}
+.eyebrow .mk{color:var(--muted)}
 
-  /* altitude strip */
-  .alt{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--hair);margin-top:40px}
-  .alt>div{padding:30px 30px}
-  .alt>div+div{border-left:1px solid var(--hair)}
-  .alt .lbl{font-family:var(--font-head);font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;display:flex;align-items:center;gap:10px}
-  .alt .lbl i{width:8px;height:8px;border:1px solid var(--muted);display:inline-block}
-  .alt .up .lbl{color:var(--accent)}
-  .alt .up .lbl i{background:var(--accent);border-color:var(--accent)}
-  .alt p{font-size:1.02rem}
-  .alt .up p{color:var(--ink)}
+/* promote to site-v2: proof figures in the hero strip (same rules inline on /). .c4 = four figures */
+.figs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s5)}
+.figs li{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--s2);min-width:0}
+.figs li + li{border-left:1px solid var(--line)}
+.figs b{font-family:var(--font-head);font-weight:800;font-size:var(--fs-num);line-height:1;letter-spacing:-.04em;color:var(--ink);font-variant-numeric:tabular-nums}
+.figs span{font-size:var(--fs-s);line-height:1.4;color:var(--text)}
+.figs.c4{grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s4)}
+.figs.c4 b{font-size:clamp(26px,2.75vw,36px);white-space:nowrap}
 
-  .wall{columns:3;column-gap:16px;margin-top:34px}
-  .shot{break-inside:avoid;margin:0 0 16px;border:1px solid var(--hair2);overflow:hidden}
-  .resolve{margin-top:46px;border:1px solid rgba(56,182,255,.3);padding:34px}
-  .resolve .h{font-family:var(--font-head);font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
-  .resolve ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 30px}
-  .resolve li{display:flex;gap:11px;color:var(--ink);font-size:1rem}
-  .resolve li::before{content:"+";color:var(--accent);font-family:var(--font-head);font-weight:700}
+/* why this room: the call next to what comes up on it */
+.callrow{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:var(--s9);align-items:center;margin-top:var(--s9)}
+.callrow img{width:100%;height:auto;border-radius:var(--r)}
+.callrow .label{margin-bottom:var(--s4)}
+.callrow .lines li{font-size:var(--fs-b);padding-block:14px}
+.callrow .lines li::before{top:calc(14px + .7em)}
 
-  .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:12px}
-  .icell{border:1px solid var(--hair);padding:28px 26px}
-  .icell .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
-  .icell .ic svg{width:30px;height:30px;stroke:var(--ink);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
-  .icell .ic svg .f{fill:var(--accent);stroke:none}
-  .icell h3{font-size:1.12rem;margin-bottom:6px}
-  .icell p{color:var(--muted);font-size:.97rem}
+/* the conversation out there: plain screenshots */
+.wall{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s5);align-items:start;margin-top:var(--s9)}
+.wall img{width:100%;height:auto;border-radius:var(--r)}
+.wall-close{margin-top:var(--s8);max-width:46ch;font-family:var(--font-head);font-weight:600;font-size:var(--fs-l);line-height:1.45;color:var(--ink)}
 
-  .prose-vet{font-size:1.1rem;max-width:64ch}
-  .protect{margin-top:18px;font-family:var(--font-head);font-size:1.15rem;color:var(--ink);font-weight:600}
-  .run-list{list-style:none;display:grid;gap:10px;margin-top:26px;max-width:64ch}
-  .run-list li{padding-left:26px;position:relative;color:var(--muted)}
-  .run-list li::before{content:"+";position:absolute;left:0;top:0;color:var(--accent);font-family:var(--font-head);font-weight:700}
+/* who runs the room */
+.founder .creds{display:flex;flex-direction:column;gap:10px}
+.founder .creds li{font-size:var(--fs-b);line-height:1.5;color:var(--ink)}
+.pull{display:flex;flex-direction:column;gap:8px;margin-top:6px;padding-top:20px;border-top:1px solid var(--line)}
+.pull p{font-family:var(--font-head);font-weight:600;font-size:var(--fs-l);line-height:1.45;color:var(--ink)}
+.pull cite{font-style:normal;font-size:var(--fs-s);color:var(--muted)}
+.hosting{margin-top:var(--s11)}
+.hosting-h{display:flex;justify-content:space-between;gap:var(--s4);margin-bottom:var(--s4)}
+.hosting-h .label:last-child{color:var(--ink)}
+.slider{position:relative;border-radius:var(--r);overflow:hidden;background:var(--panel)}
+.slides{position:relative;aspect-ratio:2/1}
+.slides figure{position:absolute;inset:0;opacity:0;transition:opacity .9s ease}
+.slides figure.on{opacity:1}
+.slides picture,.slides img{width:100%;height:100%;object-fit:cover}
+.slider .dots{position:absolute;right:16px;bottom:14px;display:flex;gap:6px}
+.slider .dots i{display:block;width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.55)}
+.slider .dots i.on{background:var(--accent)}
+@media (max-width:700px){.slides{aspect-ratio:4/3}} /* pairs with the 4:3 phone crops in each <source> */
 
-  .about-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:start}
-  .about-grid img{width:100%;border:1px solid var(--hair2)}
-  .about-grid p{margin-bottom:16px}
+/* what's included: glyph cells on navy */
+#included .hgrid{margin-top:var(--s9)}
+#included .hgrid .g{margin-bottom:var(--s2)}
 
-  .qgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:12px}
-  .qcard{border:1px solid var(--hair);padding:28px 26px;border-top:2px solid var(--accent)}
-  .qcard p{font-size:1rem;font-style:italic}
-  .qcard cite{display:block;margin-top:14px;font-family:var(--font-head);font-size:13px;color:var(--muted);font-style:normal}
-  .slider{margin-top:16px;border:1px solid var(--hair2);position:relative}
-  .slides{position:relative;aspect-ratio:2/1;overflow:hidden;background:#000}
-  .slides figure{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .9s ease}
-  .slides figure.on{opacity:1}
-  .slides picture,.slides img{width:100%;height:100%;object-fit:cover;display:block}
-  .dots{position:absolute;right:14px;bottom:12px;display:flex;gap:6px}
-  .dots i{width:16px;height:2px;background:rgba(255,255,255,.35);display:block}
-  .dots i.on{background:var(--accent)}
-  @media(max-width:700px){.slides{aspect-ratio:4/3}}
+/* who gets in */
+.gets{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s11);align-items:start}
+.gets .protect{margin-top:var(--s6);font-family:var(--font-head);font-weight:700;font-size:var(--fs-l);line-height:1.45;color:var(--ink)}
 
-  .faq{max-width:820px}
-  .faq details{border-bottom:1px solid var(--hair);padding:22px 0}
-  .faq summary{font-family:var(--font-head);font-weight:600;font-size:1.12rem;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;align-items:center}
-  .faq summary::-webkit-details-marker{display:none}
-  .faq summary::after{content:"+";color:var(--accent);font-size:22px;font-weight:400;transition:.2s}
-  .faq details[open] summary::after{transform:rotate(45deg)}
-  .faq .a{padding-top:14px}
+/* testimonials: white cards on soft, quote and name only */
+.tgrid.c3{grid-template-columns:repeat(3,minmax(0,1fr));max-width:none}
+.tgrid.c3 .tcard{border:1px solid var(--line);padding-bottom:24px}
+.tcard .by span{display:block;font-size:var(--fs-s);line-height:1.4;color:var(--muted)}
 
-  footer{padding:52px 0}
-  .site-foot .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
-  .foot-in{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
-  .socials{display:flex;gap:20px}
-  .socials a{color:var(--muted);font-size:14px;font-weight:500}
-  .socials a:hover{color:var(--accent)}
-  .foot-in p,.site-foot p{color:var(--muted);font-size:14px}
-  .foot-legal{display:flex;gap:18px;margin-top:14px;width:100%;border-top:1px solid var(--hair);padding-top:16px}
-  .foot-legal a{color:var(--muted);font-size:13px}
+/* apply: the closing band, with one quote under the button */
+#apply .aq{display:flex;flex-direction:column;gap:8px;max-width:46ch;margin-top:var(--s5);padding-top:var(--s5);border-top:1px solid var(--line)}
+#apply .aq p{font-size:var(--fs-b);line-height:1.6}
+#apply .aq cite{font-style:normal;font-family:var(--font-head);font-weight:700;font-size:var(--fs-s);color:var(--ink)}
 
-  @media(max-width:860px){
-    .links a:not(.btn){display:none}
-    header{padding:70px 0 0}section{padding:64px 0}
-    .hero-grid,.about-grid,.apply-grid,.alt{grid-template-columns:1fr}
-    .alt>div+div{border-left:none;border-top:1px solid var(--hair)}
-    .proofband{grid-template-columns:1fr 1fr}.proofband .cell:nth-child(2){border-right:none}
-    .igrid,.qgrid{grid-template-columns:1fr}.wall{columns:2}
-  }
-  @media(max-width:560px){.wall{columns:1}.resolve ul{grid-template-columns:1fr}}
-
-  .topics{margin-top:44px;border-top:1px solid var(--hair);padding-top:28px}
-  .topics .th{font-family:var(--font-head);font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
-  .topics ul{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:0}
-  .topics li{font-family:var(--font-head);font-weight:600;font-size:1.05rem;color:var(--ink);padding:16px 20px 16px 0;border-bottom:1px solid var(--hair);display:flex;gap:12px;align-items:baseline}
-  .topics li::before{content:"";width:7px;height:7px;background:var(--accent);flex:none;transform:translateY(-2px)}
-  .wall-close{margin-top:32px;font-family:var(--font-head);font-weight:600;font-size:1.12rem;color:var(--ink);max-width:60ch}
-  @media(max-width:860px){.topics ul{grid-template-columns:1fr}}
-
-  .hosting{margin-top:48px;border-top:1px solid var(--hair);padding-top:26px}
-  .hosting-h{display:flex;justify-content:space-between;gap:16px;font-family:var(--font-head);font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
-  .hosting-h span:last-child{color:var(--accent)}
-  .hosting .slider{margin-top:0}
+@media (max-width:960px){
+  .hero-photo.flip .ph{height:auto;aspect-ratio:2/1;object-position:30% 45%}
+  .figs.c4{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:0}
+  .figs.c4 li{padding-block:var(--s4)}
+  .figs.c4 li:nth-child(3){border-left:0}
+  .figs.c4 li:nth-child(n+3){border-top:1px solid var(--line)}
+  .callrow,.gets{grid-template-columns:minmax(0,1fr);gap:var(--s7)}
+  .wall{grid-template-columns:minmax(0,1fr);max-width:560px}
+  .tgrid.c3{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .hero-wrap{padding-top:var(--s3)}
+  .hero-photo.flip h1{font-size:36px;line-height:1.02}
+  .hero-photo .btns .note{text-align:center}
+  .figs{grid-template-columns:minmax(0,1fr);gap:0;text-align:left}
+  .figs.c4{grid-template-columns:minmax(0,1fr)}
+  .figs li,.figs.c4 li{flex-direction:row;align-items:baseline;justify-content:flex-start;gap:var(--s4);padding-block:var(--s3)}
+  .figs li + li{border-left:0;border-top:1px solid var(--line)}
+  .figs b,.figs.c4 b{flex:none;min-width:150px;font-size:28px}
+  .hosting{margin-top:var(--s9)}
+  .hosting-h{flex-direction:column;gap:6px}
+}
 </style>
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script src="/visits.js" defer></script>
+<script src="/assets/booking.js" defer></script>
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD3WQ8N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<nav class="site-nav">
+<!-- chrome:header focus href="#apply" label="Apply" -->
+<header class="site-nav focus with-cta">
   <div class="wrap">
-    <a href="/" class="logo">Mike<i>.</i>Moll</a>
-    <a href="#apply" class="nav-cta">Apply</a>
-  </div>
-</nav>
-
-<header>
-  <div class="wrap hero">
-    <div class="hero-grid">
-      <div>
-        <div class="mark"><b>AERO</b><span><em>AI</em>-Era Room for Operators</span></div>
-        <h1>A hand-picked room of founders who <span class="accent">use AI to run leaner</span>.</h1>
-        <p class="sub">Men only. Established operators with paying clients, using AI to run the business better. I interview every member myself.</p>
-        <div class="hero-cta">
-          <a href="#apply" class="btn btn-primary btn-lg">Apply for a Seat</a>
-          <span class="price">$85/month, billed quarterly.</span>
-        </div>
-      </div>
-      <div class="hero-media"><img src="/media/mastermind-group.jpg" alt="The mastermind group on a monthly call"></div>
-    </div>
-    <div class="proofband">
-      <div class="cell"><b>Since 2018</b><span>Facilitating founder rooms</span></div>
-      <div class="cell"><b>8</b><span>Countries hosted</span></div>
-      <div class="cell"><b>50%</b><span>Operating in AI</span></div>
-      <div class="cell"><b>$2.5M+</b><span>Added for clients</span></div>
-    </div>
+    <a class="logo" href="/">Mike<span>.</span>Moll<small>Sales + Offer Coach</small></a>
+    <a class="btn line" href="#apply">Apply</a>
   </div>
 </header>
+<!-- /chrome:header -->
 
-<section>
-  <div class="wrap">
-    <div class="narrow">
-      <span class="eyebrow">Why this room</span>
-      <div class="sec-head"><h2>Running a business without a co-founder means deciding alone.</h2></div>
-      <p class="lede-p">Without an equal in the company, the hard calls sit on your desk for weeks, or never get made. This room is a board of peers who have already faced the same decisions and will tell you what they did.</p>
+<main>
+  <div class="wrap hero-wrap">
+    <div class="hero-photo flip" style="--hero-img:url('/media/mm-event-01.jpg')">
+      <img class="ph" src="/media/mm-event-01.jpg" alt="Founders at a mastermind dinner" width="1600" height="800" fetchpriority="high">
+      <div class="in">
+        <span class="eyebrow">AERO <span class="mk">AI-Era Room for Operators</span></span>
+        <h1>A hand-picked room of founders who use AI to run leaner.</h1>
+        <p>Men only. Established operators with paying clients, using AI to run the business better. I interview every member myself.</p>
+        <div class="btns">
+          <a href="#apply" class="btn">Apply for a seat</a>
+          <span class="note">$85/month, billed quarterly.</span>
+        </div>
+      </div>
     </div>
-    <div class="topics">
-      <div class="th">What comes up on the calls</div>
-      <ul>
-        <li>Pricing and offers</li>
-        <li>Sales calls and processes</li>
-        <li>Hiring and delegation</li>
-        <li>AI deployments throughout the company</li>
-        <li>Content and positioning</li>
-        <li>Margin and cash</li>
+    <div class="strip">
+      <ul class="figs c4">
+        <li><b>Since 2018</b><span>Facilitating founder rooms</span></li>
+        <li><b>8</b><span>Countries hosted</span></li>
+        <li><b>50%</b><span>Operating in AI</span></li>
+        <li><b>$2.5M+</b><span>Added for clients</span></li>
       </ul>
     </div>
   </div>
-</section>
-<section>
-  <div class="wrap">
-    <div class="narrow">
-      <span class="eyebrow">Compare that with the free AI entrepreneur groups</span>
-      <div class="sec-head"><h2>This is the conversation out there.</h2></div>
-    </div>
-    <div class="wall">
-      <div class="shot"><img src="/media/fb-actual-products.jpg" alt="Facebook post asking if anyone has products built with Claude making money"></div>
-      <div class="shot"><img src="/media/fb-nothing-new.jpg" alt="Facebook post claiming there is nothing new to create and the AI market is full"></div>
-      <div class="shot"><img src="/media/fb-weekly-limits.jpg" alt="Facebook post feeling hopeless after hitting weekly limits"></div>
-    </div>
-    <p class="wall-close">Every member here runs a service business with paying clients and came in through an interview with me.</p>
-  </div>
-</section>
-<section>
-  <div class="wrap">
-    <span class="eyebrow">Who runs the room</span>
-    <div class="about-grid">
-      <div>
-        <div class="sec-head"><h2>Mike Moll</h2></div>
-        <p>I've been building service businesses since 2013.</p>
-        <ul class="run-list" style="margin-top:20px">
-          <li>Grew a marketing agency to $700K a year, working with Volvo and Patak's</li>
-          <li>Had my moment of fame taking my software company on Dragon's Den</li>
-          <li>Coaching founders and agency owners since 2019</li>
-          <li>Built offers and sales processes for over 150 companies</li>
-          <li>Fractional CMO for a $20M probiotics company</li>
-          <li>Launched a marketing service in 2025 running 90% on AI</li>
-          <li>Hosting founder dinners since 2018, in eight countries</li>
-        </ul>
-        <div class="quote">
-          <p>"You've really lived it and done the things you're talking about. That makes a big difference."</p>
-          <cite>Kirstin Russ, Mountain to Sea Media</cite>
+
+  <!-- WHY THIS ROOM -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Why this room</span>
+        <h2>Running a business without a co-founder means deciding alone.</h2>
+        <p>Without an equal in the company, the hard calls sit on your desk for weeks, or never get made. This room is a board of peers who have already faced the same decisions and will tell you what they did.</p>
+      </div>
+      <div class="callrow">
+        <img src="/media/mastermind-group.jpg" alt="The mastermind group on a monthly call" width="1600" height="692" loading="lazy" decoding="async">
+        <div>
+          <span class="label">What comes up on the calls</span>
+          <ul class="lines dots">
+            <li>Pricing and offers</li>
+            <li>Sales calls and processes</li>
+            <li>Hiring and delegation</li>
+            <li>AI deployments throughout the company</li>
+            <li>Content and positioning</li>
+            <li>Margin and cash</li>
+          </ul>
         </div>
       </div>
-      <img src="/images/mike-moll-solopreneur-coach.jpg" alt="Mike Moll">
     </div>
-    <div class="hosting">
-      <div class="hosting-h"><span>Founder dinners and meetups since 2018</span><span>Eight countries</span></div>
-    <div class="slider" id="dinner-slider" aria-label="Mastermind dinners and meetups">
-      <div class="slides">
-        <figure class="on"><picture><source media="(max-width: 700px)" srcset="/media/mm-event-01-m.jpg"><img src="/media/mm-event-01.jpg" alt="Founders at a mastermind dinner"></picture></figure>
-        <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-02-m.jpg"><img src="/media/mm-event-02.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
-        <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-03-m.jpg"><img src="/media/mm-event-03.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
-        <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-04-m.jpg"><img src="/media/mm-event-04.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
-        <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-05-m.jpg"><img src="/media/mm-event-05.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
-        <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-06-m.jpg"><img src="/media/mm-event-06.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
-        <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-07-m.jpg"><img src="/media/mm-event-07.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
-        <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-08-m.jpg"><img src="/media/mm-event-08.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
-        <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-09-m.jpg"><img src="/media/mm-event-09.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
-        <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-10-m.jpg"><img src="/media/mm-event-10.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
-        <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-11-m.jpg"><img src="/media/mm-event-11.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
-        <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-12-m.jpg"><img src="/media/mm-event-12.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
-        <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-13-m.jpg"><img src="/media/mm-event-13.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
-        <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-14-m.jpg"><img src="/media/mm-event-14.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
+  </section>
+
+  <!-- THE CONVERSATION OUT THERE -->
+  <section class="section band-soft">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Compare that with the free AI entrepreneur groups</span>
+        <h2>This is the conversation out there.</h2>
       </div>
-      <div class="dots" aria-hidden="true"></div>
+      <div class="wall">
+        <img src="/media/fb-actual-products.jpg" alt="Facebook post asking if anyone has products built with Claude making money" width="760" height="395" loading="lazy" decoding="async">
+        <img src="/media/fb-nothing-new.jpg" alt="Facebook post claiming there is nothing new to create and the AI market is full" width="760" height="327" loading="lazy" decoding="async">
+        <img src="/media/fb-weekly-limits.jpg" alt="Facebook post feeling hopeless after hitting weekly limits" width="760" height="240" loading="lazy" decoding="async">
+      </div>
+      <p class="wall-close">Every member here runs a service business with paying clients and came in through an interview with me.</p>
     </div>
-  </div>
-</section>
-<section>
-  <div class="wrap">
-    <span class="eyebrow">What's included</span>
-    <div class="igrid">
-      <div class="icell"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/><path class="f" d="M12 6.8a6 6 0 0 1 0 10.4a6 6 0 0 1 0-10.4z"/></svg></div><h3>Two calls a month</h3><p>75 minutes each. Bring a problem and leave with a decision.</p></div>
-      <div class="icell"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h10M4 17h13"/><circle class="f" cx="19" cy="12" r="1.8"/></svg></div><h3>A WhatsApp thread</h3><p>Intros and quick answers, without forced small talk.</p></div>
-      <div class="icell"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 17c0-8 14-8 14-16" stroke-dasharray="2.2 2.6"/><path d="M4 18a2 2 0 1 0 0.01 0z"/><circle class="f" cx="19" cy="4.5" r="2.4"/></svg></div><h3>Travel and meetups</h3><p>Dinner whenever two members land in the same city.</p></div>
-      <div class="icell"><div class="ic"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18"/><path d="M9 3v18"/><rect class="f" x="14" y="7" width="3" height="4"/></svg></div><h3>The member black book</h3><p>Warm intros from my list of operators, builders and closers.</p></div>
-      <div class="icell"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17"/><path d="M12 7l5 5-5 5-5-5z"/><circle class="f" cx="12" cy="12" r="1.6"/></svg></div><h3>The shared vault</h3><p>Tools, prompts and builds that members add to as they go.</p></div>
-      <div class="icell"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path class="f" d="M12 3.5a8.5 8.5 0 0 1 8.5 8.5h-8.5z"/></svg></div><h3>A vetted room</h3><p>Every member came through an interview with me.</p></div>
+  </section>
+
+  <!-- WHO RUNS THE ROOM -->
+  <section class="section">
+    <div class="wrap">
+      <div class="founder">
+        <img src="/images/mike-moll-solopreneur-coach.jpg" alt="Mike Moll" width="900" height="1350" loading="lazy" decoding="async">
+        <div class="copy">
+          <span class="eyebrow">Who runs the room</span>
+          <h2>Mike Moll</h2>
+          <p>I've been building service businesses since 2013.</p>
+          <ul class="creds dots">
+            <li>Grew a marketing agency to $700K a year, working with Volvo and Patak's</li>
+            <li>Had my moment of fame taking my software company on Dragon's Den</li>
+            <li>Coaching founders and agency owners since 2019</li>
+            <li>Built offers and sales processes for over 150 companies</li>
+            <li>Fractional CMO for a $20M probiotics company</li>
+            <li>Launched a marketing service in 2025 running 90% on AI</li>
+            <li>Hosting founder dinners since 2018, in eight countries</li>
+          </ul>
+          <blockquote class="pull">
+            <p>"You've really lived it and done the things you're talking about. That makes a big difference."</p>
+            <cite>Kirstin Russ, Mountain to Sea Media</cite>
+          </blockquote>
+        </div>
+      </div>
+      <div class="hosting">
+        <div class="hosting-h"><span class="label">Founder dinners and meetups since 2018</span><span class="label">Eight countries</span></div>
+        <div class="slider" id="dinner-slider" aria-label="Mastermind dinners and meetups">
+          <div class="slides">
+            <figure class="on"><picture><source media="(max-width: 700px)" srcset="/media/mm-event-02-m.jpg"><img src="/media/mm-event-02.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
+            <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-03-m.jpg"><img src="/media/mm-event-03.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
+            <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-04-m.jpg"><img src="/media/mm-event-04.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
+            <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-05-m.jpg"><img src="/media/mm-event-05.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
+            <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-06-m.jpg"><img src="/media/mm-event-06.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
+            <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-07-m.jpg"><img src="/media/mm-event-07.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
+            <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-08-m.jpg"><img src="/media/mm-event-08.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
+            <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-09-m.jpg"><img src="/media/mm-event-09.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
+            <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-10-m.jpg"><img src="/media/mm-event-10.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
+            <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-11-m.jpg"><img src="/media/mm-event-11.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
+            <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-12-m.jpg"><img src="/media/mm-event-12.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
+            <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-13-m.jpg"><img src="/media/mm-event-13.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
+            <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-14-m.jpg"><img src="/media/mm-event-14.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
+            <figure><picture><source media="(max-width: 700px)" srcset="/media/mm-event-01-m.jpg"><img src="/media/mm-event-01.jpg" alt="Founders at a mastermind dinner" loading="lazy"></picture></figure>
+          </div>
+          <div class="dots" aria-hidden="true"></div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-<section>
-  <div class="wrap narrow">
-    <span class="eyebrow">Who gets in</span>
-    <div class="sec-head"><h2>I interview every applicant myself.</h2></div>
-    <p class="prose-vet">I'm looking for operators who give more than they take and would be good company at dinner in a random city.</p>
-    <ul class="run-list">
-      <li>Service-based founders: consulting, coaching, agencies, advisory, fractional work</li>
-      <li>Same core offer for at least 12 months, with a stable base of clients</li>
-      <li>Use AI to run the business better. You don't have to run an AI company</li>
-      <li>Open-minded with a giver's mentality</li>
-    </ul>
-    <p class="protect">My job is to keep the MFers out (borrowed this from Kevin Nations).</p>
-  </div>
-</section>
-<section>
-  <div class="wrap">
-    <span class="eyebrow">From founders I've worked with</span>
-    <div class="qgrid">
-      <div class="qcard"><p>"Right now I'm making a few multiples higher than when I came to you, which was already a good income, with three to four people on my team."</p><cite>Sean Grabowski, Keepers Digital</cite></div>
-      <div class="qcard"><p>"We're making between 30 and 40 thousand a month in recurring revenue, and a big part of that has to do with you."</p><cite>Daniela, Findable Digital Marketing</cite></div>
-      <div class="qcard"><p>"It helped me move from an individual-contributor freelancer to actually feeling like a business owner."</p><cite>Tyler Cook, Hypermedia</cite></div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section id="included" class="section band-dark">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>What's included</h2>
+      </div>
+      <ul class="hgrid c3">
+        <li><svg class="g" viewBox="0 0 44 44" aria-hidden="true"><circle cx="16.5" cy="22" r="11"/><circle cx="27.5" cy="22" r="11"/><path class="af" d="M22 12.5a11 11 0 0 1 0 19a11 11 0 0 1 0-19z"/></svg><h3>Two calls a month</h3><p>75 minutes each. Bring a problem and leave with a decision.</p></li>
+        <li><svg class="g" viewBox="0 0 44 44" aria-hidden="true"><path d="M7 13h30M7 22h18M7 31h24"/><circle class="af" cx="34" cy="22" r="3"/></svg><h3>A WhatsApp thread</h3><p>Intros and quick answers, without forced small talk.</p></li>
+        <li><svg class="g" viewBox="0 0 44 44" aria-hidden="true"><circle cx="9" cy="35" r="3"/><path d="M12 32C17 21 26 27 31 14" stroke-dasharray="0 4"/><circle class="af" cx="34" cy="9" r="4"/></svg><h3>Travel and meetups</h3><p>Dinner whenever two members land in the same city.</p></li>
+        <li><svg class="g" viewBox="0 0 44 44" aria-hidden="true"><rect x="10" y="6" width="25" height="32" rx="2"/><path d="M16 6v32"/><rect class="af" x="26" y="13" width="5" height="8" rx="1"/></svg><h3>The member black book</h3><p>Warm intros from my list of operators, builders and closers.</p></li>
+        <li><svg class="g" viewBox="0 0 44 44" aria-hidden="true"><rect x="7" y="7" width="30" height="30" rx="3"/><path d="M22 13l9 9-9 9-9-9z"/><circle class="af" cx="22" cy="22" r="3"/></svg><h3>The shared vault</h3><p>Tools, prompts and builds that members add to as they go.</p></li>
+        <li><svg class="g" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="15"/><path class="af" d="M22 7a15 15 0 0 1 15 15H22z"/></svg><h3>A vetted room</h3><p>Every member came through an interview with me.</p></li>
+      </ul>
     </div>
+  </section>
+
+  <!-- WHO GETS IN -->
+  <section class="section">
+    <div class="wrap gets">
+      <div class="sec-head">
+        <span class="eyebrow">Who gets in</span>
+        <h2>I interview every applicant myself.</h2>
+        <p>I'm looking for operators who give more than they take and would be good company at dinner in a random city.</p>
+      </div>
+      <div>
+        <ul class="lines dots">
+          <li>Service-based founders: consulting, coaching, agencies, advisory, fractional work</li>
+          <li>Same core offer for at least 12 months, with a stable base of clients</li>
+          <li>Use AI to run the business better. You don't have to run an AI company</li>
+          <li>Open-minded with a giver's mentality</li>
+        </ul>
+        <p class="protect">My job is to keep the MFers out (borrowed this from Kevin Nations).</p>
+      </div>
     </div>
-  </div>
-</section>
-<section id="apply">
-  <div class="wrap">
-    <div class="narrow">
-      <span class="eyebrow">Apply</span>
-      <div class="sec-head"><h2>By application only.</h2></div>
-      <p class="lede-p">If you meet the criteria above, book a call with me. $85 a month, billed quarterly.</p>
-      <a href="/book/mastermind-application" target="_blank" rel="noopener" class="btn btn-primary btn-lg" style="margin-top:28px">Apply</a>
-      <div class="quote">
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section band-soft">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>From founders I've worked with</h2>
+      </div>
+      <div class="tgrid c3">
+        <div class="tcard"><p class="q">"Right now I'm making a few multiples higher than when I came to you, which was already a good income, with three to four people on my team."</p><div class="by"><div><b>Sean Grabowski</b><span>Keepers Digital</span></div></div></div>
+        <div class="tcard"><p class="q">"We're making between 30 and 40 thousand a month in recurring revenue, and a big part of that has to do with you."</p><div class="by"><div><b>Daniela</b><span>Findable Digital Marketing</span></div></div></div>
+        <div class="tcard"><p class="q">"It helped me move from an individual-contributor freelancer to actually feeling like a business owner."</p><div class="by"><div><b>Tyler Cook</b><span>Hypermedia</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLY -->
+  <section id="apply" class="section closing band-dark">
+    <div class="wrap">
+      <h2>By application only.</h2>
+      <p>If you meet the criteria above, book a call with me. $85 a month, billed quarterly.</p>
+      <a href="/book/mastermind-application" class="btn">Apply</a>
+      <blockquote class="aq">
         <p>"I've had bad experiences with consultants and coaches, so if anyone's hesitant about signing up, I'd say all day long, sign up."</p>
         <cite>Andy</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="wrap faqgrid">
+      <div class="copy">
+        <h2>FAQ</h2>
+      </div>
+      <div class="faqlist">
+        <details open><summary>What is this room about?<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3.25v11.5M3.25 9h11.5"/></svg></summary><p>A small group of service-based founders who meet twice a month to work through whatever is on their desk that week: a price they're afraid to raise, a hire that isn't working, a delivery process AI could take over. I built it because most owners have nobody at their level to check a decision with, and the AI groups out there are full of people who haven't run anything yet. Everyone here has.</p></details>
+        <details><summary>Is there a revenue minimum?<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3.25v11.5M3.25 9h11.5"/></svg></summary><p>Yes, $10K a month with a stable client base. Below that, the problems are different and the room won't serve you well yet. I'd rather tell you that now than have you pay for a seat that doesn't fit.</p></details>
+        <details><summary>When do you meet, and what if I can't make one?<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3.25v11.5M3.25 9h11.5"/></svg></summary><p>Every second Wednesday at 1:00 p.m. Eastern, for 75 minutes. Join when you're available. The room is full of busy people.</p></details>
+        <details><summary>What does a call look like?<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3.25v11.5M3.25 9h11.5"/></svg></summary><p>Two or three people bring a decision they're stuck on, the rest of us ask questions until the problem is clear, then everyone who has been through something similar says what they did and how it went. People also share what they're working on, or break down something they've discovered for the benefit of the group.</p></details>
+        <details><summary>Why men only?<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3.25v11.5M3.25 9h11.5"/></svg></summary><p>I wanted to create a space where we could be open, honest, and vulnerable.</p></details>
+        <details><summary>How much do I need to know about AI?<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3.25v11.5M3.25 9h11.5"/></svg></summary><p>Not much. You should already be using it to run parts of your business, but plenty of members aren't technical and taught themselves what they needed. What matters is that you reach for it before you reach for busywork.</p></details>
       </div>
     </div>
-  </div>
-</section>
-<section>
-  <div class="wrap narrow">
-    <span class="eyebrow">FAQ</span>
-    <div class="faq">
-      <details><summary>What is this room about?</summary><div class="a">A small group of service-based founders who meet twice a month to work through whatever is on their desk that week: a price they're afraid to raise, a hire that isn't working, a delivery process AI could take over. I built it because most owners have nobody at their level to check a decision with, and the AI groups out there are full of people who haven't run anything yet. Everyone here has.</div></details>
-      <details><summary>Is there a revenue minimum?</summary><div class="a">Yes, $10K a month with a stable client base. Below that, the problems are different and the room won't serve you well yet. I'd rather tell you that now than have you pay for a seat that doesn't fit.</div></details>
-      <details><summary>When do you meet, and what if I can't make one?</summary><div class="a">Every second Wednesday at 1:00 p.m. Eastern, for 75 minutes. Join when you're available. The room is full of busy people.</div></details>
-      <details><summary>What does a call look like?</summary><div class="a">Two or three people bring a decision they're stuck on, the rest of us ask questions until the problem is clear, then everyone who has been through something similar says what they did and how it went. People also share what they're working on, or break down something they've discovered for the benefit of the group.</div></details>
-      <details><summary>Why men only?</summary><div class="a">I wanted to create a space where we could be open, honest, and vulnerable.</div></details>
-      <details><summary>How much do I need to know about AI?</summary><div class="a">Not much. You should already be using it to run parts of your business, but plenty of members aren't technical and taught themselves what they needed. What matters is that you reach for it before you reach for busywork.</div></details>
+  </section>
+</main>
+
+<!-- chrome:footer focus -->
+<footer class="site-foot focus">
+  <div class="wrap">
+    <div class="legal">
+      <div><span>&copy; 2026 Impact Leads LLC</span><i aria-hidden="true">&middot;</i><a href="/privacy">Privacy</a><i aria-hidden="true">&middot;</i><a href="/terms">Terms</a></div>
+      <nav aria-label="Social"><a href="https://www.instagram.com/themikemoll/">Instagram</a><i aria-hidden="true">&middot;</i><a href="https://www.youtube.com/@mikemollco">YouTube</a><i aria-hidden="true">&middot;</i><a href="https://www.linkedin.com/in/themikemoll/">LinkedIn</a></nav>
     </div>
   </div>
-</section>
-
+</footer>
+<!-- /chrome:footer -->
 
 <script>
 (function(){
@@ -363,17 +362,5 @@
   },4000);
 })();
 </script>
-<footer class="site-foot">
-  <div class="wrap">
-    <div class="logo">Mike<i>.</i>Moll</div>
-    <div class="socials"><a href="https://www.instagram.com/themikemoll/">Instagram</a><a href="https://www.youtube.com/@mikemollco">YouTube</a><a href="https://www.linkedin.com/in/themikemoll/">LinkedIn</a></div>
-    <p>&copy; 2026 Impact Leads LLC</p>
-    <div class="foot-legal">
-      <a href="/privacy">Privacy Policy</a>
-      <a href="/terms">Terms &amp; Conditions</a>
-    </div>
-  </div>
-</footer>
-
 </body>
 </html>
