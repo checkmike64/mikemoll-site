@@ -8,77 +8,34 @@
 <meta name="description" content="Your replay and materials from the Get Booked on Podcasts workshop, plus the next steps to go deeper.">
 <meta name="robots" content="noindex, follow">
 <link rel="canonical" href="https://www.mikemoll.co/podcast-workshop-replay">
+<!-- chrome:head -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700;800&family=Poppins:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/site-v2.css">
+<!-- /chrome:head -->
 <style>
-  :root{--max:1120px;}
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
-  .narrow{max-width:900px;margin:0 auto;padding:0 28px}
-  a{color:inherit;text-decoration:none}
-  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-0.03em;line-height:1.05}
-  nav{position:sticky;top:0;z-index:20;background:rgba(0,0,0,0.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline)}
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
-  .logo{font-family:var(--display);font-weight:700;font-size:20px}.logo span{color:var(--accent)}
-  .btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:15px;padding:13px 24px;border:none;cursor:pointer;transition:transform .2s,background .2s,border-color .2s,color .2s}
-  .btn-primary{background:var(--accent);color:var(--accent-ink)}.btn-primary:hover{transform:translateY(-2px)}
-  .btn-ghost{border:1px solid var(--hairline-2);color:var(--ink);background:none}.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
-  .btn-lg{font-size:16px;padding:16px 30px}
-  .eyebrow{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block}
-  header{text-align:center}
-  header.narrow{padding:96px 28px 48px}
-  .hero-bonus{margin-top:24px}
-  header h1{font-size:clamp(2.3rem,5vw,3.5rem);font-weight:700;line-height:1.1;max-width:20ch;margin:0 auto 24px}
-  header p.lead{color:var(--muted);font-size:1.15rem;max-width:54ch;margin:0 auto}
-  .videosec{padding:8px 0 0}
-  .videobox{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--hairline-2);background:#000;}
-  .videobox iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-  section.block{padding:48px 0}
-  .card{background:var(--surface);border:1px solid var(--hairline);padding:40px 40px}
-  .card.card-quiet{max-width:640px;margin:0 auto;padding:32px 32px;text-align:center}
-  .card.card-quiet h2{font-size:1.35rem}
-  .card.card-quiet p.sub{font-size:1rem;margin-bottom:16px}
-  .card .eyebrow{margin-bottom:14px}
-  .card h2{font-size:1.7rem;margin-bottom:14px}
-  .card p.sub{color:var(--muted);font-size:1.05rem;max-width:52ch;margin-bottom:24px}
-  ul.checks{list-style:none;margin:0 0 24px;display:grid;gap:12px}
-  ul.checks li{position:relative;padding-left:30px;color:var(--ink);font-size:1rem}
-  ul.checks li::before{content:"";position:absolute;left:0;top:9px;width:16px;height:16px;background:rgba(56,182,255,0.16);border:1px solid var(--accent)}
-  ul.checks li::after{content:"";position:absolute;left:5px;top:12px;width:5px;height:9px;border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(45deg)}
-  .opts{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-  .opt{background:var(--surface);border:1px solid var(--hairline);padding:36px 34px;display:flex;flex-direction:column}
-  .opt.feat{border-color:rgba(56,182,255,0.45)}
-  .opt .tagrow{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-  .opt .otag{font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);background:rgba(56,182,255,0.10);border:1px solid var(--hairline-2);padding:5px 11px;}
-  .opt h3{font-size:1.4rem;margin-bottom:10px}
-  .opt .price{font-family:var(--display);font-weight:600;color:var(--ink);font-size:1.05rem;margin-bottom:14px}
-  .opt .price span{color:var(--muted);font-weight:400;font-size:.95rem}
-  .opt .dates{font-family:var(--display);font-weight:600;font-size:.95rem;color:var(--accent);margin-bottom:16px}
-  .opt .mini-link{display:inline-block;margin-top:14px;font-size:14px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
-  .opt .mini-link:hover{color:var(--accent)}
-  .opt p{color:var(--muted);font-size:1rem;margin-bottom:18px}
-  .opt ul.checks{margin-bottom:26px}
-  .opt .cta{margin-top:auto}
-  .sec-head{text-align:center;margin-bottom:34px}
-  .sec-head .eyebrow{margin-bottom:14px}
-  .sec-head h2{font-size:clamp(1.8rem,3.5vw,2.4rem)}
-  .sec-head p{color:var(--muted);max-width:56ch;margin:12px auto 0}
-  footer.site-foot{padding:48px 0;border-top:1px solid var(--hairline);margin-top:48px}
-  footer .foot-in{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;color:var(--muted);font-size:14px}
-  footer .socials{display:flex;gap:18px}
-  footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
-  .foot-legal{display:flex;gap:16px}
-  .bonus{text-align:center;position:relative}
-  .bonus .flag{position:absolute;top:-14px;right:26px;transform:rotate(2deg);background:var(--accent);color:var(--accent-ink);font-family:var(--display);font-weight:600;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;white-space:nowrap}
-  @media(max-width:760px){.bonus .flag{right:14px;font-size:10px;padding:6px 11px}}
-  .bonus ul.checks{text-align:left;max-width:580px;margin:0 auto 24px;gap:10px}
-  .bonus .keep{color:var(--muted);font-size:1rem;margin-bottom:26px}
-  .bonus .micro{margin-top:12px;font-size:14px;color:var(--muted)}
-  @media(max-width:760px){.opts{grid-template-columns:1fr}.card{padding:32px 24px}.card.card-quiet{padding:28px 20px}section.block{padding:40px 0}header.narrow{padding:64px 20px 32px}}
+/* /podcast-workshop-replay: page-only rules. Everything shared lives in /assets/site-v2.css. */
+.narrow{max-width:960px}
+.hero-b.replay{padding-bottom:var(--s8)}
+.hero-b.replay h1{max-width:16ch}
+.videosec{padding-bottom:var(--s8)}
+.videobox{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:var(--r);background:var(--panel)}
+.videobox iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+/* course access: one card, a quiet text link (the booking below stays the only solid button) */
+.access{padding-bottom:var(--sec)}
+.access .card{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:var(--s6);border:1px solid var(--line);border-radius:var(--r);background:#ffffff}
+.access .card h2{font-size:var(--fs-h4);line-height:1.2}
+.access .card p{max-width:56ch}
+.access .card .tlink{margin-top:4px}
+/* next steps: the closing band */
+#next-steps .checks{display:flex;flex-direction:column;gap:12px;max-width:560px;margin-top:4px;text-align:left}
+#next-steps .checks li{color:var(--ink);font-size:var(--fs-b);line-height:1.55}
+#next-steps p.keep{font-size:var(--fs-b)}
+#next-steps p.micro{font-size:var(--fs-s);color:var(--muted);margin-top:-8px}
+@media (max-width:560px){
+  .access .card{padding:var(--s5) 20px}
+}
 </style>
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -88,56 +45,70 @@
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD3WQ8N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<nav class="site-nav"><div class="wrap">
-  <a href="/" class="logo">Mike<i>.</i>Moll</a>
-  <a href="#next-steps" class="btn btn-ghost">Claim my free bonus</a>
-</div></nav>
-<header class="narrow">
-  <span class="eyebrow">Your Workshop</span>
-  <h1>You're in. Here's your workshop.</h1>
-  <p class="lead">The full Get Booked on Podcasts session is below, along with everything you need to start landing interviews. Watch it as many times as you want.</p>
-  <p class="hero-bonus"><a class="alink" href="#next-steps">Your free strategy session is below &darr;</a></p>
+
+<!-- chrome:header focus href="#next-steps" label="Claim my free bonus" -->
+<header class="site-nav focus with-cta">
+  <div class="wrap">
+    <a class="logo" href="/">Mike<span>.</span>Moll<small>Sales + Offer Coach</small></a>
+    <a class="btn line" href="#next-steps">Claim my free bonus</a>
+  </div>
 </header>
-<section class="videosec"><div class="narrow">
-  <div class="videobox">
-    <iframe src="https://share.descript.com/embed/LWo1YOS10AN" allowfullscreen title="Get Booked on Podcasts — Workshop Replay"></iframe>
-  </div>
-</div></section>
-<section class="block"><div class="narrow">
-  <div class="card card-quiet">
-    <span class="eyebrow">Your materials</span>
-    <h2>Get your course access</h2>
-    <p class="sub" style="margin-left:auto;margin-right:auto">Everything from the session in one place. The speaker sheet, the outreach scripts, and the do-it-yourself path to your first booking, ready to use.</p>
-    <a href="https://solopreneur-coach.notion.site/Guest-Podcasting-o-s-18aecae2717080c68fa3e62cdcca0829" target="_blank" rel="noopener" class="alink" data-cta="course-access">Open your course access &rarr;</a>
-  </div>
-</div></section>
-<section class="block" id="next-steps"><div class="narrow">
-  <div class="card bonus">
-    <span class="eyebrow">For workshop viewers</span>
-    <h2>Turn the workshop into your plan</h2>
-    <p class="sub" style="margin-left:auto;margin-right:auto">The workshop gave you the system. On this call, we map it onto your business. It's the same strategy session I charge $150 for, and it's free for workshop viewers.</p>
-    <ul class="checks">
-      <li>You'll know how to position your offer in the podcast environment.</li>
-      <li>We'll evaluate your online presence, your website and LinkedIn included, and discuss how to optimize them.</li>
-      <li>You'll leave with your podcast strategy mapped.</li>
-      <li>We'll discuss how appearances turn into revenue.</li>
-    </ul>
-    <p class="keep">You keep the plan for free, even if we don't work together on it.</p>
-    <div class="cta">
-      <a href="/book/podcast-guesting-strategy" class="btn btn-primary btn-lg" data-cta="book-strategy-call">Book my strategy call &rarr;</a>
+<!-- /chrome:header -->
+
+<main>
+  <section class="hero-b replay">
+    <div class="wrap narrow">
+      <h1>You're in. Here's your workshop.</h1>
+      <p class="lead">The full Get Booked on Podcasts session is below, along with everything you need to start landing interviews. Watch it as many times as you want.</p>
+      <p class="hero-bonus"><a class="tlink" href="#next-steps">Your free strategy session is below &darr;</a></p>
+    </div>
+  </section>
+
+  <section class="videosec">
+    <div class="wrap narrow">
+      <div class="videobox">
+        <iframe src="https://share.descript.com/embed/LWo1YOS10AN" allowfullscreen title="Get Booked on Podcasts — Workshop Replay"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="access">
+    <div class="wrap narrow">
+      <div class="card">
+        <h2>Get your course access</h2>
+        <p>Everything from the session in one place. The speaker sheet, the outreach scripts, and the do-it-yourself path to your first booking, ready to use.</p>
+        <a href="https://solopreneur-coach.notion.site/Guest-Podcasting-o-s-18aecae2717080c68fa3e62cdcca0829" target="_blank" rel="noopener" class="tlink" data-cta="course-access">Open your course access &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="next-steps" class="section closing band-dark">
+    <div class="wrap">
+      <span class="eyebrow">For workshop viewers</span>
+      <h2>Turn the workshop into your plan</h2>
+      <p>The workshop gave you the system. On this call, we map it onto your business. It's the same strategy session I charge $150 for, and it's free for workshop viewers.</p>
+      <ul class="checks dots">
+        <li>You'll know how to position your offer in the podcast environment.</li>
+        <li>We'll evaluate your online presence, your website and LinkedIn included, and discuss how to optimize them.</li>
+        <li>You'll leave with your podcast strategy mapped.</li>
+        <li>We'll discuss how appearances turn into revenue.</li>
+      </ul>
+      <p class="keep">You keep the plan for free, even if we don't work together on it.</p>
+      <a href="/book/podcast-guesting-strategy" class="btn" data-cta="book-strategy-call">Book my strategy call &rarr;</a>
       <p class="micro">Free 20-minute strategy session.</p>
     </div>
+  </section>
+</main>
+
+<!-- chrome:footer focus -->
+<footer class="site-foot focus">
+  <div class="wrap">
+    <div class="legal">
+      <div><span>&copy; 2026 Impact Leads LLC</span><i aria-hidden="true">&middot;</i><a href="/privacy">Privacy</a><i aria-hidden="true">&middot;</i><a href="/terms">Terms</a></div>
+      <nav aria-label="Social"><a href="https://www.instagram.com/themikemoll/">Instagram</a><i aria-hidden="true">&middot;</i><a href="https://www.youtube.com/@mikemollco">YouTube</a><i aria-hidden="true">&middot;</i><a href="https://www.linkedin.com/in/themikemoll/">LinkedIn</a></nav>
+    </div>
   </div>
-</div></section>
-<footer class="site-foot"><div class="wrap">
-  <div class="logo">Mike<i>.</i>Moll</div>
-  <div class="socials">
-    <a href="https://www.instagram.com/themikemoll/">Instagram</a>
-    <a href="https://www.youtube.com/@mikemollco">YouTube</a>
-    <a href="https://www.linkedin.com/in/themikemoll/">LinkedIn</a>
-  </div>
-  <span>&copy; 2026 Impact Leads LLC</span>
-  <div class="foot-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div>
-</div></footer>
+</footer>
+<!-- /chrome:footer -->
 </body>
 </html>

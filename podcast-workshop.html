@@ -14,10 +14,12 @@
 <meta property="og:description" content="Get your first or next podcast interview and turn it into authority, audience, and revenue. Free one-hour workshop, watch anytime.">
 <meta property="og:url" content="https://www.mikemoll.co/podcast-workshop">
 <meta name="twitter:card" content="summary_large_image">
+<!-- chrome:head -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700;800&family=Poppins:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/site-v2.css">
+<!-- /chrome:head -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","@id":"https://www.mikemoll.co/#organization","name":"Mike Moll","url":"https://www.mikemoll.co/"},
@@ -25,109 +27,101 @@
 ]}
 </script>
 <style>
-  :root{--max:1080px;}
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
-  
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;position:relative;z-index:2}
-  a{color:inherit;text-decoration:none}
-  .eyebrow{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:0.26em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:block}
-  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-0.03em;line-height:1.05}
-  nav{position:sticky;top:0;z-index:10;background:rgba(0,0,0,0.75);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline)}
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
-  .logo{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-0.02em}
-  .logo span{color:var(--accent)}
-  .nav-links{display:flex;align-items:center;gap:28px}
-  .nav-links a:not(.btn){color:var(--muted);font-size:15px;font-weight:500;transition:color .2s}
-  .nav-links a:not(.btn):hover{color:var(--ink)}
-  .btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:15px;padding:12px 22px;transition:transform .2s,background .2s;border:none;cursor:pointer}
-  .btn-primary{background:var(--accent);color:var(--accent-ink)}
-  .btn-primary:hover{transform:translateY(-2px)}
-  .btn-lg{padding:16px 32px;font-size:16px}
+/* /podcast-workshop: page-only rules. Everything shared lives in /assets/site-v2.css. */
 
-  header{padding:80px 0 70px;text-align:center;border-bottom:1px solid var(--hairline)}
-  .hero h1{font-size:clamp(2.4rem,5.4vw,3.9rem);max-width:20ch;margin:0 auto 20px}
-  .hero h1 em{font-style:normal;color:var(--accent)}
-  .hero .sub{color:var(--muted);font-size:clamp(1.05rem,2vw,1.3rem);max-width:44ch;margin:0 auto 26px}
-  .datepill{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:14px;color:var(--accent);border:1px solid rgba(56,182,255,0.35);padding:9px 18px;margin-bottom:28px}
-  .hero .cta-note{color:var(--muted);font-size:14px;margin-top:14px}
-  .host{display:inline-flex;align-items:center;gap:12px;margin-top:44px;color:var(--muted);font-size:14px}
-  .host .av{width:40px;height:40px;background:var(--accent);color:var(--accent-ink);font-family:var(--display);font-weight:700;display:flex;align-items:center;justify-content:center;overflow:hidden}
-  .host .av img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
-  .host b{color:var(--ink);font-family:var(--display)}
-  .whyrow{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center}
-  .whyrow .sec-head{max-width:none;margin-bottom:14px}
-  .whyphoto{margin:0}
-  .whyphoto img{width:100%;display:block;border:1px solid var(--hairline);}
+/* promote to site-v2: hero A-split. The photo fills the right 40% with no gradient,
+   for frames where Mike sits left. Phones: photo first, then the copy. */
+.hero-photo.split{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);align-items:stretch;min-height:0}
+.hero-photo.split::before{display:none}
+.hero-photo.split .shot{grid-column:2;grid-row:1;position:relative;min-height:560px}
+.hero-photo.split .ph{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:45% 30%}
+.hero-photo.split .in{grid-column:1;grid-row:1;align-self:center;max-width:none;padding:64px 56px 64px 64px}
+.hero-photo.split h1{font-size:clamp(40px,3.7vw,54px);line-height:1.02} /* a long, sentence-length H1 */
+.hero-photo p.meta{font-size:var(--fs-s);color:var(--text)}
+.hero-photo .note{font-size:var(--fs-s);color:var(--text)}
+.host{display:flex;align-items:center;gap:14px;margin-top:6px;font-size:var(--fs-s);line-height:1.45;color:var(--text)}
+.host .av{flex:none;width:40px;height:40px;border-radius:50%;overflow:hidden}
+.host .av img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.host b{font-family:var(--font-head);font-weight:700;color:var(--ink)}
 
-  section{padding:84px 0;border-bottom:1px solid var(--hairline)}
-  .sec-head{max-width:60ch;margin-bottom:14px}
-  .center{text-align:center}.center .sec-head{margin-left:auto;margin-right:auto}
-  .sec-head h2{font-size:clamp(1.9rem,4.4vw,2.9rem);margin-bottom:14px}
-  .sec-head p{color:var(--muted);font-size:1.08rem}
-  .lead-para{color:#d7d7d7;font-size:1.1rem;max-width:60ch}
+/* why podcasts: copy + photo */
+.whyrow{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:var(--s11);align-items:center}
+.whyphoto img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:var(--r)}
 
-  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
-  .card{border:1px solid var(--hairline);padding:32px 28px;background:var(--surface)}
-  .card h3{font-size:1.2rem;margin-bottom:10px;color:var(--accent)}
-  .card p{color:var(--muted);font-size:0.98rem}
+/* promote to site-v2: record band, the money figure as the hero (podcast family only) */
+.rec-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;align-items:center}
+.rec-top .t{display:flex;flex-direction:column;gap:20px}
+.rec-top .t p{font-size:var(--fs-l)}
+.rec-top .hl{color:var(--ink);font-weight:500}
+.rec-top .hl.h{color:var(--accent)}
+.fig-block{display:flex;flex-direction:column;min-width:0}
+.fig{font-family:var(--font-head);font-weight:800;color:var(--ink);font-size:clamp(56px,7vw,96px);line-height:.9;letter-spacing:-.045em;font-variant-numeric:tabular-nums}
+.fig-cap{margin-top:14px;font-size:var(--fs-b);color:var(--text)}
+.dots20{display:grid;grid-template-columns:repeat(20,12px);gap:8px;margin-top:28px}
+.dots20 i{display:block;width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.28)}
+.dots20 .h{background:var(--accent)}
 
-  .proof{display:grid;grid-template-columns:0.8fr 1.2fr;gap:50px;align-items:center;margin-top:20px}
-  .proof .big{font-family:var(--display);font-weight:700;font-size:clamp(3rem,8vw,4.6rem);color:var(--accent);letter-spacing:-0.03em;line-height:1}
-  .proof .cap{color:var(--muted);margin-top:8px}
-  .proof p{color:#d7d7d7}
-  .proof .hl{color:var(--accent);font-weight:600}
+/* promote to site-v2: myths band (podcast family only; same rules inline on /podcast-guesting) */
+.myths .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:80px;align-items:start}
+.myths .t,.myths .a{display:flex;flex-direction:column;gap:20px}
+.myths .mh,.myths .a h3{font-size:clamp(26px,2.6vw,30px);line-height:1.15}
+.myths .a p{font-size:var(--fs-l)}
+.myths .a p.close{font-family:var(--font-head);font-weight:600;color:var(--ink);line-height:1.45;padding-top:18px;border-top:1px solid var(--line)}
 
-  .myths{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:36px 0}
-  .myth{border:1px solid var(--hairline);padding:16px 18px;color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(56,182,255,0.6);font-size:1rem}
-  .close{font-family:var(--display);font-weight:600;font-size:1.3rem;color:var(--ink);max-width:40ch}
+/* who it's for: one hairline row */
+.whofor{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));margin-top:var(--s9);border-top:1px solid var(--line)}
+.whofor li{display:flex;flex-direction:column;gap:8px;min-width:0;padding:var(--s6) 24px 0}
+.whofor li:first-child{padding-left:0}
+.whofor li:last-child{padding-right:0}
+.whofor li + li{border-left:1px solid var(--line)}
+.whofor b{font-family:var(--font-head);font-weight:700;font-size:var(--fs-h3);line-height:1.25;letter-spacing:-.01em;color:var(--ink)}
+.whofor span{font-size:15px;line-height:1.55} /* parity with .seq p */
 
-  .whofor{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:48px}
-  .who{border:1px solid var(--hairline);padding:24px 20px;background:var(--surface)}
-  .who b{font-family:var(--display);font-size:1.05rem;display:block;margin-bottom:8px}
-  .who span{color:var(--muted);font-size:0.9rem}
+.cta-row{margin-top:var(--s8)}
 
-  .steps{display:grid;gap:0;margin-top:44px;border-top:1px solid var(--hairline)}
-  .step{display:flex;gap:22px;padding:24px 0;border-bottom:1px solid var(--hairline)}
-  .step .sn{font-family:var(--display);font-weight:700;font-size:1.2rem;color:var(--accent);min-width:36px}
-  .step h3{font-size:1.2rem;margin-bottom:5px}
-  .step p{color:var(--muted);font-size:0.98rem}
+/* meet Mike */
+.founder .role{font-family:var(--font-head);font-weight:600;font-size:var(--fs-l);color:var(--muted);margin-top:-8px}
+.creds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 28px;margin-top:6px;padding-top:22px;border-top:1px solid var(--line)}
+.creds li{font-size:15px;line-height:1.5;color:var(--ink)}
 
-  .mike{display:grid;grid-template-columns:0.8fr 1.2fr;gap:50px;align-items:center}
-  .mike-photo{aspect-ratio:1/1;border:1px solid var(--hairline);background:linear-gradient(150deg,var(--surface),var(--surface-2));display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:5rem;color:var(--hairline-2);overflow:hidden}
-  .mike-photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block}
-  .mike p{color:#d7d7d7;margin-bottom:18px}
-  .creds{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
-  .creds li{font-family:var(--display);font-size:13px;color:var(--muted);border:1px solid var(--hairline);padding:8px 14px}
+/* register: the opt-in card around the unchanged form */
+.optin.reg{max-width:none;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+.optin.reg .photo{min-height:100%;background-position:62% 28%}
+.reg .body{display:flex;flex-direction:column;gap:16px;padding:44px 40px}
+.reg h2{font-size:var(--fs-sub);line-height:1.12}
+.reg .body > p{font-size:15px}
+.reg .dt{font-family:var(--font-head);font-weight:700;font-size:var(--fs-s);color:var(--ink);margin-top:6px;padding-top:20px;border-top:1px solid var(--line)}
+.optin.reg form{padding:0;gap:14px}
+.reg .field label{position:static;display:block;width:auto;height:auto;overflow:visible;clip:auto;margin-bottom:6px;
+  font-family:var(--font-head);font-weight:600;font-size:var(--fs-s);color:var(--ink)}
+.reg input{width:100%}
+.reg .body > p.regnote{font-size:13px;color:var(--muted);text-align:center} /* parity with .optin .fine */
 
-  .register{text-align:center}
-  .regcard{max-width:520px;margin:36px auto 0;border:1px solid var(--hairline-2);background:var(--surface);padding:40px 36px}
-  .regcard .dt{font-family:var(--display);font-weight:600;color:var(--accent);margin-bottom:18px}
-  /* --- REGISTER FORM ---
-     Recommended: leave this custom form and set FORM_WEBHOOK to your GoHighLevel
-     Workflow > Inbound Webhook URL (it will create + tag the contact and fire the
-     reminder emails). Stopgap: delete this form and paste your GHL JavaScript embed
-     into #register instead. */
-  .regform{display:grid;gap:14px;margin-top:4px}
-  .regform .field{text-align:left}
-  .regform label{display:block;font-size:12.5px;color:var(--muted);font-family:var(--display);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:6px}
-  .regform input{width:100%;background:var(--canvas);border:1px solid var(--hairline-2);padding:14px 16px;color:var(--ink);font-family:var(--body);font-size:16px}
-  .regform input:focus{outline:none;border-color:var(--accent)}
-  .regform .btn{width:100%;text-align:center;margin-top:6px}
-  .regnote{color:var(--muted);font-size:13px;margin-top:16px}
-
-  footer{padding:48px 0;border:none}
-  .foot-in{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
-  .foot-in .logo{font-size:18px}.foot-in p{color:var(--muted);font-size:14px}
-
-  @media(max-width:860px){
-    .nav-links a:not(.btn){display:none}
-    .three,.myths{grid-template-columns:1fr}
-    .proof,.mike,.whyrow{grid-template-columns:1fr;gap:28px}
-    .whofor{grid-template-columns:1fr 1fr}
-    header{padding:56px 0 50px}section{padding:60px 0}
-  }
+@media (max-width:960px){
+  .hero-photo.split{display:block}
+  .hero-photo.split .shot{display:block;min-height:0}
+  .hero-photo.split .ph{position:static;height:220px;object-position:30% 40%}
+  .hero-photo.split .in{padding:32px 28px 40px}
+  .whyrow,.rec-top,.myths .wrap{grid-template-columns:minmax(0,1fr);gap:var(--s7)}
+  .whofor{grid-template-columns:minmax(0,1fr)}
+  .whofor li:nth-child(n){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:24px;align-items:baseline;padding:20px 0;border-left:0}
+  .whofor li + li{border-top:1px solid var(--line)}
+  .optin.reg{grid-template-columns:minmax(0,1fr)}
+  .optin.reg .photo{min-height:200px;background-position:55% 30%} /* short, so the fields land in view after the #register jump */
+}
+@media (max-width:560px){
+  .hero-photo.split .ph{height:170px;object-position:30% 38%}
+  .hero-photo.split .in{gap:16px;padding:24px 20px 28px}
+  .hero-photo.split h1{font-size:32px;line-height:1.04}
+  .hero-photo .btns .note{text-align:center}
+  .fig{font-size:60px}
+  .dots20{grid-template-columns:repeat(20,10px);gap:6px}
+  .dots20 i{width:10px;height:10px}
+  .whofor li:nth-child(n){display:flex;gap:4px}
+  .creds{grid-template-columns:minmax(0,1fr)}
+  .optin.reg .photo{min-height:150px}
+  .reg .body{padding:28px 22px 32px}
+}
 </style>
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -137,138 +131,159 @@
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD3WQ8N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<nav class="site-nav">
+<!-- chrome:header focus href="#register" label="Get the recording" -->
+<header class="site-nav focus with-cta">
   <div class="wrap">
-    <a href="/" class="logo">Mike<i>.</i>Moll</a>
-    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu" onclick="var n=this.closest('.site-nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><span></span><span></span><span></span></button><div class="links" id="site-menu">
-      <a href="#register" class="btn btn-ghost">Get the recording</a>
-    </div>
-  </div>
-</nav>
-
-<header>
-  <div class="wrap hero">
-    <span class="eyebrow">Free Workshop Recording</span>
-    <h1>Get your first (or next) podcast interview and turn it into <em>authority, audience, and revenue.</em></h1>
-    <p class="sub">The one marketing channel that still compounds. No big following required.</p>
-    <div class="datepill">● One-hour workshop · watch anytime</div>
-    <div><a href="#register" class="btn btn-primary btn-lg">Send me the recording</a></div>
-    <div class="cta-note">Free. Instant access.</div>
-    <div class="host"><span class="av"><img src="/images/mike-moll-solopreneur-coach.jpg" alt="Mike Moll"></span><span>Taught by <b>Mike Moll</b> · 70+ shows guested, 120 episodes hosted.</span></div>
+    <a class="logo" href="/">Mike<span>.</span>Moll<small>Sales + Offer Coach</small></a>
+    <a class="btn line" href="#register">Get the recording</a>
   </div>
 </header>
+<!-- /chrome:header -->
 
-<!-- DURABILITY -->
-<section>
+<main>
   <div class="wrap">
-    <div class="whyrow">
-      <div class="whytext">
+    <div class="hero-photo split">
+      <picture class="shot">
+        <source media="(min-width: 961px)" srcset="/media/podcast-workshop/roundtable-mike.jpg" width="920" height="1338">
+        <img class="ph" src="/media/podcast-guesting/roundtable.jpg" alt="Mike Moll talking into a podcast microphone at a table with three guests" width="1100" height="733" fetchpriority="high">
+      </picture>
+      <div class="in">
+        <span class="eyebrow">Free Workshop Recording</span>
+        <h1>Get your first (or next) podcast interview and turn it into authority, audience, and <em>revenue.</em></h1>
+        <p>The one marketing channel that still compounds. No big following required.</p>
+        <p class="meta">One-hour workshop · watch anytime</p>
+        <div class="btns"><a href="#register" class="btn">Send me the recording</a><span class="note">Free. Instant access.</span></div>
+        <div class="host"><span class="av"><img src="/images/mike-moll-headshot.jpg" alt="Mike Moll" width="40" height="40"></span><span>Taught by <b>Mike Moll</b> · 70+ shows guested, 120 episodes hosted.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DURABILITY -->
+  <section class="section">
+    <div class="wrap whyrow">
+      <div class="sec-head">
         <span class="eyebrow">Why podcasts</span>
-        <div class="sec-head"><h2>Ads and posts stop working the day you stop.</h2></div>
-        <p class="lead-para">A boosted post is gone by the weekend. A podcast appearance still gets found a year later, ranking in search and turning up in someone's feed. Guesting takes work to land. The difference is the work keeps paying after you stop.</p>
+        <h2>Ads and posts stop working the day you stop.</h2>
+        <p>A boosted post is gone by the weekend. A podcast appearance still gets found a year later, ranking in search and turning up in someone's feed. Guesting takes work to land. The difference is the work keeps paying after you stop.</p>
       </div>
       <figure class="whyphoto">
-        <img src="/images/mike-moll-podcast-interview.jpg" alt="Mike Moll being interviewed on a podcast" loading="lazy">
+        <img src="/media/podcast-workshop/mike-explaining.jpg" alt="Mike Moll being interviewed on a podcast" width="1200" height="800" loading="lazy" decoding="async">
       </figure>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- WHY IT BEATS POSTING -->
-<section>
-  <div class="wrap">
-    <span class="eyebrow">The compounding channel</span>
-    <div class="sec-head"><h2>Why one good interview beats a month of posting.</h2></div>
-    <div class="three">
-      <div class="card"><h3>Authority transfer</h3><p>The host spent years earning their audience's trust. In one sentence, some of it becomes yours. On other channels that takes years.</p></div>
-      <div class="card"><h3>Undivided attention</h3><p>Listeners finish 80% of an episode. That's 30 to 60 minutes of full attention, not a three-second scroll. A post gets glanced at. An interview is a conversation.</p></div>
-      <div class="card"><h3>Permanence</h3><p>Episodes keep working for years. They rank in search and bring people to you long after you've moved on. Every appearance is a brick in your wall of credibility.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- PROOF -->
-<section>
-  <div class="wrap">
-    <span class="eyebrow">No big following. No famous name.</span>
-    <div class="proof">
-      <div><div class="big">$386,000</div><div class="cap">in revenue I've traced back to podcast appearances.</div></div>
-      <div><p>I started with fewer than <span class="hl">15,000 followers</span>. Reach wasn't the point. I learned how to get booked, and how to show up once I did. Most of it, about <span class="hl">70%</span>, came from the hosts: referrals, introductions, and partnerships that began with one conversation.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- MYTHS -->
-<section>
-  <div class="wrap">
-    <span class="eyebrow">You might be thinking…</span>
-    <div class="myths">
-      <div class="myth">I need a big audience</div>
-      <div class="myth">I need a big social media following</div>
-      <div class="myth">I need a crazy story</div>
-      <div class="myth">I need a big company exit</div>
-    </div>
-    <p class="lead-para" style="margin-bottom:20px">None of these is what gets you booked. The host brings the audience. What they want is a guest with a clear point of view and something useful to say. If you've written a book or built expertise people respect, you already have that.</p>
-    <div class="close">You're more bookable than you think. You just need the system.</div>
-  </div>
-</section>
-
-<!-- WHO IT'S FOR -->
-<section>
-  <div class="wrap">
-    <span class="eyebrow">Who this is for</span>
-    <div class="sec-head"><h2>Built for experts with something to say.</h2></div>
-    <div class="whofor">
-      <div class="who"><b>Coaches</b><span>Get in front of the people who need your help.</span></div>
-      <div class="who"><b>Consultants</b><span>Turn your expertise into inbound leads.</span></div>
-      <div class="who"><b>Agency owners</b><span>Win clients without cold outreach.</span></div>
-      <div class="who"><b>Authors</b><span>Put your book and ideas in front of new readers.</span></div>
-      <div class="who"><b>Speakers</b><span>Build the reputation that fills your calendar.</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- WHAT YOU'LL LEARN -->
-<section>
-  <div class="wrap">
-    <span class="eyebrow">What's in the recording</span>
-    <div class="sec-head"><h2>You'll leave with the system for landing your next booking.</h2></div>
-    <div class="steps">
-      <div class="step"><div class="sn">01</div><div><h3>Make your story sellable</h3><p>Frame your experience so the right host says yes.</p></div></div>
-      <div class="step"><div class="sn">02</div><div><h3>Build assets that get a yes</h3><p>The bio, speaker sheet, and titles a host needs.</p></div></div>
-      <div class="step"><div class="sn">03</div><div><h3>Get the outreach right</h3><p>Stand out in a full inbox and win the host over.</p></div></div>
-    </div>
-    <div style="margin-top:36px"><a href="#register" class="btn btn-primary btn-lg">Send me the recording</a></div>
-  </div>
-</section>
-
-<!-- MEET MIKE -->
-<section>
-  <div class="wrap mike">
-    <div class="mike-photo"><img src="/images/mike-moll-solopreneur-coach.jpg" alt="Mike Moll" loading="lazy"></div>
-    <div>
-      <span class="eyebrow">Meet Mike</span>
-      <div class="sec-head"><h2>Mike Moll</h2><p>Marketing coach &amp; fractional CMO</p></div>
-      <p>I've spent years on both sides of the mic. I host The Undervalued Expert and I've guested on more than 70 shows, without a big audience. I've traced $386,000 in revenue back to those appearances.</p>
-      <ul class="creds">
-        <li>Fractional CMO for a $20M company</li>
-        <li>Digital lead for Volvo &amp; Patak's</li>
-        <li>70+ shows guested on</li>
-        <li>120 episodes hosted</li>
-        <li>14 years running my company</li>
-        <li>$386K traced to appearances</li>
+  <!-- WHY IT BEATS POSTING -->
+  <section class="section band-soft">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">The compounding channel</span>
+        <h2>Why one good interview beats a month of posting.</h2>
+      </div>
+      <ul class="hgrid c3">
+        <li><h3>Authority transfer</h3><p>The host spent years earning their audience's trust. In one sentence, some of it becomes yours. On other channels that takes years.</p></li>
+        <li><h3>Undivided attention</h3><p>Listeners finish 80% of an episode. That's 30 to 60 minutes of full attention, not a three-second scroll. A post gets glanced at. An interview is a conversation.</p></li>
+        <li><h3>Permanence</h3><p>Episodes keep working for years. They rank in search and bring people to you long after you've moved on. Every appearance is a brick in your wall of credibility.</p></li>
       </ul>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- REGISTER -->
-<section id="register" class="register">
-  <div class="wrap center">
-    <span class="eyebrow">Get the recording</span>
-    <div class="sec-head"><h2>Watch the full workshop, free.</h2><p>Enter your first name and email and the recording opens right away. We'll also email you the link so you can come back to it. There's a time-limited bonus for people who watch. You'll see it on the next page.</p></div>
-    <div class="regcard">
-      <div class="dt">One-hour workshop · instant access</div>
+  <!-- PROOF -->
+  <section class="section band-dark record">
+    <div class="wrap rec-top">
+      <div class="t">
+        <h2>No big following. No famous name.</h2>
+        <p>I started with fewer than <span class="hl">15,000 followers</span>. Reach wasn't the point. I learned how to get booked, and how to show up once I did. Most of it, about <span class="hl h">70%</span>, came from the hosts: referrals, introductions, and partnerships that began with one conversation.</p>
+      </div>
+      <div class="fig-block">
+        <b class="fig">$386,000</b>
+        <span class="fig-cap">in revenue I've traced back to podcast appearances.</span>
+        <div class="dots20" aria-hidden="true"><i class="h"></i><i class="h"></i><i class="h"></i><i class="h"></i><i class="h"></i><i class="h"></i><i class="h"></i><i class="h"></i><i class="h"></i><i class="h"></i><i class="h"></i><i class="h"></i><i class="h"></i><i class="h"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MYTHS -->
+  <section class="section tight band-soft myths">
+    <div class="wrap">
+      <div class="t">
+        <h2 class="mh">You might be thinking&hellip;</h2>
+        <ul class="mlist">
+          <li><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 2l8 8M10 2l-8 8"/></svg>I need a big audience</li>
+          <li><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 2l8 8M10 2l-8 8"/></svg>I need a big social media following</li>
+          <li><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 2l8 8M10 2l-8 8"/></svg>I need a crazy story</li>
+          <li><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 2l8 8M10 2l-8 8"/></svg>I need a big company exit</li>
+        </ul>
+      </div>
+      <div class="a">
+        <h3>None of these is what gets you booked.</h3>
+        <p>The host brings the audience. What they want is a guest with a clear point of view and something useful to say. If you've written a book or built expertise people respect, you already have that.</p>
+        <p class="close">You're more bookable than you think. You just need the system.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Who this is for</span>
+        <h2>Built for experts with something to say.</h2>
+      </div>
+      <ul class="whofor">
+        <li><b>Coaches</b><span>Get in front of the people who need your help.</span></li>
+        <li><b>Consultants</b><span>Turn your expertise into inbound leads.</span></li>
+        <li><b>Agency owners</b><span>Win clients without cold outreach.</span></li>
+        <li><b>Authors</b><span>Put your book and ideas in front of new readers.</span></li>
+        <li><b>Speakers</b><span>Build the reputation that fills your calendar.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHAT YOU'LL LEARN -->
+  <section class="section band-soft">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">What's in the recording</span>
+        <h2>You'll leave with the system for landing your next booking.</h2>
+      </div>
+      <ol class="seq">
+        <li><span class="num">01</span><h3>Make your story sellable</h3><p>Frame your experience so the right host says yes.</p></li>
+        <li><span class="num">02</span><h3>Build assets that get a yes</h3><p>The bio, speaker sheet, and titles a host needs.</p></li>
+        <li><span class="num">03</span><h3>Get the outreach right</h3><p>Stand out in a full inbox and win the host over.</p></li>
+      </ol>
+      <div class="cta-row"><a href="#register" class="btn">Send me the recording</a></div>
+    </div>
+  </section>
+
+  <!-- MEET MIKE -->
+  <section class="section">
+    <div class="wrap founder">
+      <img src="/media/podcast-workshop/mike-listening.jpg" alt="Mike Moll" width="960" height="1200" loading="lazy" decoding="async">
+      <div class="copy">
+        <h2>Mike Moll</h2>
+        <p class="role">Marketing coach &amp; fractional CMO</p>
+        <p>I've spent years on both sides of the mic. I host The Undervalued Expert and I've guested on more than 70 shows, without a big audience. I've traced $386,000 in revenue back to those appearances.</p>
+        <ul class="creds dots">
+          <li>Fractional CMO for a $20M company</li>
+          <li>Digital lead for Volvo &amp; Patak's</li>
+          <li>70+ shows guested on</li>
+          <li>120 episodes hosted</li>
+          <li>14 years running my company</li>
+          <li>$386K traced to appearances</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTER -->
+  <section id="register" class="section tight band-soft register">
+    <div class="wrap">
+      <div class="optin reg">
+        <div class="photo" role="img" style="--optin-img:url('/media/podcast-workshop/mike-recording.jpg')" aria-label="Mike Moll smiling at a podcast microphone while a camera records"></div>
+        <div class="body">
+          <h2>Watch the full workshop, free.</h2>
+          <p>Enter your first name and email and the recording opens right away. We'll also email you the link so you can come back to it. There's a time-limited bonus for people who watch. You'll see it on the next page.</p>
+          <p class="dt">One-hour workshop · instant access</p>
       <!-- Handled by /forms.js: posts to /api/lead, which sends it to the CRM. -->
       <form class="regform" data-lead="workshop-recording" data-redirect="/podcast-workshop-replay" data-sending="Opening the workshop..." action="/api/lead" method="post">
         <input type="hidden" name="source" value="podcast-workshop-evergreen">
@@ -282,18 +297,23 @@
         </div>
         <button class="btn btn-primary btn-lg" type="submit">Send me the recording</button>
       </form>
-      <p class="regnote">No spam. Just the recording and a few useful emails.</p>
+          <p class="regnote">No spam. Just the recording and a few useful emails.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- chrome:footer focus -->
+<footer class="site-foot focus">
+  <div class="wrap">
+    <div class="legal">
+      <div><span>&copy; 2026 Impact Leads LLC</span><i aria-hidden="true">&middot;</i><a href="/privacy">Privacy</a><i aria-hidden="true">&middot;</i><a href="/terms">Terms</a></div>
+      <nav aria-label="Social"><a href="https://www.instagram.com/themikemoll/">Instagram</a><i aria-hidden="true">&middot;</i><a href="https://www.youtube.com/@mikemollco">YouTube</a><i aria-hidden="true">&middot;</i><a href="https://www.linkedin.com/in/themikemoll/">LinkedIn</a></nav>
     </div>
   </div>
-</section>
-
-<footer class="site-foot">
-  <div class="wrap">
-    <a href="/" class="logo">Mike<i>.</i>Moll</a>
-    <p>© 2026 Impact Leads LLC</p>
-    <div style="flex-basis:100%;width:100%;border-top:1px solid rgba(255,255,255,0.10);padding-top:14px;display:flex;justify-content:center;gap:18px"><a href="/privacy" style="color:#9a9a9a;font-size:13px;text-decoration:none">Privacy Policy</a><a href="/terms" style="color:#9a9a9a;font-size:13px;text-decoration:none">Terms &amp; Conditions</a></div>
-  </div>
 </footer>
+<!-- /chrome:footer -->
 
 <script src="/forms.js" defer></script>
 </body>
