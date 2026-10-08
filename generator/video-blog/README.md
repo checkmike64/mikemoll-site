@@ -7,10 +7,10 @@ builder.
 
 ```
 generator/video-blog/
-  template.html        page shell (GTM, favicon block, nav, footer, slots)
+  template.html        page shell (GTM, favicon block, chrome markers, slots)
   build_post.py        posts/<slug>.json -> blog/<slug>.html (+ index updates)
   posts/<slug>.json    one content file per post; the source of truth for that page
-assets/video-blog.css  post styles (all classes prefixed vb-), loaded after site.css
+assets/video-blog.css  post styles (all classes prefixed vb-), loaded after site-v2.css
 assets/video-blog.js   player facade, chapter seeking, contents scroll-spy, CTA events
 ```
 
@@ -30,6 +30,12 @@ or video), its `sitemap.xml` lastmod, and `llms.txt`. Guest-appearance cards liv
 ```bash
 for f in generator/video-blog/posts/*.json; do python3 generator/video-blog/build_post.py "$f"; done
 ```
+
+The page is on design system v2 (`assets/site-v2.css`). The template carries empty
+`chrome:head`, `chrome:header site` and `chrome:footer full` markers; `build_post.py` fills
+them from `generator/chrome/` through `scripts/stamp_chrome.py`, so the header and footer
+always match the rest of the site. After a partial changes, `python3 scripts/stamp_chrome.py`
+restamps built posts too (no rebuild needed), and `--check` covers them.
 
 ## The page, top to bottom
 
@@ -52,7 +58,7 @@ a second video player.
 | `crumb_name` | Short last breadcrumb item, e.g. the guest's name. |
 | `title_tag` | 50–60 characters, keyword first, ends `\| Mike Moll`. |
 | `meta_description` | 150–160 characters. |
-| `h1`, `h1_accent` | The search question. `h1_accent` (optional) is the last few words, shown in blue. |
+| `h1`, `h1_accent` | The search question. `h1_accent` (optional) is the last few words. On v2 they stay ink (blue marks action and money only); the span is kept for the markup. |
 | `about` | Topic name for the schema `about` field. |
 | `sub` | Two-sentence promise under the H1. |
 | `date_published`, `date_modified` | `YYYY-MM-DD`. A rebuild keeps the original `date_published`. |
@@ -66,7 +72,7 @@ a second video player.
 | `sections` | 6–9 of `{id, h2, html}`. `id` = the slugged question. `html` may use `p`, `b`, `a`, `figure.vb-pull`, `aside.vb-callout`, `ol.vb-steps`. Timestamp links get `data-t="<seconds>"`. |
 | `further_reading` | 2–3 `{label, url}` site links. |
 | `related` | Exactly 3 `{url, tag, title, desc, go}` cards. |
-| `cta` | `href`, `button`, `headline`, `headline_accent`, `sub`, `micro`, `rail_label`, `rail_text`, `mobile_text`. Values come from the brain. |
+| `cta` | `href`, `button`, `headline`, `headline_accent`, `sub`, `micro`, `rail_label`, `rail_text`, `mobile_text`. Values come from the brain. A button says what it does (Mike's call 8, 2026-10-07): when `href` is `/consulting#apply` (the application, with the booking step after it) the builder labels the hero, rail and closing buttons "Apply for a free assessment" and the phone bar "Apply", whatever `button` says. Any other `href` uses `button` (and "Book" on the phone bar). |
 | `chapters` | `{t, title}` in time order, first at `t: 0`. |
 | `transcript` | `policy` (`full` or `mike-only`) and `chapters[{t, paragraphs[{speaker, text}]}]`. Each `t` matches a chapter. |
 | `index_card` | `badge`, `title`, `desc` for the `blog.html` card. |

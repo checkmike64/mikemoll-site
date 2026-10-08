@@ -3,9 +3,11 @@
 
     python3 generator/video-blog/build_post.py generator/video-blog/posts/<slug>.json [--index]
 
-Writes blog/<slug>.html from template.html. With --index it also updates the
-blog index card (blog.html), sitemap.xml and llms.txt. The JSON format is
-documented in generator/video-blog/README.md. Standard library only.
+Writes blog/<slug>.html from template.html, then stamps the shared v2 header,
+footer and head links into its chrome:* markers (scripts/stamp_chrome.py, the
+partials in generator/chrome/). With --index it also updates the blog index
+card (blog.html), sitemap.xml and llms.txt. The JSON format is documented in
+generator/video-blog/README.md. Standard library only.
 """
 import argparse
 import html
@@ -18,6 +20,9 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parent.parent
 SITE = "https://www.mikemoll.co"
+
+sys.path.insert(0, str(REPO / "scripts"))
+from stamp_chrome import MarkerError, stamp as stamp_chrome  # noqa: E402  (the one renderer for the shared chrome)
 
 # Site structure: category -> label, hub page, blog.html data-tag.
 CATEGORIES = {
@@ -98,6 +103,20 @@ def validate(p):
             warn(f"section {s['id']} contains a definition box or table; those are dropped from this format")
 
 
+def cta_labels(cta):
+    """Button labels for the post's one offer: (full label, short label for the phone bar).
+
+    Mike's call 8 (2026-10-07): a button lands where it promises. /consulting#apply is the
+    application form (the booking step comes after it), so every button that goes there is
+    labelled as applying, whatever the JSON's cta.button says. Any other destination (a real
+    booking link) keeps the JSON label.
+    """
+    href = cta["href"].replace(SITE, "", 1)
+    if href.split("?")[0] == "/consulting#apply":
+        return "Apply for a free assessment", "Apply"
+    return cta["button"], "Book"
+
+
 def yt(p, t=None):
     base = f"https://www.youtube.com/watch?v={p['video']['youtube_id']}"
     return base if t is None else f"{base}&t={t}s"
@@ -111,6 +130,7 @@ def render(p):
     h1_full = p["h1"] + (" " + p["h1_accent"] if p.get("h1_accent") else "")
     h1_html = e(p["h1"]) + (f' <span class="vb-ac">{e(p["h1_accent"])}</span>' if p.get("h1_accent") else "")
     author, cta = p["author"], p["cta"]
+    cta_button, cta_short = cta_labels(cta)
 
     # article word count (takeaways + sections) -> read time
     words = len(" ".join(p["takeaways"]).split()) + sum(len(text_of(s["h2"] + " " + s["html"]).split()) for s in p["sections"])
@@ -133,15 +153,15 @@ def render(p):
     guest_box = ""
     if p["category"] == "guest-appearance":
         sh = p["show"]
-        links = f'<a class="alink" href="{e(sh["episode_url"])}" target="_blank" rel="noopener">Listen to the full episode</a>'
+        links = f'<a class="tlink" href="{e(sh["episode_url"])}" target="_blank" rel="noopener">Listen to the full episode</a>'
         if sh.get("url"):
-            links += f'<a class="alink" href="{e(sh["url"])}" target="_blank" rel="noopener">{e(sh["name"])}</a>'
+            links += f'<a class="tlink" href="{e(sh["url"])}" target="_blank" rel="noopener">{e(sh["name"])}</a>'
         guest_box = (f'      <aside class="vb-guest" aria-label="About the show">\n        <div class="vb-mono" aria-hidden="true">{e(sh.get("initials", sh["name"][:2].upper()))}</div>\n'
                      f'        <div>\n          <span class="vb-kl" style="margin-bottom:6px">About the show</span>\n          <h3>{e(sh["name"])}</h3>\n'
                      f'          <p class="vb-role">Hosted by {e(sh["host"])}</p>\n          <p>{e(sh["about"])}</p>\n          <div class="vb-links">{links}</div>\n        </div>\n      </aside>')
     elif p.get("guest"):
         g = p["guest"]
-        links = "".join(f'<a class="alink" href="{e(l["url"])}" target="_blank" rel="noopener">{e(l["label"])}</a>' for l in g.get("links", []))
+        links = "".join(f'<a class="tlink" href="{e(l["url"])}" target="_blank" rel="noopener">{e(l["label"])}</a>' for l in g.get("links", []))
         guest_box = (f'      <aside class="vb-guest" aria-label="About the guest">\n        <div class="vb-mono" aria-hidden="true">{e(g["initials"])}</div>\n'
                      f'        <div>\n          <span class="vb-kl" style="margin-bottom:6px">About the guest</span>\n          <h3>{e(g["name"])}</h3>\n'
                      f'          <p class="vb-role">{e(g["role"])}</p>\n          <p>{e(g["bio"])}</p>\n          <div class="vb-links">{links}</div>\n        </div>\n      </aside>')
@@ -175,7 +195,7 @@ def render(p):
         tr_note = "From the YouTube captions, lightly cleaned for punctuation and filler words. Timestamps open that moment in the video."
     panel_label = "Episode chapters and transcript" if p["category"] != "video" else "Video chapters and transcript"
 
-    author_links = "".join(f'<a class="alink" href="{e(l["url"])}" target="_blank" rel="noopener">{e(l["label"])}</a>' for l in author.get("links", []))
+    author_links = "".join(f'<a class="tlink" href="{e(l["url"])}" target="_blank" rel="noopener">{e(l["label"])}</a>' for l in author.get("links", []))
     related = "".join(
         f'<a class="vb-card" href="{e(r["url"])}"><span class="vb-tag">{e(r["tag"])}</span><h3>{e(r["title"])}</h3><p>{e(r["desc"])}</p><span class="vb-go">{e(r["go"])} &rarr;</span></a>'
         for r in p["related"])
@@ -246,7 +266,7 @@ def render(p):
         "SLUG": p["slug"], "TITLE_TAG": e(p["title_tag"]), "META_DESCRIPTION": e(p["meta_description"]), "URL": url,
         "URL_ENC": urllib.parse.quote(url, safe=""), "OG_TITLE": e(h1_full), "THUMB_URL": thumb,
         "DATE_PUBLISHED": p["date_published"], "DATE_MODIFIED": p["date_modified"], "JSONLD": jsonld,
-        "CTA_HREF": e(cta["href"]), "CTA_BUTTON": e(cta["button"]), "CRUMBS": crumbs,
+        "CTA_HREF": e(cta["href"]), "CTA_BUTTON": e(cta_button), "CTA_SHORT": e(cta_short), "CRUMBS": crumbs,
         "EYEBROW": f'<span class="vb-ac">{e(cat["label"])}</span> · {e(p["format"])}', "H1_HTML": h1_html, "SUB": e(p["sub"]),
         "AUTHOR_IMAGE": e(author["image"]), "AUTHOR_NAME": e(author["name"]), "BYLINE_ROLE": e(author["byline_role"]),
         "FACTS": facts, "CHIPS": chips, "YT_ID": v["youtube_id"], "VIDEO_TITLE_ATTR": e(v["title"]), "DURATION": dur(v["duration_seconds"]),
@@ -357,6 +377,10 @@ def main():
     validate(p)
     out, words, read, url, h1_full = render(p)
     dest = REPO / "blog" / f"{p['slug']}.html"
+    try:
+        out, _ = stamp_chrome(out, dest)
+    except MarkerError as err:
+        sys.exit(f"template.html chrome markers: {err}")
     dest.write_text(out)
     print(f"wrote {dest.relative_to(REPO)}  ({words} words, {read} min read)")
     if a.index:

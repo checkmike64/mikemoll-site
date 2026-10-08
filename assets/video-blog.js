@@ -1,5 +1,5 @@
 /* Video blog posts: player facade, chapter seeking, contents scroll-spy,
-   copy link, reading progress, phone CTA bar and CTA click events.
+   copy link, phone CTA bar and CTA click events.
    Progressive enhancement only: every link works without this file. */
 (function(){
   var d=document;
@@ -26,7 +26,8 @@
       e.preventDefault();
       var t=parseInt(a.getAttribute('data-t'),10)||0;
       if(frame){cmd('seekTo',[t,true]);cmd('playVideo')}else{load(t)}
-      var top=box.getBoundingClientRect().top+window.pageYOffset-24;
+      var nav=d.querySelector('.site-nav'),stick=nav&&getComputedStyle(nav).position==='sticky'?nav.offsetHeight:0;
+      var top=box.getBoundingClientRect().top+window.pageYOffset-24-stick;
       window.scrollTo({top:top,behavior:'smooth'});
     });
   });
@@ -34,7 +35,7 @@
   /* ---- contents: open on desktop, collapsed on phones; scroll-spy ---- */
   var toc=d.querySelector('.vb-toc details');
   if(toc&&window.matchMedia){
-    var mq=matchMedia('(min-width:901px)');
+    var mq=matchMedia('(min-width:961px)');
     toc.open=mq.matches;
     toc.addEventListener('click',function(e){var l=e.target.closest&&e.target.closest('a');if(l&&!mq.matches)toc.open=false});
     var links=[].slice.call(toc.querySelectorAll('a'));
@@ -58,13 +59,10 @@
     a.addEventListener('click',function(){window.dataLayer.push({event:'blog_cta_click',cta_position:a.getAttribute('data-cta'),page_path:location.pathname})});
   });
 
-  /* ---- reading progress + phone CTA bar (shows once the hero is passed) ---- */
-  var bar=d.createElement('div');bar.id='vb-pgbar';bar.setAttribute('aria-hidden','true');d.body.appendChild(bar);
+  /* ---- phone CTA bar (shows once the hero is passed) ---- */
   var m=d.querySelector('.vb-mcta'),hero=d.querySelector('.vb-hero'),raf=false;
   function paint(){
     raf=false;
-    var de=d.documentElement,max=de.scrollHeight-innerHeight,y=window.pageYOffset||de.scrollTop||0;
-    bar.style.transform='scaleX('+(max>0?Math.min(1,y/max):0)+')';
     if(m&&hero){var show=hero.getBoundingClientRect().bottom<0;m.classList.toggle('show',show);m.setAttribute('aria-hidden',show?'false':'true');var a=m.querySelector('a');if(a)a.tabIndex=show?0:-1}
   }
   function on(){if(!raf){raf=true;requestAnimationFrame(paint)}}
