@@ -38,7 +38,7 @@
     6  Buttons
     7  Lists + glyphs
     8  Chrome: .site-nav, .site-foot, .crumbs
-    9  Components
+    9  Components (9b: content components for lists of episodes and shows)
    10  Responsive
    11  Compat (small; delete each line when grep finds no user)
    12  Reduced motion
@@ -397,6 +397,72 @@ html.menu-open{overflow:hidden}
 .prose hr{border:0;border-top:1px solid var(--line);margin-block:var(--s8)}
 .prose img{border-radius:var(--r)}
 
+/* ---------- 9b. Content components ----------
+   Built for /media, /guest-appearances and /podcast (restyle PR 6); the blog index and
+   the other content pages reuse them. Lists are hairline rows, never cards: the whole
+   row is the link, the title turns blue on hover. Covers always point at the show's
+   cover_url (generator/_source/appearances.json), never a relative images/ path. */
+
+/* cover tile: a show's square artwork. 64px, the one 6px radius (only the hero badge
+   stack keeps 9px), a faint inner edge so white artwork holds its shape.
+     <span class="cover"><img src="{cover_url}" alt="Show name" width="64" height="64" loading="lazy" decoding="async"></span>
+   .yt   a YouTube hqdefault.jpg: scaled so its letterbox bars fall outside the tile
+   .ini  a show with no artwork: its initials, ink on soft (white on a soft band) */
+.cover{position:relative;display:block;flex:none;width:64px;height:64px;border-radius:var(--r);overflow:hidden;background:var(--soft)}
+.cover::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(12,26,36,.08);pointer-events:none}
+.cover img{width:100%;height:100%;object-fit:cover}
+.cover.yt img{transform:scale(1.34)}
+.cover.ini{display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:800;font-size:var(--fs-h3);line-height:1;letter-spacing:-.02em;color:var(--ink)}
+.band-soft .cover.ini{background:#ffffff}
+
+/* appearance list: one hairline row per guest appearance. Cover tile, title, one line, link.
+     <ul class="applist"><li><a href="/blog/slug"><span class="cover">..</span>
+       <span class="t"><h3>Title</h3><p>One line.</p><span class="go">See the episode</span></span></a></li></ul>
+   .c2  two columns from 761px; the rows line up across both */
+.applist > li{min-width:0;border-bottom:1px solid var(--line)}
+.applist > li:first-child{border-top:1px solid var(--line)}
+.applist > li > a{display:grid;grid-template-columns:64px minmax(0,1fr);column-gap:var(--s5);align-items:start;padding-block:var(--s5)}
+.applist .t{display:flex;flex-direction:column;gap:6px;min-width:0}
+.applist h3{transition:color var(--ease)}
+.applist p{font-size:15px;line-height:1.55} /* parity with .seq p */
+.applist .go{margin-top:2px;font-family:var(--font-head);font-weight:700;font-size:var(--fs-s);color:var(--link)}
+.applist a:hover h3{color:var(--link)}
+.applist a:hover .go{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.applist.c2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--s10)}
+.applist.c2 > li:nth-child(2){border-top:1px solid var(--line)}
+
+/* episode list: hairline rows, no artwork. Meta on the left, title and one line, the link on the right.
+     <ul class="eplist"><li><a href="/blog/slug"><span class="meta">Interview &middot; May 29, 2025</span>
+       <h3>Title</h3><p>One line.</p><span class="go">Read the episode</span></a></li></ul> */
+.eplist{border-top:1px solid var(--line)}
+.eplist > li{border-bottom:1px solid var(--line)}
+.eplist > li > a{display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr) auto;column-gap:var(--s8);row-gap:var(--s2);
+  align-items:baseline;padding-block:var(--s6)}
+.eplist .meta{grid-column:1;grid-row:1;font-family:var(--font-head);font-weight:600;font-size:var(--fs-s);line-height:1.4;color:var(--muted)}
+.eplist h3{grid-column:2;grid-row:1;font-size:var(--fs-h4);line-height:1.2;letter-spacing:-.02em;transition:color var(--ease)}
+.eplist p{grid-column:2;max-width:60ch}
+.eplist .go{grid-column:3;grid-row:1;font-family:var(--font-head);font-weight:700;font-size:var(--fs-s);color:var(--link);white-space:nowrap}
+.eplist a:hover h3{color:var(--link)}
+.eplist a:hover .go{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.sec-head + .applist,.sec-head + .eplist{margin-top:var(--s8)}
+
+/* static cover grid: every show as a cover tile, in place of a marquee. No motion, no fades.
+     <ul class="covergrid" role="list"><li class="cover"><img ...></li> ... </ul> */
+.covergrid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--s3);margin-top:var(--s9)}
+.covergrid .cover{width:auto;height:auto;aspect-ratio:1/1}
+.covergrid .cover.ini{font-size:var(--fs-h4)}
+
+/* stat row on navy: put a .statrow straight into a .band-dark (the band re-points the tokens).
+   .c3    three figures
+   .lone  the row is the band's only content: no top rule or margin, the first figure on the left edge */
+.statrow.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.statrow.lone{margin-top:0;border-top:0}
+.statrow.lone li{padding-block:0}
+.statrow.lone li:first-child{padding-left:0}
+
+/* closing band with two doors (content pages): one solid button, one outlined */
+.closing .btns{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--s3) var(--s4)}
+
 /* ---------- 10. Responsive ---------- */
 @media (min-width:761px){
   .site-nav{position:sticky;top:env(safe-area-inset-top,0px);backdrop-filter:blur(8px)}
@@ -449,6 +515,11 @@ html.menu-open{overflow:hidden}
   .seq{grid-template-columns:minmax(0,1fr);gap:var(--s6)}
   .optin{grid-template-columns:minmax(0,1fr)}
   .optin .photo{min-height:260px}
+  /* 9b content components */
+  .statrow.c3 li:nth-child(3){border-left:1px solid var(--line)}
+  .statrow.c3 li:nth-child(n+3){border-top:0}
+  .eplist > li > a{grid-template-columns:minmax(0,160px) minmax(0,1fr) auto;column-gap:var(--s6)}
+  .covergrid{grid-template-columns:repeat(10,minmax(0,1fr))}
 }
 @media (max-width:760px){
   .logos{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:var(--s5)}
@@ -456,6 +527,13 @@ html.menu-open{overflow:hidden}
   .outs li{justify-content:flex-start;padding-block:var(--s3)}
   .outs li + li{border-left:0;border-top:1px solid var(--line)}
   .site-foot .cols a:not(.logo){min-height:44px}
+  /* 9b content components: one column */
+  .applist.c2{grid-template-columns:minmax(0,1fr)}
+  .applist.c2 > li:nth-child(2){border-top:0}
+  .eplist > li > a{grid-template-columns:minmax(0,1fr);padding-block:var(--s5)}
+  .eplist .meta,.eplist h3,.eplist p,.eplist .go{grid-column:1;grid-row:auto}
+  .eplist h3{font-size:var(--fs-h3);line-height:1.3}
+  .covergrid{grid-template-columns:repeat(8,minmax(0,1fr))}
 }
 @media (max-width:560px){
   :root{--gutter:20px}
@@ -491,6 +569,17 @@ html.menu-open{overflow:hidden}
   .tcard .result{font-size:22px} /* parity */
   .optin form{padding:32px 22px}
   .prose p,.prose li{font-size:var(--fs-b)}
+  /* 9b content components */
+  .applist > li > a{column-gap:var(--s4)}
+  .statrow.c3{grid-template-columns:minmax(0,1fr)}
+  .statrow.c3 li:nth-child(n){flex-direction:row;align-items:baseline;gap:var(--s4);padding:var(--s4) 0;border-left:0}
+  .statrow.c3 li:nth-child(n+2){border-top:1px solid var(--line)}
+  .statrow.c3 b{flex:none;min-width:140px}
+  .statrow.lone li:first-child{padding-top:0}
+  .statrow.lone li:last-child{padding-bottom:0}
+  .closing .btns{flex-direction:column;align-items:stretch;width:100%}
+  .covergrid{grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--s2)}
+  .covergrid .cover.ini{font-size:var(--fs-b)}
 }
 
 /* ---------- 11. Compat (small) ----------

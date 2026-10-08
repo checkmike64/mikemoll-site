@@ -48,6 +48,13 @@ To put a page on v2:
    to page-only rules. Keep every `href`, `data-cta` and `data-lead` as it was.
 5. Check it at 390px and 1440px against the live page before merging.
 
+Content components (site-v2.css section 9b, from /media, /guest-appearances and
+/podcast; reuse them on the blog index and other content pages): `.cover` tile
+(`.yt`, `.ini`), `.applist` appearance list (`.c2` two columns), `.eplist`
+episode list, `.covergrid` static cover grid, `.statrow.c3` / `.lone` stat row
+on navy, and `.closing .btns` for a two-door closing band. Cover `src` is the
+show's `cover_url` from `generator/_source/appearances.json`, never `images/...`.
+
 Under 961px the header links move into a "Menu" sheet (`generator/chrome/menu.html`,
 the button plus a small inline script): it fills the screen under the header,
 Escape closes it, Tab stays inside the header, and the page behind does not

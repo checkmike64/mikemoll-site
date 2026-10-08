@@ -21,105 +21,80 @@
 {"@type":"Organization","@id":"https://www.mikemoll.co/#organization","name":"Mike Moll","url":"https://www.mikemoll.co/"}
 ]}
 </script>
+<!-- chrome:head -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700;800&family=Poppins:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/site-v2.css">
+<!-- /chrome:head -->
 <style>
-  :root{--max:1120px;}
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
-  
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;position:relative;z-index:2}
-  a{color:inherit;text-decoration:none}
-  .eyebrow{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:0.26em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:block}
-  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-0.03em;line-height:1.04}
+/* /podcast: page-only rules. Everything shared lives in /assets/site-v2.css (the episode list). */
 
-  nav{position:sticky;top:0;z-index:10;background:rgba(0,0,0,0.75);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline)}
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
-  .logo{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-0.02em}
-  .logo span{color:var(--accent)}
-  .nav-links{display:flex;align-items:center;gap:28px}
-  .nav-links a:not(.btn){color:var(--muted);font-size:15px;font-weight:500;transition:color .2s}
-  .nav-links a:not(.btn):hover,.nav-links a.active{color:var(--ink)}
-  .btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:15px;padding:12px 22px;transition:transform .2s,background .2s,border-color .2s;border:none;cursor:pointer}
-  .btn-primary{background:var(--accent);color:var(--accent-ink)}
-  .btn-primary:hover{transform:translateY(-2px)}
-  .btn-ghost{border:1px solid var(--hairline-2);color:var(--ink);background:none}
-  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
-  .text-link{font-family:var(--display);font-weight:600;font-size:15px;color:var(--muted);display:inline-flex;gap:7px;transition:color .2s,gap .2s}
-  .text-link:hover{color:var(--accent);gap:11px}
-  .crumbs{font-family:var(--display);font-size:12px;letter-spacing:0.08em;color:var(--muted);margin-bottom:22px}
-  .crumbs a:hover{color:var(--ink)}
+/* promote to site-v2: hero B split. Type on the left, a player or card on the right. */
+.hero-b.split .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:var(--s9);align-items:center}
+.hero-b.split .t{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s5)}
+.hero-b.split h1{max-width:14ch}
+.listen{display:flex;flex-direction:column;gap:var(--s3);margin-top:var(--s2)}
+.listen .row{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5)}
+.hero-b.split .apply{padding-top:var(--s5);border-top:1px solid var(--line);align-self:stretch}
+.embed{border-radius:var(--r);overflow:hidden} /* the player's own card fills it; Spotify keeps the src */
+.embed iframe{display:block;width:100%;border:0}
 
-  header{padding:44px 0 90px;border-bottom:1px solid var(--hairline)}
-  .hero{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center}
-  .hero h1{font-size:clamp(2.4rem,5.2vw,4rem);font-weight:700;max-width:14ch;margin-bottom:22px}
-  .hero .sub{color:var(--muted);font-size:1.15rem;max-width:46ch;margin-bottom:30px}
-  .subs{margin-bottom:26px}
-  .subs .lab{font-family:var(--display);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;display:block}
-  .subrow{display:flex;flex-wrap:wrap;gap:12px}
-  .sub-btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--display);font-weight:600;font-size:14px;padding:11px 18px;border:1px solid var(--hairline-2);color:var(--ink);transition:border-color .2s,transform .2s}
-  .sub-btn:hover{border-color:var(--accent);transform:translateY(-2px)}
-  .sub-btn .d{width:8px;height:8px;background:var(--accent)}
-  .embed{border:1px solid var(--hairline);overflow:hidden;background:var(--surface);}
-  .embed iframe{display:block;width:100%;border:0}
+/* episodes */
+.more{margin-top:var(--s7)}
 
-  section{padding:96px 0;border-bottom:1px solid var(--hairline)}
-  .sec-head{max-width:60ch;margin-bottom:12px}
-  .sec-head h2{font-size:clamp(1.9rem,4.4vw,3rem);margin-bottom:14px}
-  .sec-head p{color:var(--muted);font-size:1.08rem}
+/* be a guest: the copy beside the form card */
+.guest{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:var(--s10);align-items:start}
+.guest .copy{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.guest .copy > p{font-size:var(--fs-l)}
+.card{background:#ffffff;border:1px solid var(--line);border-radius:var(--r);padding:var(--s7)}
+/* promote to site-v2 (fields): 48px fields under a 56px button, --field border, 16px text, select chevron.
+   Form markup untouched; forms.js swaps in its success message. */
+.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.form .full,.form > p[style]{grid-column:1/-1}
+.form input:not([type=radio]),.form select{width:100%;min-width:0;margin:0;font-size:var(--fs-b);line-height:20px;padding:13px 16px;
+  border:1px solid var(--field);border-radius:var(--r);background:#ffffff;color:var(--ink)}
+.form select{-webkit-appearance:none;appearance:none;padding-right:40px;cursor:pointer;
+  background:#ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%230c1a24' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 16px center/12px 8px}
+.form select:invalid{color:var(--muted)}
+.form option{color:var(--ink)}
+.form input::placeholder{color:var(--muted);opacity:1}
+.form input:focus,.form select:focus{outline:none;border-color:var(--accent);box-shadow:var(--focus)}
+/* guest type: two hairline rows, a round radio with the blue dot */
+.radio{grid-column:1/-1;display:flex;flex-direction:column;margin-top:4px;border-top:1px solid var(--line)}
+.radio label{display:flex;align-items:center;gap:12px;min-height:52px;padding-block:10px;border-bottom:1px solid var(--line);font-size:15px;line-height:1.4;color:var(--ink);cursor:pointer}
+.radio input{-webkit-appearance:none;appearance:none;display:grid;place-content:center;flex:none;width:20px;height:20px;margin:0;
+  border:1.5px solid var(--field);border-radius:50%;background:#ffffff;cursor:pointer}
+.radio input::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);transform:scale(0);transition:transform var(--ease)}
+.radio input:checked{border-color:var(--ink)}
+.radio input:checked::before{transform:scale(1)}
+.form .btn{width:100%;margin-top:var(--s2)}
 
-  .eps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
-  .ep{border:1px solid var(--hairline);overflow:hidden;background:var(--surface);display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
-  .ep:hover{transform:translateY(-4px);border-color:var(--accent)}
-  .ep .art{aspect-ratio:16/9;background:radial-gradient(120% 120% at 30% 18%,#000000,#000000);display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid var(--hairline);overflow:hidden}
-  .ep .badge{position:absolute;top:12px;left:14px;font-family:var(--display);font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);border:1px solid var(--hairline-2);padding:5px 11px;background:rgba(0,0,0,.45)}
-  .ep .avatar{width:92px;height:92px;background:rgba(56,182,255,.10);border:1.5px solid rgba(56,182,255,.45);display:flex;align-items:center;justify-content:center;}
-  .ep .avatar svg{width:46px;height:40px}
-  .ep .avatar img{width:100%;height:100%;object-fit:cover}
-  .ep .body{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1}
-  .ep .meta{font-family:var(--display);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
-  .ep h3{font-size:1.25rem;margin-bottom:10px}
-  .ep p{color:var(--muted);font-size:0.96rem;margin-bottom:18px;flex:1}
+/* cross-sell: two hairline cells */
+#more .hgrid{margin-top:0;border-top:0}
+#more .hgrid h3{font-size:var(--fs-h4);line-height:1.2}
+#more .hgrid .btn{justify-self:start;margin-top:var(--s3)}
 
-  /* guest form */
-  .guest{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;align-items:start}
-  .form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  .form .full{grid-column:1/-1}
-  .form input,.form select{width:100%;background:var(--surface);border:1px solid var(--hairline-2);padding:14px 16px;color:var(--ink);font-family:var(--body);font-size:15px}
-  .form input::placeholder{color:var(--muted)}
-  .form input:focus,.form select:focus{outline:none;border-color:var(--accent)}
-  .radio{grid-column:1/-1;display:grid;gap:10px;margin-top:4px}
-  .radio label{display:flex;align-items:center;gap:10px;font-size:14px;color:#d7d7d7;border:1px solid var(--hairline);padding:13px 16px;cursor:pointer}
-  .radio label:hover{border-color:var(--hairline-2)}
+/* newsletter: the form in one card */
+.news .card{max-width:860px;margin-inline:auto;padding:var(--s8);display:flex;flex-direction:column;align-items:flex-start;gap:var(--s5)}
+.news h2{font-size:var(--fs-sub);line-height:1.15;max-width:24ch}
+.newsform{display:flex;flex-wrap:wrap;gap:12px;align-self:stretch}
+.newsform input{flex:1;min-width:0;font-size:var(--fs-b);line-height:20px;padding:13px 16px;border:1px solid var(--field);border-radius:var(--r);background:#ffffff;color:var(--ink)}
+.newsform input::placeholder{color:var(--muted);opacity:1}
+.newsform input:focus{outline:none;border-color:var(--accent);box-shadow:var(--focus)}
+.newsform > p[style]{flex-basis:100%}
 
-  /* cross-sell */
-  .xsell{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;border:1px solid rgba(56,182,255,0.28);background:linear-gradient(160deg,#000000,var(--surface));padding:34px 38px;margin-top:44px}
-  .xsell h3{font-size:1.4rem;margin-bottom:6px}
-  .xsell p{color:var(--muted);font-size:0.98rem}
-
-  .news{text-align:center}
-  .news .sec-head{margin:0 auto}
-  .newsform{display:flex;gap:12px;max-width:460px;margin:32px auto 0}
-  .newsform input{flex:1;min-width:0;background:var(--surface);border:1px solid var(--hairline-2);padding:15px 18px;color:var(--ink);font-family:var(--body);font-size:16px}
-  .newsform input:focus{outline:none;border-color:var(--accent)}
-
-  footer{padding:52px 0;border:none}
-  .foot-in{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
-  .socials{display:flex;gap:20px}
-  .socials a{color:var(--muted);font-size:14px;font-weight:500}
-  .socials a:hover{color:var(--accent)}
-  .foot-in p{color:var(--muted);font-size:14px}
-
-  @media(max-width:860px){
-    .nav-links a:not(.btn){display:none}
-    .hero,.guest{grid-template-columns:1fr;gap:38px}
-    .eps{grid-template-columns:1fr}
-    .form{grid-template-columns:1fr}
-    header{padding:30px 0 60px}section{padding:66px 0}
-  }
+@media (max-width:960px){
+  .hero-b.split .wrap,.guest{grid-template-columns:minmax(0,1fr);gap:var(--s7)}
+}
+@media (max-width:560px){
+  .card{padding:var(--s6) 20px}
+  .news .card{padding:var(--s6) 20px}
+  .news h2{font-size:var(--fs-h4)}
+  .form{grid-template-columns:minmax(0,1fr)}
+  .newsform{flex-direction:column}
+  #more .hgrid .btn{justify-self:stretch}
+}
 </style>
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -129,73 +104,99 @@
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD3WQ8N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<nav class="site-nav">
+<!-- chrome:header site -->
+<header class="site-nav">
   <div class="wrap">
-    <a href="/" class="logo">Mike<i>.</i>Moll</a>
-    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu" onclick="var n=this.closest('.site-nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><span></span><span></span><span></span></button><div class="links" id="site-menu">
-      <a href="/#free-resources">Free Resources</a>
+    <a class="logo" href="/">Mike<span>.</span>Moll<small>Sales + Offer Coach</small></a>
+    <nav class="links" id="site-menu" aria-label="Main">
+      <a href="/consulting">Consulting</a>
+      <a href="/podcast-guesting">Podcast guesting</a>
+      <a href="/client-results">Results</a>
       <a href="/media">Media</a>
-      <a href="/#work" class="btn btn-ghost">How I Help</a>
-    </div>
-  </div>
-</nav>
-
-<header>
-  <div class="wrap">
-    <div class="crumbs"><a href="/">Home</a> › Podcast</div>
-    <div class="hero">
-      <div>
-        <span class="eyebrow">The Undervalued Expert · The Podcast</span>
-        <h1>A podcast for growing your service business.</h1>
-        <p class="sub">Short, practical episodes for experts who undercharge. Live coaching sessions, expert interviews, and trainings you can use the same day.</p>
-        <div class="subs">
-          <span class="lab">Listen on</span>
-          <div class="subrow">
-            <a class="sub-btn" href="https://podcasts.apple.com/ca/podcast/the-profitable-solopreneur/id1798563683"><span class="d"></span> Apple Podcasts</a>
-            <a class="sub-btn" href="https://open.spotify.com/show/2BpB6zzFSXhimB6fFqH3wj"><span class="d"></span> Spotify</a>
-            <a class="sub-btn" href="https://www.youtube.com/@mikemollco"><span class="d"></span> YouTube</a>
-          </div>
-        </div>
-        <a href="#application" class="text-link">Want to be on the show? Apply to come on →</a>
-      </div>
-      <div class="embed">
-        <iframe src="https://open.spotify.com/embed/show/2BpB6zzFSXhimB6fFqH3wj?theme=0" height="392" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="The Undervalued Expert on Spotify"></iframe>
-      </div>
-    </div>
+    </nav>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+    <script>
+    /* Phone menu (<=960px): a full-height sheet under the header. Escape closes it, Tab stays inside the header, the page behind does not scroll. */
+    (function () {
+      var nav = document.currentScript.closest('.site-nav');
+      var btn = nav.querySelector('.menu'), links = nav.querySelector('.links'), root = document.documentElement;
+      var wide = window.matchMedia('(min-width: 961px)');
+      function isOpen() { return nav.classList.contains('open'); }
+      function set(open, refocus) {
+        nav.classList.toggle('open', open);
+        root.classList.toggle('menu-open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.textContent = open ? 'Close' : 'Menu';
+        if (!open && refocus) btn.focus({ preventScroll: true });
+      }
+      function order() {
+        return [nav.querySelector('.logo'), nav.querySelector('.wrap > .btn'), btn].concat([].slice.call(links.querySelectorAll('a'))).filter(Boolean);
+      }
+      btn.addEventListener('click', function () { set(!isOpen(), false); });
+      links.addEventListener('click', function (e) { if (isOpen() && e.target.closest('a')) set(false, false); });
+      document.addEventListener('keydown', function (e) {
+        if (!isOpen() || document.querySelector('dialog[open]')) return;
+        if (e.key === 'Escape') { e.preventDefault(); set(false, true); return; }
+        if (e.key !== 'Tab') return;
+        var list = order(), i = list.indexOf(document.activeElement);
+        e.preventDefault();
+        list[i < 0 ? 0 : (i + (e.shiftKey ? list.length - 1 : 1)) % list.length].focus({ preventScroll: true });
+      });
+      function onWide() { if (wide.matches && isOpen()) set(false, false); }
+      if (wide.addEventListener) wide.addEventListener('change', onWide); else wide.addListener(onWide);
+    })();
+    </script>
   </div>
 </header>
+<!-- /chrome:header -->
 
-<!-- EPISODES -->
-<section id="episodes">
+<main>
+<section class="hero-b split">
   <div class="wrap">
-    <span class="eyebrow">Episodes &amp; guests</span>
-    <div class="sec-head"><h2>Explore episodes and guests.</h2><p>Every episode is one clear idea you can put to work the same day.</p></div>
-    <div class="eps">
-      <a class="ep" href="/blog/how-i-quit-my-comfortable-job-to-pursue-business">
-        <div class="art"><div class="badge">Personal</div><div class="avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#38b6ff" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
-        <div class="body"><div class="meta">Personal · April 21, 2026</div><h3>How I quit my comfortable job</h3><p>The day I walked out of a corporate job with no plan, and what it taught me about building on my own terms.</p><span class="text-link">Read the episode &rarr;</span></div>
-      </a>
-      <a class="ep" href="/blog/how-to-vet-service-providers-behdad-jamshidi">
-        <div class="art"><div class="badge">Interview</div><div class="avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#38b6ff" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
-        <div class="body"><div class="meta">Interview · May 29, 2025</div><h3>How to vet a service provider</h3><p>How to vet service providers so you stop hiring the wrong people, with Behdad Jamshidi.</p><span class="text-link">Read the episode &rarr;</span></div>
-      </a>
-      <a class="ep" href="/blog/following-your-nudges-how-to-trust-your-intuition-more-jason-brown">
-        <div class="art"><div class="badge">Interview</div><div class="avatar"><svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg" fill="#38b6ff" aria-hidden="true"><rect x="4" y="14" width="5" height="12" rx="2.5"/><rect x="13" y="8" width="5" height="24" rx="2.5"/><rect x="22" y="4" width="5" height="32" rx="2.5"/><rect x="31" y="11" width="5" height="18" rx="2.5"/><rect x="40" y="16" width="5" height="8" rx="2.5"/></svg></div></div>
-        <div class="body"><div class="meta">Interview · May 1, 2025</div><h3>Learn to trust your intuition</h3><p>How to trust your intuition when you make business decisions, with Jason Brown.</p><span class="text-link">Read the episode &rarr;</span></div>
-      </a>
+    <div class="t">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Podcast</span></nav>
+      <span class="eyebrow">The Undervalued Expert · The Podcast</span>
+      <h1>A podcast for growing your service business.</h1>
+      <p class="lead">Short, practical episodes for experts who undercharge. Live coaching sessions, expert interviews, and trainings you can use the same day.</p>
+      <div class="listen">
+        <span class="label">Listen on</span>
+        <div class="row">
+          <a class="tlink" href="https://podcasts.apple.com/ca/podcast/the-profitable-solopreneur/id1798563683">Apple Podcasts</a>
+          <a class="tlink" href="https://open.spotify.com/show/2BpB6zzFSXhimB6fFqH3wj">Spotify</a>
+          <a class="tlink" href="https://www.youtube.com/@mikemollco">YouTube</a>
+        </div>
+      </div>
+      <p class="apply"><a href="#application" class="tlink">Want to be on the show? Apply to come on</a></p>
     </div>
-    <div style="margin-top:34px"><a href="/blog" class="text-link">See all episodes &rarr;</a></div>
+    <div class="embed">
+      <iframe src="https://open.spotify.com/embed/show/2BpB6zzFSXhimB6fFqH3wj?theme=0" height="392" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="The Undervalued Expert on Spotify"></iframe>
+    </div>
   </div>
 </section>
 
-<!-- BE A GUEST -->
-<section id="application">
+<!-- EPISODES: episode list -->
+<section id="episodes" class="section">
+  <div class="wrap">
+    <div class="sec-head"><h2>Explore episodes and guests.</h2><p>Every episode is one clear idea you can put to work the same day.</p></div>
+    <ul class="eplist">
+      <li><a href="/blog/how-i-quit-my-comfortable-job-to-pursue-business"><span class="meta">Personal · April 21, 2026</span><h3>How I quit my comfortable job</h3><p>The day I walked out of a corporate job with no plan, and what it taught me about building on my own terms.</p><span class="go">Read the episode</span></a></li>
+      <li><a href="/blog/how-to-vet-service-providers-behdad-jamshidi"><span class="meta">Interview · May 29, 2025</span><h3>How to vet a service provider</h3><p>How to vet service providers so you stop hiring the wrong people, with Behdad Jamshidi.</p><span class="go">Read the episode</span></a></li>
+      <li><a href="/blog/following-your-nudges-how-to-trust-your-intuition-more-jason-brown"><span class="meta">Interview · May 1, 2025</span><h3>Learn to trust your intuition</h3><p>How to trust your intuition when you make business decisions, with Jason Brown.</p><span class="go">Read the episode</span></a></li>
+    </ul>
+    <p class="more"><a href="/blog" class="tlink">See all episodes</a></p>
+  </div>
+</section>
+
+<!-- BE A GUEST: the form in one card on soft -->
+<section id="application" class="section band-soft">
   <div class="wrap guest">
-    <div>
+    <div class="copy">
       <span class="eyebrow">Be a guest</span>
-      <div class="sec-head"><h2>Want to come on the show?</h2><p>Two ways on: come teach as an expert, or bring a real problem for a live coaching session on air.</p></div>
-      <a href="#episodes" class="text-link">Hear the format first →</a>
+      <h2>Want to come on the show?</h2>
+      <p>Two ways on: come teach as an expert, or bring a real problem for a live coaching session on air.</p>
+      <a href="#episodes" class="tlink">Hear the format first</a>
     </div>
+    <div class="card">
     <form class="form" data-lead="podcast-guest" data-success="Application received." data-success-note="If it's a fit for the show, I'll reach out with next steps.">
       <input class="full" type="text" name="name" placeholder="First name" required>
       <input type="email" name="email" placeholder="Email" required>
@@ -208,49 +209,82 @@
       </div>
       <button class="btn btn-primary full" type="submit">Apply to Come On</button>
     </form>
+    </div>
   </div>
 </section>
 
 <!-- CROSS-SELL -->
-<section id="more">
+<section id="more" class="section tight">
   <div class="wrap">
-    <div class="xsell">
-      <div>
+    <ul class="hgrid">
+      <li>
         <h3>Looking for help with your offer?</h3>
         <p>Ninety days to fix your pricing, sales, and delivery.</p>
-      </div>
-      <a href="/consulting" class="btn btn-primary">See the coaching program →</a>
-    </div>
-    <div class="xsell" style="border-color:var(--hairline);background:var(--surface)">
-      <div>
+        <a href="/consulting" class="btn">See the coaching program</a>
+      </li>
+      <li>
         <h3>Want to get booked on shows like this?</h3>
-        <p>The podcast workshop shows you how to get in front of your buyers.</p>
-      </div>
-      <a href="/podcast-workshop" class="btn btn-ghost">Explore the workshop →</a>
-    </div>
+        <p>I get you booked on podcasts your buyers already trust, so the right people find you.</p>
+        <a href="/podcast-guesting" class="btn line">Get on podcasts</a>
+      </li>
+    </ul>
   </div>
 </section>
 
-<!-- NEWSLETTER -->
-<section class="news">
+<!-- NEWSLETTER: the form in one card on soft -->
+<section class="section band-soft news">
   <div class="wrap">
-    <span class="eyebrow">Never miss an episode</span>
-    <div class="sec-head"><h2>New episodes, workshop invites, and practical business notes.</h2></div>
-    <form class="newsform" data-lead="newsletter" data-success="You're subscribed." data-success-note="New episodes, workshop invites, and practical business notes.">
+    <div class="card">
+      <span class="eyebrow">Never miss an episode</span>
+      <h2>New episodes, workshop invites, and practical business notes.</h2>
+      <form class="newsform" data-lead="newsletter" data-success="You're subscribed." data-success-note="New episodes, workshop invites, and practical business notes.">
       <input type="email" name="email" placeholder="you@yourbusiness.com" aria-label="Email" required>
       <button class="btn btn-primary" type="submit">Subscribe</button>
     </form>
+    </div>
   </div>
 </section>
+</main>
 
+<!-- chrome:footer full -->
 <footer class="site-foot">
   <div class="wrap">
-    <a href="/" class="logo">Mike<i>.</i>Moll</a>
-    <div class="socials"><a href="https://www.youtube.com/@mikemollco">YouTube</a><a href="https://www.linkedin.com/in/themikemoll/">LinkedIn</a></div>
-    <p>© 2026 Impact Leads LLC</p>
-    <div style="flex-basis:100%;width:100%;border-top:1px solid rgba(255,255,255,0.10);padding-top:14px;display:flex;justify-content:center;gap:18px"><a href="/privacy" style="color:#9a9a9a;font-size:13px;text-decoration:none">Privacy Policy</a><a href="/terms" style="color:#9a9a9a;font-size:13px;text-decoration:none">Terms &amp; Conditions</a></div>
+    <div class="cols">
+      <div class="brand"><a class="logo" href="/">Mike<span>.</span>Moll<small>Sales + Offer Coach</small></a></div>
+      <nav aria-label="Work with me">
+        <span class="label">Work with me</span>
+        <ul>
+          <li><a href="/consulting">Consulting</a></li>
+          <li><a href="/podcast-guesting">Podcast guesting</a></li>
+          <li><a href="/client-results">Client results</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Learn">
+        <span class="label">Learn</span>
+        <ul>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/podcast">Podcast</a></li>
+          <li><a href="/videos">Videos</a></li>
+          <li><a href="/#free-resources">Free resources</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="About">
+        <span class="label">About</span>
+        <ul>
+          <li><a href="/media">Media</a></li>
+          <li><a href="/speaker-sheet">Speaker sheet</a></li>
+          <li><a href="https://www.instagram.com/themikemoll/">Instagram</a></li>
+          <li><a href="https://www.youtube.com/@mikemollco">YouTube</a></li>
+          <li><a href="https://www.linkedin.com/in/themikemoll/">LinkedIn</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="legal">
+      <div><span>&copy; 2026 Impact Leads LLC</span><i aria-hidden="true">&middot;</i><a href="/privacy">Privacy</a><i aria-hidden="true">&middot;</i><a href="/terms">Terms</a></div>
+    </div>
   </div>
 </footer>
+<!-- /chrome:footer -->
 
 <script src="/forms.js"></script>
 </body>
