@@ -4,6 +4,12 @@
 // data-redirect (go there instead of showing a message), data-sending (button
 // label while the request is in flight).
 //
+// After a successful submission the form fires a cancelable, bubbling
+// 'lead:success' event carrying the form id and the name, email and phone it
+// was given. A page that wants to carry on from there (the consulting page's
+// booking step does) calls preventDefault(), and the redirect and success
+// message are skipped.
+//
 // Also pushes GA4 events to dataLayer (picked up by a GTM GA4 Event tag) —
 // generate_lead on success, lead_form_error on failure. GA4's own Enhanced
 // Measurement already sees clicks/scroll/generic form_submit, but it can't
@@ -128,6 +134,18 @@
           var eventId = result && typeof result.eventId === 'string' && UUID.test(result.eventId) ? result.eventId : '';
           pushEvent('generate_lead', data.formId, eventId, await hashing);
         }
+        var next = new CustomEvent('lead:success', {
+          bubbles: true,
+          cancelable: true,
+          detail: {
+            formId: data.formId,
+            name: data.name || '',
+            email: data.email || '',
+            phone: data.phone || '',
+            heardAbout: data.heard_about || ''
+          }
+        });
+        if (!form.dispatchEvent(next)) return;
         var redirect = form.getAttribute('data-redirect');
         if (redirect) { window.location.href = redirect; return; }
         var msg = form.getAttribute('data-success') || "You're in.";
