@@ -8,55 +8,23 @@
 <meta name="description" content="Privacy Policy for mikemoll.co, operated by Impact Leads LLC.">
 <meta name="robots" content="noindex, follow">
 <link rel="canonical" href="https://www.mikemoll.co/privacy">
+<!-- chrome:head -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700;800&family=Poppins:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/site-v2.css">
+<!-- /chrome:head -->
 <style>
-  :root{--max:1120px;}
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;scroll-padding-top:90px}
-  body{background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;position:relative;overflow-x:clip}
-  
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;position:relative;z-index:2}
-  a{color:inherit;text-decoration:none}
-  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-0.03em;line-height:1.1}
-  nav{position:sticky;top:0;z-index:10;background:rgba(0,0,0,0.75);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline)}
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
-  .logo{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-0.02em}
-  .logo span{color:var(--accent)}
-  .nav-links{display:flex;align-items:center;gap:28px}
-  .nav-links a:not(.btn){color:var(--muted);font-size:15px;font-weight:500;transition:color .2s}
-  .nav-links a:not(.btn):hover{color:var(--ink)}
-  .btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:15px;padding:12px 22px;transition:transform .2s;border:none;cursor:pointer}
-  .btn-primary{background:var(--accent);color:var(--accent-ink)}
-  .btn-primary:hover{transform:translateY(-2px)}
-
-  .legalhero{padding:120px 0 46px;border-bottom:1px solid var(--hairline)}
-  .legalhero .eyebrow{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:block}
-  .legalhero h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:700}
-  .legalhero .eff{color:var(--muted);font-size:14px;margin-top:16px;font-family:var(--display);letter-spacing:0.02em}
-  .legal{max-width:780px;margin:0 auto;padding:60px 28px 100px;position:relative;z-index:2}
-  .legal h2{font-size:1.5rem;margin:46px 0 14px;color:var(--ink)}
-  .legal h2:first-of-type{margin-top:0}
-  .legal h3{font-size:1.12rem;font-weight:600;margin:26px 0 10px;color:var(--ink)}
-  .legal p{color:#d7d7d7;margin-bottom:16px;font-size:1.02rem}
-  .legal ul{margin:0 0 18px 22px;color:#d7d7d7}
-  .legal li{margin-bottom:9px}
-  .legal a{color:var(--accent);text-decoration:underline}
-  .legal strong{color:var(--ink);font-weight:600}
-  .legal .intro{color:#d7d7d7;font-size:1.1rem}
-
-  footer{padding:52px 0;border-top:1px solid var(--hairline)}
-  .foot-in{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
-  .socials{display:flex;gap:20px}
-  .socials a{color:var(--muted);font-size:14px;font-weight:500}
-  .socials a:hover{color:var(--accent)}
-  .foot-in p{color:var(--muted);font-size:14px}
-  .foot-legal{display:flex;justify-content:center;gap:18px;width:100%;border-top:1px solid var(--hairline);padding-top:16px}
-  .foot-legal a{color:var(--muted);font-size:13px}
-  .foot-legal a:hover{color:var(--accent)}
-  @media(max-width:640px){.legalhero{padding:96px 0 40px}}
+/* /privacy: page-only rules. Everything shared lives in /assets/site-v2.css. */
+.hero-b .eff{font-family:var(--font-head);font-weight:600;font-size:var(--fs-s);color:var(--muted)}
+/* the legal text: the 720px prose column, read at body size */
+.legaltext{padding-top:var(--s7);border-top:1px solid var(--line)}
+.legaltext p,.legaltext li{font-size:var(--fs-b);line-height:1.7}
+.legaltext .intro{font-size:var(--fs-l);color:var(--ink)}
+.legaltext h2{font-size:var(--fs-h4);line-height:1.2;margin-top:var(--s8)}
+.legaltext h3{font-size:var(--fs-l);line-height:1.35;margin-top:var(--s6)}
+.legaltext ul li::before{top:.78em}
+.legaltext strong{font-weight:500}
 </style>
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -65,26 +33,65 @@
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD3WQ8N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<nav class="site-nav">
+<!-- chrome:header site -->
+<header class="site-nav">
   <div class="wrap">
-    <a href="/" class="logo">Mike<i>.</i>Moll</a>
-    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu" onclick="var n=this.closest('.site-nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><span></span><span></span><span></span></button><div class="links" id="site-menu">
-      <a href="/#free-resources">Free Resources</a>
+    <a class="logo" href="/">Mike<span>.</span>Moll<small>Sales + Offer Coach</small></a>
+    <nav class="links" id="site-menu" aria-label="Main">
+      <a href="/consulting">Consulting</a>
+      <a href="/podcast-guesting">Podcast guesting</a>
+      <a href="/client-results">Results</a>
       <a href="/media">Media</a>
-      <a href="/#work" class="btn btn-ghost">How I Help</a>
-    </div>
+    </nav>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+    <script>
+    /* Phone menu (<=960px): a full-height sheet under the header. Escape closes it, Tab stays inside the header, the page behind does not scroll. */
+    (function () {
+      var nav = document.currentScript.closest('.site-nav');
+      var btn = nav.querySelector('.menu'), links = nav.querySelector('.links'), root = document.documentElement;
+      var wide = window.matchMedia('(min-width: 961px)');
+      function isOpen() { return nav.classList.contains('open'); }
+      function set(open, refocus) {
+        nav.classList.toggle('open', open);
+        root.classList.toggle('menu-open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.textContent = open ? 'Close' : 'Menu';
+        if (!open && refocus) btn.focus({ preventScroll: true });
+      }
+      function order() {
+        return [nav.querySelector('.logo'), nav.querySelector('.wrap > .btn'), btn].concat([].slice.call(links.querySelectorAll('a'))).filter(Boolean);
+      }
+      btn.addEventListener('click', function () { set(!isOpen(), false); });
+      links.addEventListener('click', function (e) { if (isOpen() && e.target.closest('a')) set(false, false); });
+      document.addEventListener('keydown', function (e) {
+        if (!isOpen() || document.querySelector('dialog[open]')) return;
+        if (e.key === 'Escape') { e.preventDefault(); set(false, true); return; }
+        if (e.key !== 'Tab') return;
+        var list = order(), i = list.indexOf(document.activeElement);
+        e.preventDefault();
+        list[i < 0 ? 0 : (i + (e.shiftKey ? list.length - 1 : 1)) % list.length].focus({ preventScroll: true });
+      });
+      function onWide() { if (wide.matches && isOpen()) set(false, false); }
+      if (wide.addEventListener) wide.addEventListener('change', onWide); else wide.addListener(onWide);
+    })();
+    </script>
   </div>
-</nav>
+</header>
+<!-- /chrome:header -->
 
-<div class="legalhero">
+<main>
+<section class="hero-b">
   <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Privacy policy</span></nav>
     <span class="eyebrow">Legal</span>
     <h1>Privacy Policy</h1>
-    <div class="eff">Effective date: October 2, 2026</div>
+    <p class="eff">Effective date: October 2, 2026</p>
   </div>
-</div>
+</section>
 
-<main class="legal">
+<section class="section">
+  <div class="wrap">
+<div class="prose legaltext">
   <p class="intro">This Privacy Policy explains how Impact Leads LLC ("we," "us," or "our") collects, uses, and shares information when you visit mikemoll.co (the "Site") or interact with our content, forms, and services. By using the Site, you agree to the practices described here.</p>
 
   <h2>Who we are</h2>
@@ -154,18 +161,49 @@
   1603 Capitol Ave<br>
   Cheyenne, WY 82001<br>
   <a href="mailto:mike@mikemoll.co">mike@mikemoll.co</a></p>
+</div>
+  </div>
+</section>
 </main>
 
+<!-- chrome:footer full -->
 <footer class="site-foot">
   <div class="wrap">
-    <a href="/" class="logo">Mike<i>.</i>Moll</a>
-    <div class="socials"><a href="https://www.instagram.com/themikemoll/">Instagram</a><a href="https://www.youtube.com/@mikemollco">YouTube</a><a href="https://www.linkedin.com/in/themikemoll/">LinkedIn</a></div>
-    <p>&copy; 2026 Impact Leads LLC</p>
-    <div class="foot-legal">
-      <a href="/privacy">Privacy Policy</a>
-      <a href="/terms">Terms &amp; Conditions</a>
+    <div class="cols">
+      <div class="brand"><a class="logo" href="/">Mike<span>.</span>Moll<small>Sales + Offer Coach</small></a></div>
+      <nav aria-label="Work with me">
+        <span class="label">Work with me</span>
+        <ul>
+          <li><a href="/consulting">Consulting</a></li>
+          <li><a href="/podcast-guesting">Podcast guesting</a></li>
+          <li><a href="/client-results">Client results</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Learn">
+        <span class="label">Learn</span>
+        <ul>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/podcast">Podcast</a></li>
+          <li><a href="/videos">Videos</a></li>
+          <li><a href="/#free-resources">Free resources</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="About">
+        <span class="label">About</span>
+        <ul>
+          <li><a href="/media">Media</a></li>
+          <li><a href="/speaker-sheet">Speaker sheet</a></li>
+          <li><a href="https://www.instagram.com/themikemoll/">Instagram</a></li>
+          <li><a href="https://www.youtube.com/@mikemollco">YouTube</a></li>
+          <li><a href="https://www.linkedin.com/in/themikemoll/">LinkedIn</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="legal">
+      <div><span>&copy; 2026 Impact Leads LLC</span><i aria-hidden="true">&middot;</i><a href="/privacy">Privacy</a><i aria-hidden="true">&middot;</i><a href="/terms">Terms</a></div>
     </div>
   </div>
 </footer>
+<!-- /chrome:footer -->
 </body>
 </html>
