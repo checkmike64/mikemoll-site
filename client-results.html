@@ -22,61 +22,51 @@
 {"@type":"ListItem","position":2,"name":"Client Results","item":"https://www.mikemoll.co/client-results"}]}
 ]}
 </script>
+<!-- chrome:head -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700;800&family=Poppins:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/site-v2.css">
+<!-- /chrome:head -->
 <style>
-  /* reserve space for the Elfsight widgets so the page doesn't jump while they load */
-  .widget-slot{min-height:420px;margin-top:8px}
-  .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+/* /client-results: page-only rules. Everything shared lives in /assets/site-v2.css. */
 
-  /* video gallery starts collapsed to ~2 rows; the button below reveals all 12 */
-  .widget-slot.collapsed{max-height:600px;overflow:hidden;border-bottom:1px solid var(--hair)}
-  .more-row{margin-top:26px}
+/* testimonial band: the H1 above introduces it, so the grid starts at the band's top
+   and lines up with the hero's left edge */
+#results .tgrid{margin-top:0;max-width:none}
 
-  /* ------------------------------------------------------------------
-     Elfsight widgets ship with a white theme. These overrides restyle
-     them to the razor system (true black, hairlines, no radius).
-     They target Elfsight's stable semantic classes (es-* for the
-     reviews widget, yottie-* for the YouTube gallery); if Elfsight
-     renames those in a future bundle, re-inspect and update here —
-     or set the colors in the Elfsight dashboard instead.
-     ------------------------------------------------------------------ */
-  /* Reviews widget (In writing) */
-  #written .es-review-background-container,
-  #written .es-tabs-container{background:#000!important;border:1px solid var(--hair)!important;border-radius:0!important}
-  #written .es-button-base-container{background:transparent!important;border:1px solid var(--hair)!important;border-radius:0!important;color:var(--ink)!important}
-  #written .es-review-content,
-  #written .es-review-content-text-container,
-  #written .es-text-shortener{color:var(--text)!important}
-  #written .es-review-author-name,
-  #written .es-tab-title,
-  #written .es-rating-value{color:var(--ink)!important}
-  #written .es-review-info-date,
-  #written .es-review-info-container,
-  #written .es-text-shortener-control{color:var(--muted)!important}
+/* Elfsight widgets sit on white in their own theme. No colour overrides here:
+   if one renders dark, set it to the light theme in the Elfsight dashboard.
+   Reserve space so the page doesn't jump while they load. */
+.widget-slot{min-height:420px;margin-top:var(--s8)}
+/* video gallery starts collapsed to about two rows; the button below reveals the rest */
+.widget-slot.collapsed{max-height:600px;overflow:hidden;border-bottom:1px solid var(--line)}
+.more-row{margin-top:var(--s5)}
+/* contrast guard, not a theme: the reviews widget's own date and "Read more" grey
+   (#111 at 50% on #f8f8f8) is 3.5:1, under AA. Delete this rule once that colour
+   is darkened in the Elfsight dashboard. */
+#written .es-review-info-date,#written .es-text-shortener-control{color:var(--muted)!important}
 
-  /* YouTube gallery (On video) */
-  #video .yottie-widget-feed,
-  #video .yottie-widget-header,
-  #video .yottie-widget-header-classic,
-  #video .yottie-widget-nav,
-  #video .yottie-widget-header-logo{background:#000!important}
-  #video .yottie-widget-header-overlay{background:rgba(0,0,0,0.92)!important}
-  #video .swiper-slide,
-  #video .yottie-widget-video,
-  #video .yottie-widget-video-horizontal,
-  #video .yottie-widget-feed-section-slide{background:transparent!important}
-  #video .yottie-widget-video-overlay{background:rgba(0,0,0,0.95)!important}
-  #video .yottie-widget-feed-section-arrow{background:rgba(0,0,0,0.85)!important;color:#fff!important}
-  #video .yottie-widget-feed-section-arrow svg{fill:#fff!important}
-  #video .yottie-widget-video-info-title,
-  #video .yottie-widget-video-info-caption,
-  #video .yottie-widget-header-channel-title{color:var(--ink)!important}
-  #video .yottie-widget-header-channel-properties,
-  #video .yottie-widget-header-channel-properties-item,
-  #video .yottie-widget-header-channel-properties-item-text{color:var(--muted)!important}
+/* promote to site-v2: text-only quotes (no photo), a hairline pair */
+.said{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:var(--s8);border-block:1px solid var(--line)}
+.said li{display:flex;flex-direction:column;gap:var(--s4);min-width:0;padding:var(--s7) var(--s8) var(--s7) 0}
+.said li + li{border-left:1px solid var(--line);padding-inline:var(--s8) 0}
+.said blockquote{flex:1;font-family:var(--font-head);font-weight:600;font-size:var(--fs-h4);line-height:1.3;letter-spacing:-.015em;color:var(--ink);text-wrap:pretty}
+.said .by{font-size:var(--fs-s);line-height:1.4;color:var(--muted)}
+.said .by b{font-family:var(--font-head);font-weight:700;font-size:var(--fs-b);color:var(--ink)}
+
+/* closing band: two doors, one solid button */
+.closing .btns{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--s3) var(--s4)}
+
+@media (max-width:760px){
+  .said{grid-template-columns:minmax(0,1fr)}
+  .said li{padding:var(--s6) 0}
+  .said li + li{border-left:0;border-top:1px solid var(--line);padding-inline:0}
+  .said blockquote{font-size:var(--fs-h3)}
+}
+@media (max-width:560px){
+  .closing .btns{flex-direction:column;align-items:stretch;width:100%}
+}
 </style>
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -86,78 +76,139 @@
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD3WQ8N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<nav class="site-nav"><div class="wrap">
-  <a href="/" class="logo">Mike<i>.</i>Moll</a>
-  <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu" onclick="var n=this.closest('.site-nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><span></span><span></span><span></span></button><div class="links" id="site-menu">
-    <a href="/#free-resources">Free Resources</a>
-    <a href="/media">Media</a>
-    <a href="/#work" class="btn btn-ghost" style="padding:12px 16px">How I Help</a>
+<!-- chrome:header site -->
+<header class="site-nav">
+  <div class="wrap">
+    <a class="logo" href="/">Mike<span>.</span>Moll<small>Sales + Offer Coach</small></a>
+    <nav class="links" id="site-menu" aria-label="Main">
+      <a href="/consulting">Consulting</a>
+      <a href="/podcast-guesting">Podcast guesting</a>
+      <a href="/client-results" aria-current="page">Results</a>
+      <a href="/media">Media</a>
+    </nav>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="site-menu" onclick="var h=this.closest('.site-nav'),o=h.classList.toggle('open');this.setAttribute('aria-expanded',o);this.textContent=o?'Close':'Menu'">Menu</button>
   </div>
-</div></nav>
+</header>
+<!-- /chrome:header -->
 
-<header class="hero"><div class="wrap">
-  <h1>What my clients say.</h1>
-  <p>Here's what changed for clients after we worked together. Some raised their prices. Some got booked on podcasts.</p>
-</div></header>
+<main>
+<section class="hero-b">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Client results</span></nav>
+    <h1>What my clients say.</h1>
+    <p class="lead">Here's what changed for clients after we worked together. Some raised their prices. Some got booked on podcasts.</p>
+  </div>
+</section>
+
+<!-- RESULTS (same cards as /podcast-guesting) -->
+<section id="results" class="section band-dark">
+  <div class="wrap">
+    <h2 class="sr-only">Client results</h2>
+    <div class="tgrid">
+      <div class="tcard"><p class="result">Sales up 30%</p><p class="q">Mike's coaching helped me grow my sales by 30% and deeply connect with my audience. His podcasting and marketing strategies opened doors I didn't even know were there.</p><div class="by"><img loading="lazy" decoding="async" src="/media/podcast-guesting/client-mark.jpg" alt="Mark" width="44" height="44"><div><b>Mark</b></div><a class="watch" href="https://www.youtube.com/watch?v=xaf3zHqoBdg" target="_blank" rel="noopener"><svg viewBox="0 0 8 10" aria-hidden="true"><path d="M0 0v10l8-5z"/></svg>Watch</a></div></div>
+      <div class="tcard"><p class="result"><span class="nw">$16K &rarr; $30K</span> a month, fewer hours</p><p class="q">Yeah, the close ratio has got so much better since working with you, really.</p><div class="by"><img loading="lazy" decoding="async" src="/media/podcast-guesting/client-sean.jpg" alt="Sean Grabowski" width="44" height="44"><div><b>Sean Grabowski</b></div><a class="watch" href="https://www.youtube.com/watch?v=k9cjVyADu-8" target="_blank" rel="noopener"><svg viewBox="0 0 8 10" aria-hidden="true"><path d="M0 0v10l8-5z"/></svg>Watch</a></div></div>
+      <div class="tcard"><p class="result">Retainer tripled, <span class="nw">$1,500 &rarr; $4,500</span></p><p class="q">Within 10 minutes he distills it into three different solutions that would all work.</p><div class="by"><img loading="lazy" decoding="async" src="/media/podcast-guesting/client-tyler.jpg" alt="Tyler Cook" width="44" height="44"><div><b>Tyler Cook</b></div><a class="watch" href="https://www.youtube.com/watch?v=-1KCGNu6Lyc" target="_blank" rel="noopener"><svg viewBox="0 0 8 10" aria-hidden="true"><path d="M0 0v10l8-5z"/></svg>Watch</a></div></div>
+      <div class="tcard"><p class="result">Rates quadrupled</p><p class="q">Since then my rates have quadrupled.</p><div class="by"><img loading="lazy" decoding="async" src="/media/podcast-guesting/client-jenni.jpg" alt="Jenni" width="44" height="44"><div><b>Jenni</b></div><a class="watch" href="https://www.youtube.com/watch?v=s0EuglriODE" target="_blank" rel="noopener"><svg viewBox="0 0 8 10" aria-hidden="true"><path d="M0 0v10l8-5z"/></svg>Watch</a></div></div>
+    </div>
+  </div>
+</section>
 
 <!-- VIDEO TESTIMONIALS -->
-<section id="video" class="section"><div class="wrap">
-  <div class="eye">Client results</div>
-  <h2 class="h2">On video</h2>
-  <div class="widget-slot" id="video-slot">
-    <!-- Elfsight YouTube Gallery -->
-    <script src="https://elfsightcdn.com/platform.js" async></script>
-    <div class="elfsight-app-58b0280e-81f8-441e-be90-104e9c46c414" data-elfsight-app-lazy></div>
+<section id="video" class="section">
+  <div class="wrap">
+    <div class="sec-head"><h2>On video</h2></div>
+    <div class="widget-slot" id="video-slot">
+      <!-- Elfsight YouTube Gallery -->
+      <script src="https://elfsightcdn.com/platform.js" async></script>
+      <div class="elfsight-app-58b0280e-81f8-441e-be90-104e9c46c414" data-elfsight-app-lazy></div>
+    </div>
+    <div class="more-row" id="video-more-row" hidden>
+      <button type="button" class="btn line" id="video-more">View more videos</button>
+    </div>
+    <script>
+      // Collapse the gallery to two rows until the visitor asks for the rest.
+      // Applied from JS so the page still shows everything if scripts fail.
+      (function(){
+        var slot=document.getElementById('video-slot');
+        var row=document.getElementById('video-more-row');
+        slot.classList.add('collapsed');
+        row.hidden=false;
+        document.getElementById('video-more').addEventListener('click',function(){
+          slot.classList.remove('collapsed');
+          row.hidden=true;
+        });
+      })();
+    </script>
   </div>
-  <div class="more-row" id="video-more-row" hidden>
-    <button type="button" class="btn btn-ghost" id="video-more">View more videos</button>
-  </div>
-  <script>
-    // Collapse the gallery to two rows until the visitor asks for the rest.
-    // Applied from JS so the page still shows everything if scripts fail.
-    (function(){
-      var slot=document.getElementById('video-slot');
-      var row=document.getElementById('video-more-row');
-      slot.classList.add('collapsed');
-      row.hidden=false;
-      document.getElementById('video-more').addEventListener('click',function(){
-        slot.classList.remove('collapsed');
-        row.hidden=true;
-      });
-    })();
-  </script>
-</div></section>
+</section>
 
 <!-- WRITTEN REVIEWS -->
-<section id="written" class="section"><div class="wrap">
-  <div class="eye">Client results</div>
-  <h2 class="h2">In writing</h2>
-  <div class="widget-slot">
-    <!-- Elfsight All-in-One Reviews (platform.js already loaded above) -->
-    <div class="elfsight-app-46b97380-920e-4b02-a820-039052364bc4" data-elfsight-app-lazy></div>
+<section id="written" class="section">
+  <div class="wrap">
+    <div class="sec-head"><h2>In writing</h2></div>
+    <!-- Daniella and Alvin moved here from the homepage (no photo). Quote text as it ran there. -->
+    <ul class="said">
+      <li data-review-id="daniella"><blockquote>"Now we're at $30&ndash;40K a month in recurring revenue, and I enjoy sales."</blockquote><p class="by"><b>Daniella</b> &middot; Findable Digital</p></li>
+      <li data-review-id="alvin"><blockquote>"Mike helped me go from doing everything myself to scaling through systems and people."</blockquote><p class="by"><b>Alvin</b> &middot; Consultant</p></li>
+    </ul>
+    <div class="widget-slot">
+      <!-- Elfsight All-in-One Reviews (platform.js already loaded above) -->
+      <div class="elfsight-app-46b97380-920e-4b02-a820-039052364bc4" data-elfsight-app-lazy></div>
+    </div>
   </div>
-</div></section>
+</section>
 
 <!-- NEXT STEP -->
-<section id="next" class="section"><div class="wrap">
-  <div class="eye">Work with me</div>
-  <h2 class="h2">How I help</h2>
-  <p class="lead">I work with you on your offer, pricing, and sales, or on getting booked on podcasts your buyers already trust.</p>
-  <div class="cta-row">
-    <a href="/consulting" class="btn btn-primary">Explore Consulting</a>
-    <a href="/podcast-workshop" class="btn btn-ghost">Get on Podcasts</a>
+<section id="next" class="section closing band-dark">
+  <div class="wrap">
+    <h2>Work with me</h2>
+    <p>I work with you on your offer, pricing, and sales, or on getting booked on podcasts your buyers already trust.</p>
+    <div class="btns">
+      <a href="/consulting" class="btn">Explore consulting</a>
+      <a href="/podcast-workshop" class="btn line">Get on podcasts</a>
+    </div>
   </div>
-</div></section>
+</section>
+</main>
 
-<footer class="site-foot"><div class="wrap">
-  <a href="/" class="logo">Mike<i>.</i>Moll</a>
-  <div class="fl socials"><a href="https://www.instagram.com/themikemoll/">Instagram</a><a href="https://www.youtube.com/@mikemollco">YouTube</a><a href="https://www.linkedin.com/in/themikemoll/">LinkedIn</a></div>
-  <p>&copy; 2026 Impact Leads LLC</p>
-  <div class="fl foot-legal">
-    <a href="/privacy">Privacy Policy</a>
-    <a href="/terms">Terms &amp; Conditions</a>
+<!-- chrome:footer full -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="cols">
+      <div class="brand"><a class="logo" href="/">Mike<span>.</span>Moll<small>Sales + Offer Coach</small></a></div>
+      <nav aria-label="Work with me">
+        <span class="label">Work with me</span>
+        <ul>
+          <li><a href="/consulting">Consulting</a></li>
+          <li><a href="/podcast-guesting">Podcast guesting</a></li>
+          <li><a href="/client-results">Client results</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Learn">
+        <span class="label">Learn</span>
+        <ul>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/podcast">Podcast</a></li>
+          <li><a href="/videos">Videos</a></li>
+          <li><a href="/#free-resources">Free resources</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="About">
+        <span class="label">About</span>
+        <ul>
+          <li><a href="/media">Media</a></li>
+          <li><a href="/speaker-sheet">Speaker sheet</a></li>
+          <li><a href="https://www.instagram.com/themikemoll/">Instagram</a></li>
+          <li><a href="https://www.youtube.com/@mikemollco">YouTube</a></li>
+          <li><a href="https://www.linkedin.com/in/themikemoll/">LinkedIn</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="legal">
+      <div><span>&copy; 2026 Impact Leads LLC</span><i aria-hidden="true">&middot;</i><a href="/privacy">Privacy</a><i aria-hidden="true">&middot;</i><a href="/terms">Terms</a></div>
+    </div>
   </div>
-</div></footer>
-<script src="/scroll-top.js" defer></script>
+</footer>
+<!-- /chrome:footer -->
 </body>
 </html>
