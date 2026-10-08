@@ -22,10 +22,66 @@
 {"@type":"ProfessionalService","@id":"https://www.mikemoll.co/#service","name":"Mike Moll Coaching","description":"Offer and sales consulting (the Compression Method) and podcast-guesting help for service business owners.","provider":{"@id":"https://www.mikemoll.co/#organization"},"areaServed":"Worldwide","url":"https://www.mikemoll.co/"}
 ]}
 </script>
+<!-- chrome:head -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700;800&family=Poppins:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/site-v2.css">
+<!-- /chrome:head -->
+<link rel="preload" as="image" href="/media/home/hero.jpg">
+<style>
+/* home: page-only rules. Everything shared lives in /assets/site-v2.css. */
+/* promote to site-v2: breathing room between the stamped header and an offer hero */
+.hero-wrap{padding-top:var(--s5)}
+/* proof figures in the hero strip */
+.figs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s5)}
+.figs li{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--s2);min-width:0}
+.figs li + li{border-left:1px solid var(--line)}
+.figs b{font-family:var(--font-head);font-weight:800;font-size:var(--fs-num);line-height:1;letter-spacing:-.04em;color:var(--ink);font-variant-numeric:tabular-nums}
+.figs span{font-size:var(--fs-s);line-height:1.4;color:var(--text)}
+/* two doors: the two offers as peer cards, rows aligned */
+.doors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:20px;margin-top:var(--s10)}
+.door{display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:var(--s4);min-width:0;padding:40px;
+  background:#ffffff;border:1px solid var(--line);border-radius:var(--r)}
+.door h3{font-size:var(--fs-sub);line-height:1.15;letter-spacing:-.02em}
+.door .dots{display:flex;flex-direction:column;gap:10px;padding-top:var(--s4);border-top:1px solid var(--line);color:var(--ink)}
+.door .btn{align-self:end;justify-self:start;margin-top:var(--s2)}
+/* Meet Mike */
+.founder .copy .lead{color:var(--text)}
+.founder .lines li{font-size:var(--fs-b);padding-block:14px}
+.founder .lines li::before{top:calc(14px + .7em)}
+/* testimonials: name + company under the photo */
+.tcard .by span{display:block;font-size:var(--fs-s);line-height:1.4;color:var(--muted)}
+#proof .more-link{text-align:center;margin-top:var(--s7)}
+/* free resources: three hairline cells, each ends in its link or the form */
+#free-resources .tlink{align-self:flex-start}
+#free-resources .nl{margin-top:var(--s2)}
+/* newsletter form: markup untouched (forms.js swaps in its success message) */
+.nl{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s2)}
+.nl input{align-self:stretch;min-width:0;font-size:var(--fs-b);line-height:20px;padding:13px 16px;border:1px solid var(--field);border-radius:var(--r);background:#ffffff;color:var(--ink)}
+.nl input::placeholder{color:var(--muted);opacity:1}
+.nl input:focus{outline:none;border-color:var(--accent);box-shadow:var(--focus)}
+.nl button{min-height:48px;padding:0 22px;border:0;border-radius:var(--r);background:var(--accent);color:var(--accent-ink);
+  font-family:var(--font-head);font-weight:700;font-size:var(--fs-b);cursor:pointer;transition:background-color var(--ease)}
+.nl button:hover{background:var(--accent-hover)}
+@media (max-width:960px){
+  .doors{grid-template-columns:minmax(0,1fr);row-gap:var(--s4);margin-top:var(--s8)}
+  .door{grid-row:auto;display:flex;flex-direction:column;gap:var(--s4)}
+  .door .btn{align-self:flex-start}
+  .figs b{font-size:36px}
+}
+@media (max-width:560px){
+  .hero-wrap{padding-top:var(--s3)}
+  .figs{grid-template-columns:minmax(0,1fr);gap:0;text-align:left}
+  .figs li{flex-direction:row;align-items:baseline;justify-content:flex-start;gap:var(--s4);padding-block:var(--s3)}
+  .figs li + li{border-left:0;border-top:1px solid var(--line)}
+  .figs b{flex:none;min-width:116px;font-size:28px}
+  .door{padding:28px 22px}
+  .door h3{font-size:var(--fs-h4)}
+  .door .btn{align-self:stretch}
+  .nl button{align-self:stretch}
+}
+</style>
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -34,131 +90,218 @@
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD3WQ8N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<nav class="site-nav"><div class="wrap">
-  <a href="/" class="logo">Mike<i>.</i>Moll</a>
-  <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu" onclick="var n=this.closest('.site-nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><span></span><span></span><span></span></button><div class="links" id="site-menu">
-    <a href="#free-resources">Free Resources</a>
-    <a href="/media">Media</a>
-    <a href="#work" class="btn btn-ghost" style="padding:12px 16px">How I Help</a>
+<!-- chrome:header site -->
+<header class="site-nav">
+  <div class="wrap">
+    <a class="logo" href="/">Mike<span>.</span>Moll<small>Sales + Offer Coach</small></a>
+    <nav class="links" id="site-menu" aria-label="Main">
+      <a href="/consulting">Consulting</a>
+      <a href="/podcast-guesting">Podcast guesting</a>
+      <a href="/client-results">Results</a>
+      <a href="/media">Media</a>
+    </nav>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+    <script>
+    /* Phone menu (<=960px): a full-height sheet under the header. Escape closes it, Tab stays inside the header, the page behind does not scroll. */
+    (function () {
+      var nav = document.currentScript.closest('.site-nav');
+      var btn = nav.querySelector('.menu'), links = nav.querySelector('.links'), root = document.documentElement;
+      var wide = window.matchMedia('(min-width: 961px)');
+      function isOpen() { return nav.classList.contains('open'); }
+      function set(open, refocus) {
+        nav.classList.toggle('open', open);
+        root.classList.toggle('menu-open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.textContent = open ? 'Close' : 'Menu';
+        if (!open && refocus) btn.focus({ preventScroll: true });
+      }
+      function order() {
+        return [nav.querySelector('.logo'), nav.querySelector('.wrap > .btn'), btn].concat([].slice.call(links.querySelectorAll('a'))).filter(Boolean);
+      }
+      btn.addEventListener('click', function () { set(!isOpen(), false); });
+      links.addEventListener('click', function (e) { if (isOpen() && e.target.closest('a')) set(false, false); });
+      document.addEventListener('keydown', function (e) {
+        if (!isOpen() || document.querySelector('dialog[open]')) return;
+        if (e.key === 'Escape') { e.preventDefault(); set(false, true); return; }
+        if (e.key !== 'Tab') return;
+        var list = order(), i = list.indexOf(document.activeElement);
+        e.preventDefault();
+        list[i < 0 ? 0 : (i + (e.shiftKey ? list.length - 1 : 1)) % list.length].focus({ preventScroll: true });
+      });
+      function onWide() { if (wide.matches && isOpen()) set(false, false); }
+      if (wide.addEventListener) wide.addEventListener('change', onWide); else wide.addListener(onWide);
+    })();
+    </script>
   </div>
-</div></nav>
+</header>
+<!-- /chrome:header -->
 
-<header class="hero"><div class="wrap">
-  <h1>I make you and your offer more sellable.</h1>
-  <p>I sharpen your offer so it sells for more, and get you on podcasts so the right buyers find you.</p>
-  <div class="cta"><a href="#work" class="btn btn-primary">How I Help</a><a href="#free-resources" class="btn btn-ghost">Explore free resources</a></div>
-  <div class="stats">
-    <div><b>$2.5M+</b><span>Added for clients</span></div>
-    <div><b>2-4&times;</b><span>Clients' rates raised</span></div>
-    <div><b>$386K</b><span>From podcast guesting</span></div>
-  </div>
-</div></header>
-
-<!-- BRANCHES -->
-<section id="work" class="section"><div class="wrap">
-  <div class="eye">Work with me</div>
-  <h2 class="h2">How I help</h2>
-  <p class="lead">I can work with you on one or both of these, depending on your needs.</p>
-  <div class="grid2">
-    <div class="card">
-      <div class="tag">Your Offer &middot; Consulting</div>
-      <h3>Make your offer more sellable</h3>
-      <p>We simplify your offer and fix your pricing and sales so you enjoy delivering, done through the Compression Method.</p>
-      <ul>
-        <li>A simpler offer built around one clear outcome</li>
-        <li>Pricing set on the value you create</li>
-        <li>A sales process easy for you to deliver</li>
-      </ul>
-      <span class="circled"><svg class="scribble" viewBox="0 0 300 92" preserveAspectRatio="none"><path d="M22,55 C9,23 96,9 170,13 C248,17 294,32 279,56 C267,76 186,86 106,81 C50,77 12,68 47,40"/></svg><a href="/consulting" class="alink">Explore Consulting &rarr;</a></span>
-    </div>
-    <div class="card">
-      <div class="tag">You &middot; Podcast Guesting</div>
-      <h3>Make yourself more sellable</h3>
-      <p>I get you booked on podcasts your buyers already trust, so the right people find you.</p>
-      <ul>
-        <li>Finding you the best shows for your offer</li>
-        <li>Pitches that get you booked</li>
-        <li>A guest appearance that turns into clients</li>
-      </ul>
-      <span class="circled"><svg class="scribble" viewBox="0 0 300 92" preserveAspectRatio="none"><path d="M22,55 C9,23 96,9 170,13 C248,17 294,32 279,56 C267,76 186,86 106,81 C50,77 12,68 47,40"/></svg><a href="/podcast-guesting" class="alink">Get on podcasts &rarr;</a></span>
-    </div>
-  </div>
-</div></section>
-
-<!-- MEET MIKE -->
-<section id="mike" class="section"><div class="wrap">
-  <div class="meetgrid">
-    <div>
-      <div class="eye">Meet Mike</div>
-      <h2 class="h2">I've done both for my own business.</h2>
-      <p class="lede">I fixed my offer after near bankruptcy, then booked myself onto 70+ podcasts and added $386,000 in revenue.</p>
-    </div>
-    <div class="meetphoto"><img src="/images/mike-moll-podcast-interview.jpg" alt="Mike Moll recording a podcast at the table" loading="lazy"></div>
-  </div>
-  <div class="creds">
-    <div>14 years in service business</div>
-    <div>Leads GTM at seven-figure company</div>
-    <div>Fractional CMO, $20M company</div>
-    <div>Digital lead, Volvo &amp; Patak's</div>
-    <div>70+ podcast appearances</div>
-    <div>120+ podcasts hosted</div>
-  </div>
-</div></section>
-
-<!-- TESTIMONIALS -->
-<section id="proof" class="section"><div class="wrap">
-  <div class="eye loose">Client results</div>
-  <h2 class="sr-only">Client results</h2>
-  <!-- Testimonials are display-only. To link a review to its source later,
-       wrap the .rev in an <a href> keyed by data-review-id. -->
-  <div class="revs">
-    <div class="rev" data-review-id="daniella"><p>"Now we're at $30&ndash;40K a month in recurring revenue, and I enjoy sales."</p><b>Daniella <em>&middot; Findable Digital</em></b></div>
-    <div class="rev" data-review-id="jenni"><p>"My rates have quadrupled. Last month I did a $16K month without it feeling like a stretch."</p><b>Jenni <em>&middot; Chill Creative</em></b></div>
-    <div class="rev" data-review-id="mark"><p>"A podcasting strategy that directly grew my client engagements and visibility."</p><b>Mark <em>&middot; Solopreneur</em></b></div>
-    <div class="rev" data-review-id="sean"><p>"I'm making a few multiples more than when I came to Mike, working the same hours if not less."</p><b>Sean <em>&middot; Keepers Digital</em></b></div>
-    <div class="rev" data-review-id="tyler"><p>"Within ten minutes he distills a business-crushing problem into three solutions that would all work."</p><b>Tyler <em>&middot; Email Marketing Agency</em></b></div>
-    <div class="rev" data-review-id="alvin"><p>"Mike helped me go from doing everything myself to scaling through systems and people."</p><b>Alvin <em>&middot; Consultant</em></b></div>
-  </div>
-  <div style="margin-top:28px"><a href="/client-results" class="alink">See more client results &rarr;</a></div>
-</div></section>
-
-<!-- STAY IN MY WORLD -->
-<section id="free-resources" class="section"><div class="wrap">
-  <div class="eye loose">Start for free</div>
-  <h2 class="sr-only">Free resources</h2>
-  <div class="res">
-    <div class="card">
-      <h3>The Podcast</h3>
-      <p>Short episodes on offers, pricing, and sales.</p>
-      <a href="/podcast" class="alink">Listen Now &rarr;</a>
-    </div>
-    <div class="card">
-      <h3>The Newsletter</h3>
-      <p>The marketing offer and AI experiments that I share.</p>
-      <form class="nl" data-lead="newsletter" data-success="You're subscribed." data-success-note="Owner-to-owner notes on offers, pricing, and getting paid.">
-        <input type="email" name="email" placeholder="you@yourbusiness.com" aria-label="Email" required>
-        <button type="submit">Subscribe</button>
-      </form>
-    </div>
-    <div class="card">
-      <h3>More free resources</h3>
-      <p>Videos and tools.</p>
-      <div class="rlinks">
-        <a href="/free/claude-basics" class="alink">Claude for the Boring Work &rarr;</a>
+<main>
+  <div class="wrap hero-wrap">
+    <div class="hero-photo" style="--hero-img:url('/media/home/hero.jpg')">
+      <img class="ph" src="/media/home/hero.jpg" alt="" aria-hidden="true" fetchpriority="high" width="1350" height="900">
+      <div class="in">
+        <h1>I make you and your offer more sellable.</h1>
+        <p>I sharpen your offer so it sells for more, and get you on podcasts so the right buyers find you.</p>
+        <div class="btns">
+          <a class="btn" href="#work">Work with me</a>
+          <a class="act" href="#free-resources">Explore free resources</a>
+        </div>
       </div>
     </div>
+    <div class="strip">
+      <ul class="figs">
+        <li><b>$2.5M+</b><span>Added for clients</span></li>
+        <li><b>2-4&times;</b><span>Clients' rates raised</span></li>
+        <li><b>$386K</b><span>From podcast guesting</span></li>
+      </ul>
+    </div>
   </div>
-</div></section>
 
-<footer class="site-foot"><div class="wrap">
-  <a href="/" class="logo">Mike<i>.</i>Moll</a>
-  <div class="fl socials"><a href="https://www.instagram.com/themikemoll/">Instagram</a><a href="https://www.youtube.com/@mikemollco">YouTube</a><a href="https://www.linkedin.com/in/themikemoll/">LinkedIn</a></div>
-  <p>&copy; 2026 Impact Leads LLC</p>
-  <div class="fl foot-legal">
-    <a href="/privacy">Privacy Policy</a>
-    <a href="/terms">Terms &amp; Conditions</a>
+  <!-- TWO DOORS: the two offers, as peers -->
+  <section id="work" class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Two ways to work with me</h2>
+        <p>I can work with you on one or both of these, depending on your needs.</p>
+      </div>
+      <div class="doors">
+        <article class="door on-light">
+          <span class="label">Your Offer &middot; Consulting</span>
+          <h3>Make your offer more sellable</h3>
+          <p>We simplify your offer and fix your pricing and sales so you enjoy delivering, done through the Compression Method.</p>
+          <ul class="dots">
+            <li>A simpler offer built around one clear outcome</li>
+            <li>Pricing set on the value you create</li>
+            <li>A sales process easy for you to deliver</li>
+          </ul>
+          <a class="btn" href="/consulting">Explore consulting</a>
+        </article>
+        <article class="door on-light">
+          <span class="label">You &middot; Podcast Guesting</span>
+          <h3>Make yourself more sellable</h3>
+          <p>I get you booked on podcasts your buyers already trust, so the right people find you.</p>
+          <ul class="dots">
+            <li>Finding you the best shows for your offer</li>
+            <li>Pitches that get you booked</li>
+            <li>A guest appearance that turns into clients</li>
+          </ul>
+          <a class="btn" href="/podcast-guesting">Get on podcasts</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEET MIKE -->
+  <section id="mike" class="section band-soft">
+    <div class="wrap">
+      <div class="founder">
+        <img loading="lazy" decoding="async" src="/media/home/mike-portrait.jpg" alt="Mike Moll smiling in a leather armchair with a notebook" width="800" height="1000">
+        <div class="copy">
+          <span class="eyebrow">Meet Mike</span>
+          <h2>I've done both for my own business.</h2>
+          <p class="lead">I fixed my offer after near bankruptcy, then booked myself onto 70+ podcasts and added $386,000 in revenue.</p>
+          <ul class="lines dots">
+            <li>14 years in service business</li>
+            <li>Leads GTM at seven-figure company</li>
+            <li>Fractional CMO, $20M company</li>
+            <li>Digital lead, Volvo &amp; Patak's</li>
+            <li>70+ podcast appearances</li>
+            <li>120+ podcasts hosted</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="proof" class="section band-dark">
+    <div class="wrap">
+      <div class="sec-head center">
+        <h2>Client results</h2>
+      </div>
+      <!-- Testimonials are display-only. To link a review to its source later,
+           wrap the .tcard in an <a href> keyed by data-review-id. -->
+      <div class="tgrid">
+        <div class="tcard" data-review-id="jenni"><p class="result">Rates quadrupled</p><p class="q">&ldquo;My rates have quadrupled. Last month I did a $16K month without it feeling like a stretch.&rdquo;</p><div class="by"><img loading="lazy" decoding="async" src="/media/podcast-guesting/client-jenni.jpg" alt="Jenni" width="44" height="44"><div><b>Jenni</b><span>Chill Creative</span></div></div></div>
+        <div class="tcard" data-review-id="mark"><p class="result">Sales up 30%</p><p class="q">&ldquo;A podcasting strategy that directly grew my client engagements and visibility.&rdquo;</p><div class="by"><img loading="lazy" decoding="async" src="/media/podcast-guesting/client-mark.jpg" alt="Mark" width="44" height="44"><div><b>Mark</b><span>Solopreneur</span></div></div></div>
+        <div class="tcard" data-review-id="sean"><p class="result"><span class="nw">$16K &rarr; $30K</span> a month, fewer hours</p><p class="q">&ldquo;I'm making a few multiples more than when I came to Mike, working the same hours if not less.&rdquo;</p><div class="by"><img loading="lazy" decoding="async" src="/media/podcast-guesting/client-sean.jpg" alt="Sean" width="44" height="44"><div><b>Sean</b><span>Keepers Digital</span></div></div></div>
+        <div class="tcard" data-review-id="tyler"><p class="result">Retainer tripled, <span class="nw">$1,500 &rarr; $4,500</span></p><p class="q">&ldquo;Within ten minutes he distills a business-crushing problem into three solutions that would all work.&rdquo;</p><div class="by"><img loading="lazy" decoding="async" src="/media/podcast-guesting/client-tyler.jpg" alt="Tyler" width="44" height="44"><div><b>Tyler</b><span>Email Marketing Agency</span></div></div></div>
+      </div>
+      <p class="more-link"><a href="/client-results" class="tlink">See more client results</a></p>
+    </div>
+  </section>
+
+  <!-- FREE RESOURCES -->
+  <section id="free-resources" class="section band-soft">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Start for free</span>
+        <h2>Free resources</h2>
+      </div>
+      <ul class="hgrid c3">
+        <li>
+          <h3>The Podcast</h3>
+          <p>Short episodes on offers, pricing, and sales.</p>
+          <a href="/podcast" class="tlink">Listen now</a>
+        </li>
+        <li>
+          <h3>The Newsletter</h3>
+          <p>The marketing offer and AI experiments that I share.</p>
+          <form class="nl" data-lead="newsletter" data-success="You're subscribed." data-success-note="Owner-to-owner notes on offers, pricing, and getting paid.">
+            <input type="email" name="email" placeholder="you@yourbusiness.com" aria-label="Email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </li>
+        <li>
+          <h3>More free resources</h3>
+          <p>Videos and tools.</p>
+          <a href="/free/claude-basics" class="tlink">Claude for the Boring Work</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<!-- chrome:footer full -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="cols">
+      <div class="brand"><a class="logo" href="/">Mike<span>.</span>Moll<small>Sales + Offer Coach</small></a></div>
+      <nav aria-label="Work with me">
+        <span class="label">Work with me</span>
+        <ul>
+          <li><a href="/consulting">Consulting</a></li>
+          <li><a href="/podcast-guesting">Podcast guesting</a></li>
+          <li><a href="/client-results">Client results</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Learn">
+        <span class="label">Learn</span>
+        <ul>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/podcast">Podcast</a></li>
+          <li><a href="/videos">Videos</a></li>
+          <li><a href="/#free-resources">Free resources</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="About">
+        <span class="label">About</span>
+        <ul>
+          <li><a href="/media">Media</a></li>
+          <li><a href="/speaker-sheet">Speaker sheet</a></li>
+          <li><a href="https://www.instagram.com/themikemoll/">Instagram</a></li>
+          <li><a href="https://www.youtube.com/@mikemollco">YouTube</a></li>
+          <li><a href="https://www.linkedin.com/in/themikemoll/">LinkedIn</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="legal">
+      <div><span>&copy; 2026 Impact Leads LLC</span><i aria-hidden="true">&middot;</i><a href="/privacy">Privacy</a><i aria-hidden="true">&middot;</i><a href="/terms">Terms</a></div>
+    </div>
   </div>
-</div></footer>
+</footer>
+<!-- /chrome:footer -->
 
 <script src="/forms.js"></script>
 </body>

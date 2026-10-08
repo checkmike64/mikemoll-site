@@ -8,6 +8,9 @@ only the text between a pair is replaced:
       preconnects, the one font URL, /assets/site-v2.css
   <!-- chrome:header site --> ... <!-- /chrome:header -->
       logo + Consulting, Podcast guesting, Results, Media. No button.
+      Under 961px the links move into the "Menu" sheet (menu.html: the
+      button and its script: full-height sheet, Escape, focus kept in the
+      header, page scroll locked).
   <!-- chrome:header podcast --> ... <!-- /chrome:header -->
       the same + outlined "Free assessment" (podcast-guesting-nav)
   <!-- chrome:header focus href="#apply" label="Apply" cta="mastermind-nav" --> ... <!-- /chrome:header -->
@@ -89,7 +92,7 @@ def render(kind, variant, attrs, page_url, where):
         current = attrs.get('current', page_url)
         if current:
             nav = nav.replace(f'<a href="{current}">', f'<a href="{current}" aria-current="page">', 1)
-        out = out.replace('{{nav}}', nav)
+        out = out.replace('{{nav}}', nav).replace('{{menu}}', partial('menu.html'))
     if kind == 'header' and variant == 'focus':
         for need in ('href', 'label'):
             if not attrs.get(need):
