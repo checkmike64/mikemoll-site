@@ -9,19 +9,50 @@ Static site for Mike Moll. Plain HTML/CSS, no build step. Deploys on Vercel.
 - `public/audio/` — DO NOT commit audio/video. Host on YouTube/Spotify and embed.
 - `vercel.json` — clean URLs + 301 redirects from the old GoHighLevel slugs
 - `robots.txt`, `sitemap.xml`, `llms.txt` — SEO + AI-SEO
-- `_template.html` — starting point for new pages. Has GTM and the scroll-to-top
-  script already wired in. No build step means no automatic includes, so copy
-  this file rather than starting a page from scratch. When you add a page,
-  also add its URL to `sitemap.xml` (unless it should stay `noindex`, like a
-  thank-you page).
-- `scroll-top.js` — shared "back to top" button, included via `<script src="/scroll-top.js" defer></script>` before `</body>` on every page.
+- `_template.html`: starting point for new pages, on design system v2 (see below).
+  GTM, the favicon block, `visits.js` and `forms.js` are already wired in. No
+  build step means no automatic includes, so copy this file rather than
+  starting a page from scratch. When you add a page, also add its URL to
+  `sitemap.xml` (unless it should stay `noindex`, like a thank-you page).
+- `scroll-top.js`: shared "back to top" button on v1 pages, included via `<script src="/scroll-top.js" defer></script>` before `</body>`. v2 pages don't load it (the sticky header does the job).
 - `favicon.ico`, `favicon.svg`, `apple-touch-icon.png` — the site icon (white M on a black circle). Every page links all three just before `</head>`; `_template.html` and both generator templates (`generator/_source/gen.py`, `build_pages.py`) already carry the block. Keep it when copying or generating pages:
   ```html
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   ```
-- Every page includes the same Google Tag Manager container (`GTM-55MG6M63`) — script tag high in `<head>`, noscript iframe right after `<body>`. Keep both when copying/editing pages.
+- Every page includes the same Google Tag Manager container (`GTM-WD3WQ8N`): script tag high in `<head>`, noscript iframe right after `<body>`. Keep both when copying/editing pages.
+
+## Design system v2
+The site is moving, page by page, from `assets/site.css` (v1: black, frozen,
+no new work) to `assets/site-v2.css` (the light system from `/podcast-guesting`).
+A page loads one or the other, never both: `.hero`, `.btn`, `.eyebrow` and
+`.logo` mean different things in each. The rules and the component list are at
+the top of `assets/site-v2.css`; `_template.html` is the reference page.
+
+To put a page on v2:
+1. In `<head>`, replace the Google Fonts link and the `site.css` link with an
+   empty `<!-- chrome:head -->` `<!-- /chrome:head -->` pair. Leave GTM, the
+   title, canonical, OG, JSON-LD, the favicon block and the scripts alone.
+2. Replace the page's `<nav>`/`<header>` and `<footer>` with marker pairs:
+   - `<!-- chrome:header site -->`: logo + Consulting, Podcast guesting, Results, Media
+   - `<!-- chrome:header podcast -->`: the same + the outlined "Free assessment" button
+   - `<!-- chrome:header focus href="#apply" label="Apply" cta="mastermind-nav" -->`:
+     campaign pages, logo + the page's one action
+   - `<!-- chrome:footer full -->` or `<!-- chrome:footer focus -->` (legal row + socials)
+
+   Each one is closed by `<!-- /chrome:header -->` or `<!-- /chrome:footer -->`.
+3. Stamp it: `python3 scripts/stamp_chrome.py page.html`. The nav link for the
+   page's own URL gets `aria-current="page"` (the ink link with the blue dot).
+4. Rebuild the content with the v2 components and cut the inline `<style>` down
+   to page-only rules. Keep every `href`, `data-cta` and `data-lead` as it was.
+5. Check it at 390px and 1440px against the live page before merging.
+
+The header and footer live once, in `generator/chrome/`. After editing a
+partial, run `python3 scripts/stamp_chrome.py` (no arguments) to restamp every
+page that carries a marker, and `python3 scripts/stamp_chrome.py --check` to
+confirm nothing has drifted (exit 1 if a page is out of date). Only the text
+between markers is ever rewritten.
 
 ## Get it live (first time, ~10 minutes)
 1. **GitHub:** create a new repo at github.com/new named `mikemoll-site`. Upload this folder (drag-and-drop in the browser works, or use GitHub Desktop).
