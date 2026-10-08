@@ -185,7 +185,9 @@
       status.textContent = message;
       if (withFallback) {
         status.append(' ');
-        status.appendChild(el('a', { href: fallback }, 'Open the booking calendar'));
+        // Marked external so this script's own /book/ link handler lets it
+        // through to the CRM's booking page instead of reopening the window.
+        status.appendChild(el('a', { href: fallback, 'data-booking-external': true }, 'Open the booking calendar'));
         status.append('.');
       }
     }
