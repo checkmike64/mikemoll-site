@@ -1,5 +1,16 @@
 #!/usr/bin/env python3
 # Renders guest-appearance blog posts from content/<ref>.json + base.json into ../blog/<slug>.html
+# RETIRED (2026-10-07, blog restyle PR B3). Kept as a record of how the guest posts
+# were first generated; it must not run again. The live pages were tuned by hand after its
+# last run: they carry the GTM snippet, canonicals, OG/Twitter tags, JSON-LD and the
+# design system v2 chrome, and this script writes none of them (it inlines the retired v1
+# stylesheet and an old nav and footer instead). Running it would wipe all of that.
+#   New posts:   generator/video-blog/build_post.py (category guest-appearance)
+#   Restyles:    scripts/migrate_posts_v2.py, then scripts/stamp_chrome.py
+import sys
+sys.exit("gen.py is retired and refuses to write into blog/: it would wipe the GTM snippet, "
+         "canonicals, OG and JSON-LD on the live pages. Build posts with "
+         "generator/video-blog/build_post.py instead (see generator/_source/README.md).")
 import json, re, pathlib, html, sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent   # project root (mikemoll-media)
 css = (ROOT/'assets'/'site.css').read_text()

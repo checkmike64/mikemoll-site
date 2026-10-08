@@ -25,77 +25,13 @@
  {"@type":"Organization","@id":"https://www.mikemoll.co/#organization","name":"Mike Moll","url":"https://www.mikemoll.co/"}
 ]}
 </script>
+<!-- chrome:head -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css">
-<style>
-  :root{--max:1120px;--read:720px;}
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{background:var(--canvas);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
-  
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;position:relative;z-index:2}
-  a{color:inherit;text-decoration:none}
-  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-0.03em;line-height:1.1}
-  nav{position:sticky;top:0;z-index:10;background:rgba(0,0,0,0.75);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline)}
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
-  .logo{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-0.02em}
-  .logo span{color:var(--accent)}
-  .nav-links{display:flex;align-items:center;gap:28px}
-  .nav-links a:not(.btn){color:var(--muted);font-size:15px;font-weight:500;transition:color .2s}
-  .nav-links a:not(.btn):hover{color:var(--ink)}
-  .btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:15px;padding:12px 22px;transition:transform .2s,background .2s,border-color .2s;border:none;cursor:pointer}
-  .btn-primary{background:var(--accent);color:var(--accent-ink)}
-  .btn-primary:hover{transform:translateY(-2px)}
-  .btn-ghost{border:1px solid var(--hairline-2);color:var(--ink);background:none}
-  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
-  .text-link{font-family:var(--display);font-weight:600;font-size:15px;color:var(--muted);display:inline-flex;gap:7px;transition:color .2s,gap .2s}
-  .text-link:hover{color:var(--accent);gap:11px}
-
-  .article{max-width:var(--read);margin:0 auto;padding:52px 28px 40px;position:relative;z-index:2}
-  .crumbs{font-family:var(--display);font-size:12px;letter-spacing:0.08em;color:var(--muted);margin-bottom:24px}
-  .crumbs a:hover{color:var(--ink)}
-  .tag-chip{display:inline-block;font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);border:1px solid var(--hairline-2);padding:6px 14px;margin-bottom:20px}
-  .article h1{font-size:clamp(2rem,4.6vw,2.9rem);font-weight:700;margin-bottom:18px}
-  .post-meta{font-family:var(--display);font-size:13px;letter-spacing:0.04em;color:var(--muted);margin-bottom:32px}
-  .post-meta span+span::before{content:"·";margin:0 10px;color:var(--hairline-2)}
-
-  .player{border:1px solid var(--hairline);overflow:hidden;background:var(--surface);margin-bottom:20px;aspect-ratio:16/9}
-  .player iframe{display:block;width:100%;height:100%;border:0}
-  .listen{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:44px}
-  .listen a{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:600;font-size:13px;padding:9px 16px;border:1px solid var(--hairline-2);color:var(--ink);transition:border-color .2s}
-  .listen a:hover{border-color:var(--accent);color:var(--accent)}
-  .listen a .d{width:7px;height:7px;background:var(--accent)}
-
-  .prose > p{margin-bottom:22px;color:var(--ink)}
-  .prose h2{font-size:1.5rem;margin:44px 0 16px}
-  .prose h3{font-size:1.2rem;margin:32px 0 12px}
-  .prose ul{margin:0 0 22px 0;padding:0;list-style:none}
-  .prose ul li{position:relative;padding-left:26px;margin-bottom:12px;color:var(--ink)}
-  .prose ul li::before{content:"";position:absolute;left:4px;top:11px;width:7px;height:7px;background:var(--accent)}
-  .prose a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--hairline-2)}
-  .prose a:hover{text-decoration-color:var(--accent)}
-
-  .takeaways{background:var(--surface);border:1px solid var(--hairline);padding:28px 30px;margin:38px 0}
-  .takeaways h2{font-size:1.15rem;margin:0 0 16px}
-
-  .guestcard{background:var(--surface-2);border:1px solid var(--hairline);padding:30px 32px;margin:44px 0}
-  .guestcard .lab{font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:block}
-  .guestcard h3{font-size:1.3rem;margin-bottom:12px}
-  .guestcard .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-  .guestcard .links a{font-family:var(--display);font-weight:600;font-size:13px;padding:8px 15px;border:1px solid var(--hairline-2);color:var(--ink);transition:border-color .2s}
-  .guestcard .links a:hover{border-color:var(--accent);color:var(--accent)}
-
-  .cta{border:1px solid var(--hairline-2);padding:38px 34px;margin:52px 0 12px;background:linear-gradient(150deg,#000000,#000000)}
-  .cta h3{font-size:1.45rem;margin-bottom:10px}
-  .cta p{color:var(--muted);margin-bottom:22px}
-
-  footer{border-top:1px solid var(--hairline);padding:40px 0}
-  .foot-in{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
-  .foot-in p{color:var(--muted);font-size:14px}
-  @media(max-width:640px){.nav-links a:not(.btn){display:none}}
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700;800&family=Poppins:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/site-v2.css">
+<!-- /chrome:head -->
+<link rel="stylesheet" href="/assets/post.css">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -103,16 +39,51 @@
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD3WQ8N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<nav class="site-nav">
+<!-- chrome:header site -->
+<header class="site-nav">
   <div class="wrap">
-    <a href="/" class="logo">Mike<i>.</i>Moll</a>
-    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu" onclick="var n=this.closest('.site-nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><span></span><span></span><span></span></button><div class="links" id="site-menu">
-      <a href="/#free-resources">Free Resources</a>
+    <a class="logo" href="/">Mike<span>.</span>Moll<small>Sales + Offer Coach</small></a>
+    <nav class="links" id="site-menu" aria-label="Main">
+      <a href="/consulting">Consulting</a>
+      <a href="/podcast-guesting">Podcast guesting</a>
+      <a href="/client-results">Results</a>
       <a href="/media">Media</a>
-      <a href="/#work" class="btn btn-ghost">How I Help</a>
-    </div>
+    </nav>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+    <script>
+    /* Phone menu (<=960px): a full-height sheet under the header. Escape closes it, Tab stays inside the header, the page behind does not scroll. */
+    (function () {
+      var nav = document.currentScript.closest('.site-nav');
+      var btn = nav.querySelector('.menu'), links = nav.querySelector('.links'), root = document.documentElement;
+      var wide = window.matchMedia('(min-width: 961px)');
+      function isOpen() { return nav.classList.contains('open'); }
+      function set(open, refocus) {
+        nav.classList.toggle('open', open);
+        root.classList.toggle('menu-open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.textContent = open ? 'Close' : 'Menu';
+        if (!open && refocus) btn.focus({ preventScroll: true });
+      }
+      function order() {
+        return [nav.querySelector('.logo'), nav.querySelector('.wrap > .btn'), btn].concat([].slice.call(links.querySelectorAll('a'))).filter(Boolean);
+      }
+      btn.addEventListener('click', function () { set(!isOpen(), false); });
+      links.addEventListener('click', function (e) { if (isOpen() && e.target.closest('a')) set(false, false); });
+      document.addEventListener('keydown', function (e) {
+        if (!isOpen() || document.querySelector('dialog[open]')) return;
+        if (e.key === 'Escape') { e.preventDefault(); set(false, true); return; }
+        if (e.key !== 'Tab') return;
+        var list = order(), i = list.indexOf(document.activeElement);
+        e.preventDefault();
+        list[i < 0 ? 0 : (i + (e.shiftKey ? list.length - 1 : 1)) % list.length].focus({ preventScroll: true });
+      });
+      function onWide() { if (wide.matches && isOpen()) set(false, false); }
+      if (wide.addEventListener) wide.addEventListener('change', onWide); else wide.addListener(onWide);
+    })();
+    </script>
   </div>
-</nav>
+</header>
+<!-- /chrome:header -->
 
 <article class="article">
   <div class="crumbs"><a href="/">Home</a> / <a href="/blog">Blog</a> / Expert Guest: How to Time Block to Maximize Productivity - Tiffany Taylor</div>
@@ -170,24 +141,58 @@
     </div>
   </div>
 
-  <div class="cta">
-    <h3>Two ways I can help.</h3>
-    <p>I work with experts on two things: making your offer more sellable, and getting you on podcasts so the right buyers find you. Pick the one you need.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:12px">
-      <a href="/consulting" class="btn btn-primary">If you need help selling your offer</a>
-      <a href="/podcast-workshop" class="btn btn-ghost">If you want to get on podcasts</a>
-    </div>
-  </div>
-
-  <div style="margin-top:36px"><a href="/blog" class="text-link">&larr; All episodes and writing</a></div>
+  <p class="post-back"><a href="/blog" class="tlink">&larr; All episodes and writing</a></p>
 </article>
 
+<section class="section closing band-dark post-close">
+  <div class="wrap">
+    <h2>Two ways to work with me.</h2>
+    <p>I work with experts on two things: making your offer more sellable, and getting you on podcasts so the right buyers find you. Pick the one you need.</p>
+    <div class="btns">
+      <a href="/consulting" class="btn">If you need help selling your offer</a>
+      <a href="/podcast-guesting" class="btn line">If you want to get on podcasts</a>
+    </div>
+  </div>
+</section>
+
+<!-- chrome:footer full -->
 <footer class="site-foot">
   <div class="wrap">
-    <a href="/" class="logo">Mike<i>.</i>Moll</a>
-    <p>&copy; 2026 Impact Leads LLC</p>
-    <div style="flex-basis:100%;width:100%;border-top:1px solid rgba(255,255,255,0.10);padding-top:14px;display:flex;justify-content:center;gap:18px"><a href="/privacy" style="color:#9a9a9a;font-size:13px;text-decoration:none">Privacy Policy</a><a href="/terms" style="color:#9a9a9a;font-size:13px;text-decoration:none">Terms &amp; Conditions</a></div>
+    <div class="cols">
+      <div class="brand"><a class="logo" href="/">Mike<span>.</span>Moll<small>Sales + Offer Coach</small></a></div>
+      <nav aria-label="Work with me">
+        <span class="label">Work with me</span>
+        <ul>
+          <li><a href="/consulting">Consulting</a></li>
+          <li><a href="/podcast-guesting">Podcast guesting</a></li>
+          <li><a href="/client-results">Client results</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Learn">
+        <span class="label">Learn</span>
+        <ul>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/podcast">Podcast</a></li>
+          <li><a href="/videos">Videos</a></li>
+          <li><a href="/#free-resources">Free resources</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="About">
+        <span class="label">About</span>
+        <ul>
+          <li><a href="/media">Media</a></li>
+          <li><a href="/speaker-sheet">Speaker sheet</a></li>
+          <li><a href="https://www.instagram.com/themikemoll/">Instagram</a></li>
+          <li><a href="https://www.youtube.com/@mikemollco">YouTube</a></li>
+          <li><a href="https://www.linkedin.com/in/themikemoll/">LinkedIn</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="legal">
+      <div><span>&copy; 2026 Impact Leads LLC</span><i aria-hidden="true">&middot;</i><a href="/privacy">Privacy</a><i aria-hidden="true">&middot;</i><a href="/terms">Terms</a></div>
+    </div>
   </div>
 </footer>
+<!-- /chrome:footer -->
 </body>
 </html>
