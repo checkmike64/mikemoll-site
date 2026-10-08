@@ -24,14 +24,14 @@ Static site for Mike Moll. Plain HTML/CSS, no build step. Deploys on Vercel.
 - Every page includes the same Google Tag Manager container (`GTM-WD3WQ8N`): script tag high in `<head>`, noscript iframe right after `<body>`. Keep both when copying/editing pages.
 
 ## Design system v2
-The site is moving, page by page, from `assets/site.css` (v1: black, frozen,
-no new work) to `assets/site-v2.css` (the light system from `/podcast-guesting`).
-A page loads one or the other, never both: `.hero`, `.btn`, `.eyebrow` and
-`.logo` mean different things in each. The rules and the component list are at
-the top of `assets/site-v2.css`; `_template.html` is the reference page.
+Every page runs on `assets/site-v2.css` (the light system first built for
+`/podcast-guesting`). The old black `assets/site.css` was retired on 2026-10-07
+once no page loaded it; don't bring it back. The rules and the component list
+are at the top of `assets/site-v2.css`; `_template.html` is the reference page.
+Blog posts add `assets/post.css`, and video posts add `assets/video-blog.css`.
 
 To put a page on v2:
-1. In `<head>`, replace the Google Fonts link and the `site.css` link with an
+1. In `<head>`, replace the Google Fonts link and any stylesheet link with an
    empty `<!-- chrome:head -->` `<!-- /chrome:head -->` pair. Leave GTM, the
    title, canonical, OG, JSON-LD, the favicon block and the scripts alone.
 2. Replace the page's `<nav>`/`<header>` and `<footer>` with marker pairs:
