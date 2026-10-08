@@ -119,4 +119,4 @@ Repo-ready in the outputs folder; nothing pushed. CSS inlined per page. Cover `<
 - `_source/appearances.json`, `_source/base.json`
 - `_source/content/*.json` (49), `_source/gen.py`, `_source/build_pages.py`
 - `_source/covers_manifest.json`, `_source/transcripts/*`
-- `assets/site.css` (inlined into each page)
+- `assets/site.css` (was inlined into each page; retired 2026-10-07. Posts now load `/assets/site-v2.css` + `/assets/post.css`)
