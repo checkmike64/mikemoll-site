@@ -132,6 +132,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 .logo-tile img{width:auto;height:calc(var(--h) * var(--s));max-width:min(calc(var(--mw) * var(--s)),100%);object-fit:contain;
   filter:grayscale(1) brightness(var(--b,1));opacity:.8;transition:filter .2s ease-out,opacity .2s ease-out}
 .logo-tile:hover img{filter:none;opacity:1}
+.logo-tile .wm{font-family:var(--font-head);font-weight:800;font-size:calc(17px * var(--s));line-height:1.05;letter-spacing:-.01em;color:var(--ink);opacity:.72;text-align:center}
 .logo-tile span{max-width:21ch;font-size:13px;line-height:1.4;color:var(--text);text-wrap:balance}
 /* outcome strip: three results, one line each */
 .outs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:0;padding:0;list-style:none}
@@ -603,8 +604,8 @@ footer nav a:hover{color:var(--accent)}
         <span class="eyebrow">Spoken at</span>
         <ul class="logos" role="list">
           <li class="logo-tile"><div class="box"><img loading="lazy" decoding="async" src="/media/podcast-guesting/logo-appsumo.svg" alt="AppSumo" style="--h:20px;--mw:130px"></div><span>Remote Work Academy speaker</span></li>
-          <li class="logo-tile"><div class="box"><img loading="lazy" decoding="async" src="/media/podcast-guesting/logo-mcmaster.png" alt="McMaster University" style="--h:40px;--mw:80px"></div><span>MBA guest lecturer</span></li>
-          <li class="logo-tile"><div class="box"><img loading="lazy" decoding="async" src="/media/podcast-guesting/logo-canada.svg" alt="Government of Canada" style="--h:26px;--mw:160px"></div><span>Environmental division lecture</span></li>
+          <li class="logo-tile"><div class="box"><b class="wm">McMaster<br>University</b></div><span>MBA guest lecturer</span></li>
+          <li class="logo-tile"><div class="box"><b class="wm">Government<br>of Canada</b></div><span>Environmental division lecture</span></li>
           <li class="logo-tile"><div class="box"><img loading="lazy" decoding="async" src="/media/podcast-guesting/logo-peel-halton.png" alt="Peel Halton Workforce Hub" style="--h:34px;--mw:122px;--b:.6"></div><span>Workforce development workshop</span></li>
         </ul>
         <p class="spoke-note"><b>AppSumo's Remote Work Academy:</b> shared a virtual stage with Chris Voss, Nir Eyal, James Clear and Dan Martell.</p>
