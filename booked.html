@@ -7,28 +7,24 @@
 <title>You're booked | Mike Moll</title>
 <meta name="robots" content="noindex,nofollow">
 <link rel="canonical" href="https://www.mikemoll.co/booked">
+<!-- chrome:head -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700;800&family=Poppins:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/site-v2.css">
+<!-- /chrome:head -->
 <style>
-  body{min-height:100vh;display:flex;flex-direction:column}
-  main{flex:1;display:flex;align-items:center}
-  .booked{width:100%;padding:96px 0;text-align:center}
-  .booked h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:700;letter-spacing:-.03em;line-height:1.05;margin-bottom:22px}
-  .booked p{font-size:1.1rem;max-width:46ch;margin:0 auto 10px}
-  .booked .when{color:var(--ink)}
-  .booked .text-link{display:inline-block;margin-top:30px}
-
-  .foot-in{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
-  .socials{display:flex;gap:20px}
-  .socials a{color:var(--muted);font-size:14px;font-weight:500}
-  .socials a:hover{color:var(--accent)}
-  .foot-legal{display:flex;justify-content:center;gap:18px;width:100%;border-top:1px solid var(--hairline);padding-top:16px}
-  .foot-legal a{color:var(--muted);font-size:13px}
-  .foot-legal a:hover{color:var(--accent)}
-
-  @media(max-width:760px){.booked{padding:66px 0}}
+/* /booked: page-only rules. Everything shared lives in /assets/site-v2.css.
+   The script at the end of the page is not touched by the restyle. */
+body{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+main{flex:1;display:flex;align-items:center}
+main > .hero-b{width:100%}
+/* centered content hero */
+.hero-b.center .wrap{align-items:center;text-align:center}
+.hero-b.center h1{max-width:none}
+.hero-b.center .lead{max-width:46ch}
+.booked .when{font-family:var(--font-head);font-weight:700;font-size:var(--fs-l);line-height:1.4;color:var(--ink);max-width:40ch}
+.booked .tlink{margin-top:var(--s2)}
 </style>
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -37,34 +33,33 @@
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD3WQ8N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<nav class="site-nav">
+<header class="site-nav focus">
   <div class="wrap">
-    <a href="/" class="logo">Mike<i>.</i>Moll</a>
+    <a class="logo" href="/">Mike<span>.</span>Moll<small>Sales + Offer Coach</small></a>
   </div>
-</nav>
+</header>
 
 <main>
-  <div class="booked">
+  <section class="hero-b center booked">
     <div class="wrap">
       <h1>You're booked.</h1>
       <p class="when" id="booked-when" hidden></p>
-      <p>The calendar invite and the call link are on their way to your inbox.</p>
-      <a href="/" class="text-link">Back to mikemoll.co</a>
+      <p class="lead">The calendar invite and the call link are on their way to your inbox.</p>
+      <a href="/" class="tlink">Back to mikemoll.co</a>
     </div>
-  </div>
+  </section>
 </main>
 
-<footer class="site-foot">
+<!-- chrome:footer focus -->
+<footer class="site-foot focus">
   <div class="wrap">
-    <a href="/" class="logo">Mike<i>.</i>Moll</a>
-    <div class="socials"><a href="https://www.instagram.com/themikemoll/">Instagram</a><a href="https://www.youtube.com/@mikemollco">YouTube</a><a href="https://www.linkedin.com/in/themikemoll/">LinkedIn</a></div>
-    <p>&copy; 2026 Impact Leads LLC</p>
-    <div class="foot-legal">
-      <a href="/privacy">Privacy Policy</a>
-      <a href="/terms">Terms &amp; Conditions</a>
+    <div class="legal">
+      <div><span>&copy; 2026 Impact Leads LLC</span><i aria-hidden="true">&middot;</i><a href="/privacy">Privacy</a><i aria-hidden="true">&middot;</i><a href="/terms">Terms</a></div>
+      <nav aria-label="Social"><a href="https://www.instagram.com/themikemoll/">Instagram</a><i aria-hidden="true">&middot;</i><a href="https://www.youtube.com/@mikemollco">YouTube</a><i aria-hidden="true">&middot;</i><a href="https://www.linkedin.com/in/themikemoll/">LinkedIn</a></nav>
     </div>
   </div>
 </footer>
+<!-- /chrome:footer -->
 <script>
 // The CRM sends people here after they book a call. The address says what
 // they booked: the meeting type (type), its name, when it starts (at), the

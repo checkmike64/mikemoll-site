@@ -34,7 +34,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   --muted:#6d737a;
   --hair:rgba(17,17,17,.13);
   --hair-strong:rgba(17,17,17,.26);
-  --accent:#38b6ff;
+  --accent:#38b6ff;            /* fills, dots, the logo dot, numerals on the black bands */
+  --accent-deep:#0874b8;       /* blue as text on white (AA), as chapter 03 documents */
   --band:#000000;
   --band-ink:#ffffff;
   --band-text:#d7d7d7;
@@ -68,12 +69,12 @@ h1{font-weight:700;font-size:clamp(32px,4.6vw,54px);letter-spacing:-.03em;line-h
 .toc{margin-top:40px;border-top:2px solid var(--ink)}
 .toc a{display:grid;grid-template-columns:44px minmax(180px,280px) 1fr 20px;column-gap:16px;align-items:baseline;
   padding:12px 0;border-bottom:1px solid var(--hair);color:inherit;text-decoration:none}
-.toc .n{font-family:var(--head);font-weight:700;font-size:15px;color:var(--accent);font-variant-numeric:tabular-nums}
+.toc .n{font-family:var(--head);font-weight:700;font-size:15px;color:var(--accent-deep);font-variant-numeric:tabular-nums}
 .toc .t{font-family:var(--head);font-weight:600;font-size:16px;color:var(--ink);line-height:1.3}
 .toc .d{font-size:13.5px;color:var(--muted);line-height:1.45}
 .toc a::after{content:"\2193";font-family:var(--head);color:var(--muted);justify-self:end;transition:transform .15s,color .15s}
 .toc a:hover .t{text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:4px}
-.toc a:hover::after{color:var(--accent);transform:translateY(2px)}
+.toc a:hover::after{color:var(--accent-deep);transform:translateY(2px)}
 @media (prefers-reduced-motion:reduce){.toc a::after{transition:none}}
 .toc a:focus-visible,a.ext:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
@@ -86,7 +87,7 @@ h1{font-weight:700;font-size:clamp(32px,4.6vw,54px);letter-spacing:-.03em;line-h
 .band p{font-size:15px;color:var(--band-text);margin-top:10px;max-width:46ch}
 .band .inside{border-left:1px solid var(--band-hair);padding-left:18px;font-size:12.5px;color:var(--band-muted);line-height:1.5}
 .band .inside li{position:relative;padding-left:14px}
-.band .inside li::before{content:"+";position:absolute;left:0;font-family:var(--head);font-weight:700;color:var(--accent)}
+.band .inside li::before{content:"";position:absolute;left:0;top:.51em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
 
 /* chapter body */
 .body{padding-top:44px}
@@ -119,7 +120,7 @@ h3{font-weight:700;font-size:16px;letter-spacing:-.005em;margin-bottom:12px}
 .tpl .tbody ul{margin:8px 0 0 18px;list-style:disc;font-size:14px}
 .ph{color:var(--ink);background:rgba(56,182,255,.16);padding:0 1px}
 .copy{font:600 12px/1 var(--head);color:var(--ink);background:none;border:0;border-bottom:2px solid var(--accent);padding:0 0 2px;cursor:pointer;flex:none}
-.copy:hover{color:var(--accent)}
+.copy:hover{color:var(--accent-deep)}
 .copy:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .tpl-group{margin-top:44px}
 .tpl-group > h3{margin-bottom:4px}
@@ -127,7 +128,7 @@ h3{font-weight:700;font-size:16px;letter-spacing:-.005em;margin-bottom:12px}
 .tpls + .small{margin-top:28px}
 a.ext{color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:4px;overflow-wrap:anywhere}
 a.ext::after{content:" \2197";color:var(--muted);text-decoration:none;display:inline-block;margin-left:4px;font-size:.85em}
-a.ext:hover{color:var(--accent)}
+a.ext:hover{color:var(--accent-deep)}
 
 /* 02 brand */
 .thesis{display:grid;gap:14px}
@@ -145,10 +146,10 @@ a.ext:hover{color:var(--accent)}
 .values b{display:block;font-family:var(--head);font-size:15px;line-height:1.3}
 .values span{display:block;font-size:13.5px;color:var(--text);margin-top:4px}
 
-/* .plus lists (chapters 02 and 05) */
-.plus li{position:relative;padding-left:18px;font-size:14px}
-.plus li + li{margin-top:7px}
-.plus li::before{content:"+";position:absolute;left:0;top:-1px;font-family:var(--head);font-weight:700;color:var(--accent)}
+/* .dots lists (chapters 02 and 05): the small blue dot bullet documented in chapter 03 */
+.dots li{position:relative;padding-left:20px;font-size:14px}
+.dots li + li{margin-top:7px}
+.dots li::before{content:"";position:absolute;left:2px;top:.66em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
 
 /* 03 look: documents design system v2 (mikemoll.co, October 2026) and the social graphics locks.
    Specimens are drawn here with the site's own values (assets/site-v2.css), not screenshots.
@@ -299,8 +300,8 @@ a.ext:hover{color:var(--accent)}
 /* 05 playbook */
 .order li{display:grid;grid-template-columns:30px 1fr;gap:8px;padding:8px 0;border-top:1px solid var(--hair);font-size:14px}
 .order li:last-child{border-bottom:1px solid var(--hair)}
-.order .n{font-family:var(--head);font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
-.pct{font-family:var(--head);font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums;margin-right:8px;letter-spacing:0}
+.order .n{font-family:var(--head);font-weight:700;color:var(--accent-deep);font-variant-numeric:tabular-nums}
+.pct{font-family:var(--head);font-weight:700;color:var(--accent-deep);font-variant-numeric:tabular-nums;margin-right:8px;letter-spacing:0}
 .pillars{margin-top:6px}
 .pillars li{padding:8px 0;border-top:1px solid var(--hair);font-size:14px}
 .pillars li:last-child{border-bottom:1px solid var(--hair)}
@@ -309,7 +310,7 @@ a.ext:hover{color:var(--accent)}
 .week .d{font-family:var(--head);font-weight:600;color:var(--ink)}
 .week .a{font-family:var(--head);font-weight:600;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
 .week .a.ask{color:var(--ink)}
-.week .a.ask::before{content:"";display:inline-block;width:7px;height:7px;background:var(--accent);margin-right:6px;vertical-align:1px}
+.week .a.ask::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:6px;vertical-align:1px}
 .proof{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px}
 .proof td{padding:8px 0;border-top:1px solid var(--hair);vertical-align:top;font-variant-numeric:tabular-nums}
 .proof tr:last-child td{border-bottom:1px solid var(--hair)}
@@ -365,7 +366,6 @@ a.ext:hover{color:var(--accent)}
   .band .wrap{padding-block:14px 10px}
   .chapter{margin-top:24px;break-before:page}
   .row,.final{break-inside:avoid}
-  #scroll-top-btn{display:none!important}
 }
 </style>
 <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -382,7 +382,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="mast">
       <span class="wordmark">Mike<i>.</i>Moll</span>
-      <span class="meta">Social media hub · Updated September 2026</span>
+      <span class="meta">Social media hub · Updated October 2026</span>
     </div>
     <h1>Brand and social media hub</h1>
     <p class="lede">Everything the social media team needs to post as Mike Moll, in one place. Start with the links, then the brand, the look, the voice and the content playbook.</p>
@@ -520,7 +520,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <div class="blk">
             <h3>Rules for the offer message</h3>
-            <ul class="plus">
+            <ul class="dots">
               <li>Mike’s title is <b>Sales + Offer Coach</b>. Pair it with “Podcast Host” where a second role fits.</li>
               <li>Pricing is one of the four problems. Don’t lead with underpricing on its own, because every business coach does.</li>
               <li>Say the problems “are due to the offer”. “Start with the offer” reads weaker.</li>
@@ -994,7 +994,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <div class="blk">
             <h3>Mike’s credentials</h3>
-            <ul class="plus">
+            <ul class="dots">
               <li>Built 150+ offers.</li>
               <li>Reviewed 1,000+ sales calls.</li>
               <li>Clients have added $2.5M+ in revenue and raised their rates 2 to 4 times.</li>
@@ -1158,13 +1158,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- ADD A CHAPTER: copy one <section class="chapter"> block above, give it the next
        number (06, 07...) and a new id, update its band text and "inside" list, and add a
        matching <li> to the contents list at the top. Inside .body use .row, .row.two or
-       .row.three with .blk blocks, and reuse the .links, .plus, .dl and .order lists. -->
+       .row.three with .blk blocks, and reuse the .links, .dots, .dl and .order lists. -->
 
 </main>
 
 <footer class="foot">
   <div class="wrap">
-    <p class="small">Built from the coaching second brain: BRAND: Core Message, Positioning, Voice and Story, Ideal Client Profile, Core Values · Content Conversion Strategy &amp; Pillars · Mike Moll: LinkedIn Organic Strategy · Content Source Bank · Voice Guardrails (Aug 31, updated Sep 12) · Mike’s Voice · Icon System · mikemoll.co Favicon · Podcast Description · Mike Moll — Podcast Guest Profile. Visual tokens from mikemoll.co site.css.</p>
+    <p class="small">Built from the coaching second brain: BRAND: Core Message, Positioning, Voice and Story, Ideal Client Profile, Core Values · Content Conversion Strategy &amp; Pillars · Mike Moll: LinkedIn Organic Strategy · Content Source Bank · Voice Guardrails (Aug 31, updated Sep 12) · Mike’s Voice · Icon System · mikemoll.co Favicon · Podcast Description · Mike Moll — Podcast Guest Profile. Visual tokens from mikemoll.co site-v2.css.</p>
   </div>
 </footer>
 
@@ -1183,6 +1183,5 @@ document.addEventListener('click',function(e){
   if(navigator.clipboard){navigator.clipboard.writeText(text).then(done,function(){})}
 });
 </script>
-<script src="/scroll-top.js" defer></script>
 </body>
 </html>
