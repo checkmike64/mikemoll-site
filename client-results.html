@@ -86,7 +86,38 @@
       <a href="/client-results" aria-current="page">Results</a>
       <a href="/media">Media</a>
     </nav>
-    <button class="menu" type="button" aria-expanded="false" aria-controls="site-menu" onclick="var h=this.closest('.site-nav'),o=h.classList.toggle('open');this.setAttribute('aria-expanded',o);this.textContent=o?'Close':'Menu'">Menu</button>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+    <script>
+    /* Phone menu (<=960px): a full-height sheet under the header. Escape closes it, Tab stays inside the header, the page behind does not scroll. */
+    (function () {
+      var nav = document.currentScript.closest('.site-nav');
+      var btn = nav.querySelector('.menu'), links = nav.querySelector('.links'), root = document.documentElement;
+      var wide = window.matchMedia('(min-width: 961px)');
+      function isOpen() { return nav.classList.contains('open'); }
+      function set(open, refocus) {
+        nav.classList.toggle('open', open);
+        root.classList.toggle('menu-open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.textContent = open ? 'Close' : 'Menu';
+        if (!open && refocus) btn.focus({ preventScroll: true });
+      }
+      function order() {
+        return [nav.querySelector('.logo'), nav.querySelector('.wrap > .btn'), btn].concat([].slice.call(links.querySelectorAll('a'))).filter(Boolean);
+      }
+      btn.addEventListener('click', function () { set(!isOpen(), false); });
+      links.addEventListener('click', function (e) { if (isOpen() && e.target.closest('a')) set(false, false); });
+      document.addEventListener('keydown', function (e) {
+        if (!isOpen() || document.querySelector('dialog[open]')) return;
+        if (e.key === 'Escape') { e.preventDefault(); set(false, true); return; }
+        if (e.key !== 'Tab') return;
+        var list = order(), i = list.indexOf(document.activeElement);
+        e.preventDefault();
+        list[i < 0 ? 0 : (i + (e.shiftKey ? list.length - 1 : 1)) % list.length].focus({ preventScroll: true });
+      });
+      function onWide() { if (wide.matches && isOpen()) set(false, false); }
+      if (wide.addEventListener) wide.addEventListener('change', onWide); else wide.addListener(onWide);
+    })();
+    </script>
   </div>
 </header>
 <!-- /chrome:header -->

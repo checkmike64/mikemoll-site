@@ -25,19 +25,8 @@
 <link rel="stylesheet" href="/assets/site-v2.css">
 <style>
 /* /podcast-guesting: page-only rules. Everything shared lives in /assets/site-v2.css. */
-/* this page's current header + footer, kept until the stamped podcast header ships with the homepage */
-.head{padding-block:18px}
-.head .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px}
-.head .logo small{font-size:10.5px;letter-spacing:.2em}
-.nav{display:flex;gap:28px;align-items:center;font-family:var(--font-head);font-weight:600;font-size:14px;color:var(--ink)}
-.nav a:not(.btn):hover{color:var(--accent-deep)}
-.nav .btn{min-height:44px;padding:12px 20px;font-size:15px}
-footer{background:var(--panel);color:var(--panel-text);padding-block:48px}
-footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:14px}
-footer .logo{color:#ffffff}
-footer nav{display:flex;gap:22px;flex-wrap:wrap}
-footer nav a{display:inline-flex;align-items:center;min-height:44px}
-footer nav a:hover{color:var(--accent)}
+/* promote to site-v2: breathing room between the stamped header and an offer hero */
+.hero-wrap{padding-top:var(--s5)}
 /* offer-page devices: problem pair, myths, promise, closing takeaways (podcast family only) */
 .problem-h{max-width:15em}
 .problem{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:80px;align-items:start;margin-top:48px}
@@ -67,12 +56,8 @@ footer nav a:hover{color:var(--accent)}
 .optin .sub em{font-style:italic;color:var(--ink);font-weight:500}
 /* phones: sticky booking bar, shown between the hero button and #book */
 .mbar{display:none}
-@media (min-width:761px){
-  .head{position:sticky;top:env(safe-area-inset-top, 0px);z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid transparent}
-}
 @media (max-width:960px){
   #benefits{padding-bottom:56px}
-  .nav a:not(.btn){display:none}
   .problem,.myths .wrap{grid-template-columns:minmax(0,1fr);gap:40px}
   .problem{margin-top:32px;gap:48px}
 }
@@ -84,8 +69,7 @@ footer nav a:hover{color:var(--accent)}
   .mbar .btn{width:100%}
 }
 @media (max-width:560px){
-  .head .wrap{gap:12px}
-  .nav .btn{padding:12px 16px;font-size:14px;width:auto}
+  .hero-wrap{padding-top:var(--s3)}
   .problem .copy .btn{align-self:stretch}
   .myths .mh,.myths .a h3{font-size:26px}
 }
@@ -98,20 +82,55 @@ footer nav a:hover{color:var(--accent)}
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD3WQ8N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<header class="head">
+<!-- chrome:header podcast -->
+<header class="site-nav with-cta">
   <div class="wrap">
     <a class="logo" href="/">Mike<span>.</span>Moll<small>Sales + Offer Coach</small></a>
-    <nav class="nav" aria-label="Main">
-      <a href="#benefits">Why podcasts</a>
-      <a href="#about">About Mike</a>
-      <a href="#program">The program</a>
-      <a class="btn line" href="/book/podcast-guesting-strategy" data-cta="podcast-guesting-nav">Free assessment</a>
+    <nav class="links" id="site-menu" aria-label="Main">
+      <a href="/consulting">Consulting</a>
+      <a href="/podcast-guesting" aria-current="page">Podcast guesting</a>
+      <a href="/client-results">Results</a>
+      <a href="/media">Media</a>
     </nav>
+    <a class="btn line" href="/book/podcast-guesting-strategy" data-cta="podcast-guesting-nav">Free assessment</a>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+    <script>
+    /* Phone menu (<=960px): a full-height sheet under the header. Escape closes it, Tab stays inside the header, the page behind does not scroll. */
+    (function () {
+      var nav = document.currentScript.closest('.site-nav');
+      var btn = nav.querySelector('.menu'), links = nav.querySelector('.links'), root = document.documentElement;
+      var wide = window.matchMedia('(min-width: 961px)');
+      function isOpen() { return nav.classList.contains('open'); }
+      function set(open, refocus) {
+        nav.classList.toggle('open', open);
+        root.classList.toggle('menu-open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.textContent = open ? 'Close' : 'Menu';
+        if (!open && refocus) btn.focus({ preventScroll: true });
+      }
+      function order() {
+        return [nav.querySelector('.logo'), nav.querySelector('.wrap > .btn'), btn].concat([].slice.call(links.querySelectorAll('a'))).filter(Boolean);
+      }
+      btn.addEventListener('click', function () { set(!isOpen(), false); });
+      links.addEventListener('click', function (e) { if (isOpen() && e.target.closest('a')) set(false, false); });
+      document.addEventListener('keydown', function (e) {
+        if (!isOpen() || document.querySelector('dialog[open]')) return;
+        if (e.key === 'Escape') { e.preventDefault(); set(false, true); return; }
+        if (e.key !== 'Tab') return;
+        var list = order(), i = list.indexOf(document.activeElement);
+        e.preventDefault();
+        list[i < 0 ? 0 : (i + (e.shiftKey ? list.length - 1 : 1)) % list.length].focus({ preventScroll: true });
+      });
+      function onWide() { if (wide.matches && isOpen()) set(false, false); }
+      if (wide.addEventListener) wide.addEventListener('change', onWide); else wide.addListener(onWide);
+    })();
+    </script>
   </div>
 </header>
+<!-- /chrome:header -->
 
 <main id="top">
-  <div class="wrap">
+  <div class="wrap hero-wrap">
     <div class="hero-photo" style="--hero-img:url('/media/podcast-guesting/hero.jpg')">
       <img class="ph" src="/media/podcast-guesting/hero.jpg" alt="" aria-hidden="true" fetchpriority="high">
       <div class="in">
@@ -385,19 +404,45 @@ footer nav a:hover{color:var(--accent)}
   </section>
 </main>
 
-<footer>
+<!-- chrome:footer full -->
+<footer class="site-foot">
   <div class="wrap">
-    <span class="logo">Mike<span>.</span>Moll</span>
-    <nav aria-label="Social">
-      <a href="https://www.instagram.com/themikemoll/">Instagram</a>
-      <a href="https://www.youtube.com/@mikemollco">YouTube</a>
-      <a href="https://www.linkedin.com/in/themikemoll/">LinkedIn</a>
-      <a href="/privacy">Privacy Policy</a>
-      <a href="/terms">Terms &amp; Conditions</a>
-    </nav>
-    <span>&copy; 2026 Impact Leads LLC</span>
+    <div class="cols">
+      <div class="brand"><a class="logo" href="/">Mike<span>.</span>Moll<small>Sales + Offer Coach</small></a></div>
+      <nav aria-label="Work with me">
+        <span class="label">Work with me</span>
+        <ul>
+          <li><a href="/consulting">Consulting</a></li>
+          <li><a href="/podcast-guesting">Podcast guesting</a></li>
+          <li><a href="/client-results">Client results</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Learn">
+        <span class="label">Learn</span>
+        <ul>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/podcast">Podcast</a></li>
+          <li><a href="/videos">Videos</a></li>
+          <li><a href="/#free-resources">Free resources</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="About">
+        <span class="label">About</span>
+        <ul>
+          <li><a href="/media">Media</a></li>
+          <li><a href="/speaker-sheet">Speaker sheet</a></li>
+          <li><a href="https://www.instagram.com/themikemoll/">Instagram</a></li>
+          <li><a href="https://www.youtube.com/@mikemollco">YouTube</a></li>
+          <li><a href="https://www.linkedin.com/in/themikemoll/">LinkedIn</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="legal">
+      <div><span>&copy; 2026 Impact Leads LLC</span><i aria-hidden="true">&middot;</i><a href="/privacy">Privacy</a><i aria-hidden="true">&middot;</i><a href="/terms">Terms</a></div>
+    </div>
   </div>
 </footer>
+<!-- /chrome:footer -->
 
 <div class="mbar" id="mbar" inert><a class="btn" href="/book/podcast-guesting-strategy" data-cta="podcast-guesting-sticky">Book your free assessment</a></div>
 

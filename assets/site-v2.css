@@ -197,6 +197,8 @@ h4{font-weight:800;font-size:var(--fs-h4);line-height:1.15;letter-spacing:-.02em
 .site-nav .btn{min-height:44px;padding:12px 20px}
 .site-nav .menu{display:none;min-height:44px;padding:0 4px;border:0;background:none;cursor:pointer;
   font-family:var(--font-head);font-weight:600;font-size:var(--fs-b);color:var(--ink)}
+/* the open phone menu (generator/chrome/menu.html) locks the page behind it */
+html.menu-open{overflow:hidden}
 /* footer: navy. full = brand + three columns + legal row; focus = legal row + socials */
 .site-foot{background:var(--panel);border-top:1px solid var(--line);font-size:var(--fs-s)} /* seam after a navy closing band */
 .site-foot .cols{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:var(--s7) var(--s6);padding-block:var(--s10) var(--s8)}
@@ -402,12 +404,17 @@ h4{font-weight:800;font-size:var(--fs-h4);line-height:1.15;letter-spacing:-.02em
 }
 @media (max-width:960px){
   :root{--sec:var(--s11);--sec-tight:var(--s10)}
-  /* header: logo, the CTA (if any) and "Menu"; links move into a sheet */
+  /* header: logo, the CTA (if any) and "Menu"; links move into a full-height sheet.
+     Open, the header sticks to the top (it keeps its place in the flow, so nothing shifts)
+     and the sheet fills the rest of the screen, so the page never shows under it. */
   .site-nav .menu{display:inline-flex;align-items:center}
-  .site-nav .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;
-    padding:0 var(--gutter) var(--s4);background:var(--bg);border-bottom:1px solid var(--line);font-size:var(--fs-l)}
+  .site-nav.open{position:sticky;top:0;z-index:60;background:var(--bg);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .site-nav .links{display:none;position:absolute;top:calc(100% + 1px);left:0;right:0;
+    height:calc(100vh - 100% - 1px);height:calc(100dvh - 100% - 1px);overflow-y:auto;overscroll-behavior:contain;
+    flex-direction:column;align-items:stretch;gap:0;
+    padding:var(--s2) var(--gutter) calc(var(--s8) + env(safe-area-inset-bottom,0px));background:var(--bg);font-size:var(--fs-l)}
   .site-nav.open .links{display:flex}
-  .site-nav .links a{min-height:56px;border-top:1px solid var(--line)}
+  .site-nav .links a{flex:none;min-height:56px;border-bottom:1px solid var(--line)}
   .site-foot .cols{grid-template-columns:repeat(3,minmax(0,1fr))}
   .site-foot .cols .brand{grid-column:1/-1}
   .hero-photo{display:block;min-height:0;background:var(--panel)}

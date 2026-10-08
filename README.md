@@ -48,6 +48,11 @@ To put a page on v2:
    to page-only rules. Keep every `href`, `data-cta` and `data-lead` as it was.
 5. Check it at 390px and 1440px against the live page before merging.
 
+Under 961px the header links move into a "Menu" sheet (`generator/chrome/menu.html`,
+the button plus a small inline script): it fills the screen under the header,
+Escape closes it, Tab stays inside the header, and the page behind does not
+scroll (`html.menu-open`). The CSS is in `assets/site-v2.css`, section 10.
+
 The header and footer live once, in `generator/chrome/`. After editing a
 partial, run `python3 scripts/stamp_chrome.py` (no arguments) to restamp every
 page that carries a marker, and `python3 scripts/stamp_chrome.py --check` to
