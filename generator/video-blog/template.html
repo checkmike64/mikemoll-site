@@ -24,11 +24,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="article:published_time" content="{{DATE_PUBLISHED}}">
 <meta property="article:modified_time" content="{{DATE_MODIFIED}}">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- chrome:head -->
+<!-- /chrome:head -->
 <link rel="preconnect" href="https://i.ytimg.com">
-<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/video-blog.css">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -42,20 +40,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<nav class="site-nav">
-  <div class="wrap">
-    <a href="/" class="logo">Mike<i>.</i>Moll</a>
-    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu" onclick="var n=this.closest('.site-nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><span></span><span></span><span></span></button><div class="links" id="site-menu">
-      <a href="/blog">Blog</a>
-      <a href="/podcast">Podcast</a>
-      <a href="/media">Media</a>
-      <a href="{{CTA_HREF}}" class="btn btn-ghost" data-cta="nav">Free assessment</a>
-    </div>
-  </div>
-</nav>
+<!-- chrome:header site -->
+<!-- /chrome:header -->
 
 <div class="vb-wrap">
-  <nav class="vb-crumbs" aria-label="Breadcrumb">{{CRUMBS}}</nav>
+  <nav class="vb-crumbs crumbs" aria-label="Breadcrumb">{{CRUMBS}}</nav>
   <header class="vb-hero" id="top">
     <div>
       <div class="vb-eyebrow">{{EYEBROW}}</div>
@@ -66,7 +55,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="vb-facts">{{FACTS}}</div>
       </div>
       <div class="vb-chips" aria-label="Topics">{{CHIPS}}</div>
-      <div class="vb-hero-cta"><a class="btn btn-primary" href="{{CTA_HREF}}" data-cta="hero">{{CTA_BUTTON}} <span aria-hidden="true">&rarr;</span></a><a class="btn btn-ghost" href="#takeaways">Key takeaways &darr;</a></div>
+      <div class="vb-hero-cta"><a class="btn" href="{{CTA_HREF}}" data-cta="hero">{{CTA_BUTTON}} <span aria-hidden="true">&rarr;</span></a><a class="btn line" href="#takeaways">Key takeaways &darr;</a></div>
     </div>
     <div>
       <a class="vb-video" href="https://www.youtube.com/watch?v={{YT_ID}}" target="_blank" rel="noopener" data-yt="{{YT_ID}}" data-title="{{VIDEO_TITLE_ATTR}}" aria-label="Play video: {{VIDEO_TITLE_ATTR}} ({{DURATION}})">
@@ -132,7 +121,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <aside class="vb-rail" aria-label="Topics, sharing and offer">
     <div><span class="vb-kl">Topics</span><div class="vb-chips">{{CHIPS}}</div></div>
     <div><span class="vb-kl">Share</span><div class="vb-share"><a href="https://www.linkedin.com/sharing/share-offsite/?url={{URL_ENC}}" target="_blank" rel="noopener">LinkedIn</a><button type="button" class="vb-copy" data-url="{{URL}}">Copy link</button></div></div>
-    <div class="vb-rail-cta"><span class="vb-kl" style="color:var(--accent)">{{RAIL_LABEL}}</span><p>{{RAIL_TEXT}}</p><a class="btn btn-primary" href="{{CTA_HREF}}" data-cta="rail">Book a time</a></div>
+    <div class="vb-rail-cta"><span class="vb-kl">{{RAIL_LABEL}}</span><p>{{RAIL_TEXT}}</p><a class="btn" href="{{CTA_HREF}}" data-cta="rail">{{CTA_BUTTON}}</a></div>
   </aside>
 </main>
 
@@ -143,30 +132,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<section class="vb-cta" id="book">
-  <div class="vb-wrap">
+<section class="vb-cta section closing band-dark" id="book">
+  <div class="wrap">
     <h2>{{CTA_HEADLINE_HTML}}</h2>
     <p class="vb-cta-sub">{{CTA_SUB}}</p>
-    <a class="btn btn-primary btn-lg" href="{{CTA_HREF}}" data-cta="end">{{CTA_BUTTON}} <span aria-hidden="true">&rarr;</span></a>
+    <a class="btn" href="{{CTA_HREF}}" data-cta="end">{{CTA_BUTTON}} <span aria-hidden="true">&rarr;</span></a>
     <span class="vb-cta-micro">{{CTA_MICRO}}</span>
   </div>
 </section>
 
-<footer class="site-foot">
-  <div class="wrap">
-    <a href="/" class="logo">Mike<i>.</i>Moll</a>
-    <div class="socials"><a href="https://www.instagram.com/themikemoll/">Instagram</a><a href="https://www.youtube.com/@mikemollco">YouTube</a><a href="https://www.linkedin.com/in/themikemoll/">LinkedIn</a></div>
-    <p>&copy; 2026 Impact Leads LLC</p>
-    <div class="foot-legal">
-      <a href="/privacy">Privacy Policy</a>
-      <a href="/terms">Terms &amp; Conditions</a>
-    </div>
-  </div>
-</footer>
+<!-- chrome:footer full -->
+<!-- /chrome:footer -->
 
-<div class="vb-mcta" aria-hidden="true"><span>{{MCTA_TEXT}}</span><a class="btn btn-primary" href="{{CTA_HREF}}" data-cta="mobile-bar" tabindex="-1">Book</a></div>
+<div class="vb-mcta" aria-hidden="true"><span>{{MCTA_TEXT}}</span><a class="btn" href="{{CTA_HREF}}" data-cta="mobile-bar" tabindex="-1">{{CTA_SHORT}}</a></div>
 
 <script src="/assets/video-blog.js" defer></script>
-<script src="/scroll-top.js" defer></script>
 </body>
 </html>
