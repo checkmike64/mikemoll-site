@@ -20,6 +20,12 @@
 //
 // If the CRM can't be reached, the step says so and links to the CRM's own
 // booking page for the same type, so nobody is left without a way to book.
+//
+// On a page that loads this script, a click on any /book/<slug> link opens
+// the same booking step in a window over the page instead of leaving the
+// site. /visits.js has already counted that click as a booking_click, so the
+// window does not count it again. A click with a modifier key, or one this
+// script can't handle, follows the link as before.
 (function () {
   var API = 'https://coaching-crm-tau.vercel.app/api/book/';
   var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -30,7 +36,8 @@
   var CSS = [
     '.mmb{--mmb-ink:var(--ink,#0c1a24);--mmb-text:var(--text,#3a4651);--mmb-muted:var(--muted,#5f6b76);',
     '--mmb-line:var(--line,var(--hair,rgba(127,127,127,.35)));--mmb-accent:var(--accent,#38b6ff);',
-    '--mmb-on-accent:var(--accent-ink,#0c1a24);--mmb-r:var(--r,0px);display:grid;gap:22px;text-align:left;color:var(--mmb-text)}',
+    '--mmb-on-accent:var(--accent-ink,#0c1a24);--mmb-r:var(--r,0px);display:grid;grid-template-columns:minmax(0,1fr);gap:22px;text-align:left;color:var(--mmb-text);min-width:0}',
+    '.mmb>*{min-width:0}',
     '.mmb [hidden]{display:none!important}',
     '.mmb-meta{margin:0;font-size:14px;color:var(--mmb-muted)}',
     '.mmb-label{margin:0 0 10px;font-family:var(--font-head,inherit);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mmb-ink)}',
@@ -62,6 +69,16 @@
     '.mmb-status:empty{display:none}',
     '.mmb-status a{color:inherit;text-decoration:underline;text-underline-offset:3px}',
     '.mmb-submit{justify-self:start}',
+    '.mmb-head{display:grid;gap:6px;padding-right:40px}',
+    '.mmb-head h2{margin:0;font-family:var(--font-head,inherit);font-size:24px;line-height:1.2;color:var(--mmb-ink)}',
+    '.mmb-head p{margin:0;font-size:15px}',
+    '.mmb-dialog{position:fixed;inset:0;margin:auto;width:min(640px,calc(100vw - 32px));height:fit-content;max-height:calc(100dvh - 48px);overflow:auto;box-sizing:border-box;padding:32px;',
+    'border:1px solid var(--line,var(--hair,rgba(127,127,127,.35)));border-radius:var(--r,0px);background:var(--bg,#fff);color:var(--text,#3a4651)}',
+    '.mmb-dialog::backdrop{background:rgba(6,14,20,.62)}',
+    '.mmb-close{position:absolute;top:16px;right:16px;width:44px;height:44px;display:grid;place-items:center;background:transparent;border:0;cursor:pointer;color:var(--ink,#0c1a24);border-radius:var(--r,0px)}',
+    '.mmb-close:focus-visible{outline:2px solid var(--accent,#38b6ff)}',
+    '.mmb-close svg{width:18px;height:18px}',
+    '@media (max-width:560px){.mmb-dialog{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;margin:0;padding:24px 16px calc(24px + env(safe-area-inset-bottom,0px));border:0;border-radius:0}}',
     '@media (max-width:560px){.mmb-submit{justify-self:stretch;width:100%}}'
   ].join('');
 
@@ -149,6 +166,7 @@
 
     root.innerHTML = '';
     var box = el('div', { class: 'mmb' });
+    var head = el('div', { class: 'mmb-head', hidden: true });
     var meta = el('p', { class: 'mmb-meta' }, 'Loading open times...');
     var dayWrap = el('div', { hidden: true });
     var dayLabel = el('p', { class: 'mmb-label', id: id + '-days' }, 'Pick a day');
@@ -160,7 +178,7 @@
     var status = el('p', { class: 'mmb-status', role: 'status', 'aria-live': 'polite' });
     dayWrap.append(dayLabel, dayList);
     timeWrap.append(timeLabelEl, timeList);
-    box.append(meta, dayWrap, timeWrap, form, status);
+    box.append(head, meta, dayWrap, timeWrap, form, status);
     root.appendChild(box);
 
     function say(message, withFallback) {
@@ -181,6 +199,13 @@
           var view = answer.body.result;
           state.fields = Array.isArray(view.intakeFields) ? view.intakeFields : [];
           state.days = localDays(Array.isArray(view.days) ? view.days : [], zone);
+          if (options.title && view.type) {
+            head.innerHTML = '';
+            head.append(el('h2', { id: id + '-title' }, view.type.name));
+            if (view.type.description) head.append(el('p', {}, view.type.description));
+            head.hidden = false;
+            if (options.onTitle) options.onTitle(id + '-title');
+          }
           var minutes = view.type && view.type.durationMinutes;
           meta.textContent = (minutes ? minutes + ' minutes · ' : '') + 'times in your time zone (' + zone.replace(/_/g, ' ') + ')';
           if (state.days.length === 0) {
@@ -228,7 +253,7 @@
 
     function pick(slot) {
       state.slot = slot;
-      if (!state.clicked) { state.clicked = true; pushBookingClick(slug); }
+      if (!state.clicked) { state.clicked = true; if (options.countClick !== false) pushBookingClick(slug); }
       drawTimes();
       drawForm();
       say('');
@@ -457,7 +482,49 @@
     load();
   }
 
-  window.MMBooking = { mount: mount };
+  // The booking step in a window over the page. One window is reused.
+  var dialog = null;
+  var opener = null;
+
+  function open(slug, options) {
+    if (!SLUG.test(slug) || typeof HTMLDialogElement !== 'function') return false;
+    addStyles();
+    if (!dialog) {
+      dialog = el('dialog', { class: 'mmb-dialog' });
+      var close = el('button', { type: 'button', class: 'mmb-close', 'aria-label': 'Close' });
+      close.innerHTML = '<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>';
+      close.addEventListener('click', function () { dialog.close(); });
+      dialog.addEventListener('click', function (event) { if (event.target === dialog) dialog.close(); });
+      dialog.addEventListener('close', function () {
+        document.documentElement.style.overflow = '';
+        if (opener && opener.focus) opener.focus();
+      });
+      dialog.append(close, el('div', { class: 'mmb-dialog-body' }));
+      document.body.appendChild(dialog);
+    }
+    opener = document.activeElement;
+    var body = dialog.querySelector('.mmb-dialog-body');
+    dialog.removeAttribute('aria-labelledby');
+    mount(body, Object.assign({ slug: slug, title: true, onTitle: function (titleId) { dialog.setAttribute('aria-labelledby', titleId); } }, options || {}));
+    document.documentElement.style.overflow = 'hidden';
+    if (!dialog.open) dialog.showModal();
+    return true;
+  }
+
+  window.MMBooking = { mount: mount, open: open };
+
+  // Same-site /book/<slug> links open the window. visits.js counted the click.
+  document.addEventListener('click', function (event) {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    var node = event.target && event.target.nodeType === 1 ? event.target : event.target && event.target.parentElement;
+    var link = node && node.closest ? node.closest('a[href]') : null;
+    if (!link || link.hasAttribute('data-booking-external') || (link.target && link.target !== '_self')) return;
+    var url;
+    try { url = new URL(link.getAttribute('href'), location.href); } catch (e) { return; }
+    var match = url.origin === location.origin && url.pathname.match(/^\/book\/([a-z0-9]+(?:-[a-z0-9]+)*)\/?$/);
+    if (!match) return;
+    if (open(match[1], { countClick: false })) event.preventDefault();
+  });
 
   function auto() {
     Array.prototype.forEach.call(document.querySelectorAll('[data-booking]:not([data-booking-manual])'), function (node) { mount(node); });
