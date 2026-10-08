@@ -31,22 +31,17 @@
 /* /consulting: page-only rules. Everything shared lives in /assets/site-v2.css. */
 .crumbs.top{padding-block:4px}
 
-/* promote to site-v2: hero A-split. A portrait photo in the right 40% of the navy card, no gradient.
-   On phones the photo comes first, as a short band. */
-.hero-photo.split{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);align-items:stretch;min-height:640px}
-.hero-photo.split::before{display:none}
-.hero-photo.split .ph{display:block;grid-column:2;grid-row:1;width:100%;height:0;min-height:100%;object-fit:cover;object-position:50% 18%}
-.hero-photo.split .in{grid-column:1;grid-row:1;align-self:center;max-width:none;padding:56px 56px 132px 64px;gap:20px}
-.hero-photo.split h1{font-size:clamp(44px,4.9vw,70px)}
+/* hero A-split (site-v2 9c): the arms-crossed portrait's crop, then the proof under the button */
+.hero-photo.split > .ph{object-position:50% 18%}
 .hero-photo .hproof{display:flex;flex-direction:column;gap:6px}
 .hproof li::before,.trust li::before{top:.53em}
 .hero-photo .hproof li{font-family:var(--font-head);font-weight:600;font-size:15px;line-height:1.45;color:var(--ink)}
 .hero-photo p.cred{font-size:15px;line-height:1.6;color:var(--text);max-width:52ch;padding-top:18px;border-top:1px solid var(--line)}
-/* the 30/30/30 strip: figure, label, one line */
-.figs li{flex-direction:column;justify-content:flex-start;gap:6px;text-align:center}
-.figs .fig{font-family:var(--font-head);font-weight:800;font-size:var(--fs-num);line-height:1;letter-spacing:-.03em;color:var(--ink);font-variant-numeric:tabular-nums;text-align:center}
-.figs .k{font-family:var(--font-head);font-weight:700;font-size:var(--fs-l);line-height:1.3;color:var(--ink);text-align:center}
-.figs span{font-size:var(--fs-s);line-height:1.45;color:var(--text)}
+/* the 30/30/30 strip: figure, label, one line (not the shared .figs: a label row and its own phone layout) */
+.thirty li{flex-direction:column;justify-content:flex-start;gap:6px;text-align:center}
+.thirty .fig{font-family:var(--font-head);font-weight:800;font-size:var(--fs-num);line-height:1;letter-spacing:-.03em;color:var(--ink);font-variant-numeric:tabular-nums;text-align:center}
+.thirty .k{font-family:var(--font-head);font-weight:700;font-size:var(--fs-l);line-height:1.3;color:var(--ink);text-align:center}
+.thirty span{font-size:var(--fs-s);line-height:1.45;color:var(--text)}
 
 /* the cycle: four light numerals in a row */
 .cycle{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s6);margin-top:var(--s8);padding-top:28px;border-top:1px solid var(--line)}
@@ -110,19 +105,8 @@
 .apcard{background:#ffffff;border:1px solid var(--line);border-radius:var(--r);padding:var(--s7)}
 .apcard h3{font-size:var(--fs-h4);line-height:1.2}
 .apcard .sub{margin-top:var(--s2);font-size:15px}
-/* promote to site-v2 (fields): 48px fields under a 56px button, --field border, 16px text, select chevron */
-form.ap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:var(--s6)}
-form.ap .full{grid-column:1/-1}
-form.ap > p[style]{grid-column:1/-1}
-form.ap input,form.ap select,form.ap textarea{width:100%;min-width:0;margin:0;font-size:var(--fs-b);line-height:20px;padding:13px 16px;border:1px solid var(--field);border-radius:var(--r);background:#ffffff;color:var(--ink)}
-form.ap select{-webkit-appearance:none;appearance:none;padding-right:40px;cursor:pointer;
-  background:#ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%230c1a24' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 16px center/12px 8px}
-form.ap select:invalid{color:var(--muted)}
-form.ap option{color:var(--ink)}
-form.ap input::placeholder,form.ap textarea::placeholder{color:var(--muted);opacity:1}
-form.ap textarea{min-height:96px;resize:vertical}
-form.ap input:focus,form.ap select:focus,form.ap textarea:focus{outline:none;border-color:var(--accent);box-shadow:var(--focus)}
-form.ap .btn{width:100%;margin-top:var(--s2)}
+/* the application form: its fields are site-v2's (9c, .form / form.ap) */
+form.ap{margin-top:var(--s6)}
 /* step 2 (inline script below): the booking, white */
 .ap-step{display:grid;gap:12px;margin-top:var(--s6)}
 .ap-step .ap-done{display:flex;align-items:center;gap:10px;font-family:var(--font-head);font-weight:700;font-size:var(--fs-l);color:var(--ink)}
@@ -134,24 +118,21 @@ form.ap .btn{width:100%;margin-top:var(--s2)}
 .ap-step .mmb-field input:not([type=checkbox]),.ap-step .mmb-field select,.ap-step .mmb-field textarea{background:#ffffff;border-color:var(--field)}
 
 @media (max-width:960px){
-  .hero-photo.split{display:block;min-height:0}
-  .hero-photo.split .ph{height:300px;min-height:0;object-position:50% 16%}
-  .hero-photo.split .in{padding:32px 28px 128px}
+  .hero-photo.split > .ph{height:300px;object-position:50% 16%}
   .cycle{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:var(--s6)}
   .fit,.invest,.apgrid{grid-template-columns:minmax(0,1fr);gap:var(--s8)}
   .apgrid > .copy{position:static}
 }
 @media (max-width:760px){
-  .figs li{display:grid;grid-template-columns:96px minmax(0,1fr);column-gap:var(--s3);row-gap:2px;align-items:center;text-align:left}
-  .figs .fig{grid-row:1/3;font-size:32px;text-align:left}
-  .figs .k{text-align:left}
+  .thirty li{display:grid;grid-template-columns:96px minmax(0,1fr);column-gap:var(--s3);row-gap:2px;align-items:center;text-align:left}
+  .thirty .fig{grid-row:1/3;font-size:32px;text-align:left}
+  .thirty .k{text-align:left}
   .nlist{grid-template-columns:minmax(0,1fr);grid-template-rows:none;grid-auto-flow:row}
   .nlist li:nth-child(4){border-top:0}
   .cases{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:560px){
-  .hero-photo.split .ph{height:160px;object-position:50% 14%}
-  .hero-photo.split .in{padding:22px 20px 120px}
+  .hero-photo.split > .ph{height:160px;object-position:50% 14%}
   .hero-photo .hproof li{font-size:var(--fs-s)}
   .cycle{grid-template-columns:minmax(0,1fr);gap:0;padding-top:0;border-top:0;margin-top:var(--s6)}
   .cycle li{flex-direction:row;align-items:center;gap:var(--s4);padding-block:12px;border-bottom:1px solid var(--line)}
@@ -166,7 +147,6 @@ form.ap .btn{width:100%;margin-top:var(--s2)}
   .case dd{font-size:var(--fs-l)}
   .price{padding:28px 20px 24px}
   .apcard{padding:28px 20px}
-  form.ap{grid-template-columns:minmax(0,1fr)}
 }
 </style>
 <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -241,7 +221,7 @@ form.ap .btn{width:100%;margin-top:var(--s2)}
       </div>
     </div>
     <div class="strip">
-      <ul class="outs figs">
+      <ul class="outs thirty">
         <li><b class="fig">+30%</b><b class="k">Price</b><span>Get paid for the value you create</span></li>
         <li><b class="fig">+30%</b><b class="k">Close rate</b><span>Win more of the calls you take</span></li>
         <li><b class="fig">&minus;30%</b><b class="k">Delivery hours</b><span>Get your week back</span></li>

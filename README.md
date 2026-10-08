@@ -39,6 +39,8 @@ To put a page on v2:
    - `<!-- chrome:header podcast -->`: the same + the outlined "Free assessment" button
    - `<!-- chrome:header focus href="#apply" label="Apply" cta="mastermind-nav" -->`:
      campaign pages, logo + the page's one action
+   - `<!-- chrome:header logo -->`: the logo only, no nav and no button, for a page
+     with nothing to do next (`/booked`)
    - `<!-- chrome:footer full -->` or `<!-- chrome:footer focus -->` (legal row + socials)
 
    Each one is closed by `<!-- /chrome:header -->` or `<!-- /chrome:footer -->`.
@@ -46,6 +48,8 @@ To put a page on v2:
    page's own URL gets `aria-current="page"` (the ink link with the blue dot).
 4. Rebuild the content with the v2 components and cut the inline `<style>` down
    to page-only rules. Keep every `href`, `data-cta` and `data-lead` as it was.
+   If a page needs a shared component v2 lacks, build it inline under a
+   `/* promote to site-v2 */` comment; a cleanup PR moves it into section 9c.
 5. Check it at 390px and 1440px against the live page before merging.
 
 Content components (site-v2.css section 9b, from /media, /guest-appearances and
@@ -54,6 +58,25 @@ Content components (site-v2.css section 9b, from /media, /guest-appearances and
 episode list, `.covergrid` static cover grid, `.statrow.c3` / `.lone` stat row
 on navy, and `.closing .btns` for a two-door closing band. Cover `src` is the
 show's `cover_url` from `generator/_source/appearances.json`, never `images/...`.
+
+Page components (site-v2.css section 9c, promoted from the wave A/B pages; each
+one has its markup in a comment above its rules):
+- `.hero-wrap`: the space between the stamped header and an offer hero.
+- Hero A variants: `.hero-photo.split` (a portrait in the right 40%, no gradient;
+  `.shot` for a `<picture>`, `.solo` when no `.strip` follows), `.hero-photo.flip`
+  (mirrored, for a photo whose people sit left) and `.note` beside the hero button.
+  The page sets the photo crop (`object-position`) and its phone band height.
+- `.figs` proof figures in the hero strip (`.c4` for four).
+- `.hero-b.split`: type on the left, a player (`.embed`) or a card on the right;
+  `.with-card` puts a lead magnet's opt-in card beside the copy and its `.learn` list.
+- `.optin.stack`: the opt-in card in one column, plus `.optin .field label` (visible
+  labels) and `.optin button.submit` (the `.btn` look for a form that can't take it).
+- Form fields: `.form` (`.full`, `.radio`); `form.ap` is /consulting's application,
+  listed beside it because form markup is frozen.
+- `.said`: text-only quotes as a hairline pair.
+- Podcast family only (Chris): the record band (`.rec-top`, `.fig-block`, `.dots20`)
+  and the myths band (`.myths`, closing line `p.close`). The sticky phone bar
+  (`.mbar`) stays inline on /podcast-guesting on purpose: it must not spread.
 
 Under 961px the header links move into a "Menu" sheet (`generator/chrome/menu.html`,
 the button plus a small inline script): it fills the screen under the header,

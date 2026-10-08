@@ -29,16 +29,10 @@
 <style>
 /* /podcast-workshop: page-only rules. Everything shared lives in /assets/site-v2.css. */
 
-/* promote to site-v2: hero A-split. The photo fills the right 40% with no gradient,
-   for frames where Mike sits left. Phones: photo first, then the copy. */
-.hero-photo.split{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);align-items:stretch;min-height:0}
-.hero-photo.split::before{display:none}
-.hero-photo.split .shot{grid-column:2;grid-row:1;position:relative;min-height:560px}
-.hero-photo.split .ph{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:45% 30%}
-.hero-photo.split .in{grid-column:1;grid-row:1;align-self:center;max-width:none;padding:64px 56px 64px 64px}
+/* hero A-split, .solo, the photo in a .shot (site-v2 9c): the crop, a long H1, the byline */
+.hero-photo.split .shot .ph{object-position:45% 30%}
 .hero-photo.split h1{font-size:clamp(40px,3.7vw,54px);line-height:1.02} /* a long, sentence-length H1 */
 .hero-photo p.meta{font-size:var(--fs-s);color:var(--text)}
-.hero-photo .note{font-size:var(--fs-s);color:var(--text)}
 .host{display:flex;align-items:center;gap:14px;margin-top:6px;font-size:var(--fs-s);line-height:1.45;color:var(--text)}
 .host .av{flex:none;width:40px;height:40px;border-radius:50%;overflow:hidden}
 .host .av img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
@@ -48,25 +42,7 @@
 .whyrow{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:var(--s11);align-items:center}
 .whyphoto img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:var(--r)}
 
-/* promote to site-v2: record band, the money figure as the hero (podcast family only) */
-.rec-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;align-items:center}
-.rec-top .t{display:flex;flex-direction:column;gap:20px}
-.rec-top .t p{font-size:var(--fs-l)}
-.rec-top .hl{color:var(--ink);font-weight:500}
-.rec-top .hl.h{color:var(--accent)}
-.fig-block{display:flex;flex-direction:column;min-width:0}
-.fig{font-family:var(--font-head);font-weight:800;color:var(--ink);font-size:clamp(56px,7vw,96px);line-height:.9;letter-spacing:-.045em;font-variant-numeric:tabular-nums}
-.fig-cap{margin-top:14px;font-size:var(--fs-b);color:var(--text)}
-.dots20{display:grid;grid-template-columns:repeat(20,12px);gap:8px;margin-top:28px}
-.dots20 i{display:block;width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.28)}
-.dots20 .h{background:var(--accent)}
-
-/* promote to site-v2: myths band (podcast family only; same rules inline on /podcast-guesting) */
-.myths .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:80px;align-items:start}
-.myths .t,.myths .a{display:flex;flex-direction:column;gap:20px}
-.myths .mh,.myths .a h3{font-size:clamp(26px,2.6vw,30px);line-height:1.15}
-.myths .a p{font-size:var(--fs-l)}
-.myths .a p.close{font-family:var(--font-head);font-weight:600;color:var(--ink);line-height:1.45;padding-top:18px;border-top:1px solid var(--line)}
+/* the record band and the myths band are site-v2's (9c, podcast family only) */
 
 /* who it's for: one hairline row */
 .whofor{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));margin-top:var(--s9);border-top:1px solid var(--line)}
@@ -92,17 +68,12 @@
 .reg .body > p{font-size:15px}
 .reg .dt{font-family:var(--font-head);font-weight:700;font-size:var(--fs-s);color:var(--ink);margin-top:6px;padding-top:20px;border-top:1px solid var(--line)}
 .optin.reg form{padding:0;gap:14px}
-.reg .field label{position:static;display:block;width:auto;height:auto;overflow:visible;clip:auto;margin-bottom:6px;
-  font-family:var(--font-head);font-weight:600;font-size:var(--fs-s);color:var(--ink)}
 .reg input{width:100%}
 .reg .body > p.regnote{font-size:13px;color:var(--muted);text-align:center} /* parity with .optin .fine */
 
 @media (max-width:960px){
-  .hero-photo.split{display:block}
-  .hero-photo.split .shot{display:block;min-height:0}
-  .hero-photo.split .ph{position:static;height:220px;object-position:30% 40%}
-  .hero-photo.split .in{padding:32px 28px 40px}
-  .whyrow,.rec-top,.myths .wrap{grid-template-columns:minmax(0,1fr);gap:var(--s7)}
+  .hero-photo.split .shot .ph{height:220px;object-position:30% 40%}
+  .whyrow{grid-template-columns:minmax(0,1fr);gap:var(--s7)}
   .whofor{grid-template-columns:minmax(0,1fr)}
   .whofor li:nth-child(n){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:24px;align-items:baseline;padding:20px 0;border-left:0}
   .whofor li + li{border-top:1px solid var(--line)}
@@ -110,13 +81,8 @@
   .optin.reg .photo{min-height:200px;background-position:55% 30%} /* short, so the fields land in view after the #register jump */
 }
 @media (max-width:560px){
-  .hero-photo.split .ph{height:170px;object-position:30% 38%}
-  .hero-photo.split .in{gap:16px;padding:24px 20px 28px}
+  .hero-photo.split .shot .ph{height:170px;object-position:30% 38%}
   .hero-photo.split h1{font-size:32px;line-height:1.04}
-  .hero-photo .btns .note{text-align:center}
-  .fig{font-size:60px}
-  .dots20{grid-template-columns:repeat(20,10px);gap:6px}
-  .dots20 i{width:10px;height:10px}
   .whofor li:nth-child(n){display:flex;gap:4px}
   .creds{grid-template-columns:minmax(0,1fr)}
   .optin.reg .photo{min-height:150px}
@@ -142,7 +108,7 @@
 
 <main>
   <div class="wrap">
-    <div class="hero-photo split">
+    <div class="hero-photo split solo">
       <picture class="shot">
         <source media="(min-width: 961px)" srcset="/media/podcast-workshop/roundtable-mike.jpg" width="920" height="1338">
         <img class="ph" src="/media/podcast-guesting/roundtable.jpg" alt="Mike Moll talking into a podcast microphone at a table with three guests" width="1100" height="733" fetchpriority="high">

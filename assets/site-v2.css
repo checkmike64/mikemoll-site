@@ -38,7 +38,8 @@
     6  Buttons
     7  Lists + glyphs
     8  Chrome: .site-nav, .site-foot, .crumbs
-    9  Components (9b: content components for lists of episodes and shows)
+    9  Components (9b: content components for lists of episodes and shows;
+       9c: page components promoted from the wave A/B pages)
    10  Responsive
    11  Compat (small; delete each line when grep finds no user)
    12  Reduced motion
@@ -463,10 +464,173 @@ html.menu-open{overflow:hidden}
 /* closing band with two doors (content pages): one solid button, one outlined */
 .closing .btns{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--s3) var(--s4)}
 
+/* ---------- 9c. Page components, promoted ----------
+   Built inline on the wave A/B pages under "promote to site-v2" and moved here in the
+   restyle cleanup (PR 10), unchanged in rendering. Their phone rules are in section 10
+   under "9c". Two of them are podcast-family devices (Chris): the record band with
+   .dots20 and the myths band stay on /podcast-guesting, /podcast-workshop and the replay,
+   so the dot and the myths never become wallpaper. The sticky phone bar (.mbar) is NOT
+   here on purpose: it is a /podcast-guesting device and must not spread. */
+
+/* hero wrapper: breathing room between the stamped header and an offer hero.
+     <div class="wrap hero-wrap"><div class="hero-photo">..</div><div class="strip">..</div></div> */
+.hero-wrap{padding-top:var(--s5)}
+
+/* hero A, a short note beside the hero button ("Free. Instant access.", a price line) */
+.hero-photo .note{font-size:var(--fs-s);color:var(--text)}
+
+/* hero A-split: a portrait photo in the right 40% of the navy card, no gradient.
+   Phones: the photo first, as a short band, then the copy. The default leaves room
+   at the bottom for the .strip that overlaps the card.
+     <div class="hero-photo split"><img class="ph" ..><div class="in">..</div></div>
+   .shot  the photo sits in a <picture class="shot"> (a portrait crop from 961px):
+          it fills the column, and the column sets the height (560px)
+   .solo  no .strip under the card: even padding top and bottom
+   The page sets the crop: object-position on the .ph, and its phone band height
+   (260px under 961px, 180px under 561px unless the page says otherwise). */
+.hero-photo.split{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);align-items:stretch;min-height:640px}
+.hero-photo.split::before{display:none}
+.hero-photo.split > .ph{display:block;grid-column:2;grid-row:1;width:100%;height:0;min-height:100%;object-fit:cover}
+.hero-photo.split .in{grid-column:1;grid-row:1;align-self:center;max-width:none;padding:56px 56px 132px 64px;gap:20px}
+.hero-photo.split h1{font-size:clamp(44px,4.9vw,70px)}
+.hero-photo.split .shot{grid-column:2;grid-row:1;position:relative;min-height:560px}
+.hero-photo.split .shot .ph{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-photo.split.solo{min-height:0}
+.hero-photo.split.solo .in{padding:64px 56px 64px 64px;gap:22px}
+
+/* hero A, mirrored: for a photo whose people sit on the left. The copy sits right and
+   the gradient runs right to left, so no face is under it (from 961px; the rules are in
+   section 10). Phones: photo first, then the copy, as hero A.
+     <div class="hero-photo flip" style="--hero-img:url(..)"> */
+.hero-photo.flip h1{font-size:clamp(40px,3.9vw,54px);line-height:1}
+
+/* proof figures in the hero strip: a figure and one line each, hairline-divided.
+     <div class="strip"><ul class="figs"><li><b>70+</b><span>One line</span></li>..</ul></div>
+   Three by default. .c4  four figures (two by two under 961px) */
+.figs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s5)}
+.figs li{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--s2);min-width:0}
+.figs li + li{border-left:1px solid var(--line)}
+.figs b{font-family:var(--font-head);font-weight:800;font-size:var(--fs-num);line-height:1;letter-spacing:-.04em;color:var(--ink);font-variant-numeric:tabular-nums}
+.figs span{font-size:var(--fs-s);line-height:1.4;color:var(--text)}
+.figs.c4{grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s4)}
+.figs.c4 b{font-size:clamp(26px,2.75vw,36px);white-space:nowrap}
+
+/* hero B-split: type on white on the left, a player or a card on the right.
+     <section class="hero-b split"><div class="wrap"><div class="copy">..</div><div class="embed"><iframe ..></div></div></section>
+   .embed      a player (Spotify, video): its own card fills it, 6px corners
+   .with-card  a lead magnet: the opt-in card (.card-col) runs the full height on the
+               right, beside the copy and a list under it (.learn). Phones: the copy,
+               then the card (so the form stays near the top), then the list. */
+.hero-b.split .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:var(--s9);align-items:center}
+.hero-b.split .copy{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s5)}
+.hero-b.split h1{max-width:14ch}
+.hero-b.split .embed{border-radius:var(--r);overflow:hidden}
+.hero-b.split .embed iframe{display:block;width:100%;border:0}
+.hero-b.split.with-card .wrap{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);grid-template-rows:auto 1fr;grid-template-areas:"copy card" "learn card";
+  column-gap:var(--s11);row-gap:var(--s7);align-items:start}
+.hero-b.split.with-card .copy{grid-area:copy}
+.hero-b.split.with-card .learn{grid-area:learn}
+.hero-b.split.with-card .card-col{grid-area:card}
+.hero-b.split.with-card h1{max-width:12ch}
+
+/* opt-in card: visible field labels (the card hides bare labels; a .field wrapper shows them) */
+.optin .field label{position:static;display:block;width:auto;height:auto;overflow:visible;clip:auto;margin-bottom:6px;
+  font-family:var(--font-head);font-weight:600;font-size:var(--fs-s);color:var(--ink)}
+/* opt-in card, stacked in a column: photo on top, then the form (.body). The form inside
+   is the lead form as it was, so its own classes are styled here: .field, button.submit
+   (the .btn look, for a form whose button can't take .btn) and .micro (the fine print). */
+.optin.stack{max-width:none;margin:0;grid-template-columns:minmax(0,1fr)}
+.optin.stack .photo{min-height:0;aspect-ratio:3/2;background-position:50% 30%}
+.optin.stack .body{display:flex;flex-direction:column;gap:6px;padding:var(--s6) var(--s6) 28px}
+.optin.stack h2{font-size:var(--fs-h4);line-height:1.2}
+.optin.stack .sub{font-size:15px;color:var(--text)} /* parity with .optin .sub */
+.optin.stack form{padding:0;margin-top:var(--s4);gap:12px}
+.optin.stack input{width:100%}
+.optin button.submit{display:flex;align-items:center;justify-content:center;width:100%;min-height:56px;margin-top:6px;padding:18px 24px;border:0;border-radius:var(--r);
+  background:var(--accent);color:var(--accent-ink);font-family:var(--font-head);font-weight:700;font-size:var(--fs-b);line-height:20px;letter-spacing:-.005em;
+  text-align:center;cursor:pointer;transition:background-color var(--ease)}
+.optin button.submit:hover{background:var(--accent-hover)}
+.optin.stack .micro{margin-top:2px;font-size:13px;color:var(--muted);text-align:center} /* parity with .optin .fine */
+
+/* form fields: a two-column grid of 48px fields under a 56px button. --field border
+   (3:1 on white), 16px text (no iOS focus zoom), a drawn select chevron. One column
+   under 561px. The form markup is never changed: forms.js swaps in its success message.
+     <form class="form" data-lead=".."><input class="full" ..><input ..><select class="full" ..>..
+   .full    a field that spans both columns
+   .radio   a group of choices: hairline rows, a round radio with the blue dot
+   form.ap  is /consulting's application. Its class is part of the frozen form markup,
+            so it is listed beside .form rather than renamed. */
+.form,form.ap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.form .full,.form > p[style],form.ap .full,form.ap > p[style]{grid-column:1/-1}
+.form input:not([type=radio]),.form select,.form textarea,form.ap input,form.ap select,form.ap textarea{width:100%;min-width:0;margin:0;font-size:var(--fs-b);line-height:20px;padding:13px 16px;
+  border:1px solid var(--field);border-radius:var(--r);background:#ffffff;color:var(--ink)}
+.form select,form.ap select{-webkit-appearance:none;appearance:none;padding-right:40px;cursor:pointer;
+  background:#ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%230c1a24' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 16px center/12px 8px}
+.form select:invalid,form.ap select:invalid{color:var(--muted)}
+.form option,form.ap option{color:var(--ink)}
+.form input::placeholder,.form textarea::placeholder,form.ap input::placeholder,form.ap textarea::placeholder{color:var(--muted);opacity:1}
+.form textarea,form.ap textarea{min-height:96px;resize:vertical}
+.form input:focus,.form select:focus,.form textarea:focus,form.ap input:focus,form.ap select:focus,form.ap textarea:focus{outline:none;border-color:var(--accent);box-shadow:var(--focus)}
+.radio{grid-column:1/-1;display:flex;flex-direction:column;margin-top:4px;border-top:1px solid var(--line)}
+.radio label{display:flex;align-items:center;gap:12px;min-height:52px;padding-block:10px;border-bottom:1px solid var(--line);font-size:15px;line-height:1.4;color:var(--ink);cursor:pointer}
+.radio input{-webkit-appearance:none;appearance:none;display:grid;place-content:center;flex:none;width:20px;height:20px;margin:0;
+  border:1.5px solid var(--field);border-radius:50%;background:#ffffff;cursor:pointer}
+.radio input::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);transform:scale(0);transition:transform var(--ease)}
+.radio input:checked{border-color:var(--ink)}
+.radio input:checked::before{transform:scale(1)}
+.form .btn,form.ap .btn{width:100%;margin-top:var(--s2)}
+
+/* record band (podcast family only): the money figure as the hero of a navy band,
+   with the 20-dot graphic (.h = the share in accent; the other dots are white at 28%).
+     <section class="section band-dark record"><div class="wrap rec-top">
+       <div class="t"><h2>..</h2><p>.. <span class="hl">..</span> <span class="hl h">70%</span></p></div>
+       <div class="fig-block"><b class="fig">$386,000</b><span class="fig-cap">..</span><div class="dots20" aria-hidden="true"><i class="h"></i>..</div></div>
+     </div></section> */
+.rec-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;align-items:center}
+.rec-top .t{display:flex;flex-direction:column;gap:20px}
+.rec-top .t p{font-size:var(--fs-l)}
+.rec-top .hl{color:var(--ink);font-weight:500}
+.rec-top .hl.h{color:var(--accent)}
+.fig-block{display:flex;flex-direction:column;min-width:0}
+.fig-block .fig{font-family:var(--font-head);font-weight:800;color:var(--ink);font-size:clamp(56px,7vw,96px);line-height:.9;letter-spacing:-.045em;font-variant-numeric:tabular-nums}
+.fig-cap{margin-top:14px;font-size:var(--fs-b);color:var(--text)}
+.dots20{display:grid;grid-template-columns:repeat(20,12px);gap:8px;margin-top:28px}
+.dots20 i{display:block;width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.28)}
+.dots20 .h{background:var(--accent)}
+
+/* myths band (podcast family only): the dismissed beliefs as an .mlist on the left,
+   the answer on the right, closed by one line under a hairline (b in the line = blue).
+     <section class="section tight band-soft myths"><div class="wrap">
+       <div class="t"><h2 class="mh">..</h2><ul class="mlist">..</ul></div>
+       <div class="a"><h3>..</h3><p>..</p><p class="close">..</p></div>
+     </div></section> */
+.myths .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:80px;align-items:start}
+.myths .t,.myths .a{display:flex;flex-direction:column;gap:20px}
+.myths .mh,.myths .a h3{font-size:clamp(26px,2.6vw,30px);line-height:1.15}
+.myths .a p{font-size:var(--fs-l)}
+.myths .a p.close{font-family:var(--font-head);font-weight:600;color:var(--ink);line-height:1.45;padding-top:18px;border-top:1px solid var(--line)}
+.myths .a p.close b{color:var(--link)}
+
+/* text-only quotes (no photo): a hairline pair, the quote as the headline, the name under it.
+     <ul class="said"><li><blockquote>..</blockquote><p class="by"><b>Name</b> &middot; Company</p></li>..</ul> */
+.said{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:var(--s8);border-block:1px solid var(--line)}
+.said li{display:flex;flex-direction:column;gap:var(--s4);min-width:0;padding:var(--s7) var(--s8) var(--s7) 0}
+.said li + li{border-left:1px solid var(--line);padding-inline:var(--s8) 0}
+.said blockquote{flex:1;font-family:var(--font-head);font-weight:600;font-size:var(--fs-h4);line-height:1.3;letter-spacing:-.015em;color:var(--ink);text-wrap:pretty}
+.said .by{font-size:var(--fs-s);line-height:1.4;color:var(--muted)}
+.said .by b{font-family:var(--font-head);font-weight:700;font-size:var(--fs-b);color:var(--ink)}
+
 /* ---------- 10. Responsive ---------- */
 @media (min-width:761px){
   .site-nav{position:sticky;top:env(safe-area-inset-top,0px);backdrop-filter:blur(8px)}
   html:has(> body > .site-nav){scroll-padding-top:96px}   /* anchor targets clear the sticky header */
+}
+@media (min-width:961px){
+  /* 9c hero A, mirrored: the copy right, the gradient from the right edge in px, so the
+     500px copy column always sits on the solid part */
+  .hero-photo.flip{justify-content:flex-end;background-position:left center;min-height:580px}
+  .hero-photo.flip::before{background:linear-gradient(270deg,rgba(5,14,21,.95) 0,rgba(5,14,21,.9) 530px,rgba(5,14,21,.35) 660px,rgba(5,14,21,0) 780px)}
+  .hero-photo.flip .in{max-width:500px;gap:20px;padding:56px 56px 136px 0}
 }
 @media (max-width:960px){
   :root{--sec:var(--s11);--sec-tight:var(--s10)}
@@ -520,6 +684,22 @@ html.menu-open{overflow:hidden}
   .statrow.c3 li:nth-child(n+3){border-top:0}
   .eplist > li > a{grid-template-columns:minmax(0,160px) minmax(0,1fr) auto;column-gap:var(--s6)}
   .covergrid{grid-template-columns:repeat(10,minmax(0,1fr))}
+  /* 9c page components */
+  .hero-photo.split{display:block;min-height:0}
+  .hero-photo.split > .ph{height:260px;min-height:0}
+  .hero-photo.split .in{padding:32px 28px 128px}
+  .hero-photo.split .shot{display:block;min-height:0}
+  .hero-photo.split .shot .ph{position:static;height:260px}
+  .hero-photo.split.solo .in{padding:32px 28px 40px}
+  .figs b{font-size:36px}
+  .figs.c4{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:0}
+  .figs.c4 li{padding-block:var(--s4)}
+  .figs.c4 li:nth-child(3){border-left:0}
+  .figs.c4 li:nth-child(n+3){border-top:1px solid var(--line)}
+  .hero-b.split .wrap{grid-template-columns:minmax(0,1fr);gap:var(--s7)}
+  .hero-b.split.with-card .wrap{grid-template-columns:minmax(0,1fr);grid-template-rows:none;grid-template-areas:"copy" "card" "learn";row-gap:var(--s7)}
+  .hero-b.split.with-card .card-col{max-width:560px}
+  .rec-top,.myths .wrap{grid-template-columns:minmax(0,1fr);gap:var(--s7)}
 }
 @media (max-width:760px){
   .logos{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:var(--s5)}
@@ -534,6 +714,11 @@ html.menu-open{overflow:hidden}
   .eplist .meta,.eplist h3,.eplist p,.eplist .go{grid-column:1;grid-row:auto}
   .eplist h3{font-size:var(--fs-h3);line-height:1.3}
   .covergrid{grid-template-columns:repeat(8,minmax(0,1fr))}
+  /* 9c page components */
+  .said{grid-template-columns:minmax(0,1fr)}
+  .said li{padding:var(--s6) 0}
+  .said li + li{border-left:0;border-top:1px solid var(--line);padding-inline:0}
+  .said blockquote{font-size:var(--fs-h3)}
 }
 @media (max-width:560px){
   :root{--gutter:20px}
@@ -580,6 +765,27 @@ html.menu-open{overflow:hidden}
   .closing .btns{flex-direction:column;align-items:stretch;width:100%}
   .covergrid{grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--s2)}
   .covergrid .cover.ini{font-size:var(--fs-b)}
+  /* 9c page components */
+  .hero-wrap{padding-top:var(--s3)}
+  .hero-photo .btns .note{text-align:center}
+  .hero-photo.split > .ph,.hero-photo.split .shot .ph{height:180px}
+  .hero-photo.split .in{padding:22px 20px 120px}
+  .hero-photo.split.solo .in{gap:16px;padding:24px 20px 28px}
+  .hero-photo.flip h1{font-size:36px;line-height:1.02}
+  .figs{grid-template-columns:minmax(0,1fr);gap:0;text-align:left}
+  .figs.c4{grid-template-columns:minmax(0,1fr)}
+  .figs li,.figs.c4 li{flex-direction:row;align-items:baseline;justify-content:flex-start;gap:var(--s4);padding-block:var(--s3)}
+  .figs li + li{border-left:0;border-top:1px solid var(--line)}
+  .figs b{flex:none;min-width:116px;font-size:28px}
+  .figs.c4 b{min-width:150px;font-size:28px}
+  .hero-b.split.with-card .wrap{row-gap:var(--s6)}
+  .hero-b.split.with-card .copy{gap:var(--s4)}
+  .optin.stack .photo{aspect-ratio:auto;height:132px;background-position:50% 26%}
+  .optin.stack .body{padding:var(--s5) 20px}
+  .form,form.ap{grid-template-columns:minmax(0,1fr)}
+  .fig-block .fig{font-size:60px}
+  .dots20{grid-template-columns:repeat(20,10px);gap:6px}
+  .dots20 i{width:10px;height:10px}
 }
 
 /* ---------- 11. Compat (small) ----------

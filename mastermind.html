@@ -25,31 +25,8 @@
 <style>
 /* /mastermind: page-only rules. Everything shared lives in /assets/site-v2.css. */
 
-/* promote to site-v2: breathing room between the stamped header and an offer hero (same rule on / and /podcast-guesting) */
-.hero-wrap{padding-top:var(--s5)}
-
-/* promote to site-v2: hero A, mirrored. For a photo whose people sit on the left (the dinner selfie):
-   the copy sits right and the gradient runs right to left, so nobody's face is under it.
-   Phones: photo first, then the copy, as hero A. */
-@media (min-width:961px){
-  .hero-photo.flip{justify-content:flex-end;background-position:left center}
-  .hero-photo.flip{min-height:580px}
-  /* stops in px from the right edge, so the 500px copy column always sits on the solid part */
-  .hero-photo.flip::before{background:linear-gradient(270deg,rgba(5,14,21,.95) 0,rgba(5,14,21,.9) 530px,rgba(5,14,21,.35) 660px,rgba(5,14,21,0) 780px)}
-  .hero-photo.flip .in{max-width:500px;gap:20px;padding:56px 56px 136px 0}
-}
-.hero-photo.flip h1{font-size:clamp(40px,3.9vw,54px);line-height:1}
-.hero-photo .note{font-size:var(--fs-s);color:var(--text)}
+/* the hero (.hero-wrap, hero A mirrored .flip, .note) and the strip's .figs.c4 are site-v2's (9c) */
 .eyebrow .mk{color:var(--muted)}
-
-/* promote to site-v2: proof figures in the hero strip (same rules inline on /). .c4 = four figures */
-.figs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s5)}
-.figs li{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--s2);min-width:0}
-.figs li + li{border-left:1px solid var(--line)}
-.figs b{font-family:var(--font-head);font-weight:800;font-size:var(--fs-num);line-height:1;letter-spacing:-.04em;color:var(--ink);font-variant-numeric:tabular-nums}
-.figs span{font-size:var(--fs-s);line-height:1.4;color:var(--text)}
-.figs.c4{grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s4)}
-.figs.c4 b{font-size:clamp(26px,2.75vw,36px);white-space:nowrap}
 
 /* why this room: the call next to what comes up on it */
 .callrow{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:var(--s9);align-items:center;margin-top:var(--s9)}
@@ -102,23 +79,11 @@
 
 @media (max-width:960px){
   .hero-photo.flip .ph{height:auto;aspect-ratio:2/1;object-position:30% 45%}
-  .figs.c4{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:0}
-  .figs.c4 li{padding-block:var(--s4)}
-  .figs.c4 li:nth-child(3){border-left:0}
-  .figs.c4 li:nth-child(n+3){border-top:1px solid var(--line)}
   .callrow,.gets{grid-template-columns:minmax(0,1fr);gap:var(--s7)}
   .wall{grid-template-columns:minmax(0,1fr);max-width:560px}
   .tgrid.c3{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:560px){
-  .hero-wrap{padding-top:var(--s3)}
-  .hero-photo.flip h1{font-size:36px;line-height:1.02}
-  .hero-photo .btns .note{text-align:center}
-  .figs{grid-template-columns:minmax(0,1fr);gap:0;text-align:left}
-  .figs.c4{grid-template-columns:minmax(0,1fr)}
-  .figs li,.figs.c4 li{flex-direction:row;align-items:baseline;justify-content:flex-start;gap:var(--s4);padding-block:var(--s3)}
-  .figs li + li{border-left:0;border-top:1px solid var(--line)}
-  .figs b,.figs.c4 b{flex:none;min-width:150px;font-size:28px}
   .hosting{margin-top:var(--s9)}
   .hosting-h{flex-direction:column;gap:6px}
 }

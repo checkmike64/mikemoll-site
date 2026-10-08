@@ -25,20 +25,14 @@
 <link rel="stylesheet" href="/assets/site-v2.css">
 <style>
 /* /podcast-guesting: page-only rules. Everything shared lives in /assets/site-v2.css. */
-/* promote to site-v2: breathing room between the stamped header and an offer hero */
-.hero-wrap{padding-top:var(--s5)}
-/* offer-page devices: problem pair, myths, promise, closing takeaways (podcast family only) */
+/* offer-page devices: problem pair, promise, closing takeaways (podcast family only).
+   The hero wrapper and the myths band are site-v2's (9c). */
 .problem-h{max-width:15em}
 .problem{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:80px;align-items:start;margin-top:48px}
 .problem .copy{display:flex;flex-direction:column;gap:18px}
 .problem .copy .btn{align-self:flex-start;margin-top:10px}
 .problem .copy .strong{color:var(--ink);font-weight:500}
 .problem .frame{font-family:var(--font-head);font-weight:700;color:var(--ink);font-size:18px}
-.myths .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:80px;align-items:start}
-.myths .t,.myths .a{display:flex;flex-direction:column;gap:20px}
-.myths .mh,.myths .a h3{font-size:clamp(26px,2.6vw,30px);line-height:1.15}
-.proof{font-family:var(--font-head);font-weight:600;color:var(--ink);font-size:18px;line-height:1.45;padding-top:18px;border-top:1px solid var(--line)}
-.proof b{color:var(--link)}
 #benefits{padding-bottom:80px}
 .spoke-note{font-size:16px;color:var(--text);max-width:62ch;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
 .spoke-note b{font-family:var(--font-head);font-weight:700;color:var(--ink)}
@@ -58,8 +52,7 @@
 .mbar{display:none}
 @media (max-width:960px){
   #benefits{padding-bottom:56px}
-  .problem,.myths .wrap{grid-template-columns:minmax(0,1fr);gap:40px}
-  .problem{margin-top:32px;gap:48px}
+  .problem{grid-template-columns:minmax(0,1fr);margin-top:32px;gap:48px}
 }
 @media (max-width:760px){
   .mbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
@@ -69,9 +62,7 @@
   .mbar .btn{width:100%}
 }
 @media (max-width:560px){
-  .hero-wrap{padding-top:var(--s3)}
   .problem .copy .btn{align-self:stretch}
-  .myths .mh,.myths .a h3{font-size:26px}
 }
 </style>
 <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -189,7 +180,7 @@
       </div>
       <div class="a">
         <h3>None of these is what gets you booked.</h3>
-        <p class="proof">The host brings the audience. When a pitch fits the show, <b>30 to 40%</b> of hosts write back. You're more bookable than you think.</p>
+        <p class="close">The host brings the audience. When a pitch fits the show, <b>30 to 40%</b> of hosts write back. You're more bookable than you think.</p>
       </div>
     </div>
   </section>

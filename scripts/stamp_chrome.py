@@ -15,6 +15,8 @@ only the text between a pair is replaced:
       the same + outlined "Free assessment" (podcast-guesting-nav)
   <!-- chrome:header focus href="#apply" label="Apply" cta="mastermind-nav" --> ... <!-- /chrome:header -->
       logo + the page's one action (cta is optional)
+  <!-- chrome:header logo --> ... <!-- /chrome:header -->
+      the logo only: no nav, no button (pages with nothing to do next, like /booked)
   <!-- chrome:footer full --> ... <!-- /chrome:footer -->
   <!-- chrome:footer focus --> ... <!-- /chrome:footer -->
 
@@ -45,7 +47,8 @@ SKIP_DIRS = {'drafts', 'generator', 'node_modules', 'scripts', 'api', 'assets', 
 
 PARTIALS = {
     'head': {'': 'head.html'},
-    'header': {'site': 'header-site.html', 'podcast': 'header-podcast.html', 'focus': 'header-focus.html'},
+    'header': {'site': 'header-site.html', 'podcast': 'header-podcast.html', 'focus': 'header-focus.html',
+               'logo': 'header-logo.html'},
     'footer': {'full': 'footer-full.html', 'focus': 'footer-focus.html'},
 }
 OPEN = re.compile(r'<!-- chrome:(head|header|footer)\b(.*?)-->')

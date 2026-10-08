@@ -17,46 +17,12 @@
 <style>
 /* /free/claude-basics: page-only rules. Everything shared lives in /assets/site-v2.css. */
 
-/* promote to site-v2: hero B-split. Type on white beside the opt-in card.
-   Phones: the copy, then the card (the form stays near the top), then the list. */
-.hero-b.split .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);grid-template-rows:auto 1fr;grid-template-areas:"copy card" "learn card";
-  column-gap:var(--s11);row-gap:var(--s7);align-items:start}
-.hero-b.split .copy{grid-area:copy;display:flex;flex-direction:column;align-items:flex-start;gap:var(--s5)}
-.hero-b.split .learn{grid-area:learn}
-.hero-b.split .card-col{grid-area:card}
-.hero-b.split h1{max-width:12ch}
+/* hero B-split .with-card and the stacked opt-in card (.optin.stack) are site-v2's (9c).
+   Here: the topics line and the list under the copy. */
 .topics{font-family:var(--font-head);font-weight:600;font-size:var(--fs-s);line-height:1.4;color:var(--muted)}
 .learn{display:flex;flex-direction:column;gap:12px;padding-top:var(--s6);border-top:1px solid var(--line)}
 .learn li{font-size:var(--fs-b);line-height:1.55;color:var(--ink)}
 .learn.dots li::before{top:.59em}
-
-/* promote to site-v2: the opt-in card stacked in a column (photo on top, then the form).
-   The form inside is untouched, so its own classes (.field, .submit, .micro) are styled here. */
-.optin.stack{max-width:none;margin:0;grid-template-columns:minmax(0,1fr)}
-.optin.stack .photo{min-height:0;aspect-ratio:3/2;background-position:50% 30%}
-.optin.stack .body{display:flex;flex-direction:column;gap:6px;padding:var(--s6) var(--s6) 28px}
-.optin.stack h2{font-size:var(--fs-h4);line-height:1.2}
-.optin.stack .sub{font-size:15px;color:var(--text)} /* parity with .optin .sub */
-.optin.stack form{padding:0;margin-top:var(--s4);gap:12px}
-.optin.stack .field label{position:static;display:block;width:auto;height:auto;overflow:visible;clip:auto;margin-bottom:6px;
-  font-family:var(--font-head);font-weight:600;font-size:var(--fs-s);color:var(--ink)}
-.optin.stack input{width:100%}
-.optin button.submit{display:flex;align-items:center;justify-content:center;width:100%;min-height:56px;margin-top:6px;padding:18px 24px;border:0;border-radius:var(--r);
-  background:var(--accent);color:var(--accent-ink);font-family:var(--font-head);font-weight:700;font-size:var(--fs-b);line-height:20px;letter-spacing:-.005em;
-  text-align:center;cursor:pointer;transition:background-color var(--ease)}
-.optin button.submit:hover{background:var(--accent-hover)}
-.optin.stack .micro{margin-top:2px;font-size:13px;color:var(--muted);text-align:center} /* parity with .optin .fine */
-
-@media (max-width:960px){
-  .hero-b.split .wrap{grid-template-columns:minmax(0,1fr);grid-template-rows:none;grid-template-areas:"copy" "card" "learn";row-gap:var(--s7)}
-  .hero-b.split .card-col{max-width:560px}
-}
-@media (max-width:560px){
-  .hero-b.split .wrap{row-gap:var(--s6)}
-  .hero-b.split .copy{gap:var(--s4)}
-  .optin.stack .photo{aspect-ratio:auto;height:132px;background-position:50% 26%}
-  .optin.stack .body{padding:var(--s5) 20px}
-}
 </style>
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -75,7 +41,7 @@
 <!-- /chrome:header -->
 
 <main>
-  <section class="hero-b split">
+  <section class="hero-b split with-card">
     <div class="wrap">
       <div class="copy">
         <span class="eyebrow">The Compression Method &middot; 2.5M+ Client Revenue</span>

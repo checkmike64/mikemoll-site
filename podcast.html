@@ -28,17 +28,13 @@
 <link rel="stylesheet" href="/assets/site-v2.css">
 <!-- /chrome:head -->
 <style>
-/* /podcast: page-only rules. Everything shared lives in /assets/site-v2.css (the episode list). */
+/* /podcast: page-only rules. Everything shared lives in /assets/site-v2.css (the episode list,
+   hero B-split with the player in .embed, the form fields and the .radio group). */
 
-/* promote to site-v2: hero B split. Type on the left, a player or card on the right. */
-.hero-b.split .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:var(--s9);align-items:center}
-.hero-b.split .t{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s5)}
-.hero-b.split h1{max-width:14ch}
+/* hero: the listen links and the guest link under the lead */
 .listen{display:flex;flex-direction:column;gap:var(--s3);margin-top:var(--s2)}
 .listen .row{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5)}
 .hero-b.split .apply{padding-top:var(--s5);border-top:1px solid var(--line);align-self:stretch}
-.embed{border-radius:var(--r);overflow:hidden} /* the player's own card fills it; Spotify keeps the src */
-.embed iframe{display:block;width:100%;border:0}
 
 /* episodes */
 .more{margin-top:var(--s7)}
@@ -48,27 +44,6 @@
 .guest .copy{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
 .guest .copy > p{font-size:var(--fs-l)}
 .card{background:#ffffff;border:1px solid var(--line);border-radius:var(--r);padding:var(--s7)}
-/* promote to site-v2 (fields): 48px fields under a 56px button, --field border, 16px text, select chevron.
-   Form markup untouched; forms.js swaps in its success message. */
-.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.form .full,.form > p[style]{grid-column:1/-1}
-.form input:not([type=radio]),.form select{width:100%;min-width:0;margin:0;font-size:var(--fs-b);line-height:20px;padding:13px 16px;
-  border:1px solid var(--field);border-radius:var(--r);background:#ffffff;color:var(--ink)}
-.form select{-webkit-appearance:none;appearance:none;padding-right:40px;cursor:pointer;
-  background:#ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%230c1a24' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 16px center/12px 8px}
-.form select:invalid{color:var(--muted)}
-.form option{color:var(--ink)}
-.form input::placeholder{color:var(--muted);opacity:1}
-.form input:focus,.form select:focus{outline:none;border-color:var(--accent);box-shadow:var(--focus)}
-/* guest type: two hairline rows, a round radio with the blue dot */
-.radio{grid-column:1/-1;display:flex;flex-direction:column;margin-top:4px;border-top:1px solid var(--line)}
-.radio label{display:flex;align-items:center;gap:12px;min-height:52px;padding-block:10px;border-bottom:1px solid var(--line);font-size:15px;line-height:1.4;color:var(--ink);cursor:pointer}
-.radio input{-webkit-appearance:none;appearance:none;display:grid;place-content:center;flex:none;width:20px;height:20px;margin:0;
-  border:1.5px solid var(--field);border-radius:50%;background:#ffffff;cursor:pointer}
-.radio input::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);transform:scale(0);transition:transform var(--ease)}
-.radio input:checked{border-color:var(--ink)}
-.radio input:checked::before{transform:scale(1)}
-.form .btn{width:100%;margin-top:var(--s2)}
 
 /* cross-sell: two hairline cells */
 #more .hgrid{margin-top:0;border-top:0}
@@ -85,13 +60,12 @@
 .newsform > p[style]{flex-basis:100%}
 
 @media (max-width:960px){
-  .hero-b.split .wrap,.guest{grid-template-columns:minmax(0,1fr);gap:var(--s7)}
+  .guest{grid-template-columns:minmax(0,1fr);gap:var(--s7)}
 }
 @media (max-width:560px){
   .card{padding:var(--s6) 20px}
   .news .card{padding:var(--s6) 20px}
   .news h2{font-size:var(--fs-h4)}
-  .form{grid-template-columns:minmax(0,1fr)}
   .newsform{flex-direction:column}
   #more .hgrid .btn{justify-self:stretch}
 }
@@ -153,7 +127,7 @@
 <main>
 <section class="hero-b split">
   <div class="wrap">
-    <div class="t">
+    <div class="copy">
       <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Podcast</span></nav>
       <span class="eyebrow">The Undervalued Expert · The Podcast</span>
       <h1>A podcast for growing your service business.</h1>
