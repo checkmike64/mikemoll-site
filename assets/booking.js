@@ -8,10 +8,13 @@
 //   MMBooking.mount(element, {
 //     slug: 'coaching-discovery',            // the CRM booking type
 //     prefill: { name, email, phone, answers }, // optional, from an earlier form
-//     notes: false,                          // hide "Anything to prepare?"
+//     notes: false,                          // hide the closing notes box
 //     skip: ['heard_about'],                 // optional questions already asked
 //     button: 'btn btn-primary'              // classes for the confirm button
 //   });
+//
+// The closing notes box asks "Anything to prepare?" unless NOTES below gives
+// the booking type its own question. The CRM keeps no wording for that box.
 //
 // Times are shown in the visitor's own time zone. The visitor key from
 // /visits.js goes along with the booking, so the pages this browser visited
@@ -31,6 +34,9 @@
   var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   var PHONE = /^\+[0-9]{8,15}$/;
   var SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+  var NOTES = {
+    'podcast-guesting-strategy': { label: 'Do you have any thoughts or concerns about podcast guesting you want to share?', required: true }
+  };
   var uid = 0;
 
   var CSS = [
@@ -372,8 +378,9 @@
       drawQuestions();
       form.append(questions);
       if (options.notes !== false) {
-        notesInput = el('textarea', { name: 'notes', rows: '3', maxlength: '2000' });
-        form.append(field('notes', 'Anything to prepare? (optional)', notesInput));
+        var notesAsk = NOTES[slug] || { label: 'Anything to prepare?', required: false };
+        notesInput = el('textarea', { name: 'notes', rows: '3', maxlength: '2000', required: notesAsk.required });
+        form.append(field('notes', notesAsk.label + (notesAsk.required ? '' : ' (optional)'), notesInput));
       }
       var submit = el('button', { type: 'submit', class: 'mmb-submit ' + (options.button || 'btn btn-primary') }, 'Confirm booking');
       form.append(submit);
@@ -418,6 +425,7 @@
         return v === undefined || v === '' || (Array.isArray(v) && v.length === 0);
       })[0];
       if (missing && mark(missing.key, 'This one is needed.')) return;
+      if (notesInput && notesInput.required && !notesInput.value.trim()) return void mark('notes', 'This one is needed.');
 
       var answers = {};
       state.fields.forEach(function (f) {
